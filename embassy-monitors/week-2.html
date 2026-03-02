@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 — PRC Pacific Embassies Monitor | TAFI</title>
+    <meta name="description" content="Embassies shut down for Lunar New Year, commercial diplomacy, and more — February 16 to February 22, 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
+    <style>
+        /* Monitor article page */
+        .monitor-content {
+            padding: clamp(3rem, 6vh, 5rem) 0;
+            background: var(--white);
+        }
+
+        .monitor-article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .monitor-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-meta-date {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+        }
+
+        .monitor-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .monitor-download:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
+        }
+
+        .monitor-download svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Article typography */
+        .monitor-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            color: var(--navy);
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .monitor-article h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .monitor-article p {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .monitor-article ul,
+        .monitor-article ol {
+            margin: 0.75rem 0 1.25rem 1.5rem;
+        }
+
+        .monitor-article li {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.65;
+            margin-bottom: 0.15rem;
+            font-weight: 300;
+        }
+
+        .monitor-article li a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article li a:hover {
+            color: #1a0dab;
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-article blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(218, 165, 32, 0.05);
+            font-style: italic;
+        }
+
+        /* Bottom navigation between weeks */
+        .monitor-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-nav a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ocean);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .monitor-nav a:hover {
+            color: var(--gold);
+        }
+
+        .monitor-nav-placeholder {
+            visibility: hidden;
+        }
+
+        /* Publication header banner */
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .publication-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .publication-title sup {
+            font-size: 0.6em;
+            color: var(--gold);
+        }
+
+        .publication-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .publication-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .publication-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Endnote */
+        .monitor-endnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.15);
+        }
+
+        .monitor-endnote p {
+            font-size: 0.8rem !important;
+            color: var(--mid-gray) !important;
+            line-height: 1.7 !important;
+            font-weight: 300 !important;
+        }
+
+        .monitor-endnote sup {
+            font-size: 0.7em;
+            color: var(--gold);
+        }
+
+        /* Callout box — flexible text box for quotes, analyst notes, key takeaways */
+        .callout-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Float variant: sits to the right of body text on desktop */
+        .callout-box--float {
+            float: right;
+            width: 42%;
+            margin: 0.5rem 0 1.5rem 2rem;
+        }
+
+        /* Break variant: full-width separator between paragraphs */
+        .callout-box--break {
+            float: none;
+            width: 100%;
+            margin: 2rem 0;
+            border-left: none;
+            border-top: 2px solid rgba(218, 165, 32, 0.2);
+            border-bottom: 2px solid rgba(218, 165, 32, 0.2);
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .callout-box__label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        /* Type-specific label colors */
+        .callout-box--note .callout-box__label {
+            color: var(--ocean);
+        }
+
+        .callout-box--quote .callout-box__label {
+            color: var(--gold-dark);
+        }
+
+        .callout-box--takeaway .callout-box__label {
+            color: var(--navy);
+        }
+
+        .callout-box__text {
+            font-size: 0.9rem !important;
+            line-height: 1.7 !important;
+            color: var(--navy) !important;
+            font-weight: 400 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .callout-box--quote .callout-box__text {
+            font-style: italic;
+        }
+
+        .callout-box__attribution {
+            font-size: 0.75rem;
+            color: var(--mid-gray);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Article figure / image */
+        .monitor-article figure {
+            margin: 1.75rem 0;
+        }
+
+        .monitor-article figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .monitor-article figcaption {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .monitor-article figcaption a {
+            color: var(--ocean);
+            text-decoration: none;
+        }
+
+        .monitor-article figcaption a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .callout-box--float {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">Alliance Futures</span>
+            </div>
+        </a>
+        <nav>
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-nav">
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>/</span>
+                    <a href="index.html">Embassies Monitor</a> <span>/</span>
+                    <span>Week 2</span>
+                </nav>
+                <h1>PRC Pacific Embassies Monitor: <em>Week 2</em></h1>
+                <p>February 16 &ndash; 22, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Content -->
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <!-- Publication header -->
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup></span>
+                    <div class="publication-logo">
+                        <img src="../images/tafi-logo.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week 2 &mdash; February 16 &ndash; 22, 2026</div>
+                    </div>
+                    <a href="pdfs/embassy-monitor-week-2.pdf" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                </div>
+
+                <h2>Last Week in the Pacific: Embassies Shut Down for Lunar New Year, Commercial Diplomacy, and More</h2>
+
+                <!-- Ambassador's Corner — callout box, floated right alongside the Summary -->
+                <div class="callout-box callout-box--float callout-box--note">
+                    <span class="callout-box__label">Ambassador&rsquo;s Corner</span>
+                    <p class="callout-box__text">Two weeks ago, China&rsquo;s Pacific embassies ran a full schedule of public Lunar New Year festivities. Last week, they scaled back to observe the holiday themselves.</p>
+                    <p class="callout-box__text" style="margin-top: 0.75rem !important;">The embassies closed on Tuesday the 17th&mdash;the first day of the holiday and the peak of celebrations. They reopened after three days, shorter than China&rsquo;s week-long national holiday, but most of them posted little activity for the rest of the week.</p>
+                    <p class="callout-box__text" style="margin-top: 0.75rem !important;">The two-week contrast is sharp: 37 catalogued events two weeks ago versus 11 posts last week. Chinese enterprises and medical teams, not the embassies, produced many of those 11 events.</p>
+                </div>
+
+                <h2>Summary of PRC Activity</h2>
+
+                <p>Last week&rsquo;s embassy activity centered on the <strong>Solomon Islands and Vanuatu</strong>. During the Lunar New Year break, <strong>Ambassador to the Solomon Islands Cai Weiming attended three site visits</strong> while Chinese corporations made donations and initiated a new project. In Vanuatu, <strong>Ambassador Li Minggang held two meetings</strong>&mdash;one with local leaders and one with a UN regional organization, blending local engagement with broader diplomatic outreach.</p>
+
+                <h2>This Week&rsquo;s Big Themes:</h2>
+
+                <h3>Cai Weiming&rsquo;s Work Never Ends</h3>
+
+                <p>On the 17th, PRC Ambassador to the Solomon Islands Cai Weiming was the only envoy still working. Cai traveled to an agricultural site near the capital with Minister of Agriculture Wasi, where he used the holiday as a backdrop to call for closer agricultural cooperation. He also visited Chinese enterprises to express appreciation and repeat the same safety message he delivered the prior <a href="week-1.html" style="color: #1a0dab; text-decoration: underline;">week</a>. The next day, Cai delivered the same message to the Chinese medical team and police liaison team in the Solomons.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Solomon Islands:</strong> <a href="https://sb.china-embassy.gov.cn/sgxw/202602/t20260218_11861154.htm" target="_blank" rel="noopener">Ambassador Visits Chinese Enterprises</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://sb.china-embassy.gov.cn/sgxw/202602/t20260218_11861156.htm" target="_blank" rel="noopener">Ambassador Tours Agricultural Site</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://sb.china-embassy.gov.cn/eng/sgxw_3/202602/t20260222_11861707.htm" target="_blank" rel="noopener">Ambassador Visits Medical and Police Teams</a></li>
+                </ul>
+
+                <h3>Chinese Enterprises Pick Up the Pace</h3>
+
+                <p>With the embassy quiet, Chinese enterprises in the Solomon Islands filled the gap. Two Chinese shareholders of Wanguo Gold Group, which holds a 90 percent stake in the Gold Ridge Mine, donated a combined $189,000&mdash;likely an effort to shore up community relations after violence at the mine on January 20. The shareholders hosted a public ceremony with the local community. In Western Province, the Noro Township Road Project opened last week. The World Bank provided approximately $14 million in funding for the project, which it contracted to the China Civil Engineering Construction Corporation&mdash;a state-owned enterprise active across the region. A company representative attended the opening and received a gift from local leaders. This road project fits a broader pattern: Beijing claims credit for work that outside institutions fund, using such events to burnish its image as a generous partner.</p>
+
+                <figure>
+                    <img src="images/week-2-noro-road.png" alt="Minister Fuo'o presenting a gift to CCECC Country Manager Mr. Huang at the Noro Township Road Project opening">
+                    <figcaption>Minister Fuo&rsquo;o presenting a gift to CCECC Country Manager Mr. Huang. (Source: <a href="https://solomons.gov.sb/noro-township-road-improvement-project-officially-opens-boosting-western-provinces-connectivity-and-growth/" target="_blank" rel="noopener">Solomon Islands Ministry of Infrastructure Development</a>)</figcaption>
+                </figure>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.solomonstarnews.com/wanguo-shareholders-donate-1-5m-to-gold-ridge-community/" target="_blank" rel="noopener">Wangguo Shareholders Donate to Gold Ridge Community</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/share/p/14WR4CA7sD5/" target="_blank" rel="noopener">Noro Road Project Opening</a></li>
+                </ul>
+
+                <h3>Li Minggang&rsquo;s Intra- and International Diplomacy</h3>
+
+                <p>PRC Ambassador to Vanuatu Li Minggang took off the first day of the Lunar New Year but returned to work the next day. He met with a team from the UN OCHA Office of the Pacific Islands, which had traveled to Vanuatu for a workshop on data sharing and early warning messaging during extreme weather events. Li and the team discussed regional cooperation and coordination between UN OCHA and the China Meteorological Administration. Li also visited Pele Island, accompanied by Speaker Stephen Felix and MP Fred Samuel. After consulting Felix on local needs, the Ambassador delivered water pipes, cooking pots, and guitars for a local string band.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Vanuatu:</strong> <a href="https://www.facebook.com/share/p/186CSf76ZP/" target="_blank" rel="noopener">Li Minggang Meets with UN OCHA</a></li>
+                    <li><strong>Vanuatu:</strong> <a href="https://vu.china-embassy.gov.cn/eng/zwgx_0/sbwl/202602/t20260220_11861519.htm" target="_blank" rel="noopener">Li Minggang Visits Pele Island</a></li>
+                </ul>
+
+                <!-- Endnote -->
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer a weekly structured intelligence report that bridges critical information gaps on regional engagement.</p>
+                </div>
+
+                <!-- Previous / Next navigation -->
+                <nav class="monitor-nav">
+                    <a href="week-1.html">&larr; Previous Week</a>
+                    <a href="index.html">All Monitors</a>
+                    <a href="week-3.html">Next Week &rarr;</a>
+                </nav>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/tafi-logo.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#mission">Mission</a>
+                    <a href="../index.html#expertise">Expertise</a>
+                    <a href="index.html">Embassies Monitor</a>
+                    <a href="../index.html#vision">Vision</a>
+                    <a href="../index.html#team">Team</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Mobile nav sub-group accordion toggle
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                trigger.classList.toggle('active');
+                const items = trigger.nextElementSibling;
+                items.classList.toggle('active');
+            });
+        });
+
+        // Close mobile sub-groups when a sub-link is clicked
+        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRC Pacific Embassies Monitor | TAFI</title>
+    <meta name="description" content="The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing's public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
+    <style>
+        /* Monitor listing */
+        .monitors-section {
+            padding: clamp(3rem, 6vh, 5rem) 0;
+            background: var(--white);
+        }
+
+        .monitors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .monitor-card {
+            background: var(--off-white);
+            border: 1px solid transparent;
+            padding: 1.75rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .monitor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--ocean) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .monitor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
+            border-color: rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .monitor-card-week {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .monitor-card-date {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .monitor-card-desc {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        .monitor-card-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .monitor-card-actions a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .link-read {
+            color: var(--ocean);
+        }
+
+        .link-read:hover {
+            color: var(--ocean-dark);
+        }
+
+        .link-pdf {
+            color: var(--gold-dark);
+        }
+
+        .link-pdf:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 640px) {
+            .monitors-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact section */
+        .monitor-contact {
+            padding: clamp(2rem, 4vh, 3rem) 0;
+            background: var(--off-white);
+            text-align: center;
+        }
+
+        .monitor-contact p {
+            font-size: 0.95rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+        }
+
+        .monitor-contact a {
+            color: var(--ocean);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .monitor-contact a:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">Alliance Futures</span>
+            </div>
+        </a>
+        <nav>
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-nav">
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>/</span> <span>Embassies Monitor</span>
+                </nav>
+                <h1>PRC Pacific Embassies <em>Monitor</em></h1>
+                <p>The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer weekly, structured intelligence reports that bridges critical information gaps on regional engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitors Listing -->
+    <section class="monitors-section">
+        <div class="container">
+            <div class="monitors-grid">
+
+                <!-- NEWEST FIRST: Add new weeks at the top of this grid -->
+
+                <div class="monitor-card">
+                    <div class="monitor-card-week">Week 3</div>
+                    <div class="monitor-card-date">February 23 &ndash; March 1, 2026</div>
+                    <p class="monitor-card-desc">Customs and drugs, Liu Weimin&rsquo;s big week, and more.</p>
+                    <div class="monitor-card-actions">
+                        <a href="week-3.html" class="link-read">Read &rarr;</a>
+                        <a href="pdfs/embassy-monitor-week-3.pdf" class="link-pdf" download>PDF &darr;</a>
+                    </div>
+                </div>
+
+                <div class="monitor-card">
+                    <div class="monitor-card-week">Week 2</div>
+                    <div class="monitor-card-date">February 16 &ndash; 22, 2026</div>
+                    <p class="monitor-card-desc">Embassies shut down for Lunar New Year, commercial diplomacy, and more.</p>
+                    <div class="monitor-card-actions">
+                        <a href="week-2.html" class="link-read">Read &rarr;</a>
+                        <a href="pdfs/embassy-monitor-week-2.pdf" class="link-pdf" download>PDF &darr;</a>
+                    </div>
+                </div>
+
+                <div class="monitor-card">
+                    <div class="monitor-card-week">Week 1</div>
+                    <div class="monitor-card-date">February 9 &ndash; 15, 2026</div>
+                    <p class="monitor-card-desc">Lunar New Year comes to the Pacific, David Adeang in Guangdong, and more.</p>
+                    <div class="monitor-card-actions">
+                        <a href="week-1.html" class="link-read">Read &rarr;</a>
+                        <a href="pdfs/embassy-monitor-week-1.pdf" class="link-pdf" download>PDF &darr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="monitor-contact">
+        <div class="container">
+            <p>For inquiries, please contact <a href="mailto:contact@alliancefutures.org">contact@alliancefutures.org</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/tafi-logo.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#mission">Mission</a>
+                    <a href="../index.html#expertise">Expertise</a>
+                    <a href="index.html">Embassies Monitor</a>
+                    <a href="../index.html#vision">Vision</a>
+                    <a href="../index.html#team">Team</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Mobile nav sub-group accordion toggle
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                trigger.classList.toggle('active');
+                const items = trigger.nextElementSibling;
+                items.classList.toggle('active');
+            });
+        });
+
+        // Close mobile sub-groups when a sub-link is clicked
+        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 — PRC Pacific Embassies Monitor | TAFI</title>
+    <meta name="description" content="Customs and drugs, Liu Weimin's big week, and more — February 23 to March 1, 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
+    <style>
+        /* Monitor article page */
+        .monitor-content {
+            padding: clamp(3rem, 6vh, 5rem) 0;
+            background: var(--white);
+        }
+
+        .monitor-article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .monitor-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-meta-date {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+        }
+
+        .monitor-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .monitor-download:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
+        }
+
+        .monitor-download svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Article typography */
+        .monitor-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            color: var(--navy);
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .monitor-article h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .monitor-article p {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .monitor-article ul,
+        .monitor-article ol {
+            margin: 0.75rem 0 1.25rem 1.5rem;
+        }
+
+        .monitor-article li {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.65;
+            margin-bottom: 0.15rem;
+            font-weight: 300;
+        }
+
+        .monitor-article li a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article li a:hover {
+            color: #1a0dab;
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-article blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(218, 165, 32, 0.05);
+            font-style: italic;
+        }
+
+        /* Inline body links */
+        .monitor-article p a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article p a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        /* Bottom navigation between weeks */
+        .monitor-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-nav a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ocean);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .monitor-nav a:hover {
+            color: var(--gold);
+        }
+
+        .monitor-nav-placeholder {
+            visibility: hidden;
+        }
+
+        /* Publication header banner */
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .publication-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .publication-title sup {
+            font-size: 0.6em;
+            color: var(--gold);
+        }
+
+        .publication-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .publication-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Endnote */
+        .monitor-endnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.15);
+        }
+
+        .monitor-endnote p {
+            font-size: 0.8rem !important;
+            color: var(--mid-gray) !important;
+            line-height: 1.7 !important;
+            font-weight: 300 !important;
+        }
+
+        .monitor-endnote sup {
+            font-size: 0.7em;
+            color: var(--gold);
+        }
+
+        /* Callout box */
+        .callout-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout-box--float {
+            float: right;
+            width: 42%;
+            margin: 0.5rem 0 1.5rem 2rem;
+        }
+
+        .callout-box--break {
+            float: none;
+            width: 100%;
+            margin: 2rem 0;
+            border-left: none;
+            border-top: 2px solid rgba(218, 165, 32, 0.2);
+            border-bottom: 2px solid rgba(218, 165, 32, 0.2);
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .callout-box__label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .callout-box--note .callout-box__label {
+            color: var(--ocean);
+        }
+
+        .callout-box--quote .callout-box__label {
+            color: var(--gold-dark);
+        }
+
+        .callout-box--takeaway .callout-box__label {
+            color: var(--navy);
+        }
+
+        .callout-box__text {
+            font-size: 0.9rem !important;
+            line-height: 1.7 !important;
+            color: var(--navy) !important;
+            font-weight: 400 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .callout-box--quote .callout-box__text {
+            font-style: italic;
+        }
+
+        .callout-box__attribution {
+            font-size: 0.75rem;
+            color: var(--mid-gray);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Article figure / image — float variant for side placement */
+        .monitor-article figure {
+            margin: 1.75rem 0;
+        }
+
+        .monitor-article figure.figure--float {
+            float: right;
+            width: 42%;
+            margin: 0.5rem 0 1.5rem 2rem;
+        }
+
+        .monitor-article figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .monitor-article figcaption {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .monitor-article figcaption a {
+            color: var(--ocean);
+            text-decoration: none;
+        }
+
+        .monitor-article figcaption a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .callout-box--float {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+
+            .monitor-article figure.figure--float {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">Alliance Futures</span>
+            </div>
+        </a>
+        <nav>
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-nav">
+            <a href="../index.html#mission">Mission</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../index.html#vision">Vision</a>
+            <a href="../index.html#team">Team</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>/</span>
+                    <a href="index.html">Embassies Monitor</a> <span>/</span>
+                    <span>Week 3</span>
+                </nav>
+                <h1>PRC Pacific Embassies Monitor: <em>Week 3</em></h1>
+                <p>February 23 &ndash; March 1, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Content -->
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <!-- Publication header -->
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup></span>
+                    <div class="publication-logo">
+                        <img src="../images/tafi-logo.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week 3 &mdash; February 23 &ndash; March 1, 2026</div>
+                    </div>
+                    <a href="pdfs/embassy-monitor-week-3.pdf" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                </div>
+
+                <h2>Last Week in the Pacific: Customs and Drugs, Liu Weimin&rsquo;s Big Week, and More</h2>
+
+                <!-- Ambassador's Corner — callout box, floated right alongside the Summary -->
+                <div class="callout-box callout-box--float callout-box--note">
+                    <span class="callout-box__label">Ambassador&rsquo;s Corner</span>
+                    <p class="callout-box__text">Amid his packed schedule, Ambassador Liu also wrote and published an article in Talanoa &lsquo;O Tonga, a local news source.</p>
+                    <p class="callout-box__text" style="margin-top: 0.75rem !important;">Liu argued that Tongan and Chinese values align, using the Lunar New Year as evidence. He praised China&rsquo;s accomplishments during the 14th Five-Year Plan period and promoted Beijing&rsquo;s four global initiatives.</p>
+                    <p class="callout-box__text" style="margin-top: 0.75rem !important;">Looking ahead, Liu drew a parallel between China&rsquo;s upcoming 15th Five-Year Plan and Tonga&rsquo;s Strategic Development Framework, predicting the two countries will &ldquo;write an even brighter chapter.&rdquo;</p>
+                </div>
+
+                <h2>Summary of PRC Activity</h2>
+
+                <p>Last week highlighted the range of China&rsquo;s public engagement across the Pacific Islands. PRC ambassador to Tonga <strong>Liu Weimin and police representatives in the Solomon Islands pushed to expand China&rsquo;s security assistance</strong> to local law enforcement. The embassy in Tonga also hosted a <strong>series of high-level political meetings and events</strong> in the capital. China&rsquo;s <strong>medical teams also stayed busy</strong> providing services, conducting public diplomacy, and offering policy recommendations.</p>
+
+                <h2>This Week&rsquo;s Big Themes:</h2>
+
+                <h3>Internal Security Assistance</h3>
+
+                <p>PRC Ambassador Liu Weimin met with Tonga&rsquo;s newly appointed Minister for Revenue and Customs, Hon. Sevenitini Toumo&rsquo;ua, to review past cooperation and press for expanded collaboration on border security. China has donated <a href="https://www.revenue.gov.to/node/193" target="_blank" rel="noopener">X-ray equipment</a> to the Ministry to improve border enforcement&mdash;not a routine machinery handover, but part of a broader trend: <a href="https://direct.mit.edu/isec/article-abstract/49/3/122/128038/Security-without-Exclusivity-Hybrid-Alignment?redirectedFrom=fulltext" target="_blank" rel="noopener">security hybridization</a>. Pacific Island states accept external security aid from the United States&mdash;for example, maritime patrolling&mdash;while China provides internal security assistance. Three days after this meeting, the United States <a href="https://matangitonga.to/2026/02/27/us-deputy-secretary-landau-in-tonga" target="_blank" rel="noopener">signed</a> an enhanced maritime security pact with Tonga. The pattern extends beyond Tonga: the Deputy Commissioner of the Chinese Police Liaison Team in the Solomon Islands pledged to strengthen cooperation in combating drug crimes. China&rsquo;s police presence is most visible in the Solomon Islands, but Tonga shows how Beijing weaves itself into other countries&rsquo; internal security systems through less conspicuous channels.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Tonga:</strong> <a href="https://to.china-embassy.gov.cn/eng/sgxw/202602/t20260224_11862747.htm" target="_blank" rel="noopener">Liu Weimin Meets With the Minister for Revenue and Customs</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.sibconline.com.sb/china-pledges-to-support-solomon-islands-combat-drug-related-crimes/" target="_blank" rel="noopener">CPLT Pledges Cooperation on Drug Crimes</a></li>
+                </ul>
+
+                <h3>Liu Weimin&rsquo;s Big Week</h3>
+
+                <!-- Photo floated to the right alongside this theme's text -->
+                <figure class="figure--float">
+                    <img src="images/week-3-usp-tonga.png" alt="Ruan Dewen meets with USP Tonga Campus Director">
+                    <figcaption>Ruan Dewen Meets with USP Tonga Campus Director (Source: Embassy of the PRC in Tonga)</figcaption>
+                </figure>
+
+                <p>Tonga accounted for more than a third of all PRC embassy activity across the Pacific last week. During US Deputy Secretary Landau&rsquo;s trip to Tonga last week, the PRC embassy ran a packed schedule. Ambassador Liu met with the Revenue and Customs Minister, then hosted the newly elected Noble Member of Parliament Lord Ma&rsquo;afu. He also met with people&rsquo;s representative Tevita Puloka to discuss recent developments. Beyond the embassy, Counselor Ruan Dewen and junior embassy staff held a &ldquo;Young Diplomats on Campus&rdquo; event at a local high school, where they included the PRC&rsquo;s historical interpretation of the Taiwan question in their remarks. Later in the week, Ruan Dewen visited the University of the South Pacific&rsquo;s Tonga Campus and met with the Director. Liu Weimin also published an editorial in the local press.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Tonga:</strong> <a href="https://to.china-embassy.gov.cn/eng/sgxw/202602/t20260224_11862747.htm" target="_blank" rel="noopener">Liu Weimin Meets With the Minister for Revenue and Customs</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://to.china-embassy.gov.cn/eng/sgxw/202602/t20260227_11865292.html" target="_blank" rel="noopener">Liu Weimin Meets with Noble MP</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://to.china-embassy.gov.cn/eng/sgxw/202602/t20260227_11865294.htm" target="_blank" rel="noopener">Embassy Hosts Event at Local High School</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://www.facebook.com/share/p/1AiDTiedQ6/" target="_blank" rel="noopener">Liu Weimin Meets with Representative</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://www.facebook.com/share/p/1AhKvWLHGP/" target="_blank" rel="noopener">Counselor Visits USP Tonga</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://www.facebook.com/share/p/1Di2RFMJTr/" target="_blank" rel="noopener">Liu Weimin Published in Local Press</a></li>
+                </ul>
+
+                <h3>Medical Teams to the Front</h3>
+
+                <p>While most embassies stayed quiet after the New Year holiday, China&rsquo;s medical teams across the region remained active. In the Federated States of Micronesia, the medical team gathered at Pohnpei State Hospital to make and share dumplings for the Lunar New Year. In Kiribati, the team integrated into the country&rsquo;s medical planning&mdash;Dr. Shi Yiquan attended the Expanded Program on Immunization Policy Review and Provisional Planning Discussion Meeting, a government forum on immunization strategy. The team also announced that a recent stroke survivor regained the ability to walk after two weeks of acupuncture treatment. The practitioner, Yan Jingwei, serves as the team&rsquo;s Traditional Chinese Medicine specialist&ndash;a role that doubles as a cultural ambassador for promoting China&rsquo;s traditions alongside its medical services.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>FSM:</strong> <a href="https://www.facebook.com/share/v/1Gg7QmnnJr/" target="_blank" rel="noopener">Medical Team Celebrates Lunar New Year in State Hospital</a></li>
+                    <li><strong>Kiribati:</strong> <a href="https://www.facebook.com/share/p/1C9rC7rmBe/" target="_blank" rel="noopener">Medical Team Member Attends Workshop</a></li>
+                    <li><strong>Kiribati:</strong> <a href="https://www.facebook.com/share/p/18Q6B8f6Xr/" target="_blank" rel="noopener">Medical Team&rsquo;s Successful Use of Acupuncture</a></li>
+                </ul>
+
+                <!-- Endnote -->
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer a weekly structured intelligence report that bridges critical information gaps on regional engagement.</p>
+                </div>
+
+                <!-- Previous / Next navigation -->
+                <nav class="monitor-nav">
+                    <a href="week-2.html">&larr; Previous Week</a>
+                    <a href="index.html">All Monitors</a>
+                    <!-- Update href when Week 4 exists -->
+                    <span class="monitor-nav-placeholder">Next Week &rarr;</span>
+                </nav>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/tafi-logo.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#mission">Mission</a>
+                    <a href="../index.html#expertise">Expertise</a>
+                    <a href="index.html">Embassies Monitor</a>
+                    <a href="../index.html#vision">Vision</a>
+                    <a href="../index.html#team">Team</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Mobile nav sub-group accordion toggle
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                trigger.classList.toggle('active');
+                const items = trigger.nextElementSibling;
+                items.classList.toggle('active');
+            });
+        });
+
+        // Close mobile sub-groups when a sub-link is clicked
+        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
