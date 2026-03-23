@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRC Pacific Embassies Monitor | TAFI</title>
-    <meta name="description" content="The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing's public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions.">
+    <title>Publications | TAFI</title>
+    <meta name="description" content="Research publications from The Alliance Futures Initiative, including Red Team event reports examining PRC strategic objectives.">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/shared.css">
     <style>
-        /* Monitor listing */
-        .monitors-section {
+        /* Publications listing */
+        .publications-section {
             padding: clamp(3rem, 6vh, 5rem) 0;
             background: var(--white);
         }
 
-        .monitors-grid {
+        .publications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 2rem;
         }
 
-        .monitor-card {
+        .pub-card {
             background: var(--off-white);
             border: 1px solid transparent;
-            padding: 1.75rem;
+            padding: 2rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .monitor-card::before {
+        .pub-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -42,46 +42,60 @@
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .monitor-card:hover {
+        .pub-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
             border-color: rgba(218, 165, 32, 0.2);
         }
 
-        .monitor-card:hover::before {
+        .pub-card:hover::before {
             transform: scaleX(1);
         }
 
-        .monitor-card-week {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.3rem;
+        .pub-card-type {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(74, 144, 194, 0.1) 100%);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .monitor-card-date {
+        .pub-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .pub-card-subtitle {
             font-size: 0.85rem;
             color: var(--mid-gray);
             font-weight: 400;
             margin-bottom: 1rem;
         }
 
-        .monitor-card-desc {
+        .pub-card-desc {
             font-size: 0.9rem;
             color: var(--mid-gray);
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 300;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
-        .monitor-card-actions {
+        .pub-card-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             flex-wrap: wrap;
         }
 
-        .monitor-card-actions a {
+        .pub-card-actions a {
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -107,32 +121,32 @@
         }
 
         @media (max-width: 640px) {
-            .monitors-grid {
+            .publications-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         /* Contact section */
-        .monitor-contact {
+        .pub-contact {
             padding: clamp(2rem, 4vh, 3rem) 0;
             background: var(--off-white);
             text-align: center;
         }
 
-        .monitor-contact p {
+        .pub-contact p {
             font-size: 0.95rem;
             color: var(--mid-gray);
             font-weight: 400;
         }
 
-        .monitor-contact a {
+        .pub-contact a {
             color: var(--ocean);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .monitor-contact a:hover {
+        .pub-contact a:hover {
             color: var(--gold);
         }
     </style>
@@ -153,8 +167,8 @@
             <div class="nav-dropdown">
                 <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 <div class="nav-dropdown-menu">
-                    <a href="../publications/index.html">Publications</a>
-                    <a href="index.html">Embassies Monitor</a>
+                    <a href="index.html">Publications</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
             <a href="../index.html#vision">Vision</a>
@@ -172,8 +186,8 @@
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                 <div class="mobile-nav-group-items">
-                    <a href="../publications/index.html">Publications</a>
-                    <a href="index.html">Embassies Monitor</a>
+                    <a href="index.html">Publications</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
             <a href="../index.html#vision">Vision</a>
@@ -187,78 +201,38 @@
         <div class="container">
             <div class="page-hero-content">
                 <nav class="breadcrumb">
-                    <a href="../index.html">Home</a> <span>/</span> <span>Embassies Monitor</span>
+                    <a href="../index.html">Home</a> <span>/</span> <span>Publications</span>
                 </nav>
-                <h1>PRC Pacific Embassies <em>Monitor</em></h1>
-                <p>The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer weekly, structured intelligence reports that bridges critical information gaps on regional engagement.</p>
+                <h1><em>Publications</em></h1>
+                <p>Original research and analysis from The Alliance Futures Initiative. Our publications explore strategic competition, alliance dynamics, and geopolitical challenges through innovative methodologies including red team exercises and scenario-based analysis.</p>
             </div>
         </div>
     </section>
 
-    <!-- Monitors Listing -->
-    <section class="monitors-section">
+    <!-- Publications Listing -->
+    <section class="publications-section">
         <div class="container">
-            <div class="monitors-grid">
+            <div class="publications-grid">
 
-                <!-- NEWEST FIRST: Add new weeks at the top of this grid -->
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 6</div>
-                    <div class="monitor-card-date">March 16 &ndash; 22, 2026</div>
-                    <p class="monitor-card-desc">Food security, education, and promoting China&rsquo;s economic model across the Pacific.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-6.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-6.pdf" class="link-pdf" download>PDF &darr;</a>
+                <div class="pub-card">
+                    <span class="pub-card-type">Red Team Report</span>
+                    <div class="pub-card-title">Pacific Islands Red Team Event Report</div>
+                    <div class="pub-card-subtitle">Examining PRC Objectives in the Pacific Islands</div>
+                    <p class="pub-card-desc">A strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region. Expert participants roleplayed PRC officials to assess potential responses to four regional scenarios including the Kanton Island Lease, Deep-Sea Mining Competition, Marshall Islands Diplomatic Switch, and the Bougainville Crisis.</p>
+                    <div class="pub-card-actions">
+                        <a href="pics-red-team.html" class="link-read">Read Report &rarr;</a>
+                        <a href="PICs Red Team Report (2).docx.pdf" class="link-pdf" download>PDF &darr;</a>
                     </div>
                 </div>
 
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 5</div>
-                    <div class="monitor-card-date">March 9 &ndash; 15, 2026</div>
-                    <p class="monitor-card-desc">Women, children, and energy — International Women&rsquo;s Day outreach, educational donations, and infrastructure handovers.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-5.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-5.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 4</div>
-                    <div class="monitor-card-date">March 2 &ndash; 8, 2026</div>
-                    <p class="monitor-card-desc">Chinese police, societal engagement, and sub-national diplomacy.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-4.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-4.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 3</div>
-                    <div class="monitor-card-date">February 23 &ndash; March 1, 2026</div>
-                    <p class="monitor-card-desc">Customs and drugs, Liu Weimin&rsquo;s big week, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-3.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-3.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 2</div>
-                    <div class="monitor-card-date">February 16 &ndash; 22, 2026</div>
-                    <p class="monitor-card-desc">Embassies shut down for Lunar New Year, commercial diplomacy, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-2.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-2.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 1</div>
-                    <div class="monitor-card-date">February 9 &ndash; 15, 2026</div>
-                    <p class="monitor-card-desc">Lunar New Year comes to the Pacific, David Adeang in Guangdong, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-1.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-1.pdf" class="link-pdf" download>PDF &darr;</a>
+                <div class="pub-card">
+                    <span class="pub-card-type">Red Team Report</span>
+                    <div class="pub-card-title">Ukraine Red Team Event Report</div>
+                    <div class="pub-card-subtitle">China&rsquo;s Strategic Calculus on Ukraine, Europe &amp; Taiwan</div>
+                    <p class="pub-card-desc">A strategic red team exercise exploring three potential outcomes of the Russia&ndash;Ukraine war and their implications for China&rsquo;s strategic calculus in both Europe and Taiwan. Three scenarios&mdash;Blooming Sunflowers, Bear in Charge, and Wise Dragon&mdash;reveal how Beijing may respond to different peace settlements.</p>
+                    <div class="pub-card-actions">
+                        <a href="ukraine-red-team.html" class="link-read">Read Report &rarr;</a>
+                        <a href="Ukraine Red Team Event Report.docx.pdf" class="link-pdf" download>PDF &darr;</a>
                     </div>
                 </div>
 
@@ -267,7 +241,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="monitor-contact">
+    <section class="pub-contact">
         <div class="container">
             <p>For inquiries, please contact <a href="mailto:contact@alliancefutures.org">contact@alliancefutures.org</a></p>
         </div>
@@ -284,8 +258,8 @@
                 <div class="footer-links">
                     <a href="../index.html#mission">Mission</a>
                     <a href="../index.html#expertise">Expertise</a>
-                    <a href="../publications/index.html">Publications</a>
-                    <a href="index.html">Embassies Monitor</a>
+                    <a href="index.html">Publications</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                     <a href="../index.html#vision">Vision</a>
                     <a href="../index.html#team">Team</a>
                     <a href="../index.html#contact">Contact</a>
