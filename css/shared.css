@@ -1,5 +1,13 @@
 /* ===== Shared Styles — TAFI ===== */
 
+/* Face-position overrides for portraits whose subject sits high in the frame */
+img[src*="eric-lies"] { object-position: center 22%; }
+img[src*="jackie-gibson"] { object-position: center 20%; }
+img[src*="austin-wu"] { object-position: center 30%; }
+img[src*="leah-markworth"] { object-position: center 35%; }
+img[src*="nishank-motwani"] { object-position: center 30%; }
+
+
 :root {
     --navy: #0a2540;
     --navy-light: #1a3a5a;
