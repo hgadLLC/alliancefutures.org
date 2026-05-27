@@ -8,6 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/shared.css">
     <style>
+        .page-hero-imaged {
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-position: right 80%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(5, 22, 40, 0.92) 0%, rgba(5, 22, 40, 0.7) 35%, rgba(5, 22, 40, 0.25) 100%);
+        }
+        .page-hero-imaged .container { position: relative; z-index: 2; }
+
         /* Publications listing */
         .publications-section {
             padding: clamp(3rem, 6vh, 5rem) 0;
@@ -155,24 +174,26 @@
     <!-- Navigation -->
     <header id="header">
         <a href="../index.html" class="logo">
-            <img src="../images/tafi-logo.png" alt="TAFI Logo" class="logo-img">
+            <img src="../images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
             <div class="logo-text">
                 <span class="logo-text-main">TAFI</span>
-                <span class="logo-text-sub">Alliance Futures</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
             </div>
         </a>
         <nav>
-            <a href="../index.html#mission">Mission</a>
-            <a href="../index.html#expertise">Expertise</a>
+            <a href="../about.html">About</a>
             <div class="nav-dropdown">
-                <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="../our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 <div class="nav-dropdown-menu">
+                    <a href="../our-work/index.html?category=research">Research</a>
+                    <a href="../our-work/index.html?category=futures">Futures</a>
+                    <a href="../our-work/index.html?category=commentary">Commentary</a>
                     <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../index.html#vision">Vision</a>
-            <a href="../index.html#team">Team</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
         </nav>
         <div class="mobile-menu">
             <span></span>
@@ -180,22 +201,26 @@
             <span></span>
         </div>
         <nav class="mobile-nav">
-            <a href="../index.html#mission">Mission</a>
-            <a href="../index.html#expertise">Expertise</a>
+            <a href="../about.html">About</a>
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                 <div class="mobile-nav-group-items">
+                    <a href="../our-work/index.html?category=research">Research</a>
+                    <a href="../our-work/index.html?category=futures">Futures</a>
+                    <a href="../our-work/index.html?category=commentary">Commentary</a>
                     <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../index.html#vision">Vision</a>
-            <a href="../index.html#team">Team</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
         </nav>
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero page-hero-imaged">
+        <div class="page-hero-bg" style="background-image: url('../images/publications-hero.jpg');"></div>
+        <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
                 <nav class="breadcrumb">
@@ -207,34 +232,12 @@
         </div>
     </section>
 
-    <!-- Publications Listing -->
+    <!-- Publications listing has moved -->
     <section class="publications-section">
         <div class="container">
-            <div class="publications-grid">
-
-                <div class="pub-card">
-                    <span class="pub-card-type">Red Team Report</span>
-                    <div class="pub-card-title">Pacific Islands Red Team Event Report</div>
-                    <div class="pub-card-subtitle">Examining PRC Objectives in the Pacific Islands</div>
-                    <p class="pub-card-desc">A strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region. Expert participants roleplayed PRC officials to assess potential responses to four regional scenarios including the Kanton Island Lease, Deep-Sea Mining Competition, Marshall Islands Diplomatic Switch, and the Bougainville Crisis.</p>
-                    <div class="pub-card-actions">
-                        <a href="pics-red-team.html" class="link-read">Read Report &rarr;</a>
-                        <a href="PICs Red Team Report (2).docx.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="pub-card">
-                    <span class="pub-card-type">Red Team Report</span>
-                    <div class="pub-card-title">Ukraine Red Team Event Report</div>
-                    <div class="pub-card-subtitle">China&rsquo;s Strategic Calculus on Ukraine, Europe &amp; Taiwan</div>
-                    <p class="pub-card-desc">A strategic red team exercise exploring three potential outcomes of the Russia&ndash;Ukraine war and their implications for China&rsquo;s strategic calculus in both Europe and Taiwan. Three scenarios&mdash;Blooming Sunflowers, Bear in Charge, and Wise Dragon&mdash;reveal how Beijing may respond to different peace settlements.</p>
-                    <div class="pub-card-actions">
-                        <a href="ukraine-red-team.html" class="link-read">Read Report &rarr;</a>
-                        <a href="Ukraine Red Team Event Report.docx.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-            </div>
+            <p style="text-align: center; padding: 3rem 1rem; color: var(--mid-gray); font-size: 1rem; line-height: 1.7;">
+                Our publications now live under <a href="../our-work/research.html" style="color: var(--ocean); font-weight: 600;">Our Work &rsaquo; Research</a>.
+            </p>
         </div>
     </section>
 
@@ -250,21 +253,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../images/tafi-logo.png" alt="TAFI">
+                    <img src="../images/tafi-logo-real.png" alt="TAFI">
                     <span class="footer-logo-text">TAFI</span>
                 </div>
                 <div class="footer-links">
-                    <a href="../index.html#mission">Mission</a>
-                    <a href="../index.html#expertise">Expertise</a>
-                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
-                    <a href="../index.html#vision">Vision</a>
-                    <a href="../index.html#team">Team</a>
+                    <a href="../about.html">About</a>
+                    <a href="../our-work/index.html">Our Work</a>
+                    <a href="../advisory.html">Advisory</a>
+                    <a href="../people.html">People</a>
+                    <a href="../support.html">Support</a>
                     <a href="../index.html#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+                <!-- PLACEHOLDERS to confirm before launch: mailing address, contact@ -->
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.85rem; line-height: 1.7;">
+                    TAFI is supported by foundation grants, individual donors, and commercial advisory work, with a strict firewall between commercial engagements and our public research.
+                </p>
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.8rem; line-height: 1.7; opacity: 0.85;">
+                    The Alliance Futures Initiative is a research program of OTX International, an independent, non-partisan 501(c)(3) public charity. Contributions are tax-deductible to the fullest extent permitted by law.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="mailto:contact@alliancefutures.org" style="color: var(--ocean-light);">contact@alliancefutures.org</a>
+                </p>
+                <p style="margin-top: 1rem;">&copy; 2026 The Alliance Futures Initiative &middot; Founded 2026 &middot; <a href="../privacy.html" style="color: var(--ocean-light);">Privacy</a></p>
             </div>
         </div>
     </footer>

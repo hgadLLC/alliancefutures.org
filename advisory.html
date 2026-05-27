@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisory Services | TAFI</title>
+    <meta name="description" content="Commercial advisory work conducted alongside TAFI's public research, with a strict firewall between the two.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <style>
+        .page-hero-imaged {
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(5, 22, 40, 0.92) 0%, rgba(5, 22, 40, 0.78) 45%, rgba(5, 22, 40, 0.45) 100%);
+        }
+        .page-hero-imaged .container { position: relative; z-index: 2; }
+
+        .prose {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: clamp(3rem, 6vh, 5rem) 0;
+        }
+        .prose h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--navy);
+            margin: 2.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .prose h2 em { color: var(--gold); font-style: italic; }
+        .prose p { font-size: 1rem; line-height: 1.85; color: var(--navy); margin-bottom: 1.25rem; }
+        .prose p.lede { font-size: 1.15rem; line-height: 1.7; }
+        .prose ul { margin: 0 0 1.5rem 1.25rem; line-height: 1.85; }
+        .prose ul li { margin-bottom: 0.5rem; }
+
+        .firewall-box {
+            margin: 2.5rem 0;
+            padding: 1.75rem 2rem;
+            background: var(--off-white);
+            border-left: 4px solid var(--gold);
+        }
+        .firewall-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .firewall-box p { margin-bottom: 0.6rem; font-size: 0.95rem; }
+        .firewall-box p:last-child { margin-bottom: 0; }
+
+        .cta-block {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+        .cta-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+        .cta-block p { color: var(--ocean-light); margin-bottom: 1.5rem; }
+        .cta-block a {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .cta-block a:hover { background: var(--gold-light); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
+            </div>
+        </a>
+        <nav>
+            <a href="about.html">About</a>
+            <div class="nav-dropdown">
+                <a href="our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="our-work/index.html?category=research">Research</a>
+                    <a href="our-work/index.html?category=futures">Futures</a>
+                    <a href="our-work/index.html?category=commentary">Commentary</a>
+                    <a href="embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="advisory.html">Advisory</a>
+            <a href="people.html">People</a>
+            <a href="support.html">Support</a>
+        </nav>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+        <nav class="mobile-nav">
+            <a href="about.html">About</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="our-work/index.html?category=research">Research</a>
+                    <a href="our-work/index.html?category=futures">Futures</a>
+                    <a href="our-work/index.html?category=commentary">Commentary</a>
+                    <a href="embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="advisory.html">Advisory</a>
+            <a href="people.html">People</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <section class="page-hero page-hero-imaged">
+        <div class="page-hero-bg" style="background-image: url('images/advisory-hero.jpg');"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a> <span>/</span>
+                    <span>Advisory Services</span>
+                </nav>
+                <h1>Advisory <em>Services</em></h1>
+                <p>Levenhall, a Washington, DC&ndash;based strategic advisory firm, handles all commercial advisory work. Levenhall and OTX International &mdash; TAFI's parent organization &mdash; share common ownership. A structural firewall separates Levenhall's commercial work from TAFI's public research.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="container">
+            <div class="prose">
+                <p class="lede">TAFI is the public-research program. <a href="https://levenhall.com" target="_blank" rel="noopener">Levenhall</a> is the commercial advisory firm. They share roots and certain personnel, but the organizations maintain structural and operational separation so that neither compromises the other.</p>
+
+                <h2>What <em>Levenhall</em> does</h2>
+                <p>Levenhall solves a specific problem: how international defense and security firms from allied democracies gain meaningful access to US government contracts. Levenhall does not broker introductions or sell market reports. It designs market entry: entity structure, regulatory pathway, procurement vehicle, and US-based leadership.</p>
+                <p>The work spans four lines:</p>
+                <ul>
+                    <li><strong>Market Entry Advisory.</strong> Procurement landscape mapping, agency targeting, regulatory pathway analysis (ITAR / EAR / FAR / DFARS), and an operational entry plan.</li>
+                    <li><strong>Rapid Procurement Pathways.</strong> Designing CSO, OTA, and follow-on production approaches that move from solicitation to award in 60&ndash;120 days.</li>
+                    <li><strong>Executive Placement.</strong> Levenhall maintains a vetted network of former senior government officials, military officers, and defense industry executives ready to lead US operations.</li>
+                    <li><strong>International Tax Services.</strong> Cross-border entity structuring, transfer pricing, and treaty analysis through Levenhall's partnership with CST Tax.</li>
+                </ul>
+
+                <h2>Who <em>Levenhall serves</em></h2>
+                <ul>
+                    <li>Defense and security firms based in the United Kingdom, Australia, Canada, New Zealand, NATO member states, and select allied partners.</li>
+                    <li>Allied governments and agencies seeking advisory on US procurement pathways.</li>
+                    <li>Investors and primes evaluating allied defense technology entering the US market.</li>
+                </ul>
+
+                <h2>The <em>firewall</em></h2>
+                <div class="firewall-box">
+                    <h3>How TAFI keeps its public research independent of Levenhall's commercial work</h3>
+                    <p><strong>Different vehicles.</strong> Levenhall&mdash;not TAFI&mdash;contracts all commercial advisory engagements. TAFI is a research program of OTX International, an independent 501(c)(3) public charity. Levenhall is a separate commercial firm.</p>
+                    <p><strong>No review rights.</strong> Levenhall clients hold no review rights over TAFI's public research, briefings, or commentary. TAFI publishes findings that cut against prior work as readily as findings that confirm it.</p>
+                    <p><strong>No briefing of drafts.</strong> Funders&mdash;commercial or philanthropic&mdash;do not see TAFI drafts before peer reviewers do.</p>
+                    <p><strong>Disclosure.</strong> Where a TAFI publication touches on a topic on which Levenhall has done commercial work, TAFI discloses the relationship in the piece.</p>
+                    <p><strong>Conflict checks.</strong> Levenhall conducts conflict and compliance review on each engagement before accepting it. Where a conflict cannot be managed cleanly, Levenhall declines the engagement.</p>
+                </div>
+
+                <p>For advisory work&mdash;market entry, procurement strategy, or executive placement&mdash;reach Levenhall directly. For TAFI public-research inquiries, use the contact address on the homepage.</p>
+
+                <div class="cta-block">
+                    <h3>Discuss an engagement with Levenhall</h3>
+                    <p>Levenhall responds to every inquiry. Confidential by default.</p>
+                    <a href="https://levenhall.com" target="_blank" rel="noopener">Visit levenhall.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/tafi-logo-real.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="our-work/index.html">Our Work</a>
+                    <a href="advisory.html">Advisory</a>
+                    <a href="people.html">People</a>
+                    <a href="support.html">Support</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <!-- PLACEHOLDERS to confirm before launch: mailing address, contact@ -->
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.85rem; line-height: 1.7;">
+                    TAFI is supported by foundation grants, individual donors, and commercial advisory work, with a strict firewall between commercial engagements and our public research.
+                </p>
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.8rem; line-height: 1.7; opacity: 0.85;">
+                    The Alliance Futures Initiative is a research program of OTX International, an independent, non-partisan 501(c)(3) public charity. Contributions are tax-deductible to the fullest extent permitted by law.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="mailto:contact@alliancefutures.org" style="color: var(--ocean-light);">contact@alliancefutures.org</a>
+                </p>
+                <p style="margin-top: 1rem;">&copy; 2026 The Alliance Futures Initiative &middot; Founded 2026 &middot; <a href="privacy.html" style="color: var(--ocean-light);">Privacy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-nav a').forEach(l => l.addEventListener('click', () => {
+            mobileMenu.classList.remove('active'); mobileNav.classList.remove('active');
+        }));
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(t => t.addEventListener('click', () => {
+            t.classList.toggle('active'); t.nextElementSibling.classList.toggle('active');
+        }));
+    </script>
+</body>
+</html>

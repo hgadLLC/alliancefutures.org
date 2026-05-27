@@ -1,5 +1,13 @@
 /* ===== Shared Styles — TAFI ===== */
 
+/* Face-position overrides for portraits whose subject sits high in the frame */
+img[src*="eric-lies"] { object-position: center 22%; }
+img[src*="jackie-gibson"] { object-position: center 20%; }
+img[src*="austin-wu"] { object-position: center 30%; }
+img[src*="leah-markworth"] { object-position: center 35%; }
+img[src*="nishank-motwani"] { object-position: center 30%; }
+
+
 :root {
     --navy: #0a2540;
     --navy-light: #1a3a5a;
@@ -100,11 +108,12 @@ header.scrolled .logo-img {
 }
 
 .logo-text-sub {
-    font-size: clamp(0.5rem, 0.9vw, 0.65rem);
-    letter-spacing: 3px;
+    font-size: clamp(0.46rem, 0.8vw, 0.58rem);
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--gold-light);
     font-weight: 500;
+    white-space: nowrap;
 }
 
 nav {

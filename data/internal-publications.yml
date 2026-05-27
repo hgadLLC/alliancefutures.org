@@ -1,0 +1,240 @@
+# ============================================================
+# Internal TAFI publications.
+# Embassies Monitor weeks, Red Team reports, and TAFI's own
+# commentary live here. Each entry can list multiple authors;
+# the item will appear on every listed author's bio page.
+# ============================================================
+#
+# Required fields:
+#   type      - monitor | redteam | report | commentary | brief | futures
+#   title     - the piece's title
+#   outlet    - short label shown as type tag prefix
+#   date      - YYYY-MM-DD
+#   url       - relative path from project root
+#                 (the build script will resolve correctly per
+#                  bio page, which sits one folder deep)
+#   authors   - list of slugs (at least one)
+#
+# Optional but used by the Our Work filter system:
+#   category        - research | futures | commentary | embassies-monitor
+#                     (the 4 work categories shown in the Our Work dropdown)
+#   product_type    - human-readable: "Red Team Report", "Weekly Monitor",
+#                     "Brief", "Op-Ed", "Commentary"
+#   region          - Pacific | Indo-Pacific | Europe | Middle East | Global
+#   countries       - list of countries the piece touches on
+#   featured        - true to PIN the piece to the top of "What We're
+#                     Publishing" on the homepage and the Our Work
+#                     landing page. Only one piece should be featured
+#                     at a time; if multiple, the most recent wins.
+#   excerpt         - one-line dek
+# ============================================================
+
+# ----- PRC Pacific Embassies Monitor -----
+
+- type: monitor
+  title: "Beijing Counts Victories in Diplomatic Competition with Taiwan"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 15
+  date: 2026-05-18
+  url: embassy-monitors/week-15.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Papua New Guinea, Tonga, Nauru]
+  excerpt: "PNG&ndash;China economic framework; one-China affirmations from Tonga and Nauru."
+
+- type: monitor
+  title: "From China Skeptic to Sit-Down"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 14
+  date: 2026-05-11
+  url: embassy-monitors/week-14.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Solomon Islands, Vanuatu]
+  excerpt: "Solomon Islands PM Wale hosts Beijing's envoy; a Shanghai delegation visits Vanuatu."
+
+- type: monitor
+  title: Nauru and Tonga Make the Pilgrimage to Beijing
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 13
+  date: 2026-05-04
+  url: embassy-monitors/week-13.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Nauru, Tonga]
+  excerpt: "Delegations travel to Beijing; the NauruansChinaStory cultural campaign."
+
+- type: monitor
+  title: "Xi to PM Marape: I Give You Guangdong"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 12
+  date: 2026-04-27
+  url: embassy-monitors/week-12.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Papua New Guinea, Solomon Islands, Samoa]
+  excerpt: "Papua New Guinea's investment tour; expanded PRC medical services in the Solomons and Samoa."
+
+- type: monitor
+  title: Cuba and China's Kiribati Rendezvous
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 11
+  date: 2026-04-20
+  url: embassy-monitors/week-11.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Kiribati, Federated States of Micronesia]
+  excerpt: "Cuba and China's Kiribati rendezvous, disaster relief across Micronesia, and high-level meetings."
+
+- type: monitor
+  title: Climate Cooperation and Ministerial Visits
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 10
+  date: 2026-04-13
+  url: embassy-monitors/week-10.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Fiji, Vanuatu, Samoa]
+  excerpt: Climate cooperation week and ministerial visits across the Pacific.
+
+- type: monitor
+  title: In the Shadow of the Crocodile
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 9
+  date: 2026-04-06
+  url: embassy-monitors/week-9.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Papua New Guinea, Nauru]
+  excerpt: China&ndash;Papua New Guinea defense cooperation and diplomacy in Nauru.
+
+- type: monitor
+  title: Tomb Sweeping Day &amp; the Samoa Foray
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 8
+  date: 2026-03-31
+  url: embassy-monitors/week-8.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Samoa]
+  excerpt: "Qian Bo's Samoa visit, Tomb Sweeping Day observance, and people-to-people ties."
+
+- type: monitor
+  title: 44 Years with Vanuatu, Subnational Diplomacy
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 7
+  date: 2026-03-23
+  url: embassy-monitors/week-7.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Vanuatu]
+  excerpt: 44 years of relations with Vanuatu, subnational diplomacy, and education engagement.
+
+- type: monitor
+  title: Food Security &amp; the Economic Model
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 6
+  date: 2026-03-16
+  url: embassy-monitors/week-6.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Fiji, Solomon Islands, Vanuatu]
+  excerpt: "Food security, education, and promoting China's economic model across the Pacific."
+
+- type: monitor
+  title: Women, Children, and Energy
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 5
+  date: 2026-03-09
+  url: embassy-monitors/week-5.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: []
+  excerpt: "Themes from the week: women, children, and energy across the Pacific."
+
+- type: monitor
+  title: Chinese Police, Societal Engagement, and Sub-National Diplomacy
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 4
+  date: 2026-03-02
+  url: embassy-monitors/week-4.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: []
+  excerpt: Chinese police engagement, societal outreach, and sub-national diplomacy across the Pacific.
+
+- type: monitor
+  title: "Customs and Drugs, Liu Weimin's Big Week"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 3
+  date: 2026-02-23
+  url: embassy-monitors/week-3.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: []
+  excerpt: "Customs cooperation and drug enforcement; a high-profile week for Ambassador Liu Weimin."
+
+- type: monitor
+  title: Embassies Shut Down for Lunar New Year, Commercial Diplomacy
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 2
+  date: 2026-02-16
+  url: embassy-monitors/week-2.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: []
+  excerpt: "Embassies shut down for Lunar New Year while commercial diplomacy carries on."
+
+- type: monitor
+  title: "Lunar New Year Comes to the Pacific, David Adeang in Guangdong"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 1
+  date: 2026-02-09
+  url: embassy-monitors/week-1.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Weekly Monitor
+  region: Pacific
+  countries: [Nauru]
+  excerpt: "Lunar New Year across the Pacific; Nauru President David Adeang visits Guangdong."
+
+# ----- Red Team Reports -----
+# (Held back from public site until further notice. Keep this block
+#  commented; re-enable by uncommenting when ready to relaunch.)
+#
+# - type: redteam
+#   title: Pacific Islands Red Team Event Report
+#   outlet: TAFI Red Team Report
+#   date: 2026-03-01
+#   url: publications/pics-red-team.html
+#   authors: [greg-brown, eric-lies]
+#   category: research
+#   product_type: Red Team Report
+#   region: Pacific
+#   countries: [Kiribati, Marshall Islands, Papua New Guinea, Solomon Islands]
+#   excerpt: A structured analytic exercise examining PRC objectives and decision-making across four Pacific scenarios.
+#
+# - type: redteam
+#   title: Ukraine Red Team Event Report
+#   outlet: TAFI Red Team Report
+#   date: 2026-02-15
+#   url: publications/ukraine-red-team.html
+#   authors: [greg-brown, eric-lies]
+#   category: research
+#   product_type: Red Team Report
+#   region: Europe
+#   countries: [Ukraine, China, Taiwan]
+#   excerpt: "China's strategic calculus on Ukraine, Europe, and Taiwan &mdash; three scenarios."

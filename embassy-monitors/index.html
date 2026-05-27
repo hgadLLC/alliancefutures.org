@@ -3,432 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRC Pacific Embassies Monitor | TAFI</title>
-    <meta name="description" content="The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing's public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions.">
+    <title>Embassies Monitor | TAFI</title>
+    <meta name="description" content="Embassies Monitor | TAFI">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/shared.css">
-    <style>
-        /* Monitor listing */
-        .monitors-section {
-            padding: clamp(3rem, 6vh, 5rem) 0;
-            background: var(--white);
-        }
-
-        .monitors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .monitor-card {
-            background: var(--off-white);
-            border: 1px solid transparent;
-            padding: 1.75rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .monitor-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--ocean) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .monitor-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
-            border-color: rgba(218, 165, 32, 0.2);
-        }
-
-        .monitor-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .monitor-card-week {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.3rem;
-        }
-
-        .monitor-card-date {
-            font-size: 0.85rem;
-            color: var(--mid-gray);
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-
-        .monitor-card-desc {
-            font-size: 0.9rem;
-            color: var(--mid-gray);
-            line-height: 1.6;
-            font-weight: 300;
-            margin-bottom: 1.25rem;
-        }
-
-        .monitor-card-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .monitor-card-actions a {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-
-        .link-read {
-            color: var(--ocean);
-        }
-
-        .link-read:hover {
-            color: var(--ocean-dark);
-        }
-
-        .link-pdf {
-            color: var(--gold-dark);
-        }
-
-        .link-pdf:hover {
-            color: var(--gold);
-        }
-
-        @media (max-width: 640px) {
-            .monitors-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Contact section */
-        .monitor-contact {
-            padding: clamp(2rem, 4vh, 3rem) 0;
-            background: var(--off-white);
-            text-align: center;
-        }
-
-        .monitor-contact p {
-            font-size: 0.95rem;
-            color: var(--mid-gray);
-            font-weight: 400;
-        }
-
-        .monitor-contact a {
-            color: var(--ocean);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .monitor-contact a:hover {
-            color: var(--gold);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/shared.css?v=4">
+    <link rel="stylesheet" href="../css/our-work.css?v=1">
+    
 </head>
 <body>
-    <!-- Navigation -->
-    <header id="header">
-        <a href="../index.html" class="logo">
-            <img src="../images/tafi-logo.png" alt="TAFI Logo" class="logo-img">
+    <header id="header">        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
             <div class="logo-text">
                 <span class="logo-text-main">TAFI</span>
-                <span class="logo-text-sub">Alliance Futures</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
             </div>
         </a>
         <nav>
-            <a href="../index.html#mission">Mission</a>
-            <a href="../index.html#expertise">Expertise</a>
+            <a href="../about.html">About</a>
             <div class="nav-dropdown">
-                <a href="#" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="../our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 <div class="nav-dropdown-menu">
-                    <a href="index.html">Embassies Monitor</a>
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../index.html#vision">Vision</a>
-            <a href="../index.html#team">Team</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
         </nav>
-        <div class="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
         <nav class="mobile-nav">
-            <a href="../index.html#mission">Mission</a>
-            <a href="../index.html#expertise">Expertise</a>
+            <a href="../about.html">About</a>
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                 <div class="mobile-nav-group-items">
-                    <a href="index.html">Embassies Monitor</a>
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../index.html#vision">Vision</a>
-            <a href="../index.html#team">Team</a>
-            <a href="../index.html#contact">Contact</a>
-        </nav>
-    </header>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
+        </nav></header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="ow-hero" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background-image: url('../images/monitor-hero.jpg'); background-size: cover; background-position: center;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 22, 40, 0.94) 0%, rgba(5, 22, 40, 0.78) 50%, rgba(5, 22, 40, 0.45) 100%);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <nav class="breadcrumb" style="margin-bottom: 1rem;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../our-work/index.html">Our Work</a> <span>/</span>
+                <span>Embassies Monitor</span>
+            </nav>
+            <div class="ow-hero-eyebrow">Our Work / Embassies Monitor</div>
+            <h1>PRC Pacific <em>Embassies Monitor</em></h1>
+            <p>A weekly open-source intelligence product systematically tracking Beijing's public diplomatic activity across the nine Pacific Island Countries that host Chinese embassies.</p>
+        </div>
+    </section>
+
+    <section class="ow-body">
         <div class="container">
-            <div class="page-hero-content">
-                <nav class="breadcrumb">
-                    <a href="../index.html">Home</a> <span>/</span> <span>Embassies Monitor</span>
-                </nav>
-                <h1>PRC Pacific Embassies <em>Monitor</em></h1>
-                <p>The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer weekly, structured intelligence reports that bridges critical information gaps on regional engagement.</p>
+            <div class="ow-layout">
+                <main class="ow-main">
+                    <div class="ow-bars">
+                <a href="../embassy-monitors/week-15.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 15</span>
+                            
+                            <span class="ow-bar-date">May 18, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Beijing Counts Victories in Diplomatic Competition with Taiwan</h3>
+                        <p class="ow-bar-excerpt">PNG&ndash;China economic framework; one-China affirmations from Tonga and Nauru.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-14.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 14</span>
+                            
+                            <span class="ow-bar-date">May 11, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">From China Skeptic to Sit-Down</h3>
+                        <p class="ow-bar-excerpt">Solomon Islands PM Wale hosts Beijing's envoy; a Shanghai delegation visits Vanuatu.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-13.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 13</span>
+                            
+                            <span class="ow-bar-date">May 4, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Nauru and Tonga Make the Pilgrimage to Beijing</h3>
+                        <p class="ow-bar-excerpt">Delegations travel to Beijing; the NauruansChinaStory cultural campaign.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-12.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 12</span>
+                            
+                            <span class="ow-bar-date">Apr 27, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Xi to PM Marape: I Give You Guangdong</h3>
+                        <p class="ow-bar-excerpt">Papua New Guinea's investment tour; expanded PRC medical services in the Solomons and Samoa.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-11.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 11</span>
+                            
+                            <span class="ow-bar-date">Apr 20, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Cuba and China's Kiribati Rendezvous</h3>
+                        <p class="ow-bar-excerpt">Cuba and China's Kiribati rendezvous, disaster relief across Micronesia, and high-level meetings.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-10.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 10</span>
+                            
+                            <span class="ow-bar-date">Apr 13, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Climate Cooperation and Ministerial Visits</h3>
+                        <p class="ow-bar-excerpt">Climate cooperation week and ministerial visits across the Pacific.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-9.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 9</span>
+                            
+                            <span class="ow-bar-date">Apr 6, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">In the Shadow of the Crocodile</h3>
+                        <p class="ow-bar-excerpt">China&ndash;Papua New Guinea defense cooperation and diplomacy in Nauru.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-8.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 8</span>
+                            
+                            <span class="ow-bar-date">Mar 31, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Tomb Sweeping Day &amp; the Samoa Foray</h3>
+                        <p class="ow-bar-excerpt">Qian Bo's Samoa visit, Tomb Sweeping Day observance, and people-to-people ties.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-7.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 7</span>
+                            
+                            <span class="ow-bar-date">Mar 23, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">44 Years with Vanuatu, Subnational Diplomacy</h3>
+                        <p class="ow-bar-excerpt">44 years of relations with Vanuatu, subnational diplomacy, and education engagement.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-6.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 6</span>
+                            
+                            <span class="ow-bar-date">Mar 16, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Food Security &amp; the Economic Model</h3>
+                        <p class="ow-bar-excerpt">Food security, education, and promoting China's economic model across the Pacific.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-5.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 5</span>
+                            
+                            <span class="ow-bar-date">Mar 9, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Women, Children, and Energy</h3>
+                        <p class="ow-bar-excerpt">Themes from the week: women, children, and energy across the Pacific.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-4.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 4</span>
+                            
+                            <span class="ow-bar-date">Mar 2, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Chinese Police, Societal Engagement, and Sub-National Diplomacy</h3>
+                        <p class="ow-bar-excerpt">Chinese police engagement, societal outreach, and sub-national diplomacy across the Pacific.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-3.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 3</span>
+                            
+                            <span class="ow-bar-date">Feb 23, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Customs and Drugs, Liu Weimin's Big Week</h3>
+                        <p class="ow-bar-excerpt">Customs cooperation and drug enforcement; a high-profile week for Ambassador Liu Weimin.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-2.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 2</span>
+                            
+                            <span class="ow-bar-date">Feb 16, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Embassies Shut Down for Lunar New Year, Commercial Diplomacy</h3>
+                        <p class="ow-bar-excerpt">Embassies shut down for Lunar New Year while commercial diplomacy carries on.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+
+                <a href="../embassy-monitors/week-1.html" class="ow-bar">
+                    <div class="ow-bar-img"><img src="../images/monitor-hero.jpg" alt="" loading="lazy"></div>
+                    <div class="ow-bar-body">
+                        <div class="ow-bar-meta">
+                            <span class="ow-bar-tag">PRC Pacific Embassies Monitor &middot; Wk 1</span>
+                            
+                            <span class="ow-bar-date">Feb 9, 2026</span>
+                        </div>
+                        <h3 class="ow-bar-title">Lunar New Year Comes to the Pacific, David Adeang in Guangdong</h3>
+                        <p class="ow-bar-excerpt">Lunar New Year across the Pacific; Nauru President David Adeang visits Guangdong.</p>
+                        <div class="ow-bar-authors">By <span>Jonah Bock</span></div>
+                    </div>
+                    <span class="ow-bar-arrow">Read &rarr;</span>
+                </a>
+                    </div>
+                </main>
+        <aside class="ow-rail" aria-label="Categories">
+            <h4>Browse work</h4>
+            <ul class="ow-rail-list">
+                <li>
+                    <a href="../our-work/research.html" class="ow-rail-link">
+                        Research
+                        <span class="ow-rail-count">Coming soon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../our-work/futures.html" class="ow-rail-link">
+                        Futures
+                        <span class="ow-rail-count">Coming soon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../our-work/commentary.html" class="ow-rail-link">
+                        Commentary
+                        <span class="ow-rail-count">Coming soon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../embassy-monitors/index.html" class="ow-rail-link is-active">
+                        Embassies Monitor
+                        <span class="ow-rail-count">15 pieces</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
             </div>
         </div>
     </section>
 
-    <!-- Monitors Listing -->
-    <section class="monitors-section">
-        <div class="container">
-            <div class="monitors-grid">
-
-                <!-- NEWEST FIRST: Add new weeks at the top of this grid -->
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 15</div>
-                    <div class="monitor-card-date">May 18 &ndash; 24, 2026</div>
-                    <p class="monitor-card-desc">Beijing counts victories in diplomatic competition with Taiwan &mdash; PNG-China economic framework, and one-China affirmations from Tonga and Nauru.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-15.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-15.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 14</div>
-                    <div class="monitor-card-date">May 11 &ndash; 17, 2026</div>
-                    <p class="monitor-card-desc">From China skeptic to sit-down &mdash; PM Wale hosts Beijing&rsquo;s envoy, and the Tongan delegation concludes its China visit.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-14.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-14.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 13</div>
-                    <div class="monitor-card-date">May 4 &ndash; 10, 2026</div>
-                    <p class="monitor-card-desc">Nauru and Tonga make the pilgrimage to Beijing &mdash; parliamentary delegation, PM Adeang&rsquo;s visit, and party-to-party diplomacy.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-13.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-13.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 12</div>
-                    <div class="monitor-card-date">April 27 &ndash; May 3, 2026</div>
-                    <p class="monitor-card-desc">Xi to PM Marape: &ldquo;I give you Guangdong&rdquo; &mdash; Papua New Guinea&rsquo;s investment and diplomatic tour.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-12.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-12.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 11</div>
-                    <div class="monitor-card-date">April 20 &ndash; 26, 2026</div>
-                    <p class="monitor-card-desc">Cuba and China&rsquo;s Kiribati rendezvous, disaster relief across Micronesia, and high-level meetings.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-11.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-11.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 10</div>
-                    <div class="monitor-card-date">April 13 &ndash; 19, 2026</div>
-                    <p class="monitor-card-desc">Climate cooperation week and ministerial visits across the Pacific.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-10.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-10.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 9</div>
-                    <div class="monitor-card-date">April 6 &ndash; 12, 2026</div>
-                    <p class="monitor-card-desc">In the shadow of the crocodile &mdash; China-Papua New Guinea defense cooperation and diplomacy in Nauru.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-9.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-9.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 8</div>
-                    <div class="monitor-card-date">March 31 &ndash; April 5, 2026</div>
-                    <p class="monitor-card-desc">Tomb Sweeping Day, Qian Bo&rsquo;s Samoa foray, and people-to-people ties across the Pacific.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-8.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-8.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 7</div>
-                    <div class="monitor-card-date">March 23 &ndash; 30, 2026</div>
-                    <p class="monitor-card-desc">44 years of relations with Vanuatu, subnational diplomacy, and education engagement across the Pacific.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-7.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-7.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 6</div>
-                    <div class="monitor-card-date">March 16 &ndash; 22, 2026</div>
-                    <p class="monitor-card-desc">Food security, education, and promoting China&rsquo;s economic model across the Pacific.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-6.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-6.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 5</div>
-                    <div class="monitor-card-date">March 9 &ndash; 15, 2026</div>
-                    <p class="monitor-card-desc">Women, children, and energy — International Women&rsquo;s Day outreach, educational donations, and infrastructure handovers.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-5.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-5.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 4</div>
-                    <div class="monitor-card-date">March 2 &ndash; 8, 2026</div>
-                    <p class="monitor-card-desc">Chinese police, societal engagement, and sub-national diplomacy.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-4.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-4.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 3</div>
-                    <div class="monitor-card-date">February 23 &ndash; March 1, 2026</div>
-                    <p class="monitor-card-desc">Customs and drugs, Liu Weimin&rsquo;s big week, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-3.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-3.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 2</div>
-                    <div class="monitor-card-date">February 16 &ndash; 22, 2026</div>
-                    <p class="monitor-card-desc">Embassies shut down for Lunar New Year, commercial diplomacy, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-2.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-2.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-                <div class="monitor-card">
-                    <div class="monitor-card-week">Week 1</div>
-                    <div class="monitor-card-date">February 9 &ndash; 15, 2026</div>
-                    <p class="monitor-card-desc">Lunar New Year comes to the Pacific, David Adeang in Guangdong, and more.</p>
-                    <div class="monitor-card-actions">
-                        <a href="week-1.html" class="link-read">Read &rarr;</a>
-                        <a href="pdfs/embassy-monitor-week-1.pdf" class="link-pdf" download>PDF &darr;</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="monitor-contact">
-        <div class="container">
-            <p>For inquiries, please contact <a href="mailto:contact@alliancefutures.org">contact@alliancefutures.org</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../images/tafi-logo.png" alt="TAFI">
+                    <img src="../images/tafi-logo-real.png" alt="TAFI">
                     <span class="footer-logo-text">TAFI</span>
                 </div>
                 <div class="footer-links">
-                    <a href="../index.html#mission">Mission</a>
-                    <a href="../index.html#expertise">Expertise</a>
-                    <a href="index.html">Embassies Monitor</a>
-                    <a href="../index.html#vision">Vision</a>
-                    <a href="../index.html#team">Team</a>
+                    <a href="../about.html">About</a>
+                    <a href="../our-work/index.html">Our Work</a>
+                    <a href="../advisory.html">Advisory</a>
+                    <a href="../people.html">People</a>
+                    <a href="../support.html">Support</a>
                     <a href="../index.html#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.85rem; line-height: 1.7;">
+                    TAFI is supported by foundation grants, individual donors, and commercial advisory work, with a strict firewall between commercial engagements and our public research.
+                </p>
+                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.8rem; line-height: 1.7; opacity: 0.85;">
+                    The Alliance Futures Initiative is a research program of OTX International, an independent, non-partisan 501(c)(3) public charity. Contributions are tax-deductible to the fullest extent permitted by law.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="mailto:contact@alliancefutures.org" style="color: var(--ocean-light);">contact@alliancefutures.org</a>
+                </p>
+                <p style="margin-top: 1rem;">&copy; 2026 The Alliance Futures Initiative &middot; Founded 2026 &middot; <a href="../privacy.html" style="color: var(--ocean-light);">Privacy</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileNav = document.querySelector('.mobile-nav');
-
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // Mobile nav sub-group accordion toggle
-        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                trigger.classList.toggle('active');
-                const items = trigger.nextElementSibling;
-                items.classList.toggle('active');
-            });
-        });
-
-        // Close mobile sub-groups when a sub-link is clicked
-        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
+        if (mobileMenu && mobileNav) {
+            mobileMenu.addEventListener('click', () => { mobileMenu.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+            document.querySelectorAll('.mobile-nav a').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.remove('active'); mobileNav.classList.remove('active'); }));
+            document.querySelectorAll('.mobile-nav-group-trigger').forEach(t => t.addEventListener('click', () => { t.classList.toggle('active'); t.nextElementSibling.classList.toggle('active'); }));
+        }
     </script>
 </body>
 </html>
