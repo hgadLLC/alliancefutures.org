@@ -24,7 +24,7 @@
     "date": "2026-05-18",
     "date_pretty": "May 18, 2026",
     "url": "embassy-monitors/week-15.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-15.jpg",
     "featured": false,
     "excerpt": "PNG&ndash;China economic framework; one-China affirmations from Tonga and Nauru."
   },
@@ -52,7 +52,7 @@
     "date": "2026-05-11",
     "date_pretty": "May 11, 2026",
     "url": "embassy-monitors/week-14.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-14.jpg",
     "featured": false,
     "excerpt": "Solomon Islands PM Wale hosts Beijing's envoy; a Shanghai delegation visits Vanuatu."
   },
@@ -80,7 +80,7 @@
     "date": "2026-05-04",
     "date_pretty": "May 4, 2026",
     "url": "embassy-monitors/week-13.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-13.jpg",
     "featured": false,
     "excerpt": "Delegations travel to Beijing; the NauruansChinaStory cultural campaign."
   },
@@ -109,7 +109,7 @@
     "date": "2026-04-27",
     "date_pretty": "Apr 27, 2026",
     "url": "embassy-monitors/week-12.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-12.jpg",
     "featured": false,
     "excerpt": "Papua New Guinea's investment tour; expanded PRC medical services in the Solomons and Samoa."
   },
@@ -137,7 +137,7 @@
     "date": "2026-04-20",
     "date_pretty": "Apr 20, 2026",
     "url": "embassy-monitors/week-11.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-11.jpg",
     "featured": false,
     "excerpt": "Cuba and China's Kiribati rendezvous, disaster relief across Micronesia, and high-level meetings."
   },
@@ -166,7 +166,7 @@
     "date": "2026-04-13",
     "date_pretty": "Apr 13, 2026",
     "url": "embassy-monitors/week-10.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-10.jpg",
     "featured": false,
     "excerpt": "Climate cooperation week and ministerial visits across the Pacific."
   },
@@ -194,7 +194,7 @@
     "date": "2026-04-06",
     "date_pretty": "Apr 6, 2026",
     "url": "embassy-monitors/week-9.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-9.jpg",
     "featured": false,
     "excerpt": "China&ndash;Papua New Guinea defense cooperation and diplomacy in Nauru."
   },
@@ -221,7 +221,7 @@
     "date": "2026-03-31",
     "date_pretty": "Mar 31, 2026",
     "url": "embassy-monitors/week-8.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-8.jpg",
     "featured": false,
     "excerpt": "Qian Bo's Samoa visit, Tomb Sweeping Day observance, and people-to-people ties."
   },
@@ -248,7 +248,7 @@
     "date": "2026-03-23",
     "date_pretty": "Mar 23, 2026",
     "url": "embassy-monitors/week-7.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-7.jpg",
     "featured": false,
     "excerpt": "44 years of relations with Vanuatu, subnational diplomacy, and education engagement."
   },
@@ -277,7 +277,7 @@
     "date": "2026-03-16",
     "date_pretty": "Mar 16, 2026",
     "url": "embassy-monitors/week-6.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-6.jpg",
     "featured": false,
     "excerpt": "Food security, education, and promoting China's economic model across the Pacific."
   },
@@ -302,7 +302,7 @@
     "date": "2026-03-09",
     "date_pretty": "Mar 9, 2026",
     "url": "embassy-monitors/week-5.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-5.jpg",
     "featured": false,
     "excerpt": "Themes from the week: women, children, and energy across the Pacific."
   },
@@ -327,7 +327,7 @@
     "date": "2026-03-02",
     "date_pretty": "Mar 2, 2026",
     "url": "embassy-monitors/week-4.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-4.jpg",
     "featured": false,
     "excerpt": "Chinese police engagement, societal outreach, and sub-national diplomacy across the Pacific."
   },
@@ -352,7 +352,7 @@
     "date": "2026-02-23",
     "date_pretty": "Feb 23, 2026",
     "url": "embassy-monitors/week-3.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-3.jpg",
     "featured": false,
     "excerpt": "Customs cooperation and drug enforcement; a high-profile week for Ambassador Liu Weimin."
   },
@@ -377,7 +377,7 @@
     "date": "2026-02-16",
     "date_pretty": "Feb 16, 2026",
     "url": "embassy-monitors/week-2.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "embassy-monitors/images/thumbs/week-2.jpg",
     "featured": false,
     "excerpt": "Embassies shut down for Lunar New Year while commercial diplomacy carries on."
   },
@@ -404,7 +404,7 @@
     "date": "2026-02-09",
     "date_pretty": "Feb 9, 2026",
     "url": "embassy-monitors/week-1.html",
-    "image": "../images/monitor-hero.jpg",
+    "image": "images/monitor-hero.jpg",
     "featured": false,
     "excerpt": "Lunar New Year across the Pacific; Nauru President David Adeang visits Guangdong."
   }

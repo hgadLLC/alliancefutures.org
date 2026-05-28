@@ -72,11 +72,28 @@ CATEGORY_BLURB = {
 
 # Default thumbnail per category. Each YAML entry may override with image:
 CATEGORY_IMAGE = {
-    "research": "../images/publications-hero.jpg",
-    "futures": "../images/hero.jpg",
-    "commentary": "../images/about-study.jpg",
-    "embassies-monitor": "../images/monitor-hero.jpg",
+    "research": "images/publications-hero.jpg",
+    "futures": "images/hero.jpg",
+    "commentary": "images/about-study.jpg",
+    "embassies-monitor": "images/monitor-hero.jpg",
 }
+
+# Per-week thumbnails for Embassies Monitor entries are auto-discovered
+# from embassy-monitors/images/thumbs/week-N.jpg. The YAML doesn't have
+# to spell them out — if a thumb exists for the week number, it wins
+# over the category default.
+EM_THUMB_DIR = ROOT / "embassy-monitors" / "images" / "thumbs"
+EM_WEEK_RE = re.compile(r"embassy-monitors/week-(\d+)\.html")
+
+
+def lookup_em_thumb(url):
+    m = EM_WEEK_RE.search(url or "")
+    if not m:
+        return None
+    candidate = EM_THUMB_DIR / f"week-{m.group(1)}.jpg"
+    if candidate.exists():
+        return f"embassy-monitors/images/thumbs/week-{m.group(1)}.jpg"
+    return None
 
 HOMEPAGE_FEED_LIMIT = 6
 
@@ -106,6 +123,7 @@ def normalize(items):
                 "research" if t == "redteam" else "commentary"
             )
         author_names = [AUTHOR_NAME.get(s, s.replace("-", " ").title()) for s in slugs]
+        image = it.get("image") or lookup_em_thumb(it.get("url", "")) or CATEGORY_IMAGE.get(cat, "images/hero.jpg")
         out.append({
             "title": it.get("title", ""),
             "outlet": it.get("outlet", ""),
@@ -121,7 +139,7 @@ def normalize(items):
             "date": iso(it.get("date")),
             "date_pretty": date_pretty(iso(it.get("date"))),
             "url": it.get("url", "#"),
-            "image": it.get("image") or CATEGORY_IMAGE.get(cat, "../images/hero.jpg"),
+            "image": image,
             "featured": bool(it.get("featured", False)),
             "excerpt": it.get("excerpt", ""),
         })
