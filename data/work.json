@@ -1,5 +1,42 @@
 [
   {
+    "title": "Ukrainian Outcomes, Chinese Lessons",
+    "outlet": "Ukraine Red Team Report",
+    "type": "redteam",
+    "category": "futures",
+    "category_label": "Futures",
+    "product_type": "Red Team Report",
+    "region": "Europe",
+    "countries": [
+      "Ukraine",
+      "Russia",
+      "China",
+      "Taiwan"
+    ],
+    "authors": [
+      "eric-lies",
+      "jonah-bock",
+      "cameron-hendrix",
+      "greg-brown"
+    ],
+    "author_names": [
+      "Eric Lies",
+      "Jonah Bock",
+      "Cameron Hendrix",
+      "Dr. Greg Brown"
+    ],
+    "contributor_types": [
+      "guest",
+      "staff"
+    ],
+    "date": "2026-05-28",
+    "date_pretty": "May 28, 2026",
+    "url": "publications/ukraine-red-team.html",
+    "image": "publications/images/ukraine-red-team-thumb.jpg",
+    "featured": false,
+    "excerpt": "Three scenarios for how the Russia&ndash;Ukraine war ends &mdash; and what each teaches China about Taiwan."
+  },
+  {
     "title": "Beijing Counts Victories in Diplomatic Competition with Taiwan",
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 15",
     "type": "monitor",

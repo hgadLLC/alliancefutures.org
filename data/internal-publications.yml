@@ -212,8 +212,22 @@
   excerpt: "Lunar New Year across the Pacific; Nauru President David Adeang visits Guangdong."
 
 # ----- Red Team Reports -----
-# (Held back from public site until further notice. Keep this block
-#  commented; re-enable by uncommenting when ready to relaunch.)
+
+- type: redteam
+  title: "Ukrainian Outcomes, Chinese Lessons"
+  outlet: Ukraine Red Team Report
+  date: 2026-05-28
+  url: publications/ukraine-red-team.html
+  authors: [eric-lies, jonah-bock, cameron-hendrix, greg-brown]
+  category: futures
+  product_type: Red Team Report
+  region: Europe
+  countries: [Ukraine, Russia, China, Taiwan]
+  image: publications/images/ukraine-red-team-thumb.jpg
+  excerpt: "Three scenarios for how the Russia&ndash;Ukraine war ends &mdash; and what each teaches China about Taiwan."
+
+# Pacific Islands Red Team report is held back from public site until further
+# notice. Re-enable by uncommenting when ready.
 #
 # - type: redteam
 #   title: Pacific Islands Red Team Event Report
@@ -226,15 +240,3 @@
 #   region: Pacific
 #   countries: [Kiribati, Marshall Islands, Papua New Guinea, Solomon Islands]
 #   excerpt: A structured analytic exercise examining PRC objectives and decision-making across four Pacific scenarios.
-#
-# - type: redteam
-#   title: Ukraine Red Team Event Report
-#   outlet: TAFI Red Team Report
-#   date: 2026-02-15
-#   url: publications/ukraine-red-team.html
-#   authors: [greg-brown, eric-lies]
-#   category: research
-#   product_type: Red Team Report
-#   region: Europe
-#   countries: [Ukraine, China, Taiwan]
-#   excerpt: "China's strategic calculus on Ukraine, Europe, and Taiwan &mdash; three scenarios."

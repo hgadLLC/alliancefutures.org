@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ukraine Red Team Event Report | TAFI</title>
-    <meta name="description" content="A strategic red team exercise exploring three potential outcomes of the Russia-Ukraine war and their implications for China's calculus on Taiwan and Europe.">
+    <title>Ukrainian Outcomes, Chinese Lessons | TAFI</title>
+    <meta name="description" content="A TAFI Red Team exercise exploring three potential outcomes of the Russia&ndash;Ukraine war and their implications for China's strategic calculus on Taiwan and Europe.">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/shared.css">
     <style>
@@ -23,7 +23,73 @@
             max-width: 820px;
         }
 
-        /* ===== Generate PDF Button ===== */
+        /* Hero byline */
+        .report-byline {
+            margin-top: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .report-byline strong { color: var(--gold-light); font-weight: 700; }
+        .report-byline-sep { margin: 0 0.5rem; opacity: 0.55; }
+
+        /* Memo block (the in-character policy memos) */
+        .memo-block {
+            background: var(--off-white);
+            border-left: 4px solid var(--gold);
+            padding: 1.75rem 2rem 1.5rem;
+            margin: 2.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--navy);
+        }
+        .memo-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid rgba(10, 37, 64, 0.15);
+        }
+        .memo-header strong { display: block; font-size: 0.95rem; }
+        .memo-meta { margin: 0 0 1rem; }
+        .memo-meta p { margin: 0; font-family: 'Courier New', Courier, monospace; color: var(--navy); }
+        .memo-meta strong { color: var(--gold-dark); display: inline-block; min-width: 70px; }
+        .memo-block h4 { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 0.92rem; color: var(--gold-dark); text-transform: uppercase; letter-spacing: 1px; margin: 1.25rem 0 0.4rem; }
+        .memo-block p { font-family: 'Courier New', Courier, monospace; font-size: 0.92rem; line-height: 1.65; color: var(--navy); margin: 0 0 0.85rem; }
+        .memo-block ol, .memo-block ul { font-family: 'Courier New', Courier, monospace; font-size: 0.92rem; line-height: 1.65; margin: 0.5rem 0 1rem 1.5rem; }
+        .memo-block li { margin-bottom: 0.4rem; }
+
+        /* End-matter (Disclaimer / Acknowledgements / Copyright) */
+        .report-endmatter {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(10, 37, 64, 0.15);
+        }
+        .report-endmatter h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin: 2rem 0 0.6rem;
+            font-weight: 600;
+        }
+        .report-endmatter h3:first-child { margin-top: 0; }
+        .report-endmatter p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--mid-gray);
+            margin-bottom: 1rem;
+        }
+        .report-endmatter .copyright {
+            margin-top: 2rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(10, 37, 64, 0.08);
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            text-align: center;
+        }
+
+        /* ===== Download Report Button ===== */
         .generate-pdf-btn {
             display: inline-flex;
             align-items: center;
@@ -548,10 +614,15 @@
             <div class="page-hero-content">
                 <nav class="breadcrumb">
                     <a href="../index.html">Home</a> <span>/</span>
+                    <a href="../our-work/futures.html">Our Work / Futures</a> <span>/</span>
                     <span>Ukraine Red Team Report</span>
                 </nav>
-                <h1>Ukraine Red Team <em>Event Report</em></h1>
-                <p>A strategic red team exercise exploring three potential outcomes of the Russia-Ukraine war and their implications for China&rsquo;s calculus on Taiwan and Europe.</p>
+                <h1>Ukrainian Outcomes, <em>Chinese Lessons</em></h1>
+                <p>A TAFI Red Team exercise exploring three potential outcomes of the Russia&ndash;Ukraine war and their implications for China&rsquo;s strategic calculus on Taiwan and Europe.</p>
+                <div class="report-byline">
+                    <strong>By</strong> Eric Lies <span class="report-byline-sep">&middot;</span> Jonah Bock <span class="report-byline-sep">&middot;</span> Cameron Hendrix <span class="report-byline-sep">&middot;</span> Dr. Greg Brown
+                    <span class="report-byline-sep">&middot;</span> May 28, 2026
+                </div>
             </div>
         </div>
     </section>
@@ -585,18 +656,19 @@
                 <!-- Main Content -->
                 <article class="report-content">
 
+
                     <!-- Publication header -->
                     <div class="publication-header">
-                        <span class="publication-title">Ukraine Red Team Event Report</span>
+                        <span class="publication-title">Ukrainian Outcomes, Chinese Lessons</span>
                         <div class="publication-logo">
                             <img src="../images/tafi-logo-real.png" alt="TAFI">
                         </div>
                     </div>
 
-                    <button class="generate-pdf-btn" onclick="window.print()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                        Generate PDF
-                    </button>
+                    <a class="generate-pdf-btn" href="Ukraine Red Team Event Report.pdf" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Report
+                    </a>
 
                     <!-- ============================================ -->
                     <!-- EXECUTIVE SUMMARY -->
@@ -604,40 +676,41 @@
                     <h2 id="executive-summary">Executive Summary</h2>
 
                     <h3>Purpose and Context</h3>
-                    <p>This Red Team exercise explored three potential outcomes of the Russia-Ukraine war and possible influences on China&rsquo;s strategic calculus in both Europe and Taiwan. The CCP views the Russia-Ukraine war primarily through an anti-Western lens with an eye towards economic and political gains.</p>
+                    <p>This Red Team exercise explored three potential outcomes of the Russia&ndash;Ukraine war and possible influences on China&rsquo;s strategic calculus in both Europe and Taiwan. Utilizing these lessons, Western and Indo-Pacific leaders can better respond to subversive and destabilizing Chinese actions in Taiwan, the region, and Europe.</p>
+                    <p>The Chinese Communist Party (CCP) views the Russia-Ukraine war primarily through an anti-Western lens with an eye towards economic and political gains. With Europe and the U.S. distracted, the CCP has a freer hand in the Indo-Pacific but by supporting Russia&rsquo;s war effort risks international reprobation and strengthening Western alliance systems. Understanding how China perceives an eventual peace deal in Ukraine, its priorities moving forward, and how it plans to operationalize them, will lay the foundation for stronger strategic empathy and better policy.</p>
 
                     <h3>Key Findings</h3>
                     <ol>
-                        <li><strong>External Variables Matter:</strong> U.S. policy choices and Taiwanese domestic politics are expected to be the most decisive variables for Chinese behavior.</li>
-                        <li><strong>Integrity of Taiwan Plans:</strong> The outcome of the Russia-Ukraine war only affected resources available and perceived timeline for Taiwanese reunification but not overall conceptualization and planning.</li>
-                        <li><strong>Economic Vulnerabilities:</strong> China remains vulnerable to economic isolation from the West.</li>
-                        <li><strong>Stable Junior Partner:</strong> The relative power of Russia is of key concern to China. Beijing benefits from a stable Russia that is the &ldquo;junior partner.&rdquo;</li>
+                        <li><strong>External Variables Matter.</strong> U.S. policy choices and Taiwanese domestic politics are expected to be the most decisive variables for Chinese behavior. As the predominant global power, China expects that U.S. involvement will either make or break Taiwan contingencies.</li>
+                        <li><strong>Integrity of Taiwan Plans.</strong> The outcome of the Russia-Ukraine war only affected the resources available and perceived timeline for Taiwanese reunification, not the overall conceptualization and planning.</li>
+                        <li><strong>Economic Vulnerabilities.</strong> China remains vulnerable to economic isolation from the West, especially in the context of its sluggish economic growth. As such, the priority for China will be seizing as much economic benefit as possible in the European theater and gaining coercive economic leverage.</li>
+                        <li><strong>Stable Junior Partner.</strong> The relative power of Russia is of key concern to China and will dictate the CCP&rsquo;s approach to engagement in Europe. Beijing benefits from a stable Russia that is the &ldquo;junior partner,&rdquo; and thus easier to manage and benefit from.</li>
                     </ol>
 
                     <h3>Scenario Based Insights</h3>
+                    <p>The exercise examined three scenarios yielding strategic insights:</p>
                     <ul>
-                        <li><strong>Blooming Sunflowers:</strong> Given a peace plan loosely based on Ukrainian demands, the Committee expected the outcome would be predicated on or cause the collapse of Putin&rsquo;s regime. This plan would give the PRC an opportunity to showcase China&rsquo;s peacebuilding credentials.</li>
-                        <li><strong>Bear in Charge:</strong> Loosely based on Russian demands, the committee had concerns over an overconfident Putin acting more aggressively. They identified two potential paths for the West.</li>
-                        <li><strong>Wise Dragon:</strong> The goldilocks outcome based on the joint Chinese-Brazilian plan. The committee saw this as the best outcome for China.</li>
+                        <li><strong>Blooming Sunflowers.</strong> Given a peace plan loosely based on the fulfillment of all Ukrainian demands, the Committee expected the outcome would be predicated on or cause the collapse of Putin&rsquo;s regime in Russia. This plan would give the PRC an opportunity to showcase China&rsquo;s peacebuilding credentials through involvement in Ukraine reconstruction. At most, any coercive efforts towards Taiwanese reunification would be slowed by a redirection of resources.</li>
+                        <li><strong>Bear in Charge.</strong> Loosely based on the fulfillment of all the Russian demands, the committee had concerns over an overconfident Putin acting more aggressively. They identified two potential paths for the West: a retrenching of alliances or the further splintering of the West. Should alliances strengthen, they anticipated a longer timeline for reunification with Taiwan. Should U.S.-led alliances fall apart, they argued that the effect on Taiwan could accelerate reunification.</li>
+                        <li><strong>Wise Dragon.</strong> The outcome in this scenario was based on the joint Chinese-Brazilian plan. The committee saw this as the best outcome for China as it could elevate China&rsquo;s role in reconstruction, improve its image as a mediator, and bolster its standing in both Ukraine and Russia. The ability to extend Chinese influence throughout Europe and bolster Chinese narratives within Taiwan were key to Chinese strategic efforts moving forward.</li>
                     </ul>
 
                     <h3>Recommendations for Western Response</h3>
                     <ul>
                         <li>
-                            <strong>Analyze PRC economic dependencies and develop plans for financial isolation.</strong>
-                            <p>Western policymakers should study and map China&rsquo;s exposure to the global financial system, including reliance on SWIFT and dollar-denominated instruments. Developing detailed, pre-positioned plans for financial isolation&mdash;including the ability to restrict access to international payment systems&mdash;would signal Western resolve and impose credible costs on aggressive Chinese behavior. Additionally, investing in information tools like Radio Free Asia and its equivalents can challenge Beijing&rsquo;s domestic narrative and erode the Party&rsquo;s control over the information environment.</p>
+                            <p><strong>Analyze PRC economic dependencies and develop plans for financial isolation.</strong> The Committee identified continued economic slowdown in China as a primary obstacle to successful reunification with Taiwan. To develop successful policies aimed at deterring Chinese coercion, the U.S. and partners need to understand both the degree and perceptions of China&rsquo;s self-sufficiency.</p>
+                            <p>The Committee particularly raised fears over the PRC&rsquo;s dependence on U.S. financial systems as a key vulnerability. The United States must capitalize on this dependency and utilize threats of financial sanctions to deter aggressive Chinese behavior in Taiwan. This requires credibly signaling U.S. red lines over Taiwan and U.S. willingness to isolate China&rsquo;s financial system in the event of crossing them.</p>
+                            <p>The PRC may be able to offset the political effects of its economic slowdown through its tight media controls. The U.S. must prepare and take action to offset China&rsquo;s domestic narrative dominance. U.S. policymakers should utilize global media to propagate the realities of the Chinese economy within the country.</p>
                         </li>
                         <li>
-                            <strong>Strengthen alliances by closing the credibility gap.</strong>
-                            <p>Beijing closely monitors fractures in the transatlantic alliance and seeks to exploit them. The West must invest in sustained diplomatic engagement, not only with traditional allies but also with Global South partners who are targets of Chinese commercial diplomacy. Building robust alliance structures&mdash;and demonstrating their durability&mdash;will narrow the space for Chinese wedge strategies. Preparing coordinated economic warfare capabilities across allied nations will compound deterrent effects.</p>
+                            <p><strong>Strengthen alliances by closing the credibility gap.</strong> The United States&rsquo; credibility is key to deterring aggressive PRC action but is constantly challenged through Chinese political and economic warfare. The Committee further recognized that China exploits existing tensions between U.S. allies over Ukraine to further weaken U.S. credibility. To combat Chinese attempts to undermine the U.S., it is necessary to increase diplomatic engagement throughout the Indo-Pacific.</p>
+                            <p>On the political warfare front, America must take efforts to counter misleading and false narratives espoused by the PRC. In the economic domain, the United States ought to increase commercial diplomacy and show partners the value of working with American businesses. These efforts will also expand export markets and drive economic prosperity in the United States.</p>
                         </li>
                         <li>
-                            <strong>Develop China expertise to mitigate risks of miscommunication.</strong>
-                            <p>Strategic empathy&mdash;the ability to understand an adversary&rsquo;s worldview without endorsing it&mdash;is critically underdeveloped in Western policy circles. Investment in Mandarin language training, cultural competency, and direct diplomatic channels is essential. Establishing and maintaining crisis hotlines and back-channel communication mechanisms with Beijing would reduce the risk of escalation through miscalculation.</p>
+                            <p><strong>Develop China expertise to mitigate risks of miscommunication.</strong> By importing Western conceptual frameworks into China analysis, the United States risks increasing miscommunication and unsound policy. It is necessary to develop enriched understandings of China and strategic empathy with the PRC to avoid these threats. To both successfully signal U.S. deterrent posturing to the PRC and reassure both sides of the strait, the U.S. must be able to rely on analysts and policymakers with nuanced understandings of how the CCP views the world.</p>
+                            <p>In furtherance of building buttressing against miscommunications, the United States should nurture diplomatic lines with low-stakes, mutual concerns. For areas where positive interactions cannot be built, the U.S. must develop crisis hotlines and communications to avoid miscalculations.</p>
                         </li>
                     </ul>
-
-                    <hr class="section-divider">
 
                     <!-- ============================================ -->
                     <!-- INTRODUCTION -->
@@ -645,269 +718,231 @@
                     <h2 id="introduction">Introduction</h2>
 
                     <h3>The Imperative</h3>
-                    <p>Just as the rest of the world has watched the conflict in Ukraine closely, Chinese leadership also observes and learns from it. A peace settlement&mdash;or a frozen conflict&mdash;in Ukraine will reshape the global security environment in ways that directly affect Beijing&rsquo;s strategic planning. Understanding how China perceives these outcomes is not merely an academic exercise; it is an operational imperative for Western policymakers who must anticipate Chinese behavior across multiple domains.</p>
-
-                    <p>Strategic empathy demands that analysts move beyond mirror-imaging and instead inhabit the decision-making frameworks of their adversaries. This report captures the findings of an exercise designed to do precisely that: to think as Beijing thinks, plan as Beijing plans, and identify the opportunities and vulnerabilities that China&rsquo;s leadership would see in a post-war European landscape.</p>
+                    <p>Just as the rest of the world has watched the conflict in Ukraine closely, Chinese leadership also observes and learns from it. This includes the path to, and outcome of, an eventual peace settlement. This settlement will implicate not only China&ndash;Europe/Russia relations, but also how China prosecutes reunification with Taiwan. By identifying the range of likely Chinese responses to a Ukraine resolution, the United States, Europe, and Indo-Pacific allies can better prepare for the future. In order to respond deftly to Chinese efforts at destabilization or a coercive reunification with Taiwan, strategic empathy must be developed. Understanding Chinese thinking, goals, and priorities, and how they change based on outcomes in Ukraine, will enhance policy within the Indo-Pacific region.</p>
 
                     <h3>Exercise Background</h3>
-                    <p>The Russian Invasion of Ukraine demonstrates the continued relevance of great power politics and the willingness of revisionist actors to use military force to reshape the international order. China&rsquo;s &ldquo;no-limits&rdquo; relationship with Russia, declared just days before the 2022 invasion, has evolved into a complex partnership in which Beijing provides diplomatic cover and supplies dual-use goods while publicly maintaining a posture of neutrality.</p>
-
-                    <p>The conflict has also served as a laboratory for lessons that China applies to its own strategic planning, particularly regarding Taiwan. Beijing has studied Western sanctions regimes, alliance cohesion under stress, the role of information warfare, and the military-industrial capacity of democratic states. Each potential outcome of the war carries different implications for China&rsquo;s assessment of risk and opportunity.</p>
+                    <p>The Russian invasion of Ukraine demonstrates the continued relevance of great-power politics throughout the world. China&rsquo;s &ldquo;no-limits&rdquo; relationship and provision of dual-use goods to Russia, coupled with Beijing viewing the invasion through an anti-Western rather than pro-Russian lens, has led to increased tension and uncertainty. The lessons China might learn from a Ukraine settlement, and the strategic gains they may seize, are pertinent with respect to Taiwan. Resolving the conflict in Ukraine represents a mixed bag for China, however. American attention will no longer be as split between Europe and the Indo-Pacific, and, in supporting Russia, China paid a steep diplomatic price across most of Europe. The invasion also demonstrated how effective intelligence and military cooperation within NATO can be.</p>
+                    <p>While Taiwan and Ukraine exist in very different geographic and political contexts, global reactions to the Russian invasion are not lost on China. Beijing made great efforts to prevent comparisons of the Russian invasion of Ukraine to potential Taiwan contingencies through the argument that Taiwan is part of China, while Ukraine is a sovereign state.</p>
 
                     <h3>Objectives</h3>
-                    <p>The purpose of this Red Team exercise was to systematically identify vulnerabilities, gaps, and blind spots in Western strategic thinking by adopting the perspective of the Chinese Communist Party. Specifically, the exercise sought to:</p>
+                    <p>The purpose of this Red Team exercise was to systematically identify vulnerabilities, gaps, and blind spots in U.S. and U.S.-allies and partners&rsquo; current security posture, planning, and understandings regarding PRC perceptions of the Russia-Ukraine war and its reflections on Taiwan.</p>
+                    <p>We stimulated new thinking and stakeholder appreciation for why and how PRC strategists may determine China&rsquo;s path forward in different notional scenarios reflecting potential outcomes of the Russian&ndash;Ukraine settlement. The three scenarios were crafted by taking the demands from the Ukrainians and the Russians, as well as the Chinese&ndash;Brazilian peace plan, and modifying them to encourage discussion. The exercise explored:</p>
                     <ol>
-                        <li>Assess how the PRC perceives the three potential outcomes of the Russia-Ukraine war and the strategic implications of each.</li>
-                        <li>Identify what opportunities and risks the PRC leadership would see for advancing Chinese interests in Europe, the Indo-Pacific, and with respect to Taiwan.</li>
-                        <li>Produce actionable recommendations that Western policymakers can use to anticipate and counter Chinese strategic moves across multiple scenarios.</li>
+                        <li>PRC perceptions of its interests in Eastern Europe and the wider region.</li>
+                        <li>PRC perceptions of its relationship with Russia.</li>
+                        <li>PRC understandings of the relations between the Ukraine war and a kinetic conflict over Taiwan. What lessons has the PRC learned from Ukraine, and how will different outcomes in Ukraine affect its strategic calculus?</li>
                     </ol>
+                    <p>A key component of this Red Team approach was the development of strategic empathy &mdash; the ability to understand adversarial perspectives, motivations, and decision-making processes. By systematically exploring adversaries&rsquo; perspectives, motivations, and decision-making frameworks, we can better anticipate what opponents will do next, build better defenses by understanding adversary objectives, and take initiative instead of responding to challenges.</p>
 
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- EXERCISE & REPORT FORMAT -->
-                    <!-- ============================================ -->
-                    <h2 id="exercise-format">Exercise &amp; Report Format</h2>
-
-                    <div class="crimson-callout">
-                        <p>Red Team analysis challenges conventional thinking by having analysts adopt the perspective of an adversary or competitor. This structured analytic technique requires analysts to shift from observing opponents to becoming actors who think and respond as the adversary would do so. The method proves especially valuable when facing counterparts with different cultures, values, or decision-making processes.</p>
-                        <p>Red Teams immerse themselves in their assigned roles, producing authentic products like policy papers and strategic recommendations that the adversary might create.</p>
-                        <p>The technique helps organizations identify blind spots, test assumptions about adversary behavior, and develop more robust strategies. By forcing analysis to see situations through opponents&rsquo; eyes, Red Team analysis reveals vulnerabilities and alternative courses of action that might otherwise go unrecognized.</p>
-                    </div>
-
-                    <p>The exercise ran for one day and brought together five expert participants with deep knowledge of Chinese foreign policy, military strategy, and intelligence analysis. The group operated in a &ldquo;committee&rdquo; style format under Chatham House Rules, meaning that while the substance of the discussions is reported here, the identities of individual participants are not attributed.</p>
-
-                    <p>The first workshop activity established a baseline Chinese strategic posture&mdash;an assessment of Beijing&rsquo;s current priorities, threat perceptions, and opportunity horizons. Participants were then presented with three scenarios, each framed as a fictional policy memo to Wang Yi, Director of the Central Foreign Affairs Commission. For each scenario, the committee was asked to assess the situation from Beijing&rsquo;s perspective, identify key implications, and produce strategic recommendations.</p>
-
-                    <hr class="section-divider">
+                    <h3 id="exercise-format">Exercise and Report Format</h3>
+                    <p>Red Team analysis challenges conventional thinking by having analysts adopt the perspective of an adversary or competitor. This structured analytic technique requires analysts to shift from observing opponents to becoming actors who think and respond as the adversary would. The method proves especially valuable when facing counterparts with different cultures, values, or decision-making processes. Red Teams immerse themselves in their assigned roles, producing authentic products like policy papers and strategic recommendations that the adversary might create.</p>
+                    <p>The technique helps organizations identify blind spots, test assumptions about adversary behavior, and develop more robust strategies. By forcing analysts to see situations through opponents&rsquo; eyes, Red Team analysis reveals vulnerabilities and alternative courses of action that might otherwise go unrecognized.</p>
+                    <p>The exercise ran for one day with a team of five expert participants adopting the Red Team role of PRC military and diplomatic officials, foreign policy strategists, and technical advisors to the PRC Foreign Minister. Individual Red Team members did not play specific roles but rather conferred in &ldquo;committee&rdquo; style to represent views across PRC statecraft domains. The workshop facilitator encouraged dissenting views about the group&rsquo;s assessments and recommendations. Chatham House Rules were utilized to encourage speculation and open discussion.</p>
+                    <p>The first workshop activity provided the participants with their directive and established a baseline understanding of the PRC&rsquo;s perspectives of the Russia-Ukraine war, possible settlements, and implications for China&rsquo;s Taiwan strategy. The facilitator asked participants to &ldquo;not just answer what the PRC should do, but why it should do it.&rdquo; To ensure methodical rigor and replicability, we regularly asked participants to maintain the &ldquo;red&rdquo; mindset. Conversations were fruitful and the participants were not always in agreement. We have compiled a synthesis of these conversations presented below.</p>
+                    <p>With a baseline established, we presented the participants with the three scenarios, each a notional representation of possible developments representative of broader ongoing trends. This report presents each of the scenarios as a fictional policy memo presented to Wang Yi. The background text is the exact language provided to the red team. While the discussions during the exercise were wide-ranging, we have distilled each portion into its core elements.</p>
+                    <p>The final section of the report includes the takeaways about China&rsquo;s perspectives on the Russia-Ukraine war, how it relates to Taiwan, and lessons for the &ldquo;blue&rdquo; team &mdash; the U.S. and partnered countries. Although informed by discussions between the participants, this section is the result of our own analysis of the workshop.</p>
 
                     <!-- ============================================ -->
-                    <!-- DIRECTIVE & BASELINE STRATEGY -->
+                    <!-- DIRECTIVE AND BASELINE STRATEGY -->
                     <!-- ============================================ -->
-                    <h2 id="directive-baseline">Directive &amp; Baseline Strategy</h2>
+                    <h2 id="directive-baseline">Directive and Baseline Strategy</h2>
 
                     <h3>Baseline</h3>
-                    <p>Before engaging with the individual scenarios, the committee established a baseline assessment of China&rsquo;s strategic posture. This baseline reflected the consensus view of how Beijing perceives the current international environment and the priorities that guide its decision-making. The committee identified several core assumptions that would hold across all three scenarios:</p>
+                    <p>Participants agreed that China would rhetorically back a ceasefire and leave the fine print to others. This allows greater flexibility and selective engagement, if China engages at all. An ideal settlement for Beijing would see a weakened Russia that retains enough domestic stability to be a valuable junior partner to China. The settlement should have some kind of &ldquo;win&rdquo; for Putin while being an &ldquo;unsettled peace&rdquo; to keep NATO&rsquo;s focus on Russia instead of China &mdash; to blunt any &ldquo;pivot to Asia&rdquo; by the United States or other Western countries.</p>
+                    <p>The opportunities for Chinese advancement are more numerous in a state of peace, but expending political or financial capital to end the conflict exposes China to potential embarrassment and would limit the ability to seize opportunities as they arise. As such, Chinese engagement with any peace process should be predicated upon assessments that success is highly likely.</p>
 
-                    <p>First, the reunification of Taiwan remains the paramount strategic objective for the Chinese Communist Party. This is not a contingent or negotiable goal&mdash;it is a core interest that shapes all other calculations. Second, Beijing values stability in its relationship with Russia but is wary of becoming too closely tied to an unpredictable partner. A weakened or destabilized Russia creates risks for China; an overconfident Russia may drag China into unwanted confrontations. Third, economic growth and domestic stability remain essential to the CCP&rsquo;s legitimacy. The leadership is acutely aware of China&rsquo;s vulnerability to economic isolation and the potential disruption of its access to global markets and financial systems.</p>
-
-                    <h3>Blooming Flowers</h3>
-                    <p>Under a scenario in which Ukraine achieves a peace broadly consistent with its demands, the committee assessed that Beijing would view the outcome through the lens of regime stability in Russia and the implications for Western confidence. A Russian setback could embolden the West but also create opportunities for China to position itself as a responsible power broker.</p>
+                    <h3>Blooming Sunflowers</h3>
+                    <p>Participants referred to this as the &ldquo;Putin has a heart attack&rdquo; scenario and the &ldquo;worst case&rdquo; for China. However, involvement in the eventual reconstruction and peacekeeping efforts would allow for an opportunity to showcase Beijing&rsquo;s commitment to global peacebuilding. As one of the few nations in the world with both human and financial resources to support such an effort, China could seize an economically and diplomatically lucrative reward. One question remained: how would Beijing become involved in this effort?</p>
 
                     <h3>Bear in Charge</h3>
-                    <p>A Russian victory scenario raised concerns within the committee about the risks of an emboldened Moscow. The committee assessed that an overconfident Putin could pursue further adventurism, potentially drawing China into situations it would prefer to avoid. At the same time, a weakened West might create short-term opportunities for China in Europe and the developing world.</p>
+                    <p>The opposite of the prior scenario. China wouldn&rsquo;t have to worry about Russia&rsquo;s collapse, but rather a potentially aggressive, emboldened Putin turning his gaze toward NATO or, less likely, testing Beijing&rsquo;s response towards any hostility on the shared border. Ukraine and the EU would feel a strong degree of abandonment from the U.S., and Kyiv may turn to China to help represent its interests on the world stage, giving Beijing leverage over Russia.</p>
 
                     <h3>Wise Dragon</h3>
-                    <p>The committee assessed the Chinese-Brazilian peace plan scenario as the most favorable outcome for Beijing. It would preserve Russia as a stable junior partner, enhance China&rsquo;s international prestige, and create favorable conditions for advancing Chinese interests across multiple theaters.</p>
+                    <p>The goldilocks scenario would allow China to take a leading role in non-kinetic peacebuilding and improve its image as a nation that &ldquo;cares about people, not parties.&rdquo; The options for China to engage with Ukraine and the EU are similar to the first scenario, but would most likely have a stronger seat at the table and a greater say in how Ukraine is rebuilt. Ideally, China would aim to position itself as a mediator that recognizes Russian security concerns while supporting Ukrainian reconstruction. This would, in turn, improve leverage and trust in both Russia and Ukraine.</p>
 
                     <h3>Hotwash</h3>
-                    <p>Following the three scenario assessments, the committee conducted a &ldquo;hotwash&rdquo;&mdash;an immediate debrief designed to capture initial impressions and identify cross-cutting themes. The most striking finding was the consistency of China&rsquo;s Taiwan planning across all three scenarios. Regardless of the outcome in Ukraine, the committee assessed that Beijing&rsquo;s fundamental approach to reunification would remain unchanged; only the timeline and available resources would shift.</p>
-
-                    <p>The committee also noted the centrality of U.S. policy choices and Taiwanese domestic politics as the variables most likely to influence Chinese behavior&mdash;more so than the outcome of the Russia-Ukraine war itself. This underscored the importance of looking beyond the immediate crisis to understand the broader drivers of Chinese strategic calculus.</p>
-
-                    <hr class="section-divider">
+                    <p>In reference to Taiwan, it was found that there would be little subjective change in how cross-strait relations are approached aside from the degree of force needed to retake Taiwan. Participants felt that the greatest variable for China would lie in U.S. decision-making first and Taiwanese politics second. In Europe, China will attempt to be a passive partner initially while maintaining calls for peace, prioritizing risk avoidance while still being able to influence whatever outcome emerges. Participants reiterated concern that an emboldened Moscow may clash with China&rsquo;s long-term goals vis-&agrave;-vis European stability and its border with Russia.</p>
 
                     <!-- ============================================ -->
-                    <!-- SCENARIOS & RECOMMENDATIONS -->
+                    <!-- SCENARIO MEMOS -->
                     <!-- ============================================ -->
-                    <h2 id="scenarios">Scenarios &amp; Recommendations</h2>
+                    <h2 id="scenarios">Scenario Memos</h2>
+                    <p>The three memos that follow are presented in character &mdash; written as if produced by a fictional &ldquo;Leading Small Group on Ukraine&rdquo; advising the Director of the Central Foreign Affairs Commission. They reflect the Red Team&rsquo;s adversarial role-play, not TAFI&rsquo;s policy positions.</p>
 
-                    <!-- MEMO 1: BLOOMING SUNFLOWERS -->
-                    <h3 id="blooming-sunflowers">Scenario 1: Blooming Sunflowers</h3>
-
-                    <div class="memo">
+                    <!-- Blooming Sunflowers -->
+                    <div class="memo-block" id="blooming-sunflowers">
                         <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
+                            <strong>CENTRAL FOREIGN AFFAIRS COMMISSION OF THE CCP</strong>
+                            Beijing
                         </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Leading Small Group on Ukraine<br>
-                            <strong>DATE:</strong> 05 June 2025<br>
-                            <strong>SUBJ:</strong> BLOOMING SUNFLOWERS UKR-RUS Peace Deal Priorities
+                        <div class="memo-meta">
+                            <p><strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi</p>
+                            <p><strong>FROM:</strong> Leading Small Group on Ukraine</p>
+                            <p><strong>DATE:</strong> 05 June 2025</p>
+                            <p><strong>SUBJ:</strong> BLOOMING SUNFLOWERS UKR&ndash;RUS Peace Deal Priorities</p>
                         </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Largely settled in accordance with the Ukrainian demands, we assess the following priorities for the People&rsquo;s Republic of China.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
+                        <h4>Executive Summary</h4>
+                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Largely settled in accordance with the Ukrainian demands, the effects of this turn of events on Beijing&rsquo;s global engagement and efforts must be understood. The committee identified risks, obstacles, and opportunities to expand Chinese influence, develop economically, and strengthen efforts at bringing the Province of Taiwan back under Beijing&rsquo;s direct control given the outcomes in Europe. Two primary concerns were noted: a weakened and teetering Russia introduces greater uncertainty and risks with the Chinese&ndash;Russian border; Chinese representation is not assured in the reconstruction of Ukraine.</p>
+                        <h4>Background</h4>
+                        <p>The peace settlement contains the following seven primary points.</p>
                         <ol>
-                            <li>European troops are deployed to Ukraine as part of a multilateral peacekeeping force.</li>
-                            <li>Ukraine enters into bilateral defense agreements with key European states.</li>
-                            <li>All prisoners of war are returned through exchange mechanisms.</li>
-                            <li>A multilateral reconstruction fund is established for Ukraine&rsquo;s rebuilding.</li>
-                            <li>Ukraine is granted accelerated EU accession status.</li>
-                            <li>Russian troops withdraw to pre-February 2022 lines.</li>
-                            <li>A process is established for the prosecution of war crimes.</li>
+                            <li>European troops, with U.S. logistical support, are deployed to Ukraine to assist with stability and continued training of the Ukrainian military.</li>
+                            <li>Strong, bilateral and multilateral defense agreements between Ukraine and European countries underpin continued security.</li>
+                            <li>All military prisoners, civilian deportees, and abducted children are returned to their homes.</li>
+                            <li>A Ukrainian reconstruction fund is established to accelerate reconstruction.</li>
+                            <li>EU accession pathways are developed and facilitated for Ukraine.</li>
+                            <li>All troops are withdrawn from the front lines while negotiations on the status of captured territory, to include Crimea, are conducted.</li>
+                            <li>Prosecution of war crimes will take place via international organizations.</li>
                         </ol>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>The current situation reflects setbacks to Russia&rsquo;s war aims and represents a significant shift in the European security architecture. The committee assesses that this outcome was likely predicated on, or will precipitate, the collapse or severe weakening of Putin&rsquo;s regime. A destabilized Russia presents both risks and opportunities for the PRC.</p>
-
-                        <p>The reconstruction of Ukraine will create significant commercial opportunities, particularly in infrastructure and construction&mdash;sectors where China holds global competitive advantages. The PRC should position itself to participate meaningfully in reconstruction efforts, leveraging existing overcapacity in the construction sector.</p>
-
-                        <p>The deployment of European peacekeeping forces and bilateral defense agreements signal a more assertive European security posture. This development must be monitored closely for its implications on European defense spending, NATO cohesion, and the overall Western military posture in the Indo-Pacific.</p>
-
-                        <p>Regarding reunification: this scenario does not fundamentally alter the PRC&rsquo;s timeline or approach to Taiwan. However, the demonstrated willingness of Western nations to sustain a prolonged commitment to Ukraine&rsquo;s defense suggests that any military action regarding Taiwan would face similarly sustained opposition. The committee recommends continued development of non-kinetic approaches alongside military preparations.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
+                        <h4>Analysis</h4>
+                        <p>The current situation reflects setbacks to Russia&rsquo;s war aims and the subsequent resurgence of Ukraine and the West. China&rsquo;s primary concerns are twofold: what to do about a potentially teetering Russia, and how best to ensure Chinese representation in the reconstruction and rehabilitation of Ukraine.</p>
+                        <p>The state of Russia is concerning. China must give additional attention and resources to border security to ensure continued peace within the region while determinations of Russian regime stability are made. The appearance of a complete Russian loss is worrisome for undermining a key strategic partner and may push countries closer to the United States and European countries. The apparent lack of involvement from the Americans does present an opportunity to drive a wedge between them and their European partners, and merits additional consideration.</p>
+                        <p>There is currently no mandated role for China in this political settlement, which risks alienating Chinese economic and diplomatic efforts within the region and is unacceptable. However, perceptions of China as undermining the peace would fuel false anti-Chinese rhetoric throughout Western countries. To counteract the potential exclusion and to seize the narrative initiative, the opportunities to position China as the key funder of reconstruction for &ldquo;everyone everywhere&rdquo; holds promise. The reconstruction efforts would provide an outlet for Chinese manufacturers and construction companies, bringing a welcome influx of funds into the economy. The potential for capturing the market is large if approached with the correct blend of political caution and an eye for bold economic moves.</p>
+                        <p>With regards to the continued policing of the agreement and peacekeeping efforts, securing a resolution from the UNSC would clear the way for Chinese peacekeepers&rsquo; deployment. This may cause consternation within the region and raise fears of &ldquo;the PLA in Europe,&rdquo; but would provide another opportunity to demonstrate Chinese willingness to partner with any country around the world in support of peace and stability.</p>
+                        <p>Ultimately, the committee determined that while there are challenges to be overcome in European efforts, these do not greatly influence assessments of reunification efforts with the Province of Taiwan. There are ample opportunities to position China as the partner of choice for peace and prosperity and to demonstrate to the Republic of China that the PRC is a responsible actor under the CCP&rsquo;s guidance, and that peaceful reunification is in their best interest. A cautious approach to reunification and Chinese efforts within the region will best secure CCP goals.</p>
+                        <h4>Recommendations</h4>
+                        <p>The committee recommends the following actions:</p>
                         <ol>
-                            <li><strong>Leverage construction overcapacity.</strong> Position Chinese state-owned enterprises to participate in Ukrainian reconstruction through multilateral mechanisms. This serves dual purposes: absorbing domestic overcapacity and building political influence in the region. Emphasize China&rsquo;s peacebuilding credentials and willingness to contribute to post-conflict stabilization.</li>
-                            <li><strong>Increase intelligence collection operations.</strong> The post-conflict environment in Ukraine and the deployment of European forces create new intelligence requirements and opportunities. Expand collection on European military capabilities, alliance dynamics, and lessons-learned processes that Western militaries will undertake.</li>
-                            <li><strong>Advocate for UN centrality in peace processes.</strong> Position the PRC as a champion of multilateral solutions and UN-centered diplomacy. This enhances China&rsquo;s international standing and provides leverage in future negotiations on other issues, including Taiwan-related matters.</li>
+                            <li>Leverage Chinese construction and manufacturing overcapacity to seize the role of primary reconstruction partner in both Ukraine and Russia.</li>
+                            <li>Increase intelligence operations within Russia to monitor for domestic upheaval.</li>
+                            <li>Advocate for UN centrality in the execution of the peace plan, increasing the role for China and limiting the ability of the U.S. to act unilaterally.</li>
                         </ol>
                     </div>
 
-                    <!-- MEMO 2: BEAR IN CHARGE -->
-                    <h3 id="bear-in-charge">Scenario 2: Bear in Charge</h3>
-
-                    <div class="memo">
+                    <!-- Bear in Charge -->
+                    <div class="memo-block" id="bear-in-charge">
                         <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
+                            <strong>CENTRAL FOREIGN AFFAIRS COMMISSION OF THE CCP</strong>
+                            Beijing
                         </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Leading Small Group on Ukraine<br>
-                            <strong>DATE:</strong> 05 June 2025<br>
-                            <strong>SUBJ:</strong> BEAR IN CHARGE UKR-RUS Peace Deal Priorities
+                        <div class="memo-meta">
+                            <p><strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi</p>
+                            <p><strong>FROM:</strong> Leading Small Group on Ukraine</p>
+                            <p><strong>DATE:</strong> 05 June 2025</p>
+                            <p><strong>SUBJ:</strong> BEAR IN CHARGE UKR&ndash;RUS Peace Deal Priorities</p>
                         </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Largely settled in accordance with Russian demands, we assess the following priorities for the People&rsquo;s Republic of China.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
+                        <h4>Executive Summary</h4>
+                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Largely settled in accordance with Russian demands, the committee identified risks, obstacles, and opportunities to expand Chinese influence, develop economically, and strengthen efforts at bringing the Province of Taiwan back under Beijing&rsquo;s direct control given the outcomes in Europe.</p>
+                        <h4>Background</h4>
+                        <p>The peace settlement contains the following seven primary points.</p>
                         <ol>
-                            <li>Russia&rsquo;s territorial claims in eastern and southern Ukraine are recognized or left unresolved in Russia&rsquo;s favor.</li>
-                            <li>No European forces are deployed to Ukraine.</li>
-                            <li>Security agreements for Ukraine remain vague and non-binding.</li>
-                            <li>A demilitarized zone is established along the line of contact.</li>
-                            <li>War crimes proceedings are deferred or abandoned.</li>
-                            <li>Ukrainian armed forces are limited in size and capability.</li>
-                            <li>Western sanctions on Russia are progressively removed.</li>
+                            <li>Recognition of Russia&rsquo;s territorial claims in their entirety.</li>
+                            <li>No European forces deployed to Ukraine in any capacity, and no peacekeeping force deployed.</li>
+                            <li>Security agreements between Ukraine and other allies are vague/limited.</li>
+                            <li>A demilitarized zone is created between Russian positions and Ukrainian forces.</li>
+                            <li>War crimes are prosecuted by individual countries within their own systems of law.</li>
+                            <li>Ukrainian armed forces limited in size based on Russian&ndash;Ukrainian negotiations.</li>
+                            <li>Removal of all sanctions on Russia/Russian entities.</li>
                         </ol>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>This outcome represents a victory for Russia and a significant setback for the Western alliance. The committee identifies three primary concerns:</p>
-
-                        <p><strong>First, an emboldened Russia.</strong> Putin, vindicated by victory, may be tempted toward further adventurism in the post-Soviet space or beyond. An overconfident junior partner is a liability for China. Moscow may act in ways that provoke Western responses detrimental to Chinese interests, or may demand greater Chinese support for future ventures. The committee assesses that managing the Russia relationship will require careful calibration to maintain Moscow&rsquo;s utility as a strategic partner without being drawn into its ambitions.</p>
-
-                        <p><strong>Second, Western revitalization.</strong> A Russian victory in Ukraine may paradoxically galvanize the West. Historical precedent suggests that democratic alliances often respond to defeat with renewed investment and resolve. The committee should prepare for a potential surge in Western defense spending, accelerated NATO expansion, and a hardening of Western posture toward authoritarian states generally&mdash;including China.</p>
-
-                        <p><strong>Third, dividing transatlantic relations.</strong> Alternatively, a Russian victory could deepen existing fractures within the Western alliance. Recriminations over the failure to defend Ukraine, combined with economic pressures from energy disruption and refugee flows, could weaken European cohesion. The PRC should be prepared to exploit these divisions through targeted diplomatic and commercial engagement.</p>
-
-                        <p>The committee identified two potential paths for the West in this scenario: revitalization or fragmentation. Chinese strategy must be prepared for either outcome and should actively work to encourage the latter while preparing for the former.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
+                        <h4>Analysis</h4>
+                        <p>This settlement represents a victory for the Russians in Ukraine. While the committee saw this as a vindication of the belief that the West is currently sclerotic, three concerns dominated the discussion: how should China engage with an emboldened Russia; will this obvious setback for the West catalyze a revitalization of cooperation and pushback on China&rsquo;s national reunification; and what opportunities does such a result give China to divide transatlantic relations and intra-European relationships?</p>
+                        <p>An emboldened Putin could pave the way to further Russian adventurism within Europe or Central Asia. Putin finding his ambitions fulfilled risks new ambitions developing that run counter to Chinese interests. Pulling back our material support with respect to dual-use items and increasing engagement with key European countries to signal that Chinese interests are at stake would be vital to constraining Russia. To this end, ensuring that Chinese companies are primarily responsible for reconstruction and the provision of services within Ukraine is integral to this signaling. This would also strengthen Chinese economic growth and expertise in critical industries. These overtures should be informal in nature, led by Chinese enterprises or subleaders to preserve some distance from the President and senior leadership. Given that there is a risk that the West will conceptualize the Russian victory as a victory for China, engagement must be nuanced and calculated.</p>
+                        <p>The potential that the West misconstrues this as a Chinese-backed effort, and therefore a &ldquo;Chinese&rdquo; victory, raises the specter of a revitalized Western alliance system aimed directly at thwarting the &ldquo;Axis of Autocracies.&rdquo; Continuing diplomatic efforts and narrative building while ensuring economic resilience in the mainland is the primary concern for countering any revitalized Western alliance system. The inability of the Western powers to agree consistently or respond quickly advantages China. Furthermore, the committee noted that as the West debates what exactly to do, Chinese officials will learn of their intentions and plans with enough time to prepare adequate responses. Efforts at preventing U.S. sanctions on Chinese banking until preparations are complete is vital to a positive outcome in this scenario.</p>
+                        <p>If there is no revitalization of Western alliances, the pullback of U.S. support in Europe should open the door to Chinese efforts at weakening transatlantic and intra-European relationships. To effect this, a diplomatic blitz across the continent is recommended. There are already European advocates for engagement with China that can spread Chinese talking points, and those who support China should be rewarded with favorable trade relations and investment. Those not receiving these benefits will either come to resent those that do, splitting the alliances, or move closer to China to reap the rewards. The key to success is that the Europeans themselves are the ones spreading how cooperation and collaboration with China is for the best. These efforts would have positive follow-on effects for independence advocates in the province of Taiwan: the West cannot be relied on to do anything more than bleed them dry and abandon them when deemed convenient.</p>
+                        <p>An emboldened and strengthened Russia requires delicate handling. Should Chinese efforts at separating Russian victory from Chinese support in the minds of Westerners fail, there is a risk that the U.S. and Europe strengthen their ties and double down on constraining the rejuvenation of China and reunification with the province of Taiwan. Should this revitalization be avoided, it may accelerate reunification efforts due to the psychological impact on the separatists. The committee stressed that regardless of which route the U.S. and Europeans take, time is on the Chinese side and that reunification remains inevitable.</p>
+                        <h4>Recommendations</h4>
+                        <p>The committee recommends China take the following actions:</p>
                         <ol>
-                            <li><strong>Utilize senior officials for engagement in Ukraine.</strong> Deploy high-level diplomatic missions to Kyiv to establish China as a relevant actor in post-conflict Ukraine. Even in a Russian-dominated settlement, Ukraine will seek to diversify its international relationships. China can position itself as an alternative to both Western and Russian influence.</li>
-                            <li><strong>Decrease dual-use exports to Russia.</strong> Reduce the flow of goods that could be traced to Chinese origins and used in further Russian military operations. This mitigates the risk of secondary sanctions and maintains China&rsquo;s posture of neutrality. Redirect industrial capacity toward domestic military modernization and other strategic priorities.</li>
-                            <li><strong>Complete economic self-reliance programs.</strong> Accelerate efforts to reduce dependence on Western technology, financial systems, and markets. A Russian victory may trigger a broader Western reassessment of engagement with authoritarian states, and China must be prepared for increased economic pressure. Prioritize domestic semiconductor development, alternative payment systems, and diversified supply chains.</li>
+                            <li>Utilize senior political officials and economic engagement in Ukraine to signal Chinese interest in the region, constraining further Russian expansion.</li>
+                            <li>Decrease or cease the export of sensitive military and dual-use technology to Russia, limiting the ability of Putin to pursue further military actions.</li>
+                            <li>Complete economic self-reliance efforts to mitigate risks of Western powers isolating the Chinese economy in retaliation for Chinese support of Russia.</li>
                         </ol>
                     </div>
 
-                    <!-- MEMO 3: WISE DRAGON -->
-                    <h3 id="wise-dragon">Scenario 3: Wise Dragon</h3>
-
-                    <div class="memo">
+                    <!-- Wise Dragon -->
+                    <div class="memo-block" id="wise-dragon">
                         <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
+                            <strong>CENTRAL FOREIGN AFFAIRS COMMISSION OF THE CCP</strong>
+                            Beijing
                         </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Leading Small Group on Ukraine<br>
-                            <strong>DATE:</strong> 05 June 2025<br>
-                            <strong>SUBJ:</strong> WISE DRAGON UKR-RUS Peace Deal Priorities
+                        <div class="memo-meta">
+                            <p><strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi</p>
+                            <p><strong>FROM:</strong> Leading Small Group on Ukraine</p>
+                            <p><strong>DATE:</strong> 05 June 2025</p>
+                            <p><strong>SUBJ:</strong> WISE DRAGON UKR&ndash;RUS Peace Deal Priorities</p>
                         </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Settled in accordance with the Chinese-Brazilian proposal, we identify three factors for the People&rsquo;s Republic of China: the centrality of the United Nations in the peace process, the unsettled nature of the arrangement, and opportunities for shaping the domestic narrative.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
+                        <h4>Executive Summary</h4>
+                        <p>The Special Advisory Committee convened to examine the recently concluded peace agreement between Ukraine and Russia. Largely settled in accordance with the proposal formulated by China and Brazil, the committee identified risks, obstacles, and opportunities to expand Chinese influence, develop economically, and strengthen efforts at bringing the Province of Taiwan back under Beijing&rsquo;s direct control given the outcomes in Europe. There are three primary factors of interest: UN centrality, the unsettled nature of the agreement, and the domestic narrative challenges within China.</p>
+                        <h4>Background</h4>
+                        <p>The peace settlement contains the following seven primary points.</p>
                         <ol>
-                            <li>United Nations peacekeeping forces are deployed to monitor the ceasefire and separation of forces.</li>
-                            <li>Limited security agreements are established through multilateral frameworks.</li>
-                            <li>Bilateral reconstruction agreements are pursued outside of a single multilateral fund.</li>
-                            <li>Access to raw materials and energy resources is negotiated through bilateral channels.</li>
-                            <li>Borders are established on a bilateral basis, with some areas remaining under negotiation.</li>
-                            <li>War crimes proceedings are referred to international mechanisms but remain slow-moving.</li>
-                            <li>All prisoners of war are returned.</li>
+                            <li>UN peacekeeping force, including Chinese forces, deployed to Ukraine.</li>
+                            <li>Limited bilateral/multilateral security agreements with Ukraine.</li>
+                            <li>Reconstruction within Ukraine is conducted bilaterally.</li>
+                            <li>Access to raw materials and food exports is protected.</li>
+                            <li>Ukraine and Russian borders are negotiated bilaterally.</li>
+                            <li>War crimes are prosecuted by individual countries within their own systems of law.</li>
+                            <li>All military prisoners and detainees are returned.</li>
                         </ol>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>This outcome is the most advantageous to Chinese interests. It preserves Russia as a stable junior partner, enhances China&rsquo;s international prestige as a peacemaker, and creates favorable conditions across multiple strategic domains. The committee identifies three primary factors:</p>
-
-                        <p><strong>First, UN centrality.</strong> The deployment of UN peacekeeping forces with Chinese participation elevates China&rsquo;s status in the international order. Beijing can leverage its role in peacekeeping to project influence, gather intelligence, and build relationships with both parties. China&rsquo;s voice in UN Security Council deliberations gains additional weight and credibility. This outcome also establishes a precedent for UN-centered conflict resolution that could be invoked in future disputes where China wishes to limit unilateral Western action.</p>
-
-                        <p><strong>Second, the chaotic and unsettled nature of the arrangement.</strong> The bilateral, piecemeal character of the peace creates spaces for Chinese engagement that would not exist in a comprehensive, Western-led settlement. Bilateral reconstruction agreements allow Chinese state-owned enterprises to compete for contracts without submitting to multilateral conditionality. Unresolved territorial questions keep both parties dependent on external mediation&mdash;a role China is well-positioned to fill. The slow pace of war crimes proceedings reduces pressure on Russia and preserves the relationship.</p>
-
-                        <p><strong>Third, the domestic narrative.</strong> This outcome allows the CCP to present the war as a &ldquo;far away war&rdquo; that China helped resolve through wise and patient diplomacy. The narrative of Chinese peacemaking reinforces domestic legitimacy and distracts from internal economic challenges. It also counters Western attempts to portray China as complicit in Russian aggression.</p>
-
-                        <p>Intelligence collection opportunities are significant. The deployment of Chinese peacekeepers and the presence of Chinese construction firms in Ukraine provide cover for expanded human intelligence operations in a region of growing strategic importance. The committee recommends maximizing these opportunities.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
+                        <h4>Analysis</h4>
+                        <p>The conclusion of the conflict in Ukraine following the Chinese&ndash;Brazilian proposal is advantageous to Chinese interests. It allows for Chinese engagement in Europe and reconstruction in Ukraine and Russia but does not see either side emerge as the clear victor. This preserves Russia in a junior partner role while still demonstrating that the Western Powers are fading as the world enters a multipolar era. The committee identified three primary factors of interest: the centrality of the UN, the chaotic or unsettled nature of the arrangement, and the domestic narrative surrounding Chinese engagement.</p>
+                        <p>The emergence of the UN as the coordinating body in the peace process plays to Chinese strengths and current narrative-shaping efforts. Given the strong ties to the developing world, China has a large influence within the organization and has had some success in shaping global norms via UN processes previously. The legitimacy afforded by UN-sanctioned peacekeeping, and Chinese support for the efforts, would demonstrate that China is a partner for peace and upholding multinational institutions. China should use this narrative to point out the flawed thinking behind the U.S. unilateral and imperialistic aggression across the globe. Additionally, this would present China with the opportunity to steer reconstruction and peacekeeping efforts with the norms and practices of both the Chinese Global Development and Global Security Initiatives.</p>
+                        <p>Given the ongoing negotiations over territory, there is a risk that the conflict shifts back to active fighting between Russia and Ukraine. Without a clear victor between Russia and Ukraine, there will be increased jockeying for advantage between the West, Ukraine, Russia, and other interested parties. To capitalize on this, China should pursue engagement with unarmed peacekeeping deployments as well as domestic police and security training and collaboration. This would allow for better intelligence collection on Western military and security forces while integrating Ukraine into a Chinese-oriented system with minimum risk to Chinese citizens should the balance become overturned.</p>
+                        <p>The greatest challenge will be navigating the domestic narrative of Chinese involvement in a &ldquo;far away war&rdquo; and ensuring that it doesn&rsquo;t lead to civil unrest. Should any harm or loss of life occur among Chinese peacekeepers, there would need to be immediate containment of the negative news. To assist in countering potential criticism, the committee agreed that messaging should be focused on how this is a fundamentally Chinese story: just as China rebuilt after war and has become a partner for peace and development, China is helping others follow this enlightened path. Focusing on supporting roles will mitigate the risk of direct involvement in any flare-ups of hostilities and would directly improve the intelligence efforts identified above.</p>
+                        <p>As it stands, all sides get some of their goals while maintaining a balance between the warring parties. Additionally, there is increased access to reconstruction efforts for Chinese interests and strengthens Chinese diplomatic and political messaging around the world. By demonstrating China&rsquo;s peaceful nature and that all major parties have come around to Chinese opinion on settling disputes, it has reinforced the Chinese position vis-&agrave;-vis Taiwan. Time is on the Chinese side and efforts at preparing for a peaceful reunification should proceed apace.</p>
+                        <h4>Recommendations</h4>
+                        <p>The committee recommends China take the following actions:</p>
                         <ol>
-                            <li><strong>Utilize unarmed peacekeepers for intelligence collection.</strong> Chinese contributions to UN peacekeeping operations in Ukraine should be structured to maximize intelligence-gathering opportunities. Deploy personnel with language skills and technical expertise to positions that provide access to Western military operations, European defense infrastructure, and Ukrainian reconstruction planning. Coordinate collection priorities with the Ministry of State Security and the PLA&rsquo;s Strategic Support Force.</li>
-                            <li><strong>Steer reconstruction toward Chinese companies.</strong> Leverage bilateral reconstruction agreements to direct contracts toward Chinese state-owned enterprises, particularly in infrastructure, telecommunications, and energy. Use the Belt and Road Initiative framework to structure financing in ways that create long-term economic dependencies. Prioritize projects that provide strategic access, such as ports, rail networks, and digital infrastructure.</li>
-                            <li><strong>Conduct a comprehensive information campaign.</strong> Develop and execute a coordinated information campaign emphasizing China&rsquo;s role as peacemaker and responsible great power. Target audiences in the Global South, Europe, and domestic Chinese populations. Counter Western narratives that portray China as complicit in Russian aggression by highlighting the peace agreement as evidence of Chinese diplomatic leadership.</li>
+                            <li>Utilize unarmed Chinese peacekeepers to conduct intelligence operations on Western, Ukrainian, and Russian actors.</li>
+                            <li>Steer reconstruction efforts toward Chinese companies and standards, increasing the economic leverage China has in the region.</li>
+                            <li>Conduct information campaigns within China to increase support for Chinese involvement.</li>
                         </ol>
                     </div>
-
-                    <hr class="section-divider">
 
                     <!-- ============================================ -->
-                    <!-- LESSONS FOR THE "BLUE TEAM" -->
+                    <!-- LESSONS FOR THE BLUE TEAM -->
                     <!-- ============================================ -->
                     <h2 id="blue-team">Lessons for the &ldquo;Blue Team&rdquo;</h2>
 
                     <h3>SWIFT Action</h3>
-                    <p>The committee&rsquo;s discussions repeatedly returned to China&rsquo;s vulnerability to economic isolation. Across all three scenarios, the possibility of being cut off from the SWIFT international payment system and broader Western financial infrastructure emerged as a significant concern. This suggests that the threat of financial isolation remains one of the West&rsquo;s most potent deterrents.</p>
-
-                    <p>Western policymakers should develop detailed, pre-positioned plans for economic slowdown measures targeting China&rsquo;s financial sector. These plans should include not only sanctions on specific entities but also the capability to restrict China&rsquo;s access to the dollar-denominated financial system. The credibility of this threat depends on demonstrating that the West has both the tools and the political will to implement it.</p>
-
-                    <p>Additionally, the committee&rsquo;s sensitivity to information warfare suggests that investments in counter-narrative capabilities&mdash;including Radio Free Asia and similar outlets&mdash;can impose real costs on Beijing by challenging the CCP&rsquo;s control of the domestic information environment. Western information operations should be designed not only to inform Chinese citizens but to force the CCP to expend resources on internal narrative management.</p>
+                    <p>The greatest potential obstacle to Chinese success was identified as continued economic slowdown and ongoing reliance on Western financial systems. While China has made progress in ensuring material self-sufficiency, the effects of isolating Chinese banks from U.S. and world markets would be devastating at the current time. Greater control of the public narrative and the ability to martial economic resources by the state in China would offset some negative effects.</p>
+                    <p>The U.S. must understand China&rsquo;s current economic state and progress towards market self-sufficiency to calibrate U.S. policy and more accurately foresee Chinese behavior injurious to U.S. interests. A China that is assured of its economic resiliency is more likely to act aggressively. Understanding both how self-sufficient China&rsquo;s economy <em>actually</em> is, as well as how it perceives itself, is necessary for decision-makers to address the threat China poses to regional stability. This is not a task for the U.S. government alone, but is actively undertaken by foreign governments and think tanks inside and outside the U.S.</p>
+                    <p>During the workshop, the participants repeatedly noted concern over the U.S.&rsquo; control of financial markets and willingness to isolate Russia from the international banking system. Described as the &ldquo;nuclear option,&rdquo; the participants discussed the destruction this would bring to China&rsquo;s economy. While it is imprudent to employ such a tactic to deter China&rsquo;s ongoing grey-zone activities, the U.S. ought to signal its willingness to cut off China&rsquo;s access to financial markets in the event of Chinese military action in Taiwan &mdash; and the Indo-Pacific broadly. To this end, the U.S. should revive and pass the Deterring Communist Chinese Aggression against Taiwan through Financial Sanctions Act, last introduced in 2023. This bill would require the imposition of harsh financial sanctions in the event of an invasion of Taiwan.</p>
+                    <p>Lastly, the U.S. should pursue counter-narrative warfare in China about its domestic economy. While Chinese control over its economic narrative will not relieve the impacts of an economic slowdown, it will mitigate its downstream consequences. Widespread knowledge and concern about the economy may breed public unrest, which is disadvantageous to China&rsquo;s ability to aggressively pursue its geopolitical interests. The U.S. should increasingly utilize its global media to propagate information about the state of China&rsquo;s economic well-being. This does not entail lying &mdash; China has taken the onus of manipulating the truth; the U.S. just needs to say the truth. This effort should include revitalizing Radio Free Asia with a mandate for increasing the accessibility of its messages in China.</p>
 
                     <h3>Closing the Credibility Gap</h3>
-                    <p>A recurring theme in the committee&rsquo;s assessments was the political question of Western credibility. Beijing closely watches for signs of division within the transatlantic alliance and views any fracture as an opportunity. Chinese warfare&mdash;in the informational, economic, and diplomatic domains&mdash;is designed to exploit these divisions.</p>
-
-                    <p>The West must recognize that alliance cohesion is itself a form of deterrence. Closing the credibility gap requires sustained diplomatic engagement, not only among NATO members but with partners in the Indo-Pacific and Global South who are targets of Chinese commercial diplomacy. It also requires investment in joint economic warfare capabilities&mdash;coordinated sanctions, export controls, and investment screening mechanisms that demonstrate allied unity.</p>
-
-                    <p>The committee also noted that China views transatlantic divisions as a wedge to be driven deeper into Western alliance systems. Proactive efforts to demonstrate solidarity&mdash;through joint exercises, coordinated diplomatic statements, and aligned economic policies&mdash;will narrow the space for Chinese wedge strategies.</p>
+                    <p>Credibility is an integral element of deterrence, but credibility is more than a consideration of military capability. It is a fundamentally political question. China undermines U.S. economic and political credibility through political and economic warfare, domains the U.S. must be more active in. China benefits from portraying the United States as faltering and unreliable, and that China is closer to surpassing U.S. power than it actually is. Nonetheless, as one participant noted, &ldquo;[China] only needs [U.S. partners] to lose faith in the U.S., not convince them of how great we are.&rdquo; Key allies in the Indo-Pacific will look towards the European theater for validating the Chinese messaging.</p>
+                    <p>Across the first two scenarios, the Special Advisory Committee repeatedly emphasized capitalizing on emergent divisions between the United States and its transatlantic partners. As China already benefits from existing tensions caused by the fluctuations in U.S. aid and commitments to Ukraine, the Committee recommended further driving a wedge in U.S. alliance systems.</p>
+                    <p>Chinese diplomatic, economic, and narrative warfare aimed at fracturing U.S. alliances poses risks in Europe as well as Asia. For China, driving a wedge between the U.S. and its allies diminishes the potential need for kinetic action in the case of a coercive reunification with Taiwan. China may perceive Taiwan as less likely to resist reunification if broken U.S. promises to Ukraine and a besieged alliance system put U.S. credibility at risk. Threatened by Chinese efforts to diminish U.S. credibility, it is paramount for Washington to restore its reputation for reliability.</p>
+                    <p>Responding to the political and economic warfare efforts requires greater diplomatic engagement throughout the Indo-Pacific. The U.S. should both counter Chinese-backed misleading and false narratives and find avenues for American and allied businesses to compete and collaborate on the ground. Without demonstrating American and allied value, just telling other countries to avoid business with China is insufficient for blocking out the PRC. The onus rests on the U.S. to work on the ground and show the value of working with it.</p>
+                    <p>For the U.S. there is an additional advantage to be seized here. Unlike military buildups, which are non-productive economic ventures, these efforts can lead to the expansion of export markets and drive economic growth for the United States. In the Pacific Islands, for example, many of the needs are in fields that the U.S. excels in, such as healthcare and integrated information systems. Continuous engagement by the United States demonstrates political commitment to the region and is instrumental in establishing credible deterrence. When the United States shows up for the little things, its commitment to higher-stakes issues is far more believable.</p>
 
                     <h3>Empathizing with Friends and Foes</h3>
-                    <p>The exercise underscored the risks of applying Western constructs to understanding Chinese decision-making. The CCP does not operate on Western timelines, does not share Western assumptions about the role of international law, and does not assess risk using the same frameworks. Strategic empathy&mdash;the ability to understand an adversary&rsquo;s worldview without endorsing it&mdash;is essential for effective policy.</p>
-
-                    <p>For example, the committee&rsquo;s assessment that the PLA should be ready to conduct reunification operations by 2027 reflects a planning milestone, not a predetermined decision point. Western analysts who treat this date as a deadline risk either overreacting to military preparations or underestimating the flexibility of Chinese planning.</p>
-
-                    <p>Investment in diplomatic engagement and crisis communication mechanisms is critical. Establishing and maintaining hotlines, back-channel communications, and regular senior-level dialogues with Beijing can reduce the risk of miscalculation. Equally important is the development of deep China expertise within Western government and military institutions&mdash;including Mandarin language skills, cultural competency, and sustained analytical attention to Chinese domestic politics.</p>
-
-                    <hr class="section-divider">
+                    <p>Throughout the exercise, participants repeatedly noted that importing Western constructs from generalists or Europe-focused analysts into the Indo-Pacific risks misunderstanding what the CCP is trying to communicate to the West. Operating from faulty mental images could lead to miscalculations and outright disaster for all parties. Better understanding and strategic empathy are needed to improve deterrence communications between China and the West. President Xi&rsquo;s demand that the PLA be ready for war by 2027 is a prime example. This order, participants argued, does not mean China considers war a desirable path to reunification with Taiwan. But that is precisely how many interpreted the statement after it was made.</p>
+                    <p>Many experts argue that the primary concern of the United States is to ensure that every day President Xi wakes up he thinks, &ldquo;not today&rdquo; with respect to invading Taiwan. What would be more secure is a scenario where Xi never has to wake up and think &ldquo;not today,&rdquo; but continually assumes that peaceful efforts are the best or only way forward. This must be mirrored on the Taiwanese side with respect to independence. To that end, U.S. support should reassure not just the Taiwanese people, but the Chinese. To the former, bolstering defense capabilities while limiting inflammatory actions and rhetoric is paramount. For the latter, ensuring that China understands that the United States is not opposed to a peaceful and mutually agreed-upon reunification. All of this is predicated upon a richer, nuanced understanding of how the CCP views the world and acts, not upon models and thinking that originated with Kremlinologists.</p>
+                    <p>To ensure a robust deterrent posture, communication between the parties must be consistent and understood. Without a baseline of trust and understanding, communications will fail. Policymakers must find and nurture viable diplomatic lines with low-stakes engagements to help rebuild trust and develop mutual understanding. Engagement should focus on mutual concerns, such as rising rates of cybercrime and extortion or curtailing drug smuggling. Positive interactions will lay the foundation for improved relations moving forward. For areas where this cannot occur, the development and strengthening of crisis hotlines/communication channels is vital. Crisis channels must be embraced by all parties and insulated from political churn to prevent the unraveling of nascent gains. Concurrently, the government of the United States and allies should invest in building out country expertise and language capabilities within the intelligence community and State Department to encourage these engagements.</p>
 
                     <!-- ============================================ -->
                     <!-- CONCLUSION -->
                     <!-- ============================================ -->
                     <h2 id="conclusion">Conclusion</h2>
+                    <p>This exercise set out to identify what lessons China may take from a resolution to the Russia&ndash;Ukraine conflict. Given Xi Jinping&rsquo;s demand that the PLA be ready to invade and seize Taiwan by 2027, were there any results that would reassure the CCP that kinetic actions aren&rsquo;t as risky? Are there parallels from how Russia fared on the international stage and how Western-aligned countries would treat China should it attempt an invasion of Taiwan?</p>
+                    <p>Unexpectedly, the red team uncovered a null finding with respect to the ties between kinetic operations over Taiwan and the outcome in Ukraine, but this is far from a reassuring outcome. Critically, one of the underlying sentiments across all scenarios was a greater latitude for Chinese gains no matter the outcome of the conflict. The United States and its allies were constrained in that few outcomes support the rules that have formed the foundation of Western strength for about three-quarters of a century. Therefore, while the Chinese stand to capitalize on many outcomes, the United States stands to lose out and potentially accelerate the Chinese efforts to reclaim Taiwan via grey-zone activities, political coercion, and economic warfare.</p>
+                    <p>To that end, the West needs to recognize that the battlefield in the Indo-Pacific, and for Taiwan, will primarily be a political and economic one, and that the fight has been raging for years without adequate engagement from the United States and its allies. Pushing back on the Chinese narratives undermining the alliance structures will be key, as will be de-risking or guiding U.S. investments into the region to counter Chinese inroads. Underpinning all these efforts, however, needs to be an enhanced understanding of Chinese thinking, objectives, and interests.</p>
+                    <p>Continued support for Ukraine&rsquo;s self-defense, bolstering the capabilities of the alliance system, and improving burden sharing within the alliances the United States heads will mitigate many of the risks associated with Chinese engagement within Ukraine and planning in the Indo-Pacific. Taking action to ensure Russia is neither emboldened in victory nor capable of mounting significant operations in Europe will be key to maintaining a general peace throughout the world.</p>
 
-                    <p>This exercise set out to identify what lessons China may take from a resolution to the Russia-Ukraine conflict and how those lessons would shape Beijing&rsquo;s strategic behavior. The findings are both reassuring and sobering.</p>
+                    <!-- ============================================ -->
+                    <!-- END MATTER -->
+                    <!-- ============================================ -->
+                    <div class="report-endmatter">
+                        <h3>About TAFI</h3>
+                        <p>The Alliance Futures Initiative (TAFI) is an independent, non-profit, and non-partisan think tank dedicated to understanding and improving U.S. alliances. To that end, TAFI produces insights that help policymakers, strategists, and practitioners understand how alliances function &mdash; what sustains them, what strains them, and how they adapt to changing circumstances.</p>
 
-                    <p>The null finding on kinetic operations is significant: across all three scenarios, the committee did not assess that the outcome of the Russia-Ukraine war would trigger or significantly accelerate a Chinese military operation against Taiwan. The fundamental drivers of China&rsquo;s Taiwan calculus&mdash;U.S. policy choices, Taiwanese domestic politics, and the PLA&rsquo;s own readiness assessments&mdash;were seen as more decisive than events in Europe.</p>
+                        <h3>Disclaimer</h3>
+                        <p>This report is the product of a hypothetical Red Team simulation; findings represent adversarial role-play rather than official policy or predictions. The views expressed herein reflect those of the authors alone and do not reflect the views of TAFI or any other institution unless clearly articulated.</p>
 
-                    <p>However, the exercise revealed that each scenario provides greater latitude for Chinese gains in the political, economic, and informational domains. Whether through reconstruction contracts, intelligence collection under peacekeeping cover, or information campaigns designed to enhance China&rsquo;s international prestige, Beijing will seek to extract maximum advantage from any outcome.</p>
+                        <h3>Acknowledgements</h3>
+                        <p>TAFI is grateful for the support of Adam Leslie, Nishank Motwani, Austin Wu, Leah Markworth, Marika Vigo, and the Australian Strategic Policy Institute.</p>
 
-                    <p>The battlefield, from China&rsquo;s perspective, is primarily political and economic rather than military. Western strategy must adapt accordingly, focusing on alliance structures, economic resilience, and information capabilities as much as military deterrence.</p>
-
-                    <p>Ultimately, this exercise demonstrated the value of structured Red Team analysis in producing an enhanced understanding of Chinese thinking. By forcing analysts to adopt Beijing&rsquo;s perspective, the exercise revealed assumptions, blind spots, and strategic opportunities that conventional analysis might miss. The recommendations in this report&mdash;both those produced &ldquo;in character&rdquo; and those offered for the Blue Team&mdash;are intended to contribute to a more informed, more empathetic, and more effective Western strategy.</p>
+                        <p class="copyright">&copy; 2026 OTX International. All rights reserved. No part of this report may be reproduced or transmitted without prior written permission from the publisher.</p>
+                    </div>
 
                     <!-- Publication Navigation -->
                     <nav class="pub-nav">
-                        <a href="index.html" class="pub-nav-back">&larr; All Publications</a>
-                        <a href="pics-red-team.html" class="pub-nav-next">
-                            <span class="pub-nav-label">Next Report &rarr;</span>
-                            <span class="pub-nav-title">Pacific Islands Red Team Event Report</span>
-                        </a>
+                        <a href="../our-work/futures.html" class="pub-nav-back">&larr; All Futures work</a>
                     </nav>
 
+                </article>
                 </article>
             </div>
         </div>

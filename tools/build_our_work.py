@@ -43,6 +43,8 @@ CONTRIBUTOR_TYPE = {
     "andrew-horton": "fellow",
     "austin-wu": "fellow",
     "jackie-gibson": "fellow",
+    # External collaborators / guests (no bio page)
+    "cameron-hendrix": "guest",
 }
 
 AUTHOR_NAME = {
@@ -54,6 +56,7 @@ AUTHOR_NAME = {
     "andrew-horton": "Andrew Horton",
     "austin-wu": "Austin Wu",
     "jackie-gibson": "Jackie Gibson",
+    "cameron-hendrix": "Cameron Hendrix",
 }
 
 CATEGORY_LABEL = {
