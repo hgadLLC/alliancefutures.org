@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 16 Special Report — Last-Mile Threat: AccLinks Communications | TAFI</title>
+    <meta name="description" content="A PRC Pacific Embassies Monitor Special Report on AccLinks Communications and the espionage threat to data transiting Western-funded subsea cables in the Pacific Islands.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css?v=4">
+    <style>
+        .monitor-content {
+            padding: clamp(3rem, 6vh, 5rem) 0;
+            background: var(--white);
+        }
+
+        .monitor-article {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .monitor-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-meta-date {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+        }
+
+        .monitor-meta-author {
+            font-size: 0.85rem;
+            color: var(--navy);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .monitor-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .monitor-download:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
+        }
+
+        .monitor-download svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .special-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.12) 0%, rgba(74, 144, 194, 0.12) 100%);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cover-figure {
+            margin: 0 0 2.25rem;
+            text-align: center;
+        }
+        .cover-figure img {
+            max-width: 100%;
+            width: min(520px, 100%);
+            height: auto;
+            display: inline-block;
+            box-shadow: 0 18px 50px rgba(10, 37, 64, 0.18);
+            border-radius: 4px;
+        }
+
+        .monitor-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+            color: var(--navy);
+            font-weight: 600;
+            margin: 2.75rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .monitor-article h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.25rem, 1.9vw, 1.45rem);
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .lede {
+            font-size: 1.05rem !important;
+            font-weight: 500 !important;
+            font-style: italic;
+            color: var(--navy) !important;
+            line-height: 1.7 !important;
+        }
+
+        .monitor-article p {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .monitor-article p a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article p a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-article ul,
+        .monitor-article ol {
+            margin: 0.75rem 0 1.5rem 1.5rem;
+        }
+
+        .monitor-article li {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.7;
+            margin-bottom: 0.55rem;
+            font-weight: 300;
+        }
+
+        .monitor-article li a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article li a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-nav a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ocean);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .monitor-nav a:hover {
+            color: var(--gold);
+        }
+
+        .monitor-nav-placeholder {
+            visibility: hidden;
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .publication-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .publication-title sup {
+            font-size: 0.6em;
+            color: var(--gold);
+        }
+
+        .publication-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .monitor-endnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.15);
+        }
+
+        .monitor-endnote p {
+            font-size: 0.8rem !important;
+            color: var(--mid-gray) !important;
+            line-height: 1.7 !important;
+            font-weight: 300 !important;
+        }
+
+        .monitor-endnote sup {
+            font-size: 0.7em;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
+            </div>
+        </a>
+        <nav>
+            <a href="../about.html">About</a>
+            <div class="nav-dropdown">
+                <a href="../our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
+        </nav>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+        <nav class="mobile-nav">
+            <a href="../about.html">About</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
+        </nav></header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>/</span>
+                    <a href="index.html">Embassies Monitor</a> <span>/</span>
+                    <span>Week 16 Special Report</span>
+                </nav>
+                <h1>Last-Mile Threat: <em>AccLinks Communications</em></h1>
+                <p>PRC Pacific Embassies Monitor Special Report &middot; Week 16 &middot; May 25 &ndash; 31, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Content -->
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <!-- Publication header -->
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup> &mdash; Special Report</span>
+                    <div class="publication-logo">
+                        <img src="../images/tafi-logo-real.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week 16 &mdash; May 25 &ndash; 31, 2026</div>
+                        <div class="monitor-meta-author">By Jonah Bock, Assistant Director for Research</div>
+                    </div>
+                    <a href="pdfs/embassy-monitor-week-16.pdf" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                </div>
+
+                <!-- Cover image (full, not cropped) -->
+                <figure class="cover-figure">
+                    <img src="images/week-16-cover.jpg" alt="Last-Mile Threat: AccLinks Communications — PRC Pacific Embassies Monitor Special Report cover">
+                </figure>
+
+                <span class="special-tag">Special Report</span>
+                <h2 style="margin-top:0.25rem;">Last-Mile Threat: How AccLinks Embeds High-Risk Hardware in Pacific Island Telecommunications</h2>
+
+                <p class="lede"><strong>AccLinks Communications Inc. poses a direct espionage threat to data transiting Western-funded subsea cables in the Pacific Islands.</strong> The Shenzhen-based firm operates as a business-to-business (B2B) systems integrator, managing the &ldquo;last-mile&rdquo; infrastructure that connects local telecommunications networks through subsidiaries such as OceanLink. By controlling this link, AccLinks gates data flows between secure cables and local users, embedding hardware from ZTE and Baicells, both identified as US national security threats, into the regional telecom infrastructure.</p>
+
+                <h2>Key Findings</h2>
+                <ul>
+                    <li><strong><em>AccLinks&rsquo; integration role creates a structural vulnerability.</em></strong> Western governments and multilateral institutions fund secure subsea cables to the Pacific Islands, but AccLinks controls the local infrastructure that carries data from to end users. This arrangement allows Chinese-origin hardware from sanctioned entities to intercept or monitor data that Western-funded cables were designed to protect.</li>
+                    <li><strong>AccLinks <em>has established a footprint across four Pacific Island states</em></strong>. The firm is embedded in Kiribati&rsquo;s mobile telecommunications network and previously operated within Nauru&rsquo;s telecommunications and government IT systems. AccLinks has completed a network construction contract in the Federated States of Micronesia (FSM) and may have a presence in the Marshall Islands.</li>
+                    <li><strong><em>The company&rsquo;s corporate history raises red flags.</em></strong> A Chinese-language recruitment site lists AccLinks as established in 2011. Panama Papers records show the company registered in the British Virgin Islands in 2005. AccLinks&rsquo; own website claims operations dating to 2003. CTO Liang Liyong appears across all three registrations, linking them to a single entity despite the conflicting timelines.</li>
+                </ul>
+
+                <h2>Corporate Profile</h2>
+
+                <p><a href="https://web.archive.org/web/20251011105005/http://www.acclinks.com/about/" target="_blank" rel="noopener">AccLinks</a> (深圳市立华信技术有限公司) is a B2B intermediary for Chinese telecommunications services in the Pacific Islands.</p>
+
+                <ul>
+                    <li><strong>Leadership:</strong> CEO Zhang Huafeng is the public face of AccLinks, while CTO Liang Liyong manages technical integration.</li>
+                    <li><strong>Corporate registration discrepancies:</strong> The company has three different founding dates across three sources: 2003 (<a href="http://www.acclinks.com/about/" target="_blank" rel="noopener">company website</a>), 2005 (<a href="https://offshoreleaks.icij.org/nodes/10114757" target="_blank" rel="noopener">Panama Papers</a>), and 2011 (<a href="https://m.zhipin.com/gongsi/l03872067.html" target="_blank" rel="noopener">Chinese-language website</a>). Liang Liyong&rsquo;s name appears in all three records, confirming the listings refer to the same entity. The discrepancies plausibly reveal deliberate obfuscation of the firm&rsquo;s origins and corporate structure.</li>
+                </ul>
+
+                <h2>Regional Operations</h2>
+
+                <h3>Kiribati</h3>
+                <ul>
+                    <li>AccLinks maintains deep structural integration into Kiribati&rsquo;s digital infrastructure through its subsidiary <a href="https://ewsdata.rightsindevelopment.org/files/documents/32/WB-P159632_wKHQuoA.pdf#:~:text=Ocean%20Links%20%28owned%20by%20China%20based%20Acclinks%29%2C%20a%20new%20mobile%20network%20operator%20expected%20to&text=the%20uncertainty%20of%20interconnection%20in%20Majuro" target="_blank" rel="noopener">OceanLink</a>, which serves as the primary alternative to Vodafone Kiribati. OceanLink operates retail storefronts selling <a href="https://www.oceanlinknet.com/#/" target="_blank" rel="noopener">data plans and hardware</a>, primarily sourced from Tecno (Hong Kong).</li>
+                    <li><strong><em>OceanLink&rsquo;s technical partnerships pose a direct security concern.</em></strong> The subsidiary <a href="http://52.183.16.82/upload/attachment/201809/25/1052409591.pdf" target="_blank" rel="noopener">partners</a> with Baicells&mdash;under <a href="https://www.reuters.com/technology/chinese-tech-firm-founded-by-huawei-veterans-fbis-crosshairs-2025-01-16/" target="_blank" rel="noopener">FBI investigation</a> for security risks and designated a &ldquo;<a href="https://media.defense.gov/2025/Jan/07/2003625471/-1/-1/1/ENTITIES-IDENTIFIED-AS-CHINESE-MILITARY-COMPANIES-OPERATING-IN-THE-UNITED-STATES.PDF" target="_blank" rel="noopener">Chinese military company</a>&rdquo; by the Pentagon. OceanLink also <a href="https://www.iplook.com/info/iplook-chosen-by-oceanlink-to-enable-the-delivery-of-4g-mobile-network-on-pacific-islands-i00209i1.html" target="_blank" rel="noopener">uses</a> Hong Kong-based IPLook&rsquo;s <a href="https://www.iplook.com/products/evolved-packet-core" target="_blank" rel="noopener">Evolved Packet Core</a> (EPC) to manage its 4G LTE services, creating a centralized point for potential data mirroring.</li>
+                    <li>Through IPLook, OceanLink is plausibly connected to <a href="https://www.eastmicronesiacable.com/" target="_blank" rel="noopener">Western-funded</a> subsea cable landing points to provide last-mile service. This integration raises the risk of hardware taps that could allow Beijing to intercept data transiting through the FSM, Nauru, and Kiribati.</li>
+                </ul>
+
+                <h3>Federated States of Micronesia (FSM)</h3>
+                <ul>
+                    <li>In 2013, AccLinks won a $4 million <a href="http://www.fsmopa.fm/files/fy2019/FSMTC_fs18%20%5BFINAL%2012.28.18%5D.pdf" target="_blank" rel="noopener">contract</a> for 3G/4G expansion <a href="http://www.fsmopa.fm/files/fy2014/FSMTC_fs13%2520%5BFINAL%252012.31.13%5D.pdf" target="_blank" rel="noopener">using</a> ZTE equipment&mdash;The US Federal Communications Commission (FCC) designates ZTE as a <a href="https://www.fcc.gov/document/fcc-designates-zte-national-security-threat" target="_blank" rel="noopener">national security threat</a>. The age of the contract makes the current operational footprint difficult to verify, but ZTE-integrated last-mile infrastructure may carry data from the East Micronesia Cable.</li>
+                    <li>AccLinks CEO Zhang Huafeng met with <a href="https://issuu.com/kpressfsm/docs/kpress_vol25_iss_09_-_16_april_25" target="_blank" rel="noopener">FSM Vice President Palik</a> during a visit to China in April 2025 to discuss potential partnerships&mdash;suggesting the firm seeks to expand beyond its legacy contract.</li>
+                </ul>
+
+                <h3>Nauru</h3>
+                <ul>
+                    <li>AccLinks previously operated in Nauru&rsquo;s telecommunications sector, including a 2017 joint venture with <a href="https://www.nauru.gov.nr/media/58547/nauru_bulletin__11_24oct2018__179_.pdf" target="_blank" rel="noopener">CenPac</a> for government networks and the launch of <a href="https://www.nauru.gov.nr/media/58547/nauru_bulletin__11_24oct2018__179_.pdf" target="_blank" rel="noopener">PacCell</a> as a <a href="https://naurufinance.info/wp-content/uploads/2020/07/Budget-Paper-2-2019-20-FINAL.pdf" target="_blank" rel="noopener">commercial carrier</a>. Both initiatives appear <a href="https://www.pacnog.org/pacnog27/presentations/philip-PacNOG27.pdf" target="_blank" rel="noopener">defunct</a> as of 2026.</li>
+                    <li>The firm has since pivoted into Nauru&rsquo;s phosphate industry despite holding no public-facing expertise in heavy machinery or mining. AccLinks is involved in the <a href="https://www.facebook.com/share/p/17QvPgFxTn/" target="_blank" rel="noopener">Cantilever North Arm</a> shipping project and has supplied intelligent <a href="https://www.facebook.com/share/p/17QvPgFxTn/" target="_blank" rel="noopener">sorting machines</a>.</li>
+                    <li>Over the past year, CEO Zhang Huafeng has held seven meetings and signed two agreements with Nauruan ministers. In one meeting with Minister Bernicke, Zhang was <a href="https://www.facebook.com/share/p/17u4x9Pf28/" target="_blank" rel="noopener">photographed</a> holding a folder labeled &ldquo;NPRT (Nauru Phosphate Royalties Trust) Budget 2024.&rdquo; During Prime Minister Adeang&rsquo;s <a href="https://www.facebook.com/share/p/1GZv2ySe4p/" target="_blank" rel="noopener">delegation visit to China</a>, Zhang met with the Deputy ICT Minister and current RONPHOS Minister.</li>
+                </ul>
+
+                <h3>Other Countries</h3>
+                <p>AccLinks maintains a lighter but expanding presence beyond its core markets:</p>
+                <ul>
+                    <li>In the <strong>Solomon Islands,</strong> AccLinks partnered with Our Telekom to <a href="https://solomons.gov.sb/our-telekom-acclinks-donates-lightbox-signages-to-the-national-referral-hospital/" target="_blank" rel="noopener">donate</a> lightboxes to the National Referral Hospital, an engagement with no apparent telecommunications footprint.</li>
+                    <li>In the <strong>Marshall Islands,</strong> a report by <a href="https://blackopspartners.com/phone-internet-data-sent-undersea-cables-threatened-chinese-monitoring/" target="_blank" rel="noopener">Black Ops Partners</a> identifies an AccLinks &ldquo;distribution center&rdquo; that is strategically positioned for physical or technical access to submarine cable landing points.</li>
+                    <li>OceanLink met with the Governor-General of <strong>Tuvalu</strong> during a visit to Kiribati. An associated <a href="https://www.facebook.com/share/p/1Da1wqna7c/" target="_blank" rel="noopener">photograph</a> shows a slide deck titled &ldquo;Why Choose OceanLink,&rdquo; suggesting the firm is pitching expansion into new Pacific Island markets.</li>
+                </ul>
+
+                <h2>Key Threat Assessment</h2>
+                <ul>
+                    <li><strong><em>AccLinks obscures high-risk Chinese hardware behind a &ldquo;neutral&rdquo; intermediary brand &mdash; and the threat extends to Western-funded subsea cables.</em></strong> AccLinks integrates products from ZTE (an FCC-designated national security threat) and Baicells (a Pentagon-designated &ldquo;Chinese military company&rdquo; under FBI investigation). By acting as the on-the-ground service provider, AccLinks masks the direct involvement of these entities. Through IPLook&rsquo;s Evolved Packet Core in Kiribati, AccLinks&rsquo; subsidiary OceanLink plausibly connects to the East Micronesia Cable&rsquo;s landing points, creating a pathway for data interception. Under China&rsquo;s National Security Law, Beijing can compel AccLinks to surrender data to Beijing on request.</li>
+                    <li><strong><em>AccLinks&rsquo; expansion beyond telecommunications into Nauru&rsquo;s phosphate sector signals a broadening influence strategy that extends beyond data access.</em></strong> Zhang Huafeng&rsquo;s ministerial meetings and signed agreements in Nauru, combined with potential access to the NPRT budget document and involvement in phosphate shipping infrastructure, suggest AccLinks is building political and economic influence beyond its original telecommunications mandate. The firm&rsquo;s lack of mining or heavy machinery expertise makes this pivot analytically notable.</li>
+                    <li><strong><em>AccLinks&rsquo; claimed resale of US cybersecurity products from Fortinet warrants regulatory review.</em></strong> AccLinks&rsquo; website claims <a href="https://web.archive.org/web/20260308003019/http://www.acclinks.com/products/" target="_blank" rel="noopener">to resell products from the US cybersecurity firm Fortinet</a>. Given the firm&rsquo;s integration of hardware from designated national security threats and its obligations under Chinese law, adding AccLinks to the Export Administration Regulations (EAR) entity list merits exploration. Continued access to US-origin cybersecurity tools by a firm embedding Chinese military-linked hardware in Pacific Island infrastructure represents a policy contradiction.</li>
+                </ul>
+
+                <!-- Endnote -->
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. This Special Report extends the series with deeper analytical work on a single regional threat actor.</p>
+                    <p style="margin-top: 0.75rem;"><em>Disclaimer: This report is the product of a hypothetical Red Team simulation by The Alliance Futures Initiative; findings represent adversarial role-play rather than official policy or predictions.</em></p>
+                    <p style="margin-top: 0.5rem;"><em>Photo Credit: International undersea internet cables for Pacific Island countries. Dr Amanda H A Watson and CartoGIS ANU.</em></p>
+                </div>
+
+                <!-- Previous / Next navigation -->
+                <nav class="monitor-nav">
+                    <a href="week-15.html">&larr; Previous Week</a>
+                    <a href="index.html">All Monitors</a>
+                    <!-- Update href when Week 17 exists -->
+                    <span class="monitor-nav-placeholder">Next Week &rarr;</span>
+                </nav>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/tafi-logo-real.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../about.html">About</a>
+                    <a href="../our-work/index.html">Our Work</a>
+                    <a href="../advisory.html">Advisory</a>
+                    <a href="../people.html">People</a>
+                    <a href="../support.html">Support</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                trigger.classList.toggle('active');
+                trigger.nextElementSibling.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
