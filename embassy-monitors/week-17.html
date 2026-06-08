@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 17 — PRC Pacific Embassies Monitor | TAFI</title>
+    <meta name="description" content="Wale goes to Canberra; Beijing stays busy — China in the Solomons, GX Foundation in Tonga, June 1 to June 7, 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css?v=4">
+    <style>
+        .monitor-content {
+            padding: clamp(3rem, 6vh, 5rem) 0;
+            background: var(--white);
+        }
+
+        .monitor-article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .monitor-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-meta-date {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+        }
+
+        .monitor-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .monitor-download:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
+        }
+
+        .monitor-download svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .monitor-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            color: var(--navy);
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .monitor-article h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .monitor-article p {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .monitor-article p a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article p a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-article ul,
+        .monitor-article ol {
+            margin: 0.75rem 0 1.25rem 1.5rem;
+        }
+
+        .monitor-article li {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--navy);
+            line-height: 1.65;
+            margin-bottom: 0.15rem;
+            font-weight: 300;
+        }
+
+        .monitor-article li a {
+            color: #1a0dab;
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .monitor-article li a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        .monitor-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .monitor-nav a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ocean);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .monitor-nav a:hover {
+            color: var(--gold);
+        }
+
+        .monitor-nav-placeholder {
+            visibility: hidden;
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .publication-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .publication-title sup {
+            font-size: 0.6em;
+            color: var(--gold);
+        }
+
+        .publication-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .monitor-endnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(218, 165, 32, 0.15);
+        }
+
+        .monitor-endnote p {
+            font-size: 0.8rem !important;
+            color: var(--mid-gray) !important;
+            line-height: 1.7 !important;
+            font-weight: 300 !important;
+        }
+
+        .monitor-endnote sup {
+            font-size: 0.7em;
+            color: var(--gold);
+        }
+
+        .callout-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout-box--float {
+            float: right;
+            width: 42%;
+            margin: 0.5rem 0 1.5rem 2rem;
+        }
+
+        .callout-box__label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .callout-box--note .callout-box__label {
+            color: var(--ocean);
+        }
+
+        .callout-box__text {
+            font-size: 0.9rem !important;
+            line-height: 1.7 !important;
+            color: var(--navy) !important;
+            font-weight: 400 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .monitor-article figure {
+            margin: 1.75rem 0;
+        }
+
+        .monitor-article figure.figure--float {
+            float: right;
+            width: 46%;
+            margin: 0.5rem 0 1.5rem 2rem;
+        }
+
+        .monitor-article figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .monitor-article figcaption {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .monitor-article figcaption a {
+            color: var(--ocean);
+            text-decoration: none;
+        }
+
+        .monitor-article figcaption a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .callout-box--float {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+
+            .monitor-article figure.figure--float {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">        <a href="../index.html" class="logo">
+            <img src="../images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
+            </div>
+        </a>
+        <nav>
+            <a href="../about.html">About</a>
+            <div class="nav-dropdown">
+                <a href="../our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
+        </nav>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+        <nav class="mobile-nav">
+            <a href="../about.html">About</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="../our-work/research.html">Research</a>
+                    <a href="../our-work/futures.html">Futures</a>
+                    <a href="../our-work/commentary.html">Commentary</a>
+                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="../advisory.html">Advisory</a>
+            <a href="../people.html">People</a>
+            <a href="../support.html">Support</a>
+        </nav></header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>/</span>
+                    <a href="index.html">Embassies Monitor</a> <span>/</span>
+                    <span>Week 17</span>
+                </nav>
+                <h1>PRC Pacific Embassies Monitor: <em>Week 17</em></h1>
+                <p>June 1 &ndash; 7, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Content -->
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <!-- Publication header -->
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup></span>
+                    <div class="publication-logo">
+                        <img src="../images/tafi-logo-real.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week 17 &mdash; June 1 &ndash; 7, 2026</div>
+                    </div>
+                    <a href="pdfs/embassy-monitor-week-17.pdf" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                </div>
+
+                <h2>Wale Goes to Canberra; Beijing Stays Busy &mdash; Last Week in the Pacific</h2>
+
+                <!-- Ambassador's Corner — floated right alongside Summary -->
+                <div class="callout-box callout-box--float callout-box--note">
+                    <span class="callout-box__label">Ambassador&rsquo;s Corner</span>
+                    <p class="callout-box__text">Following the recent conclusion of regional preliminary rounds across the Pacific, China&rsquo;s Ministry of Education is preparing for the global finals of its annual Chinese Bridge Competition, a language and cultural contest for non-native speakers.</p>
+                    <p class="callout-box__text" style="margin-top: 0.75rem !important;">This competition is a powerful soft power tool, exchanging fully funded travel and televised exposure for state media promotion to cultivate a pipeline of future regional leaders who are fluent in Mandarin and receptive to Beijing&rsquo;s cultural and economic model.</p>
+                </div>
+
+                <h2>Summary of PRC Activity</h2>
+
+                <p>Solomon Islands Prime Minister Matthew Wale chose Australia for his first overseas trip last week, while Beijing continued engaging Port Moresby across multiple fronts. In Tonga, the GX Foundation, a Hong Kong-based healthcare nonprofit, followed through on a commitment from last month with a high-level delegation. The team met with the Crown Prince, the Prime Minister, and the Chinese medical team, and visited hospitals, schools, and a church. Qingdao Municipal Hospital donated medical supplies to the Tongan Ministry of Health during the visit.</p>
+
+                <h2>This Week&rsquo;s Big Themes:</h2>
+
+                <h3><em>China in the Solomons and the Solomons in China</em></h3>
+
+                <p>While the new Solomon Islands Prime Minister, Matthew Wale, visited Australia, several Solomon Islanders traveled to China for Beijing-sponsored activities. Music producer David Boghese&mdash;known as Young Davie&mdash;performed at the <a href="https://x.com/MFATNZ/status/2060192185728053466?s=20" target="_blank" rel="noopener">Pacific Day</a> celebration in Beijing, an annual event co-hosted by New Zealand and Pacific embassies in China. Eight participants from Solomon Islands National University and other institutions completed an 18-day training course on property management and maintenance of aid projects, hosted by the Academy for International Business Officials. The PRC Embassy also sponsored a trip for the Vice Chairman of the Malaita Provincial Youth Council to attend a seminar in China on climate-resilient agriculture and fisheries development.</p>
+
+                <p>In the Solomon Islands, China&rsquo;s medical team performed the country&rsquo;s first laparoscopic pyeloplasty surgery. The embassy directed several donations across the country: an embassy official provided smartphones to all executive representatives of the Solomon Islands National Youth Congress; Counsellor Charlie Song oversaw the delivery of 40 outboard motors from Fujian Province to support recovery from Tropical Cyclone Maila in Western Province; and the embassy donated roughly $45,000 on behalf of the Red Cross Society of China for additional relief efforts. Representatives from the Jiangsu Academy of Agricultural Sciences began a technical mission to bolster the Solomon Islands rice industry. The Chinese Police Liaison Team conducted anti-narcotics training for police officers in suburban Honiara.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid024ymuMEz2LsBpsKGQcjN6bbHutyoV2aYEG9kdob4ZYQm1rCfyNqzUsyAogYJnP9cVl" target="_blank" rel="noopener">Young Davie in Beijing</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid024C1sxKkTMfmj13kV9KQeRW18gEESsTJ3Fi685PESyvw54yvv5k2cK36JmXrbgDVTl" target="_blank" rel="noopener">SINU Participants in Beijing Seminar</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02RS1qNcv2J1uPP4qpbvdMSW8RYXYAPrxE6ghUX5sbrVeAaGcy7QzyhPyXS9zg4rFUl" target="_blank" rel="noopener">Malaita Provincial Youth Council in China</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02XcfH4wpoDruFuPsvA5qxstNpU4k3KqN9vDWx5B1PbVzsjxXuc1wiwMbpjR82Euual" target="_blank" rel="noopener">Medical Team Completes First Laparoscopic Pyeloplasty</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02ukRdwJjYCzwKRAw6o5XQnghdvM9LKfiFbYLYgbxUh9sFPQfF1TowqkLqr99TGPnql" target="_blank" rel="noopener">Donation to the National Youth Congress</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02NxQNz7SPVQM9mvNiCaMW3sjZYGzmUC4GWSLFRGkYUr5o6nAxxPUuqmV5Cz3dvRw2l" target="_blank" rel="noopener">Donation of Outboard Motors</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02KdyX3mxPrxffiSzfJBRP1YDCLUn4UwGCBuybAVQ9aar4si6NeCoUrUXXxXx6ov6kl" target="_blank" rel="noopener">Donation for Cyclone Relief</a></li>
+                    <li><strong>Solomon Islands:</strong> <a href="https://www.facebook.com/ChineseEmbSI/posts/pfbid02inphT1pJw4GPBoYaNjj7CBD3srDDunfDWSFZgVKii3Ti6qzEsPGFGA7kqnsEbUZMl" target="_blank" rel="noopener">Anti-Narcotics Training by CPLT</a></li>
+                </ul>
+
+                <h3><em>GX Foundation Donates to Tonga</em></h3>
+
+                <!-- Photo floated right alongside GX theme text -->
+                <figure class="figure--float">
+                    <img src="images/week-17-leung-fakafanua.jpg" alt="Leung Chun-ying with Prime Minister Lord Fakafānua">
+                    <figcaption>Leung Chun-ying with Prime Minister Lord Fakaf&#257;nua. (Source: PRC Embassy in Tonga Website)</figcaption>
+                </figure>
+
+                <p>GX Foundation Chairman Leung Chun-ying and Director-General Professor Emily Chan Ying-yang led a delegation to Tonga last week, meeting with Crown Prince Tupouto&rsquo;a &lsquo;Ulukalala and Prime Minister Lord Fakaf&#257;nua. The GX Foundation is a Hong Kong-based nonprofit that frequently operates under the Belt and Road Initiative. The Foundation opened its Tonga engagement last May, when it met with Tonga&rsquo;s Minister of Health on the sidelines of the World Health Assembly in Geneva and committed to this visit. During the trip, the delegation signed a memorandum of cooperation with the Tonga Ministry of Health on dengue fever and vector-borne disease prevention, making Tonga the Foundation&rsquo;s twelfth project country. Chinese Ambassador Liu Weimin witnessed the signing alongside Tonga&rsquo;s Health Minister. Under the agreement, the Foundation will donate 2,000 mosquito-killing lamps, 10,000 rapid dengue test kits, 3,000 mosquito nets, 100,000 fly-paper strips, and health education materials, along with technical training.</p>
+
+                <p>The delegation also toured Vaiola Hospital, the Tonga National University School of Nursing, and the Vaini Community Health Centre, and met with the Chinese Medical Team stationed in Tonga. At Queen S&#257;lote College students participated in a public health session with the delegation. On 29 May, the Tonga Ministry of Health held a ceremony accepting a separate donation of medical instruments from Qingdao Municipal Hospital, home base of the 6th Chinese Medical Team, which has served at Vaiola Hospital for 10 months.</p>
+
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    <li><strong>Tonga:</strong> <a href="https://to.china-embassy.gov.cn/sgxw/202606/t20260605_11938009.htm" target="_blank" rel="noopener">GX Delegation Visit to Tonga</a></li>
+                    <li><strong>Tonga:</strong> <a href="https://www.facebook.com/chinaembassytonga/posts/pfbid02PomTSxDcx5ePsiYvtonydGz4w1xRMVcNSSCkddNxZMk2W6Asdth6N7QeidKH1R3pl" target="_blank" rel="noopener">Qingdao Hospital Donation</a></li>
+                </ul>
+
+                <!-- Endnote -->
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer a weekly structured intelligence report that bridges critical information gaps on regional engagement.</p>
+                </div>
+
+                <!-- Previous / Next navigation -->
+                <nav class="monitor-nav">
+                    <a href="week-16.html">&larr; Previous Week</a>
+                    <a href="index.html">All Monitors</a>
+                    <!-- Update href when Week 18 exists -->
+                    <span class="monitor-nav-placeholder">Next Week &rarr;</span>
+                </nav>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/tafi-logo-real.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../about.html">About</a>
+                    <a href="../our-work/index.html">Our Work</a>
+                    <a href="../advisory.html">Advisory</a>
+                    <a href="../people.html">People</a>
+                    <a href="../support.html">Support</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                trigger.classList.toggle('active');
+                trigger.nextElementSibling.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
