@@ -173,7 +173,8 @@
     font-weight: 700;
 }
 .ow-bar-tag.is-research,
-.ow-bar-tag.is-report {
+.ow-bar-tag.is-report,
+.ow-bar-tag.is-southern-signals {
     color: var(--gold-dark);
     background: rgba(218, 165, 32, 0.1);
     border-color: rgba(218, 165, 32, 0.3);
