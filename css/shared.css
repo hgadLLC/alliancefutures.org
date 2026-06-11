@@ -151,6 +151,91 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* Donate CTA pill in the primary nav (and mobile nav). Scoped to nav so
+   the same class can sit harmlessly in the footer-links row without
+   inheriting the button styling. */
+nav a.nav-donate,
+.mobile-nav a.nav-donate {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+nav a.nav-donate::after,
+.mobile-nav a.nav-donate::after {
+    display: none;
+}
+nav a.nav-donate:hover,
+.mobile-nav a.nav-donate:hover {
+    background: var(--gold-light);
+    color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.35);
+}
+
+/* Reusable "Support our work" block dropped at the end of long-form pages
+   (Red Team reports, Embassies Monitor special reports, Southern Signals).
+   Usage:
+       <aside class="support-cta">
+           <h3>Independent research costs money.</h3>
+           <p>If this work is useful, support it. We're a 501(c)(3) public charity.</p>
+           <a href="<relative-to-support.html>" class="support-cta-btn">Donate</a>
+       </aside>
+*/
+.support-cta {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+    padding: 1.75rem 1.75rem 1.85rem;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.08) 0%, rgba(74, 144, 194, 0.06) 100%);
+    border: 1px solid rgba(218, 165, 32, 0.25);
+    border-left: 4px solid var(--gold);
+}
+.support-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    color: var(--navy);
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+}
+.support-cta p {
+    font-size: 0.95rem !important;
+    color: var(--navy) !important;
+    line-height: 1.65 !important;
+    margin: 0 0 1.1rem !important;
+    font-weight: 400 !important;
+}
+.support-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.support-cta-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.35);
+}
+.support-cta-meta {
+    font-size: 0.78rem !important;
+    color: var(--mid-gray) !important;
+    margin: 0.85rem 0 0 !important;
+    line-height: 1.55 !important;
+}
+
 /* ===== Dropdown Nav ===== */
 
 .nav-dropdown {
