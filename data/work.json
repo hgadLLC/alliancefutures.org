@@ -4,8 +4,13 @@
     "outlet": "Ukraine Red Team Report",
     "type": "redteam",
     "category": "futures",
+    "categories": [
+      "futures"
+    ],
     "category_label": "Futures",
     "product_type": "Red Team Report",
+    "series": "",
+    "tag_class": "",
     "region": "Europe",
     "countries": [
       "Ukraine",
@@ -33,16 +38,182 @@
     "date_pretty": "May 28, 2026",
     "url": "publications/ukraine-red-team.html",
     "image": "publications/images/ukraine-red-team-thumb.jpg",
-    "featured": false,
+    "featured": true,
     "excerpt": "Three scenarios for how the Russia&ndash;Ukraine war ends &mdash; and what each teaches China about Taiwan."
+  },
+  {
+    "title": "Last-Mile Threat: AccLinks Communications",
+    "outlet": "PRC Pacific Embassies Monitor &middot; Special Report",
+    "type": "monitor-special",
+    "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor",
+      "research"
+    ],
+    "category_label": "Embassies Monitor",
+    "product_type": "Special Report",
+    "series": "",
+    "tag_class": "is-research",
+    "region": "Pacific",
+    "countries": [
+      "Kiribati",
+      "Federated States of Micronesia",
+      "Nauru",
+      "Marshall Islands",
+      "Tuvalu",
+      "Solomon Islands"
+    ],
+    "authors": [
+      "jonah-bock"
+    ],
+    "author_names": [
+      "Jonah Bock"
+    ],
+    "contributor_types": [
+      "staff"
+    ],
+    "date": "2026-05-25",
+    "date_pretty": "May 25, 2026",
+    "url": "embassy-monitors/week-16.html",
+    "image": "embassy-monitors/images/thumbs/week-16.jpg",
+    "featured": true,
+    "excerpt": "How AccLinks embeds high-risk Chinese hardware in Pacific Island telecommunications, gating Western-funded subsea cables."
+  },
+  {
+    "title": "The Last Human Advantage: Recursive Self-Improvement and the New Sovereignty Crisis",
+    "outlet": "Southern Signals",
+    "type": "commentary",
+    "category": "commentary",
+    "categories": [
+      "commentary"
+    ],
+    "category_label": "Commentary",
+    "product_type": "Southern Signals",
+    "series": "Southern Signals",
+    "tag_class": "is-southern-signals",
+    "region": "Global",
+    "countries": [],
+    "authors": [
+      "andrew-horton"
+    ],
+    "author_names": [
+      "Andrew Horton"
+    ],
+    "contributor_types": [
+      "fellow"
+    ],
+    "date": "2026-06-08",
+    "date_pretty": "Jun 8, 2026",
+    "url": "our-work/commentary/the-last-human-advantage.html",
+    "image": "our-work/commentary/images/the-last-human-advantage-thumb.jpg",
+    "featured": false,
+    "excerpt": "When intelligence itself begins to compete with humans for the role of inventor, sovereignty becomes a question about who controls the engines of intelligence."
+  },
+  {
+    "title": "Wale Goes to Canberra; Beijing Stays Busy",
+    "outlet": "PRC Pacific Embassies Monitor &middot; Wk 17",
+    "type": "monitor",
+    "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
+    "category_label": "Embassies Monitor",
+    "product_type": "Embassies Monitor",
+    "series": "",
+    "tag_class": "",
+    "region": "Pacific",
+    "countries": [
+      "Solomon Islands",
+      "Tonga"
+    ],
+    "authors": [
+      "jonah-bock"
+    ],
+    "author_names": [
+      "Jonah Bock"
+    ],
+    "contributor_types": [
+      "staff"
+    ],
+    "date": "2026-06-01",
+    "date_pretty": "Jun 1, 2026",
+    "url": "embassy-monitors/week-17.html",
+    "image": "embassy-monitors/images/thumbs/week-17.jpg",
+    "featured": false,
+    "excerpt": "China&rsquo;s continuing engagement in the Solomons, and the GX Foundation&rsquo;s delegation to Tonga."
+  },
+  {
+    "title": "The Great Race: AI-Driven Cyber Offence vs AI-Driven Cyber Defence",
+    "outlet": "Southern Signals",
+    "type": "commentary",
+    "category": "commentary",
+    "categories": [
+      "commentary"
+    ],
+    "category_label": "Commentary",
+    "product_type": "Southern Signals",
+    "series": "Southern Signals",
+    "tag_class": "is-southern-signals",
+    "region": "Global",
+    "countries": [],
+    "authors": [
+      "andrew-horton"
+    ],
+    "author_names": [
+      "Andrew Horton"
+    ],
+    "contributor_types": [
+      "fellow"
+    ],
+    "date": "2026-06-01",
+    "date_pretty": "Jun 1, 2026",
+    "url": "our-work/commentary/the-great-race.html",
+    "image": "our-work/commentary/images/the-great-race-thumb.jpg",
+    "featured": false,
+    "excerpt": "An AI-driven cyber arms race that compresses the discovery-to-exploitation window to seconds &mdash; and forces a hard look at whether human institutions can keep up."
+  },
+  {
+    "title": "Who Owns the Mind of the Machine Owns the Century",
+    "outlet": "Southern Signals",
+    "type": "commentary",
+    "category": "commentary",
+    "categories": [
+      "commentary"
+    ],
+    "category_label": "Commentary",
+    "product_type": "Southern Signals",
+    "series": "Southern Signals",
+    "tag_class": "is-southern-signals",
+    "region": "Global",
+    "countries": [],
+    "authors": [
+      "andrew-horton"
+    ],
+    "author_names": [
+      "Andrew Horton"
+    ],
+    "contributor_types": [
+      "fellow"
+    ],
+    "date": "2026-05-25",
+    "date_pretty": "May 25, 2026",
+    "url": "our-work/commentary/who-owns-the-mind-of-the-machine.html",
+    "image": "our-work/commentary/images/who-owns-the-mind-of-the-machine-thumb.jpg",
+    "featured": false,
+    "excerpt": "Frontier AI is becoming strategic infrastructure. The builders are warning; governance has not yet answered."
   },
   {
     "title": "Beijing Counts Victories in Diplomatic Competition with Taiwan",
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 15",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Papua New Guinea",
@@ -70,8 +241,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 14",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Solomon Islands",
@@ -98,8 +274,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 13",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Nauru",
@@ -126,8 +307,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 12",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Papua New Guinea",
@@ -155,8 +341,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 11",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Kiribati",
@@ -183,8 +374,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 10",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Fiji",
@@ -212,8 +408,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 9",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Papua New Guinea",
@@ -240,8 +441,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 8",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Samoa"
@@ -267,8 +473,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 7",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Vanuatu"
@@ -294,8 +505,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 6",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Fiji",
@@ -323,8 +539,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 5",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [],
     "authors": [
@@ -348,8 +569,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 4",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [],
     "authors": [
@@ -373,8 +599,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 3",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [],
     "authors": [
@@ -398,8 +629,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 2",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [],
     "authors": [
@@ -423,8 +659,13 @@
     "outlet": "PRC Pacific Embassies Monitor &middot; Wk 1",
     "type": "monitor",
     "category": "embassies-monitor",
+    "categories": [
+      "embassies-monitor"
+    ],
     "category_label": "Embassies Monitor",
     "product_type": "Weekly Monitor",
+    "series": "",
+    "tag_class": "",
     "region": "Pacific",
     "countries": [
       "Nauru"

@@ -122,9 +122,16 @@ def normalize(items):
         cat = it.get("category")
         if not cat:
             t = it.get("type", "")
-            cat = "embassies-monitor" if t == "monitor" else (
+            cat = "embassies-monitor" if t in ("monitor", "monitor-special") else (
                 "research" if t == "redteam" else "commentary"
             )
+        # Pieces may belong to additional categories for counting / cross-listing.
+        # `also_in` is a list of category slugs in addition to the primary `category`.
+        all_cats = [cat] + list(it.get("also_in") or [])
+        # De-dupe while preserving order.
+        seen = set()
+        categories = [c for c in all_cats if not (c in seen or seen.add(c))]
+
         author_names = [AUTHOR_NAME.get(s, s.replace("-", " ").title()) for s in slugs]
         image = it.get("image") or lookup_em_thumb(it.get("url", "")) or CATEGORY_IMAGE.get(cat, "images/hero.jpg")
         out.append({
@@ -132,8 +139,11 @@ def normalize(items):
             "outlet": it.get("outlet", ""),
             "type": it.get("type", ""),
             "category": cat,
+            "categories": categories,
             "category_label": CATEGORY_LABEL.get(cat, cat.title()),
             "product_type": it.get("product_type", ""),
+            "series": it.get("series", ""),
+            "tag_class": it.get("tag_class", ""),
             "region": it.get("region", ""),
             "countries": it.get("countries") or [],
             "authors": slugs,
@@ -155,8 +165,13 @@ def normalize(items):
 
 def render_bar(it, url_prefix="../"):
     """Render a single horizontal-bar card. url_prefix='' for root pages."""
-    is_research = it["type"] in ("redteam", "report", "brief")
-    tag_class = " is-research" if is_research else ""
+    # Explicit tag_class in YAML wins; otherwise infer from type.
+    if it.get("tag_class"):
+        tag_class = " " + it["tag_class"]
+    elif it["type"] in ("redteam", "report", "brief", "monitor-special"):
+        tag_class = " is-research"
+    else:
+        tag_class = ""
     outlet = it["outlet"] or it.get("product_type") or it["category_label"]
     image = it["image"]
     if not image.startswith("http"):
@@ -207,7 +222,8 @@ def render_rail(items, active_category, url_prefix="../"):
     """
     counts = {}
     for it in items:
-        counts[it["category"]] = counts.get(it["category"], 0) + 1
+        for c in it.get("categories") or [it["category"]]:
+            counts[c] = counts.get(c, 0) + 1
     rows = []
     for slug in ("research", "futures", "commentary", "embassies-monitor"):
         if slug == "embassies-monitor":
@@ -376,7 +392,8 @@ def build_hub_page(items):
     """our-work/index.html - hub showing 4 category cards."""
     counts = {}
     for it in items:
-        counts[it["category"]] = counts.get(it["category"], 0) + 1
+        for c in it.get("categories") or [it["category"]]:
+            counts[c] = counts.get(c, 0) + 1
     hero = make_hero(
         eyebrow="Our Work",
         title_html="Research, futures, &amp; <em>commentary</em>",
@@ -418,7 +435,7 @@ def build_hub_page(items):
 
 def build_category_page(slug, items):
     """our-work/<slug>.html - category landing with horizontal bars."""
-    cat_items = [it for it in items if it["category"] == slug]
+    cat_items = [it for it in items if slug in (it.get("categories") or [it["category"]])]
     hero = make_hero(
         eyebrow="Our Work",
         title_html=f"<em>{CATEGORY_LABEL[slug]}</em>",
@@ -563,6 +580,101 @@ def patch_homepage(items):
     print(f"index.html: regenerated \"What We're Publishing\" feed ({min(HOMEPAGE_FEED_LIMIT, len(items))} items, horizontal bars)")
 
 
+# ----- Bio Recent Work blocks (team/<slug>.html) -----
+
+TEAM_DIR = ROOT / "team"
+
+# How many Recent Work items show above the fold before the toggle hides
+# the rest. Match the existing UX (Eric/Jonah show 5).
+BIO_RW_INITIAL_VISIBLE = 5
+
+# Region markers in bio HTML:
+#     <!-- BEGIN:bio-recent-work author="<slug>" -->
+#     ...auto-managed block...
+#     <!-- END:bio-recent-work -->
+#
+# External / in-the-media items should live OUTSIDE the markers and stay
+# manual. The script rewrites only the marked block.
+_BIO_REGION_RE = re.compile(
+    r'(<!--\s*BEGIN:bio-recent-work\s+author="([^"]+)"\s*-->)'
+    r'([\s\S]*?)'
+    r'(<!--\s*END:bio-recent-work\s*-->)'
+)
+
+
+def render_rw_item(it, url_prefix, hidden=False):
+    """Render a single <a class="rw-item"> for a bio Recent Work list."""
+    rw_type = it.get("product_type") or it.get("category_label") or ""
+    outlet = it.get("outlet") or ""
+    hidden_cls = " rw-hidden" if hidden else ""
+    href = url_prefix + it["url"]
+    lines = [
+        f'                    <a href="{href}" class="rw-item{hidden_cls}">',
+        '                        <div class="rw-meta">',
+        f'                            <span class="rw-type">{html.escape(rw_type)}</span>',
+        f'                            <span class="rw-date">{html.escape(it["date_pretty"])}</span>',
+        '                        </div>',
+        '                        <div class="rw-body">',
+        f'                            <h4 class="rw-title">{it["title"]}</h4>',
+    ]
+    if outlet:
+        lines.append(f'                            <p class="rw-outlet">{outlet}</p>')
+    lines.append(f'                            <p class="rw-excerpt">{it["excerpt"]}</p>')
+    lines.append('                        </div>')
+    lines.append('                    </a>')
+    return "\n".join(lines)
+
+
+def render_bio_recent_work(author_slug, items, url_prefix="../"):
+    """Inner HTML for one BEGIN/END bio-recent-work block.
+
+    Returns either a populated <div class="recent-work-list"> + toggle
+    button, or an empty-state paragraph for authors with no TAFI pieces
+    in the YAML.
+    """
+    mine = [it for it in items if author_slug in it.get("authors", [])]
+    # `items` is already sorted newest-first by normalize().
+    if not mine:
+        return (
+            '                <p class="recent-work-empty" '
+            'style="font-size: 0.95rem; color: var(--mid-gray); '
+            'font-style: italic;">No published TAFI work yet.</p>'
+        )
+
+    out = ['                <div class="recent-work-list">']
+    for i, it in enumerate(mine):
+        out.append(render_rw_item(it, url_prefix, hidden=(i >= BIO_RW_INITIAL_VISIBLE)))
+    out.append('                </div>')
+
+    hidden_count = max(0, len(mine) - BIO_RW_INITIAL_VISIBLE)
+    if hidden_count:
+        out.append('                <button type="button" class="rw-toggle" aria-expanded="false">')
+        out.append(f'                    <span class="rw-toggle-more">Show {hidden_count} more</span>')
+        out.append('                    <span class="rw-toggle-less">Show fewer</span>')
+        out.append('                </button>')
+    return "\n".join(out)
+
+
+def build_bio_recent_work(items):
+    """Walk team/*.html, replace every BEGIN/END bio-recent-work block."""
+    if not TEAM_DIR.is_dir():
+        return
+    n_files = 0
+    for path in sorted(TEAM_DIR.glob("*.html")):
+        text = path.read_text()
+        if "<!-- BEGIN:bio-recent-work" not in text:
+            continue
+        def _sub(m):
+            begin, author, _body, end = m.groups()
+            inner = render_bio_recent_work(author, items, url_prefix="../")
+            return f"{begin}\n{inner}\n                {end}"
+        new = _BIO_REGION_RE.sub(_sub, text)
+        if new != text:
+            path.write_text(new)
+            n_files += 1
+    print(f"team/*.html: regenerated bio Recent Work in {n_files} file(s)")
+
+
 def main():
     raw = yaml.safe_load(PUBS_YAML.read_text()) or []
     items = normalize(raw)
@@ -575,6 +687,7 @@ def main():
         build_category_page(slug, items)
     build_embassy_monitor_hub(items)
     patch_homepage(items)
+    build_bio_recent_work(items)
 
 
 if __name__ == "__main__":
