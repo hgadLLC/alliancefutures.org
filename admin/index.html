@@ -4,29 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <title>TAFI Admin</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
+    <style>
+        .admin-hint {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff8db;
+            border-bottom: 2px solid #daa520;
+            color: #0a2540;
+            font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 0.6rem 1rem;
+            z-index: 9999;
+            text-align: center;
+        }
+        .admin-hint b { color: #8a6b00; }
+        .admin-hint button {
+            margin-left: 0.75rem;
+            background: transparent;
+            border: 1px solid #daa520;
+            color: #8a6b00;
+            border-radius: 3px;
+            padding: 2px 8px;
+            cursor: pointer;
+            font: inherit;
+        }
+        .admin-hint a {
+            color: #1a0dab;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
+    <div class="admin-hint" id="admin-hint">
+        On the login screen below, click <b>"Sign In Using Access Token"</b> &mdash;
+        <em>not</em> "Sign In with GitHub" (the OAuth proxy isn't deployed yet).
+        Sveltia will provide a link to GitHub's token page with the right scopes
+        pre-selected; generate the token there, paste it back into Sveltia, you're in.
+        <button onclick="document.getElementById('admin-hint').remove()">Dismiss</button>
+    </div>
+
     <!--
-        Sveltia CMS — git-backed admin for alliancefutures.org. Editors sign
-        in with GitHub (Device Flow), the CMS commits directly to the repo
-        via the GitHub API, and GitHub Pages rebuilds the site.
-
-        No Netlify Identity, no Git Gateway, no third-party proxy of our own
-        to maintain. Sveltia ships its own hosted OAuth bridge at
-        auth.sveltia.app, which we use by default.
-
-        For an editor to gain access:
-          1. They need a GitHub account.
-          2. The repo owner adds them as a collaborator on
-             github.com/hgadLLC/alliancefutures.org (Settings → Collaborators).
-          3. They open /admin/ and click "Sign in with GitHub".
+        Sveltia CMS — git-backed admin for alliancefutures.org. With no
+        OAuth proxy deployed, the working auth method is GitHub Personal
+        Access Token paste-in. See admin/SETUP.md.
     -->
-
-    <!-- Sveltia CMS. Pinned by exact version + SRI so a compromised CDN
-         can't silently inject malicious admin JS. Bumping requires
-         recomputing the hash. See admin/SETUP.md. -->
     <script
         type="module"
         src="https://unpkg.com/@sveltia/cms@0.167.1/dist/sveltia-cms.js"
