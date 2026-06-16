@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>TAFI Admin</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
+</head>
+<body>
+    <!--
+        Decap CMS — git-backed admin for alliancefutures.org. Authoring lands as
+        commits to the GitHub repo; GitHub Pages rebuilds the site.
+
+        Auth is Netlify Identity (email/password invites) + Git Gateway. The
+        Netlify site that powers Identity is a "phantom" project linked to this
+        GitHub repo — it doesn't deploy the site; it only proxies CMS commits.
+
+        ONE-TIME SETUP for an editor to be able to log in:
+            See /admin/SETUP.md (instructions for the project owner).
+    -->
+
+    <!-- Netlify Identity widget: opens the login modal and posts auth events.
+         Pinned via Subresource Integrity (SRI) so a CDN compromise can't
+         silently inject malicious code into the admin. Bump the version +
+         hash together; see admin/SETUP.md ("Updating CMS scripts"). -->
+    <script
+        src="https://unpkg.com/netlify-identity-widget@1.9.2/build/netlify-identity-widget.js"
+        integrity="sha384-dy2tW8xkhLIj8lZR42MCwZhhDb2cCewZiw0uA65CMpdHiJzL+iubx7HzHcCXU2rW"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- Decap CMS itself, similarly pinned. -->
+    <script
+        src="https://unpkg.com/decap-cms@3.5.0/dist/decap-cms.js"
+        integrity="sha384-0qv+oSpofFn9VZ7RJ+vV8Tc4zcYtho3xHfLsM2pPimFVFoCMuU37MnWWxv83yHoR"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <script>
+        // After login or signup, route the user back into the CMS.
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+# Decap CMS configuration for alliancefutures.org
+#
+# This file defines the editor UI: which collections exist, what fields each
+# entry has, and where uploaded files land. It is read by /admin/index.html.
+#
+# Backend: Netlify Git Gateway proxies CMS commits to the GitHub repo
+# (hgadLLC/alliancefutures.org, branch main). Auth is Netlify Identity.
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "CMS: add {{collection}} '{{slug}}'"
+    update: "CMS: edit {{collection}} '{{slug}}'"
+    delete: "CMS: remove {{collection}} '{{slug}}'"
+    uploadMedia: "CMS: upload {{path}}"
+    deleteMedia: "CMS: delete {{path}}"
+
+# Where CMS-uploaded files (PDFs, images) land in the repo.
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# Live preview pane refresh interval (in ms).
+publish_mode: simple
+
+# ------------------------------------------------------------------ #
+# Collections                                                        #
+# ------------------------------------------------------------------ #
+#
+# Phase 1 ships a minimal config covering the two collections we'll
+# migrate first — Embassies Monitor weeklies and Team bios — so the
+# auth + Git Gateway round-trip can be smoke-tested with a real edit
+# before we expand. Phase 3 adds: special reports, commentary,
+# red-team reports, homepage hero, support page, channel cards,
+# site-wide settings.
+
+collections:
+  # ---------------------------------------------------------------- #
+  # PRC Pacific Embassies Monitor — weekly issues                    #
+  # ---------------------------------------------------------------- #
+  - name: monitors
+    label: "Embassies Monitor"
+    label_singular: "Monitor issue"
+    folder: "content/monitors"
+    create: true
+    slug: "week-{{week}}"
+    summary: "Wk {{week}} — {{title}}"
+    sortable_fields: ["week", "date", "title"]
+    fields:
+      - { name: layout,    label: Layout,          widget: hidden, default: "monitor" }
+      - { name: week,      label: "Week number",   widget: number, value_type: int, min: 1 }
+      - { name: title,     label: "Headline",      widget: string,
+          hint: "e.g. \"Wale Goes to Canberra; Beijing Stays Busy\"" }
+      - { name: date,      label: "Week start",    widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: date_end,  label: "Week end",      widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: authors,
+          label: "Authors",
+          widget: relation,
+          collection: people,
+          search_fields: ["name"],
+          value_field: "{{slug}}",
+          display_fields: ["name"],
+          multiple: true,
+          default: ["jonah-bock"] }
+      - { name: hero_image, label: "Hero image",   widget: image, required: false,
+          hint: "Used as the in-article photo and the card thumbnail." }
+      - { name: hero_caption, label: "Hero caption", widget: string, required: false }
+      - { name: hero_caption_source_label, label: "Caption source — label", widget: string, required: false }
+      - { name: hero_caption_source_url,   label: "Caption source — URL",   widget: string, required: false }
+      - { name: pdf,       label: "PDF download",  widget: file, required: false }
+      - { name: featured,  label: "Pin to homepage as Featured", widget: boolean, default: false, required: false }
+      - { name: summary,   label: "Summary of PRC Activity", widget: markdown }
+      - { name: ambassadors_corner, label: "Ambassador's Corner",
+          widget: markdown, required: false,
+          hint: "The floated gold-bordered callout. Leave blank to omit." }
+      - name: themes
+        label: "Big Themes"
+        widget: list
+        summary: "{{fields.title}}"
+        fields:
+          - { name: title, label: "Theme heading", widget: string }
+          - { name: body,  label: "Theme body",    widget: markdown }
+          - { name: figure, label: "Inline figure (optional)", widget: image, required: false,
+              hint: "If set, floats right alongside the body." }
+          - { name: figure_caption, label: "Figure caption", widget: string, required: false }
+          - { name: figure_source_url,   label: "Figure source URL",   widget: string, required: false }
+          - { name: figure_source_label, label: "Figure source label", widget: string, required: false }
+          - name: supporting_events
+            label: "Supporting Events"
+            widget: list
+            required: false
+            summary: "{{fields.country}}: {{fields.label}}"
+            fields:
+              - { name: country, label: "Country / Region", widget: string }
+              - { name: label,   label: "Link label",       widget: string }
+              - { name: url,     label: "URL",              widget: string }
+
+  # ---------------------------------------------------------------- #
+  # Team members                                                     #
+  # ---------------------------------------------------------------- #
+  - name: people
+    label: "People"
+    label_singular: "Person"
+    folder: "content/people"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} — {{title}}"
+    sortable_fields: ["sort_order", "name"]
+    fields:
+      - { name: layout,    label: Layout,          widget: hidden, default: "bio" }
+      - { name: name,      label: "Full name",     widget: string }
+      - { name: title,     label: "Role title",    widget: string,
+          hint: "e.g. \"Senior Fellow\", \"Deputy Director\", \"Fellow\"" }
+      - { name: group,     label: "Group",         widget: select,
+          options: ["Staff", "Fellows"], default: "Fellows" }
+      - { name: sort_order, label: "Sort order within group", widget: number, value_type: int, default: 100,
+          hint: "Lower numbers appear first. Use 10/20/30 to leave room." }
+      - { name: photo,     label: "Photo (square)", widget: image }
+      - { name: lede,      label: "Short bio (card lede)", widget: text,
+          hint: "1-2 sentences shown on the People landing." }
+      - { name: lede_long, label: "Page lede (italic)", widget: text, required: false,
+          hint: "The one-sentence summary under the role chip on the bio page." }
+      - { name: prose,     label: "Full biography", widget: markdown }
+      - { name: linkedin,  label: "LinkedIn URL",  widget: string, required: false }
+      - { name: email,     label: "Email",         widget: string, required: false }
+      - name: areas_of_focus
+        label: "Areas of focus"
+        widget: list
+        required: false
+        field: { name: item, label: "Focus area", widget: string }
+      - name: affiliations
+        label: "Affiliations"
+        widget: list
+        required: false
+        field: { name: item, label: "Affiliation", widget: string }
+      - name: education
+        label: "Education"
+        widget: list
+        required: false
+        field: { name: item, label: "Credential", widget: string }
+      - name: honours
+        label: "Honours"
+        widget: list
+        required: false
+        field: { name: item, label: "Honour", widget: string }

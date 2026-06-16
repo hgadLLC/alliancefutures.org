@@ -1,0 +1,16 @@
+{
+  "name": "alliancefutures-org",
+  "private": true,
+  "description": "Source for alliancefutures.org. Static site built with Eleventy; content authored via Decap CMS at /admin/.",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --serve",
+    "dev": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -9,3 +9,9 @@ firebase-debug.log
 
 # Stray scratch files at repo root (the canonical PDFs live in embassy-monitors/pdfs/)
 /Week 3 (Feb 23 - Mar 1.pdf
+.gstack/
+
+# Eleventy build (Phase 1 onward)
+/_site/
+/node_modules/
+/package-lock.json
