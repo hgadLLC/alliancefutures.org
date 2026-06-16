@@ -10,6 +10,10 @@ backend:
   name: github
   repo: hgadLLC/alliancefutures.org
   branch: main
+  # Sveltia CMS's own hosted OAuth bridge. The default (api.netlify.com)
+  # is a deprecated Netlify-hosted proxy that now 404s. See
+  # https://github.com/sveltia/sveltia-cms#github.
+  base_url: https://auth.sveltia.app
   commit_messages:
     create: "CMS: add {{collection}} '{{slug}}'"
     update: "CMS: edit {{collection}} '{{slug}}'"
