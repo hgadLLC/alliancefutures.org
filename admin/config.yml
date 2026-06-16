@@ -10,10 +10,18 @@ backend:
   name: github
   repo: hgadLLC/alliancefutures.org
   branch: main
-  # Sveltia CMS's own hosted OAuth bridge. The default (api.netlify.com)
-  # is a deprecated Netlify-hosted proxy that now 404s. See
-  # https://github.com/sveltia/sveltia-cms#github.
-  base_url: https://auth.sveltia.app
+  # No `base_url` set — for now editors authenticate by clicking
+  # "Sign In with Token" on the login screen and pasting a GitHub
+  # personal access token. Sveltia generates the PAT URL with the
+  # right scopes pre-selected; the token sits in the browser's
+  # local storage. See https://sveltiacms.app/en/docs/backends/github
+  # under "Access Token (Quick Start)".
+  #
+  # When we add non-technical editors later, deploy the official
+  # Sveltia OAuth client (https://github.com/sveltia/sveltia-cms-auth)
+  # as a Cloudflare Worker, register a GitHub OAuth App pointing at
+  # the Worker, and add base_url: https://your-worker.workers.dev
+  # back here. Then "Sign In with GitHub" replaces the token flow.
   commit_messages:
     create: "CMS: add {{collection}} '{{slug}}'"
     update: "CMS: edit {{collection}} '{{slug}}'"
