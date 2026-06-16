@@ -1,0 +1,110 @@
+{
+  "relationship_types": [
+    { "id": "member", "label": "member of", "desc": "An individual sits on this body." },
+    { "id": "nominate", "label": "nominates", "desc": "Party body puts forward the candidate." },
+    { "id": "approve", "label": "approves / elects", "desc": "Congress formally votes the appointment." },
+    { "id": "same", "label": "same person", "desc": "One individual holds both posts at once." }
+  ],
+
+  "national": {
+    "title": "National level",
+    "state_header": "The State",
+    "party_header": "The Party",
+    "nodes": [
+      { "id": "n-president",   "side": "state", "lane": 1, "slot": 0, "label": "President of the PRC", "holder": "xi-jinping" },
+      { "id": "n-cmc-prc",     "side": "state", "lane": 2, "slot": 0, "label": "Chairman, CMC (state)", "holder": "xi-jinping" },
+      { "id": "n-premier",     "side": "state", "lane": 1, "slot": 1, "label": "Premier", "holder": "li-qiang", "role": true },
+      { "id": "n-statecouncil","side": "state", "lane": 1, "slot": 2, "label": "State Council" },
+      { "id": "n-npcsc",       "side": "state", "lane": 1, "slot": 3, "label": "NPC Standing Committee", "holder": "zhao-leji", "soft": true },
+      { "id": "n-npc",         "side": "state", "lane": 1, "slot": 4, "label": "National People's Congress", "big": true },
+
+      { "id": "n-gensec",      "side": "party", "lane": 2, "slot": 0, "label": "CCP General Secretary", "holder": "xi-jinping" },
+      { "id": "n-cmc-ccp",     "side": "party", "lane": 1, "slot": 0, "label": "Chairman, CMC (party)", "holder": "xi-jinping" },
+      { "id": "n-psc",         "side": "party", "lane": 2, "slot": 1, "label": "Politburo Standing Committee", "soft": true },
+      { "id": "n-politburo",   "side": "party", "lane": 2, "slot": 2, "label": "Politburo" },
+      { "id": "n-cc",          "side": "party", "lane": 2, "slot": 3, "label": "Central Committee" },
+      { "id": "n-npcongress",  "side": "party", "lane": 2, "slot": 4, "label": "National Party Congress", "big": true }
+    ],
+    "edges": [
+      { "from": "n-president", "to": "n-cmc-prc", "type": "same" },
+      { "from": "n-cmc-prc", "to": "n-cmc-ccp", "type": "same" },
+      { "from": "n-cmc-ccp", "to": "n-gensec", "type": "same" },
+      { "from": "n-gensec", "to": "n-president", "type": "same" },
+
+      { "from": "n-premier", "to": "n-psc", "type": "member" },
+
+      { "from": "n-npc", "to": "n-npcsc", "type": "approve" },
+      { "from": "n-npc", "to": "n-president", "type": "approve" },
+      { "from": "n-npc", "to": "n-premier", "type": "approve" },
+      { "from": "n-npc", "to": "n-statecouncil", "type": "approve" },
+
+      { "from": "n-npcongress", "to": "n-cc", "type": "approve" },
+      { "from": "n-cc", "to": "n-politburo", "type": "approve" },
+      { "from": "n-politburo", "to": "n-psc", "type": "approve" },
+      { "from": "n-psc", "to": "n-gensec", "type": "approve" },
+
+      { "from": "n-psc", "to": "n-president", "type": "nominate" },
+      { "from": "n-psc", "to": "n-premier", "type": "nominate" }
+    ]
+  },
+
+  "selection": {
+    "title": "How the top tier is chosen",
+    "intro": "Real power does not flow up from voters. The incumbent leadership shapes its own succession, which the Party then ratifies downward.",
+    "sources": [
+      { "id": "s-elders",  "label": "Influential Party Leaders" },
+      { "id": "s-gensec",  "label": "Outgoing General Secretary" },
+      { "id": "s-psc",     "label": "Outgoing Politburo Standing Committee" }
+    ],
+    "targets": [
+      { "id": "t-gensec", "label": "Incoming General Secretary", "holder": "xi-jinping" },
+      { "id": "t-psc",    "label": "New Politburo Standing Committee" }
+    ]
+  },
+
+  "levels": [
+    { "key": "provincial",  "name": "Provincial",  "gov_leader": "Governor",   "congress": "Provincial People's Congress" },
+    { "key": "prefectural", "name": "Prefectural", "gov_leader": "Mayor",      "congress": "Prefectural People's Congress" },
+    { "key": "county",      "name": "County",      "gov_leader": "Magistrate", "congress": "County People's Congress" },
+    { "key": "township",    "name": "Township",    "gov_leader": "Head",       "congress": "Township People's Congress" }
+  ],
+
+  "base": {
+    "state": { "id": "b-citizens", "label": "Registered Citizens" },
+    "party": { "id": "b-members",  "label": "Grassroots Party Members" }
+  },
+
+  "tour": [
+    {
+      "id": "intro",
+      "title": "Two hierarchies, not one",
+      "body": "China runs on two parallel ladders: the formal <strong>state</strong> on the left, and the <strong>Communist Party</strong> on the right. Everything that follows is about how they connect."
+    },
+    {
+      "id": "ladders",
+      "title": "Two ladders to the top",
+      "body": "Each side climbs from a mass <strong>congress</strong> up through a committee to a small leadership core — a <strong>President</strong> and <strong>Premier</strong> on the state side, the <strong>Standing Committee</strong> and <strong>General Secretary</strong> on the Party side.",
+      "focus": ["n-npc", "n-npcsc", "n-president", "n-premier", "n-statecouncil", "n-npcongress", "n-cc", "n-politburo", "n-psc", "n-gensec"]
+    },
+    {
+      "id": "approve",
+      "title": "The Party chooses who governs",
+      "body": "The hinge of the system: the Party doesn't run the state directly — it decides <em>who</em> does. The Standing Committee <strong>nominates</strong>; the congresses <strong>approve</strong>. The vote ratifies a choice already made.",
+      "focus": ["n-psc", "n-president", "n-premier"],
+      "edge_types": ["nominate", "approve"]
+    },
+    {
+      "id": "same",
+      "title": "Often, the same person",
+      "body": "And the same individuals wear both hats. Xi Jinping is at once <strong>General Secretary</strong>, <strong>President</strong>, and <strong>Chairman of the Central Military Commission</strong> — one body in identical Party and state versions.",
+      "focus": ["n-gensec", "n-president", "n-cmc-ccp", "n-cmc-prc"],
+      "edge_types": ["same"]
+    },
+    {
+      "id": "fractal",
+      "title": "It repeats all the way down",
+      "body": "This isn't only national. The same paired structure reproduces at the provincial, prefectural, county and township levels — and at every rung, the local <strong>Party Secretary</strong> outranks the government leader.",
+      "scope": "full"
+    }
+  ]
+}

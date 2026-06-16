@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+extra_head: '<link rel="stylesheet" href="/css/our-work.css?v=2"><link rel="stylesheet" href="/css/commentary.css">'
+permalink: "/our-work/commentary/{{ slug }}.html"
+---
+    <section class="commentary-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> <span>/</span>
+                <a href="/our-work/">Our Work</a> <span>/</span>
+                <a href="/our-work/commentary.html">Commentary</a> <span>/</span>
+                <span>{{ breadcrumb_title or title }}</span>
+            </nav>
+            <span class="commentary-eyebrow">{{ series or "Commentary" }}</span>
+            <h1 class="commentary-title">{{ title | safe }}</h1>
+            <div class="commentary-byline">By <strong>{{ author }}</strong>{% if author_title %} &middot; {{ author_title }}{% endif %} &middot; {{ date | dateLong }}</div>
+            {%- if pdf %}
+            <div class="commentary-actions">
+                <a href="{{ pdf }}" class="commentary-download" download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF
+                </a>
+            </div>
+            {%- endif %}
+            {%- if hero_image %}
+            <figure class="commentary-hero-image"><img src="{{ hero_image }}" alt=""></figure>
+            {%- endif %}
+        </div>
+    </section>
+
+    <section class="commentary-body">
+        <div class="container">
+            <article class="commentary-prose">
+                {%- if lede %}<p class="lede">{{ lede | safe }}</p>{% endif %}
+
+                {{ content | safe }}
+            </article>
+
+            {%- if author_bio %}
+            <aside class="author-block">
+                {%- if author_image %}<img src="{{ author_image }}" alt="{{ author }}">{% endif %}
+                <div>
+                    <h3>{{ author }}</h3>
+                    <p class="author-title">{{ author_title }}, The Alliance Futures Initiative</p>
+                    <p>{{ author_bio | safe }}{% if author_bio_link %} <a href="{{ author_bio_link }}">Read full bio &rarr;</a>{% endif %}</p>
+                </div>
+            </aside>
+            {%- endif %}
+
+            <aside class="support-cta">
+                <h3>Independent research costs money.</h3>
+                <p>If this piece was useful to you, support our work. TAFI runs on grants and individual donors&mdash;tax-deductible through OTX International, a 501(c)(3) public charity.</p>
+                <a href="/support.html" class="support-cta-btn">Donate</a>
+            </aside>
+
+            <nav class="commentary-nav">
+                {%- if prev_slug %}<a href="/our-work/commentary/{{ prev_slug }}.html">&larr; Previous</a>{% else %}<span></span>{% endif %}
+                <a href="/our-work/commentary.html">All Commentary</a>
+                {%- if next_slug %}<a href="/our-work/commentary/{{ next_slug }}.html">Next &rarr;</a>{% else %}<span></span>{% endif %}
+            </nav>
+        </div>
+    </section>

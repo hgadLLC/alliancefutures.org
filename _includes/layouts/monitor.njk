@@ -1,0 +1,88 @@
+---
+layout: layouts/base.njk
+extra_head: '<link rel="stylesheet" href="/css/monitor.css">'
+permalink: "/embassy-monitors/week-{{ week }}.html"
+---
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a> <span>/</span>
+                    <a href="/embassy-monitors/">Embassies Monitor</a> <span>/</span>
+                    <span>Week {{ week }}</span>
+                </nav>
+                <h1>PRC Pacific Embassies Monitor: <em>Week {{ week }}</em></h1>
+                <p>{{ date | dateLong }} &ndash; {{ date_end | dateShort }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup></span>
+                    <div class="publication-logo">
+                        <img src="/images/tafi-logo-real.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week {{ week }} &mdash; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}</div>
+                    </div>
+                    {%- if pdf %}
+                    <a href="{{ pdf }}" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                    {%- endif %}
+                </div>
+
+                <h2>{{ title | safe }}</h2>
+
+                {%- if ambassadors_corner %}
+                <div class="callout-box callout-box--float callout-box--note">
+                    <span class="callout-box__label">Ambassador&rsquo;s Corner</span>
+                    {{ ambassadors_corner | markdownify(callout=true) | safe }}
+                </div>
+                {%- endif %}
+
+                <h2>Summary of PRC Activity</h2>
+                {{ summary | markdownify | safe }}
+
+                <h2>This Week&rsquo;s Big Theme{% if themes.length > 1 %}s{% endif %}:</h2>
+
+                {%- for theme in themes %}
+                <h3><em>{{ theme.title | safe }}</em></h3>
+                {%- if theme.figure %}
+                <figure class="figure--float">
+                    <img src="{{ theme.figure }}" alt="{{ theme.figure_caption | striptags }}">
+                    {%- if theme.figure_caption %}
+                    <figcaption>{{ theme.figure_caption | safe }}{% if theme.figure_source_url and theme.figure_source_label %} (Source: <a href="{{ theme.figure_source_url }}" target="_blank" rel="noopener">{{ theme.figure_source_label }}</a>){% endif %}</figcaption>
+                    {%- endif %}
+                </figure>
+                {%- endif %}
+                {{ theme.body | markdownify | safe }}
+                {%- if theme.supporting_events and theme.supporting_events.length > 0 %}
+                <p><strong>Supporting Events</strong></p>
+                <ul>
+                    {%- for ev in theme.supporting_events %}
+                    <li><strong>{{ ev.country }}:</strong> <a href="{{ ev.url }}" target="_blank" rel="noopener">{{ ev.label | safe }}</a></li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+                {%- endfor %}
+
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer a weekly structured intelligence report that bridges critical information gaps on regional engagement.</p>
+                </div>
+
+                <nav class="monitor-nav">
+                    {%- if prev_week %}<a href="/embassy-monitors/week-{{ prev_week }}.html">&larr; Previous Week</a>{% else %}<span class="monitor-nav-placeholder">&larr; Previous Week</span>{% endif %}
+                    <a href="/embassy-monitors/">All Monitors</a>
+                    {%- if next_week %}<a href="/embassy-monitors/week-{{ next_week }}.html">Next Week &rarr;</a>{% else %}<span class="monitor-nav-placeholder">Next Week &rarr;</span>{% endif %}
+                </nav>
+            </article>
+        </div>
+    </section>

@@ -1,0 +1,136 @@
+---
+layout: layouts/base.njk
+extra_head: '<link rel="stylesheet" href="/css/bio.css?v=2">'
+permalink: "/team/{{ slug }}.html"
+---
+    <section class="bio-hero">
+        <div class="bio-hero-inner">
+            <div class="bio-portrait">
+                <img src="/images/team/{{ photo }}" alt="{{ name }}">
+            </div>
+            <div class="bio-headline">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a> <span>/</span>
+                    <a href="/people.html">People</a> <span>/</span>
+                    <span>{{ name }}</span>
+                </nav>
+                <h1>{{ name }}</h1>
+                <div class="role">{{ role }}</div>
+                {%- if hero_lede %}<p class="lede">{{ hero_lede | safe }}</p>{% endif %}
+                <div class="bio-actions">
+                    {%- if email %}
+                    <a href="mailto:{{ email }}" class="bio-action">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+                        Email
+                    </a>
+                    {%- endif %}
+                    {%- if linkedin %}
+                    <a href="{{ linkedin }}" target="_blank" rel="noopener" class="bio-action">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 110-3.6 1.8 1.8 0 010 3.6zM19 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>
+                        LinkedIn
+                    </a>
+                    {%- endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bio-body">
+        <div class="bio-body-inner">
+            <article class="bio-prose">
+                {%- if lede_p %}<p class="lede-p">{{ lede_p | safe }}</p>{% endif %}
+
+                {{ content | safe }}
+
+                {% set recent_work = slug | recentWorkFor %}
+                {%- if recent_work and recent_work.length > 0 %}
+                <h2>Recent Work</h2>
+                <div class="recent-work-list">
+                    {%- for item in recent_work %}
+                    <a href="{{ item.url }}" class="rw-item{% if loop.index > 5 %} rw-hidden{% endif %}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>
+                        <div class="rw-meta">
+                            <span class="rw-type">{{ item.type_label }}</span>
+                            <span class="rw-date">{{ item.date_display }}</span>
+                        </div>
+                        <div class="rw-body">
+                            <h4 class="rw-title">{{ item.title | safe }}</h4>
+                            {%- if item.outlet %}<p class="rw-outlet">{{ item.outlet | safe }}</p>{% endif %}
+                            {%- if item.excerpt %}<p class="rw-excerpt">{{ item.excerpt | safe }}</p>{% endif %}
+                        </div>
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- if recent_work.length > 5 %}
+                <button type="button" class="rw-toggle" aria-expanded="false">
+                    <span class="rw-toggle-more">Show {{ recent_work.length - 5 }} more</span>
+                    <span class="rw-toggle-less">Show fewer</span>
+                </button>
+                {%- endif %}
+                {%- endif %}
+            </article>
+
+            <aside class="bio-rail">
+                {%- if email or linkedin %}
+                <div class="rail-card">
+                    <h3>Contact</h3>
+                    {%- if email %}
+                    <a class="rail-row" href="mailto:{{ email }}">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+                        {{ email }}
+                    </a>
+                    {%- endif %}
+                    {%- if linkedin %}
+                    <a class="rail-row" href="{{ linkedin }}" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 110-3.6 1.8 1.8 0 010 3.6zM19 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>
+                        LinkedIn
+                    </a>
+                    {%- endif %}
+                </div>
+                {%- endif %}
+                {%- if focus and focus.length > 0 %}
+                <div class="rail-card">
+                    <h3>Areas of Focus</h3>
+                    <ul>
+                        {%- for f in focus %}<li>{{ f | safe }}</li>{% endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+                {%- if affiliations and affiliations.length > 0 %}
+                <div class="rail-card">
+                    <h3>Affiliations</h3>
+                    <ul>
+                        {%- for a in affiliations %}<li>{{ a | safe }}</li>{% endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+                {%- if education and education.length > 0 %}
+                <div class="rail-card">
+                    <h3>Education</h3>
+                    <ul>
+                        {%- for e in education %}<li>{{ e | safe }}</li>{% endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+            </aside>
+        </div>
+    </section>
+
+    <section class="bio-nav-section">
+        <nav class="bio-nav">
+            {%- if prev_slug %}<a href="/team/{{ prev_slug }}.html" class="prev">&larr; {{ prev_name }}</a>{% endif %}
+            {%- if next_slug %}<a href="/team/{{ next_slug }}.html" class="next">{{ next_name }} &rarr;</a>{% endif %}
+        </nav>
+    </section>
+
+    <script>
+        document.querySelectorAll('.rw-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                const list = btn.previousElementSibling;
+                if (list && list.classList.contains('recent-work-list')) {
+                    list.classList.toggle('is-expanded', !expanded);
+                }
+            });
+        });
+    </script>

@@ -1,0 +1,250 @@
+{
+  "as_of": "2026-06-16",
+  "as_of_pretty": "June 2026",
+  "note": "Protocol ranks 1–7 follow the official Politburo Standing Committee order. Ranks 8–24 are an analytical best-estimate by office seniority; Beijing lists ordinary Politburo members by surname stroke order, not precedence.",
+  "leaders": [
+    {
+      "slug": "xi-jinping",
+      "name": "Xi Jinping",
+      "body": "Politburo Standing Committee",
+      "rank": 1,
+      "title": "General Secretary of the CCP; President of the PRC; Chairman, Central Military Commission",
+      "short_title": "General Secretary",
+      "status": "active",
+      "bio": "Xi has led the Party since November 2012 and the state since 2013, securing a precedent-breaking third term in 2022–23. A \"princeling\" (son of revolutionary Xi Zhongxun), he governed Zhejiang and Shanghai before entering the Standing Committee in 2007. He has centralized power to a degree unseen since Mao, commands the military directly, and sets every major policy line; the 2025–26 military purges have left him the dominant figure over a shrunken Central Military Commission."
+    },
+    {
+      "slug": "li-qiang",
+      "name": "Li Qiang",
+      "body": "Politburo Standing Committee",
+      "rank": 2,
+      "title": "Premier of the State Council",
+      "short_title": "Premier",
+      "status": "active",
+      "bio": "Li became Premier in March 2023 after rising as Xi's chief of staff in Zhejiang. He served as governor of Zhejiang and party secretary of Jiangsu and then Shanghai, where he oversaw the contentious 2022 COVID lockdown. As Premier he heads the State Council and economic administration, though the office's policy autonomy has narrowed under Xi's centralization."
+    },
+    {
+      "slug": "zhao-leji",
+      "name": "Zhao Leji",
+      "body": "Politburo Standing Committee",
+      "rank": 3,
+      "title": "Chairman, Standing Committee of the National People's Congress",
+      "short_title": "Chairman, NPC Standing Committee",
+      "status": "active",
+      "bio": "Zhao assumed the NPC chairmanship in March 2023 after running Xi's anti-corruption campaign as head of the Central Commission for Discipline Inspection (2017–22). He earlier led Qinghai and Shaanxi and headed the Organization Department. He now presides over China's legislature and its legislative agenda."
+    },
+    {
+      "slug": "wang-huning",
+      "name": "Wang Huning",
+      "body": "Politburo Standing Committee",
+      "rank": 4,
+      "title": "Chairman, Chinese People's Political Consultative Conference",
+      "short_title": "Chairman, CPPCC",
+      "status": "active",
+      "bio": "A former Fudan University political scientist, Wang is the Party's chief ideologue, having shaped doctrine for Jiang Zemin, Hu Jintao and Xi, including \"Xi Jinping Thought.\" He joined the Standing Committee in 2017 and became CPPCC chairman in March 2023. His portfolio prominently includes united-front strategy and Taiwan policy."
+    },
+    {
+      "slug": "cai-qi",
+      "name": "Cai Qi",
+      "body": "Politburo Standing Committee",
+      "rank": 5,
+      "title": "First Secretary of the Central Secretariat; Director, General Office of the CCP Central Committee",
+      "short_title": "Director, CCP General Office",
+      "status": "active",
+      "bio": "A close Xi ally from their Fujian and Zhejiang years, Cai was Beijing party secretary (2017–22) and oversaw the 2022 Winter Olympics. He vaulted onto the Standing Committee in 2022 and now runs the Party's day-to-day machinery as Secretariat first secretary and head of the General Office — effectively Xi's chief of staff and gatekeeper."
+    },
+    {
+      "slug": "ding-xuexiang",
+      "name": "Ding Xuexiang",
+      "body": "Politburo Standing Committee",
+      "rank": 6,
+      "title": "First-ranked Vice Premier of the State Council",
+      "short_title": "Executive Vice Premier",
+      "status": "active",
+      "bio": "Ding directed Xi's General Office and served as his personal secretary before his 2022 elevation to the Standing Committee. As senior (executive) vice premier since March 2023, he handles cross-cutting economic, science-and-technology and industrial coordination. He is among the younger Standing Committee members and a long-standing Xi loyalist."
+    },
+    {
+      "slug": "li-xi",
+      "name": "Li Xi",
+      "body": "Politburo Standing Committee",
+      "rank": 7,
+      "title": "Secretary, Central Commission for Discipline Inspection",
+      "short_title": "Secretary, CCDI",
+      "status": "active",
+      "bio": "Li led Liaoning and then Guangdong (2017–22) before joining the Standing Committee. As discipline chief since 2022 he directs the Party's anti-corruption apparatus — a role of heightened prominence given the sweeping 2024–26 purges of military and provincial officials. He is regarded as a reliable Xi associate from Shaanxi–Gansu networks."
+    },
+    {
+      "slug": "zhang-youxia",
+      "name": "Zhang Youxia",
+      "body": "Politburo",
+      "rank": 8,
+      "title": "First Vice Chairman, Central Military Commission (nominal — under investigation)",
+      "short_title": "First Vice Chairman, CMC",
+      "status": "investigation",
+      "status_note": "Under investigation since January 2026",
+      "bio": "A combat-experienced \"princeling\" general with family ties to Xi, Zhang was the senior uniformed officer on the Central Military Commission and long seen as Xi's closest military ally, retained past the customary retirement age in 2022. On 24 January 2026 the Central Committee announced he was under investigation for serious violations of discipline and law — an extraordinary move against the PLA's top general that analysts treat as his political downfall."
+    },
+    {
+      "slug": "li-hongzhong",
+      "name": "Li Hongzhong",
+      "body": "Politburo",
+      "rank": 9,
+      "title": "Vice Chairman, NPC Standing Committee",
+      "short_title": "Vice Chairman, NPC",
+      "status": "active",
+      "bio": "Li led Hubei and then Tianjin as party secretary before joining the Politburo in 2017 and again in 2022, moving to a vice chairmanship of the NPC Standing Committee in 2023. Now in a senior legislative role, he is one of the older members retained past the usual age norm."
+    },
+    {
+      "slug": "li-shulei",
+      "name": "Li Shulei",
+      "body": "Politburo",
+      "rank": 10,
+      "title": "Head, Publicity (Propaganda) Department of the CCP Central Committee",
+      "short_title": "Head, Publicity Department",
+      "status": "active",
+      "bio": "A former Central Party School vice president and trusted Xi aide, Li became the Party's propaganda chief in 2022, directing ideology, media and messaging. He is considered a fast-rising member of Xi's ideological inner circle."
+    },
+    {
+      "slug": "li-ganjie",
+      "name": "Li Ganjie",
+      "body": "Politburo",
+      "rank": 11,
+      "title": "Head, United Front Work Department",
+      "short_title": "Head, United Front Work Dept.",
+      "status": "active",
+      "bio": "An environmental-engineering technocrat and former Minister of Ecology and Environment, Li was governor of Shandong and then headed the powerful Organization Department from 2022. In an unprecedented April 2025 Politburo job swap he moved to lead the United Front Work Department — overseeing religion, ethnic affairs, Hong Kong/Taiwan and overseas influence — a lateral move widely read as a reduction in influence."
+    },
+    {
+      "slug": "shi-taifeng",
+      "name": "Shi Taifeng",
+      "body": "Politburo",
+      "rank": 12,
+      "title": "Head, Organization Department of the CCP Central Committee",
+      "short_title": "Head, Organization Department",
+      "status": "active",
+      "bio": "A legal scholar by training, Shi led Ningxia and Jiangsu and chaired the Chinese Academy of Social Sciences before heading the United Front Work Department in 2022. In the April 2025 swap with Li Ganjie he took over the Organization Department, which controls senior personnel appointments — a pivotal post amid ongoing purges and ahead of the 2027 congress."
+    },
+    {
+      "slug": "huang-kunming",
+      "name": "Huang Kunming",
+      "body": "Politburo",
+      "rank": 13,
+      "title": "Party Secretary of Guangdong",
+      "short_title": "Party Secretary, Guangdong",
+      "status": "active",
+      "bio": "Huang served as the Party's propaganda chief (2017–22) and is a longtime Xi associate from Fujian and Zhejiang. He became party secretary of Guangdong — China's largest provincial economy and tech hub, encompassing Shenzhen and the Greater Bay Area — in late 2022. His portfolio centers on high-quality economic development and innovation in the south."
+    },
+    {
+      "slug": "wang-yi",
+      "name": "Wang Yi",
+      "body": "Politburo",
+      "rank": 14,
+      "title": "Director, Office of the Central Foreign Affairs Commission; Minister of Foreign Affairs",
+      "short_title": "Director, Foreign Affairs Commission",
+      "status": "active",
+      "bio": "China's most prominent diplomat, Wang was foreign minister (2013–22), then became director of the Central Foreign Affairs Commission Office — the Party's top foreign-policy post — in 2023, reassuming the foreign minister portfolio after the abrupt removal of Qin Gang. He concurrently holds both senior diplomatic roles and manages relations with the US, EU and the Global South."
+    },
+    {
+      "slug": "yuan-jiajun",
+      "name": "Yuan Jiajun",
+      "body": "Politburo",
+      "rank": 15,
+      "title": "Party Secretary of Chongqing",
+      "short_title": "Party Secretary, Chongqing",
+      "status": "active",
+      "bio": "An aerospace engineer who managed China's Shenzhou crewed-spaceflight program, Yuan rose to governor and then party secretary of Zhejiang before becoming Chongqing party secretary in December 2022. He represents the Politburo's technocrat cohort and oversees a major western municipality and manufacturing base."
+    },
+    {
+      "slug": "chen-jining",
+      "name": "Chen Jining",
+      "body": "Politburo",
+      "rank": 16,
+      "title": "Party Secretary of Shanghai",
+      "short_title": "Party Secretary, Shanghai",
+      "status": "active",
+      "bio": "A Cambridge-trained environmental engineer and former president of Tsinghua University, Chen served as Minister of Environmental Protection and then mayor and acting party secretary of Beijing. He became Shanghai party secretary in late 2022, placing him over China's financial capital, and is frequently cited as a contender for higher promotion in 2027."
+    },
+    {
+      "slug": "chen-miner",
+      "name": "Chen Min'er",
+      "body": "Politburo",
+      "rank": 17,
+      "title": "Party Secretary of Tianjin",
+      "short_title": "Party Secretary, Tianjin",
+      "status": "active",
+      "bio": "A former propaganda official close to Xi from their Zhejiang years, Chen led Guizhou and then Chongqing as party secretary and was once seen as a potential successor candidate. He moved to lead Tianjin in December 2022, governing a major northern port-and-industry municipality."
+    },
+    {
+      "slug": "yin-li",
+      "name": "Yin Li",
+      "body": "Politburo",
+      "rank": 18,
+      "title": "Party Secretary of Beijing",
+      "short_title": "Party Secretary, Beijing",
+      "status": "active",
+      "bio": "A public-health expert with a Russian medical doctorate who helped manage China's SARS and later epidemic responses, Yin served as a vice health minister, then governor of Sichuan and party secretary of Fujian. He became Beijing party secretary in November 2022 — a politically sensitive capital posting that carries Politburo rank by convention."
+    },
+    {
+      "slug": "he-lifeng",
+      "name": "He Lifeng",
+      "body": "Politburo",
+      "rank": 19,
+      "title": "Vice Premier; Director, Office of the Central Financial Commission",
+      "short_title": "Vice Premier (Economic Policy)",
+      "status": "active",
+      "bio": "A long-standing Xi associate from Fujian, He chaired the National Development and Reform Commission before becoming a vice premier in 2023. He is China's top economic-policy lieutenant, leading financial and macroeconomic coordination and serving as Beijing's lead interlocutor in US–China economic and trade talks."
+    },
+    {
+      "slug": "zhang-guoqing",
+      "name": "Zhang Guoqing",
+      "body": "Politburo",
+      "rank": 20,
+      "title": "Vice Premier (Industry and Technology)",
+      "short_title": "Vice Premier (Industry)",
+      "status": "active",
+      "bio": "With a background running the state defense-industrial giant Norinco, Zhang served as mayor of Chongqing and governor and party secretary of Liaoning before becoming a vice premier in 2023. He oversees industrial policy, advanced manufacturing and technology innovation in the State Council, part of the defense-industry technocrat stream in the leadership."
+    },
+    {
+      "slug": "liu-guozhong",
+      "name": "Liu Guozhong",
+      "body": "Politburo",
+      "rank": 21,
+      "title": "Vice Premier (Agriculture and Rural Affairs)",
+      "short_title": "Vice Premier (Agriculture)",
+      "status": "active",
+      "bio": "Liu rose through Heilongjiang and Jilin and served as governor of Jilin and party secretary of Shaanxi before joining the Politburo and becoming a vice premier in 2023. His State Council brief centers on agriculture, rural development and food security."
+    },
+    {
+      "slug": "chen-wenqing",
+      "name": "Chen Wenqing",
+      "body": "Politburo",
+      "rank": 22,
+      "title": "Secretary, Central Political and Legal Affairs Commission",
+      "short_title": "Secretary, Political and Legal Affairs",
+      "status": "active",
+      "bio": "A career security and intelligence official, Chen was Minister of State Security (2016–22) — the first MSS chief to reach the Politburo. Since 2022 he heads the Central Political and Legal Affairs Commission, overseeing the courts, procuratorate, police and domestic-security apparatus."
+    },
+    {
+      "slug": "ma-xingrui",
+      "name": "Ma Xingrui",
+      "body": "Politburo",
+      "rank": 23,
+      "title": "Former Party Secretary of Xinjiang (under investigation)",
+      "short_title": "Former Party Secretary, Xinjiang",
+      "status": "investigation",
+      "status_note": "Reassigned 2025; under investigation since April 2026",
+      "bio": "An aerospace engineer who led China's space program and served as Shenzhen party chief and governor of Guangdong, Ma became Xinjiang party secretary in 2021, managing the region's security and development policy. He was removed from Xinjiang in July 2025, reassigned to a rural-work post, and placed under formal investigation for discipline and law violations on 3 April 2026."
+    },
+    {
+      "slug": "he-weidong",
+      "name": "He Weidong",
+      "body": "Politburo",
+      "rank": 24,
+      "title": "Former Second Vice Chairman, CMC (expelled)",
+      "short_title": "Former Vice Chairman, CMC",
+      "status": "expelled",
+      "status_note": "Expelled from the Party and military, October 2025",
+      "bio": "A career army officer who commanded the Eastern Theater Command, responsible for the Taiwan front, He leapt directly onto the Politburo and into a CMC vice chairmanship in 2022 without prior CMC membership. He disappeared from public view in spring 2025 and was expelled from the Party and armed forces in October 2025 — the first sitting CMC vice chairman purged since the Cultural Revolution."
+    }
+  ]
+}

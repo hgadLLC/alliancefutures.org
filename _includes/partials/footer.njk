@@ -1,0 +1,32 @@
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/images/tafi-logo-real.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/about.html">About</a>
+                    <a href="/our-work/">Our Work</a>
+                    <a href="/advisory.html">Advisory</a>
+                    <a href="/people.html">People</a>
+                    <a href="/support.html">Donate</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileMenu.addEventListener('click', () => { mobileMenu.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav a').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.remove('active'); mobileNav.classList.remove('active'); }));
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(t => t.addEventListener('click', () => { t.classList.toggle('active'); t.nextElementSibling.classList.toggle('active'); }));
+    </script>

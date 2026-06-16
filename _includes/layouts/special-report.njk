@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+extra_head: '<link rel="stylesheet" href="/css/monitor.css">'
+permalink: "/embassy-monitors/week-{{ week }}.html"
+---
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a> <span>/</span>
+                    <a href="/embassy-monitors/">Embassies Monitor</a> <span>/</span>
+                    <span>Week {{ week }} Special Report</span>
+                </nav>
+                <h1>{{ hero_title | safe }}</h1>
+                <p>PRC Pacific Embassies Monitor Special Report &middot; Week {{ week }} &middot; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="monitor-content">
+        <div class="container">
+            <article class="monitor-article">
+                <div class="publication-header">
+                    <span class="publication-title">PRC Pacific Embassies Monitor<sup>*</sup> &mdash; Special Report</span>
+                    <div class="publication-logo">
+                        <img src="/images/tafi-logo-real.png" alt="TAFI">
+                    </div>
+                </div>
+
+                <div class="monitor-meta">
+                    <div class="monitor-meta-info">
+                        <div class="monitor-meta-date">Week {{ week }} &mdash; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}</div>
+                        {%- if author %}<div class="monitor-meta-author">By {{ author }}{% if author_title %}, {{ author_title }}{% endif %}</div>{% endif %}
+                    </div>
+                    {%- if pdf %}
+                    <a href="{{ pdf }}" class="monitor-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                    {%- endif %}
+                </div>
+
+                {%- if cover_image %}
+                <figure class="cover-figure">
+                    <img src="{{ cover_image }}" alt="{{ cover_alt or title }}">
+                </figure>
+                {%- endif %}
+
+                <span class="special-tag">Special Report</span>
+                <h2 style="margin-top:0.25rem;">{{ title | safe }}</h2>
+
+                {%- if lede %}
+                <p class="lede"><strong>{{ lede | safe }}</strong></p>
+                {%- endif %}
+
+                {{ content | safe }}
+
+                <div class="monitor-endnote">
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. This Special Report extends the series with deeper analytical work on a single regional threat actor.</p>
+                    {%- if disclaimer %}
+                    <p style="margin-top: 0.75rem;"><em>{{ disclaimer | safe }}</em></p>
+                    {%- endif %}
+                    {%- if photo_credit %}
+                    <p style="margin-top: 0.5rem;"><em>{{ photo_credit | safe }}</em></p>
+                    {%- endif %}
+                </div>
+
+                <aside class="support-cta">
+                    <h3>Independent research costs money.</h3>
+                    <p>If this Special Report was useful to you, support our work. TAFI runs on grants and individual donors&mdash;tax-deductible through OTX International, a 501(c)(3) public charity.</p>
+                    <a href="/support.html" class="support-cta-btn">Donate</a>
+                </aside>
+
+                <nav class="monitor-nav">
+                    {%- if prev_week %}<a href="/embassy-monitors/week-{{ prev_week }}.html">&larr; Previous Week</a>{% else %}<span class="monitor-nav-placeholder">&larr; Previous Week</span>{% endif %}
+                    <a href="/embassy-monitors/">All Monitors</a>
+                    {%- if next_week %}<a href="/embassy-monitors/week-{{ next_week }}.html">Next Week &rarr;</a>{% else %}<span class="monitor-nav-placeholder">Next Week &rarr;</span>{% endif %}
+                </nav>
+            </article>
+        </div>
+    </section>

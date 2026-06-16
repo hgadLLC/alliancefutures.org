@@ -1,0 +1,99 @@
+---
+layout: layouts/base.njk
+extra_head: '<link rel="stylesheet" href="/css/red-team.css">'
+permalink: "/publications/{{ slug }}.html"
+---
+    <div class="print-header">
+        <img src="/images/tafi-logo-real.png" alt="TAFI">
+        <span>The Alliance Futures Initiative</span>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a> <span>/</span>
+                    <a href="/our-work/futures.html">Our Work / Futures</a> <span>/</span>
+                    <span>{{ breadcrumb_title or title }}</span>
+                </nav>
+                <h1>{{ title | safe }}</h1>
+                {%- if subtitle %}<p>{{ subtitle | safe }}</p>{% endif %}
+                <div class="report-byline">
+                    <strong>By</strong>
+                    {%- for a in authors %}
+                        {{ a }}{% if not loop.last %} <span class="report-byline-sep">&middot;</span>{% endif %}
+                    {%- endfor %}
+                    {%- if date %} <span class="report-byline-sep">&middot;</span> {{ date | dateLong }}{% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="container">
+            <div class="report-layout">
+
+                <aside class="toc-sidebar">
+                    <h3>Contents</h3>
+                    <ul>
+                        {%- for item in toc %}
+                        <li>
+                            <a href="#{{ item.id }}">{{ item.title | safe }}</a>
+                            {%- if item.sub %}
+                            <ul class="toc-sub">
+                                {%- for sub in item.sub %}
+                                <li><a href="#{{ sub.id }}">{{ sub.title | safe }}</a></li>
+                                {%- endfor %}
+                            </ul>
+                            {%- endif %}
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                </aside>
+
+                <article class="report-content">
+                    <div class="publication-header">
+                        <span class="publication-title">{{ publication_title or title | striptags }}</span>
+                        <div class="publication-logo">
+                            <img src="/images/tafi-logo-real.png" alt="TAFI">
+                        </div>
+                    </div>
+
+                    {%- if pdf %}
+                    <a class="generate-pdf-btn" href="{{ pdf }}" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Report
+                    </a>
+                    {%- endif %}
+
+                    {{ content | safe }}
+
+                    <div class="report-endmatter">
+                        {%- if about %}
+                        <h3>About TAFI</h3>
+                        {{ about | markdownify | safe }}
+                        {%- endif %}
+                        {%- if disclaimer %}
+                        <h3>Disclaimer</h3>
+                        {{ disclaimer | markdownify | safe }}
+                        {%- endif %}
+                        {%- if acknowledgements %}
+                        <h3>Acknowledgements</h3>
+                        {{ acknowledgements | markdownify | safe }}
+                        {%- endif %}
+                        <p class="copyright">&copy; 2026 OTX International. All rights reserved. No part of this report may be reproduced or transmitted without prior written permission from the publisher.</p>
+                    </div>
+
+                    <aside class="support-cta">
+                        <h3>Independent research costs money.</h3>
+                        <p>If this report was useful to you, support our work. TAFI runs on grants and individual donors&mdash;tax-deductible through OTX International, a 501(c)(3) public charity.</p>
+                        <a href="/support.html" class="support-cta-btn">Donate</a>
+                    </aside>
+
+                    <nav class="pub-nav">
+                        <a href="/our-work/futures.html" class="pub-nav-back">&larr; All Futures work</a>
+                    </nav>
+                </article>
+            </div>
+        </div>
+    </section>

@@ -1,9 +1,10 @@
 # Admin / CMS rollout plan
 
-Authoring through `/admin/` requires four phases. Phase 1 is done. The
-rest land incrementally so the live site is never broken.
+Authoring through `/admin/` requires four phases. **Phases 1–3 are done.**
+Phase 4 is staged but waits on a one-time GitHub Settings change before
+it takes effect.
 
-## Phase 1 — scaffold ✅ (this commit)
+## Phase 1 — scaffold ✅
 
 - `package.json` + `.eleventy.js` so Eleventy can build from `content/`
 - `admin/index.html` (Decap CMS shell, SRI-pinned)
@@ -14,10 +15,26 @@ rest land incrementally so the live site is never broken.
 Nothing in the live site changes. `/admin/` is reachable but rejects logins
 until the user finishes the Netlify setup in `admin/SETUP.md`.
 
-## Phase 2 — content migration
+## Phase 2 — content migration ✅
 
 Convert every hand-built HTML page into a markdown file under `content/`,
 with a layout template that renders the equivalent HTML.
+
+**Status:**
+
+- All 18 weekly monitors (incl. Week 16 Special Report) → `content/monitors/`
+- 3 Southern Signals commentaries → `content/commentary/`
+- 2 Red Team reports (Ukraine, PICs) → `content/research/`
+- 9 bios (incl. Marc Ablong) → `content/people/`
+- 5 layouts written: `base.njk`, `monitor.njk`, `special-report.njk`,
+  `commentary.njk`, `red-team.njk`, `bio.njk`
+- 4 migration scripts under `tools/` (monitor, special report, commentary,
+  red team, bios)
+- Inline CSS extracted to `css/monitor.css`, `css/commentary.css`,
+  `css/red-team.css`
+- Static pages (about, advisory, support, privacy), listing pages, and the
+  homepage are passthrough-copied for now — they still ship in `_site/`
+  but aren't yet CMS-editable. Phase 5 can revisit if needed.
 
 Targets:
 
@@ -53,9 +70,9 @@ Approach:
 
 Live deploy still untouched.
 
-## Phase 3 — expand CMS config
+## Phase 3 — expand CMS config ✅
 
-Add collections + fields to `admin/config.yml`:
+Collections shipped in `admin/config.yml`:
 
 - **Special Reports** (separate collection from weekly monitors, different
   layout fields: cover, Key Findings list, free-form sections)
@@ -71,19 +88,22 @@ Add collections + fields to `admin/config.yml`:
 Test by editing one piece of every type through `/admin/` and confirming the
 Eleventy output is correct.
 
-## Phase 4 — cutover
+## Phase 4 — cutover (staged, awaiting one manual step)
 
-1. Add `.github/workflows/build.yml` — runs `npm ci && npm run build` on push
-   to `main`, then publishes `_site/` to `gh-pages` via
-   `peaceiris/actions-gh-pages@v4`.
-2. In repo settings → Pages, change the source from "Deploy from a branch:
-   main / (root)" to "Deploy from a branch: gh-pages / (root)".
-3. First push to `main` triggers the build; the new HTML appears at
+1. ✅ `.github/workflows/deploy.yml` — builds Eleventy and deploys
+   `_site/` to GitHub Pages via the official `actions/deploy-pages` action.
+2. **YOU DO THIS ONCE:** GitHub repo → Settings → Pages → Source: change
+   from "Deploy from a branch" to **"GitHub Actions"**. That single switch
+   tells Pages to serve from the workflow's artifact instead of the
+   `main` branch root.
+3. Push to `main` triggers the workflow. The new HTML appears at
    alliancefutures.org within a minute or two.
 4. After confirming the cutover is clean (a week of normal editing), delete
    the hand-built HTML files at the repo root (`index.html`, `about.html`,
    `embassy-monitors/*.html`, `publications/*.html`, `our-work/**/*.html`,
    `team/*.html`). The CMS-authored markdown becomes the canonical source.
+   Until then, those files keep flowing through via passthrough so nothing
+   on the live site changes.
 
 After Phase 4, every editing task is done through `/admin/`:
 
