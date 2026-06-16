@@ -9,45 +9,29 @@
 </head>
 <body>
     <!--
-        Decap CMS — git-backed admin for alliancefutures.org. Authoring lands as
-        commits to the GitHub repo; GitHub Pages rebuilds the site.
+        Sveltia CMS — git-backed admin for alliancefutures.org. Editors sign
+        in with GitHub (Device Flow), the CMS commits directly to the repo
+        via the GitHub API, and GitHub Pages rebuilds the site.
 
-        Auth is Netlify Identity (email/password invites) + Git Gateway. The
-        Netlify site that powers Identity is a "phantom" project linked to this
-        GitHub repo — it doesn't deploy the site; it only proxies CMS commits.
+        No Netlify Identity, no Git Gateway, no third-party proxy of our own
+        to maintain. Sveltia ships its own hosted OAuth bridge at
+        auth.sveltia.app, which we use by default.
 
-        ONE-TIME SETUP for an editor to be able to log in:
-            See /admin/SETUP.md (instructions for the project owner).
+        For an editor to gain access:
+          1. They need a GitHub account.
+          2. The repo owner adds them as a collaborator on
+             github.com/hgadLLC/alliancefutures.org (Settings → Collaborators).
+          3. They open /admin/ and click "Sign in with GitHub".
     -->
 
-    <!-- Netlify Identity widget: opens the login modal and posts auth events.
-         Pinned via Subresource Integrity (SRI) so a CDN compromise can't
-         silently inject malicious code into the admin. Bump the version +
-         hash together; see admin/SETUP.md ("Updating CMS scripts"). -->
+    <!-- Sveltia CMS. Pinned by exact version + SRI so a compromised CDN
+         can't silently inject malicious admin JS. Bumping requires
+         recomputing the hash. See admin/SETUP.md. -->
     <script
-        src="https://unpkg.com/netlify-identity-widget@1.9.2/build/netlify-identity-widget.js"
-        integrity="sha384-dy2tW8xkhLIj8lZR42MCwZhhDb2cCewZiw0uA65CMpdHiJzL+iubx7HzHcCXU2rW"
+        type="module"
+        src="https://unpkg.com/@sveltia/cms@0.167.1/dist/sveltia-cms.js"
+        integrity="sha384-SM3rJfhgQP1NhjSiI+Tc18UM6kTvNidQudNOrdjEifJeAVeak5sU3aRtjp8Qq8B7"
         crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
-
-    <!-- Decap CMS itself, similarly pinned. -->
-    <script
-        src="https://unpkg.com/decap-cms@3.5.0/dist/decap-cms.js"
-        integrity="sha384-0qv+oSpofFn9VZ7RJ+vV8Tc4zcYtho3xHfLsM2pPimFVFoCMuU37MnWWxv83yHoR"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
-    <script>
-        // After login or signup, route the user back into the CMS.
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", (user) => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
 </body>
 </html>
