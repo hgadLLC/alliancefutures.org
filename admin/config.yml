@@ -49,11 +49,13 @@ collections:
       - { label: "Special Reports", field: layout, pattern: "layouts/special-report.njk" }
       - { label: "Weekly Monitors", field: layout, pattern: "layouts/monitor.njk" }
     fields:
-      - { name: layout, label: Layout, widget: select,
-          options:
-            - { label: "Weekly Monitor",  value: "layouts/monitor.njk" }
-            - { label: "Special Report", value: "layouts/special-report.njk" }
-          default: "layouts/monitor.njk" }
+      - name: layout
+        label: Layout
+        widget: select
+        default: "layouts/monitor.njk"
+        options:
+          - { label: "Weekly Monitor", value: "layouts/monitor.njk" }
+          - { label: "Special Report", value: "layouts/special-report.njk" }
       - { name: week, label: "Week number", widget: number, value_type: int, min: 1 }
       - { name: date, label: "Week start", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
       - { name: date_end, label: "Week end", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
