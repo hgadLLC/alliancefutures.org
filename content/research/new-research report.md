@@ -30,23 +30,11 @@ featured: false
 
 &nbsp;
 
-<h2 id="executive-summary">Executive Summary</h2>
-
-&nbsp;
-
 Replace this paragraph with the report's executive summary.
 
 &nbsp;
 
-<h2 id="introduction">Introduction</h2>
-
-&nbsp;
-
 Body content for each TOC anchor uses raw `<h2 id="..."` tags so the sidebar links work. Write the rest in markdown below each heading.
-
-&nbsp;
-
-<h2 id="conclusion">Conclusion</h2>
 
 &nbsp;
 
