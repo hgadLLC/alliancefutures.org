@@ -6,7 +6,7 @@ date: 2026-02-09T00:00:00Z
 date_end: 2026-02-15T00:00:00Z
 title: >-
   Last Week in the Pacific: Lunar New Year Comes to the Pacific, David Adeang in
-  Guangdong, and More
+  Guangdong and More
 description: >-
   Lunar New Year comes to the Pacific, David Adeang in Guangdong, and more —
   February 9 to February 15, 2026
