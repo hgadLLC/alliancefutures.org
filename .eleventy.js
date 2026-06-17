@@ -15,7 +15,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("favicon.ico");
-    eleventyConfig.addPassthroughCopy("admin");
     eleventyConfig.addPassthroughCopy({ "embassy-monitors/pdfs": "embassy-monitors/pdfs" });
     eleventyConfig.addPassthroughCopy({ "embassy-monitors/images": "embassy-monitors/images" });
     eleventyConfig.addPassthroughCopy({ "publications/images": "publications/images" });

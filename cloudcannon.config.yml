@@ -1,0 +1,319 @@
+# CloudCannon configuration for alliancefutures.org
+#
+# This file tells CloudCannon how to read, edit, and rebuild the site.
+# Edit fields and labels here when staff need a different editing UI;
+# the live site doesn't change until they hit Publish.
+#
+# Docs: https://cloudcannon.com/documentation/articles/cloudcannon-config-file/
+
+# --- Build -------------------------------------------------------- #
+# CloudCannon runs npm run build (Eleventy) on the snapshot before
+# rendering previews. Output goes to _site/.
+
+source: ""
+paths:
+  uploads: "uploads"
+  static: ""
+  data: "_data"
+
+# --- Collections -------------------------------------------------- #
+# Each collection maps a folder of markdown/YAML files to a list view in
+# the CloudCannon sidebar. Editors click into a file → see the configured
+# form on the right + a live preview on the left.
+
+collections_config:
+
+  # ---------------- Embassies Monitor weekly issues -------------- #
+  monitors:
+    path: "content/monitors"
+    output: true
+    url: "/embassy-monitors/week-[week]"
+    icon: "calendar_month"
+    name: "Embassies Monitor"
+    description: "Weekly PRC Pacific Embassies Monitor issues (and the occasional Special Report)."
+    create:
+      path: "[relative_base_path]/week-{week}.md"
+      schema: "default"
+    sort:
+      key: week
+      order: desc
+    sort_options:
+      - { key: week, order: desc, label: "Newest week first" }
+      - { key: week, order: asc,  label: "Oldest week first" }
+      - { key: date, order: desc, label: "Newest date first" }
+    schemas:
+      default:
+        path: ".cloudcannon/schemas/monitor.md"
+        name: "Weekly Monitor"
+        icon: "calendar_month"
+      special:
+        path: ".cloudcannon/schemas/special-report.md"
+        name: "Special Report"
+        icon: "campaign"
+    _enabled_editors: [content, visual]
+    _inputs:
+      layout:
+        type: select
+        comment: "Picks the page template. Switch to Special Report only for one-off deep-dives."
+        options:
+          values:
+            - { value: "layouts/monitor.njk",        label: "Weekly Monitor" }
+            - { value: "layouts/special-report.njk", label: "Special Report" }
+      week:        { type: number, comment: "Issue number — used in the URL and the filename." }
+      date:        { type: date,   comment: "Monday of the week being summarised." }
+      date_end:    { type: date,   comment: "Sunday of the week being summarised." }
+      title:       { type: text,   comment: "Article H2 headline (e.g. \"Wale Goes to Canberra; Beijing Stays Busy\")." }
+      description: { type: textarea, comment: "Used for SEO + social previews. Optional but recommended." }
+      pdf:         { type: file,   comment: "Drag-drop the issue PDF. Uploads to /embassy-monitors/pdfs/.",
+                     paths: { uploads: "embassy-monitors/pdfs" } }
+      authors:
+        type: multiselect
+        comment: "One or more author slugs. Pick from the People collection."
+        options:
+          values_key: slug
+          preview:
+            text: [{ key: name }]
+          collection: people
+      featured:    { type: switch, comment: "Pin this issue to the homepage's Featured slot." }
+      hero_image:
+        type: image
+        comment: "Hero image for the article + card thumbnail."
+        paths: { uploads: "embassy-monitors/images" }
+      summary:     { type: markdown, comment: "Weekly Monitor only — the \"Summary of PRC Activity\" prose block.",
+                     options: { bold: true, italic: true, link: true, bulletedlist: true } }
+      ambassadors_corner:
+        type: markdown
+        comment: "Optional gold-bordered callout block. Leave empty to omit."
+        options: { bold: true, italic: true, link: true }
+      themes:
+        type: array
+        comment: "Big Themes — each one renders as its own H3 + body + optional figure + supporting-events list."
+        options:
+          structures:
+            values:
+              - label: "Theme"
+                value:
+                  title: ""
+                  body: ""
+        empty_type: object
+      "themes.*.title": { type: text, comment: "Theme heading (renders italic in the article)." }
+      "themes.*.body":  { type: markdown }
+      "themes.*.figure":
+        type: image
+        comment: "Floats right of the body text."
+        paths: { uploads: "embassy-monitors/images" }
+      "themes.*.figure_caption":      { type: text }
+      "themes.*.figure_source_url":   { type: url }
+      "themes.*.figure_source_label": { type: text }
+      "themes.*.supporting_events":
+        type: array
+        empty_type: object
+        comment: "Per-theme bullet list of underlying embassy events with source links."
+        options:
+          structures:
+            values:
+              - label: "Event"
+                value: { country: "", label: "", url: "" }
+      "themes.*.supporting_events.*.country": { type: text }
+      "themes.*.supporting_events.*.label":   { type: text }
+      "themes.*.supporting_events.*.url":     { type: url }
+      # ---- Special Report-only fields ----
+      hero_title:    { type: text, comment: "Special Report only. Top-of-page hero — use <em>…</em> for italic." }
+      cover_image:
+        type: image
+        comment: "Special Report only. Full-width cover figure under the meta line."
+        paths: { uploads: "embassy-monitors/images" }
+      cover_alt:     { type: text, comment: "Alt text for the cover image (screen-reader)." }
+      author:        { type: text, comment: "Special Report only — byline name." }
+      author_title:  { type: text, comment: "Special Report only — byline role." }
+      lede:          { type: textarea, comment: "Special Report only — opening sentence in bold." }
+      disclaimer:    { type: textarea, comment: "Footer disclaimer paragraph." }
+      photo_credit:  { type: textarea, comment: "Footer photo credit." }
+      prev_week:     { type: number, comment: "Issue number to link to as ← Previous Week. Usually current minus one." }
+      next_week:     { type: number, comment: "Issue number to link to as Next Week →. Leave blank on the most recent issue." }
+
+  # ---------------- Commentary (Southern Signals, op-eds) -------- #
+  commentary:
+    path: "content/commentary"
+    output: true
+    url: "/our-work/commentary/[slug]"
+    icon: "edit_note"
+    name: "Commentary"
+    description: "Southern Signals series and other commissioned essays."
+    create:
+      path: "[relative_base_path]/{slug|slugify}.md"
+      schema: "default"
+    sort: { key: date, order: desc }
+    schemas:
+      default:
+        path: ".cloudcannon/schemas/commentary.md"
+        name: "Commentary"
+    _enabled_editors: [content, visual]
+    _inputs:
+      slug:         { type: text, comment: "URL slug (kebab-case). Becomes /our-work/commentary/SLUG.html." }
+      date:         { type: date }
+      title:        { type: text }
+      series:       { type: text, comment: "Eyebrow tag above the title. Default \"Southern Signals\"." }
+      description:  { type: textarea, comment: "SEO description." }
+      author:       { type: text, comment: "Author byline name." }
+      author_title: { type: text, comment: "e.g. \"Senior Fellow\"." }
+      pdf:          { type: file,  paths: { uploads: "our-work/commentary" } }
+      hero_image:   { type: image, paths: { uploads: "our-work/commentary/images" } }
+      lede:         { type: textarea, comment: "Opening paragraph rendered larger than body." }
+      author_image: { type: image, paths: { uploads: "images/team" }, comment: "Round portrait shown in the author bio block." }
+      author_bio:   { type: textarea, comment: "1-2 sentences for the author bio block at the bottom." }
+      author_bio_link: { type: url, comment: "Link to the author's full bio page (e.g. /team/andrew-horton.html)." }
+      prev_slug:    { type: text, comment: "Slug of the previous commentary (for ← Previous nav)." }
+      next_slug:    { type: text, comment: "Slug of the next commentary (for Next →)." }
+      featured:     { type: switch }
+
+  # ---------------- Research reports (Red Team + others) --------- #
+  research:
+    path: "content/research"
+    output: true
+    url: "/publications/[slug]"
+    icon: "library_books"
+    name: "Research Reports"
+    description: "Red Team exercises and other long-form research."
+    create:
+      path: "[relative_base_path]/{slug|slugify}.md"
+      schema: "default"
+    sort: { key: date, order: desc }
+    schemas:
+      default:
+        path: ".cloudcannon/schemas/research.md"
+        name: "Research Report"
+    _enabled_editors: [content, visual]
+    _inputs:
+      slug:        { type: text }
+      date:        { type: date }
+      title:       { type: text, comment: "HTML allowed (<em>...</em>)." }
+      subtitle:    { type: textarea }
+      publication_title: { type: text, comment: "Smaller label shown in the in-article header." }
+      description: { type: textarea }
+      pdf:         { type: file,  paths: { uploads: "publications" } }
+      authors:     { type: array, comment: "List of author display names — typed strings, not slugs.",
+                     options: { structures: { values: [{ label: "Author", value: "" }] } } }
+      toc:
+        type: array
+        comment: "Sticky sidebar Table of Contents. Each entry needs an anchor id matching an <h2 id=\"…\"> in the body."
+        empty_type: object
+        options:
+          structures:
+            values:
+              - label: "Section"
+                value: { id: "", title: "" }
+      "toc.*.id":    { type: text, comment: "Anchor id, kebab-case (must match an <h2 id=\"…\"> in the body)." }
+      "toc.*.title": { type: text }
+      "toc.*.sub":
+        type: array
+        empty_type: object
+        options: { structures: { values: [{ label: "Sub-section", value: { id: "", title: "" } }] } }
+      "toc.*.sub.*.id":    { type: text }
+      "toc.*.sub.*.title": { type: text }
+      about:           { type: markdown, comment: "\"About TAFI\" block at the bottom of the report." }
+      disclaimer:      { type: markdown, comment: "\"Disclaimer\" block at the bottom of the report." }
+      acknowledgements: { type: markdown, comment: "\"Acknowledgements\" block at the bottom of the report." }
+      featured:        { type: switch }
+
+  # ---------------- People (bios) -------------------------------- #
+  people:
+    path: "content/people"
+    output: true
+    url: "/team/[slug]"
+    icon: "person"
+    name: "People"
+    description: "Staff, fellows, and their Recent Work feeds."
+    create:
+      path: "[relative_base_path]/{slug|slugify}.md"
+      schema: "default"
+    sort: { key: name, order: asc }
+    schemas:
+      default:
+        path: ".cloudcannon/schemas/person.md"
+        name: "Person"
+    _enabled_editors: [content, visual]
+    _inputs:
+      slug:      { type: text, comment: "kebab-case — matches /team/SLUG.html." }
+      name:      { type: text, comment: "Full display name (e.g. \"Dr. Greg Brown\")." }
+      role:      { type: text, comment: "Role / title (e.g. \"Senior Fellow\", \"Deputy Director\")." }
+      photo:
+        type: image
+        comment: "Square portrait. CloudCannon uploads it to /images/team/."
+        paths: { uploads: "images/team" }
+      email:     { type: email }
+      linkedin:  { type: url }
+      hero_lede: { type: textarea, comment: "One sentence shown under the role chip on the bio page." }
+      lede_p:    { type: textarea, comment: "Bio opening paragraph rendered larger than body." }
+      focus:
+        type: array
+        comment: "Areas of Focus — appears in the right rail."
+        options: { structures: { values: [{ label: "Area", value: "" }] } }
+      affiliations:
+        type: array
+        options: { structures: { values: [{ label: "Affiliation", value: "" }] } }
+      education:
+        type: array
+        options: { structures: { values: [{ label: "Credential", value: "" }] } }
+      prev_slug: { type: text, comment: "Slug of the previous person in the People nav order." }
+      prev_name: { type: text, comment: "Display name of the previous person." }
+      next_slug: { type: text, comment: "Slug of the next person." }
+      next_name: { type: text, comment: "Display name of the next person." }
+
+# --- Data files (Recent Work / publications feeds) --------------- #
+# Surfaced in the CMS so editors can add new mentions and internal
+# publications without touching YAML directly.
+
+data_config:
+  mentions:
+    path: "data/mentions.yml"
+  internalPublications:
+    path: "data/internal-publications.yml"
+
+_inputs:
+  # Defaults that apply across collections + data — overrides go inside
+  # each collection's own _inputs block above.
+  description:
+    type: textarea
+    comment: "SEO / social preview description."
+
+# --- Editor experience ------------------------------------------- #
+# Small dropdowns + presets that show up inside CloudCannon's UI.
+
+_select_data:
+  mention_types:
+    - { value: commentary, label: "Commentary" }
+    - { value: op-ed,      label: "Op-Ed" }
+    - { value: media,      label: "In the Media" }
+    - { value: interview,  label: "Interview" }
+    - { value: podcast,    label: "Podcast" }
+    - { value: panel,      label: "Panel" }
+    - { value: citation,   label: "Citation" }
+    - { value: book,       label: "Book / Edited Volume" }
+    - { value: chapter,    label: "Book Chapter" }
+  publication_types:
+    - { value: monitor,    label: "Weekly Monitor" }
+    - { value: redteam,    label: "Red Team Report" }
+    - { value: report,     label: "Report" }
+    - { value: commentary, label: "Commentary" }
+    - { value: brief,      label: "Brief" }
+    - { value: futures,    label: "Futures piece" }
+  categories:
+    - { value: research,           label: "Research" }
+    - { value: futures,            label: "Futures" }
+    - { value: commentary,         label: "Commentary" }
+    - { value: embassies-monitor,  label: "Embassies Monitor" }
+  regions:
+    - { value: Pacific }
+    - { value: Indo-Pacific }
+    - { value: Europe }
+    - { value: "Middle East" }
+    - { value: Global }
+
+# --- Hide build artefacts + Eleventy internals from the sidebar --- #
+_array_structures: {}
+_collection_groups:
+  - heading: Content
+    collections: [monitors, commentary, research]
+  - heading: People & Recent Work
+    collections: [people]
