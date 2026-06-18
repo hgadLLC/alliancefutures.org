@@ -14,7 +14,6 @@ firebase-debug.log
 # Eleventy build (Phase 1 onward)
 /_site/
 /node_modules/
-/package-lock.json
 
 # Python bytecode
 __pycache__/
