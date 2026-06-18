@@ -257,6 +257,20 @@
 # ----- Southern Signals (Andrew Horton commentary series) -----
 
 - type: commentary
+  title: "Offshore Is Now Overhead"
+  outlet: Southern Signals
+  date: 2026-06-18
+  url: our-work/commentary/offshore-is-now-overhead.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  featured: true
+  excerpt: "Orbital data centres, the 1967 Outer Space Treaty, and the looming auction of jurisdiction for frontier compute."
+
+- type: commentary
   title: "The Last Human Advantage: Recursive Self-Improvement and the New Sovereignty Crisis"
   outlet: Southern Signals
   date: 2026-06-08

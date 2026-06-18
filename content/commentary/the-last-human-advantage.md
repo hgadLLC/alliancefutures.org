@@ -16,6 +16,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-great-race
+next_slug: offshore-is-now-overhead
 featured: false
 ---
 Most governments remain focused on the visible manifestations of artificial intelligence: productivity gains, labour market disruption, digital regulation and economic competitiveness. These issues matter. Yet they obscure a far larger strategic question emerging at the frontier of technological development. The defining geopolitical competition of the twenty-first century may not centre on territory, trade routes or military power. It may centre on sovereignty over the engines of intelligence themselves.
