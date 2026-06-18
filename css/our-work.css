@@ -6,7 +6,9 @@
 .ow-hero {
     background: var(--navy);
     color: var(--white);
-    padding: clamp(4rem, 9vh, 7rem) 0 clamp(2.5rem, 5vh, 4rem);
+    /* Top padding must clear the fixed site nav (~5rem tall). 4rem was
+       hiding the breadcrumb behind the header at narrow viewports. */
+    padding: clamp(7rem, 12vh, 10rem) 0 clamp(2.5rem, 5vh, 4rem);
 }
 .ow-hero h1 {
     font-family: 'Cormorant Garamond', serif;

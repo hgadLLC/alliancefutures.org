@@ -1,5 +1,11 @@
 .commentary-hero { padding: clamp(7rem, 14vh, 9.5rem) 0 1.5rem; background: var(--white); }
 .commentary-hero .breadcrumb { margin-bottom: 1.25rem; }
+/* Breadcrumb defaults are tuned for the dark navy hero. On the white
+   commentary hero we need real contrast — readable gold for links,
+   navy for the trailing label. */
+.commentary-hero .breadcrumb a { color: var(--gold-dark); }
+.commentary-hero .breadcrumb a:hover { color: var(--navy); }
+.commentary-hero .breadcrumb span { color: var(--navy); }
 .commentary-eyebrow { display: inline-block; padding: 0.3rem 0.75rem; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--gold-dark); background: rgba(218, 165, 32, 0.1); border: 1px solid rgba(218, 165, 32, 0.3); margin-bottom: 1rem; }
 .commentary-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 600; color: var(--navy); line-height: 1.15; margin: 0 0 1rem; max-width: 880px; }
 .commentary-byline { font-size: 0.95rem; color: var(--mid-gray); margin-bottom: 1.5rem; }
