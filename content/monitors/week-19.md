@@ -9,7 +9,7 @@ pdf: /embassy-monitors/pdfs/embassy-monitor-week-19.pdf
 prev_week: 18
 authors: [jonah-bock]
 categories: [embassies-monitor]
-featured: true
+featured: false
 
 ambassadors_corner: |
   China&rsquo;s embassies across the region marked the Dragon Boat Festival last week, celebrated with zongzi and boat races. In Vanuatu, the embassy broke from tradition and organized a group trip to Vanuatu Brewing Ltd., producer of the local Tusker beer.
