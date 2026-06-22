@@ -7,6 +7,7 @@ title: "Fengqiao Lite in Lau Valley: China&rsquo;s Grassroots Policing Model Ada
 description: "Fengqiao Lite in Lau Valley — China's grassroots policing model adapts to the Solomons; Dialogue Among Civilizations and the Nauru media broadcast. June 8 to June 14, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-18.pdf
 prev_week: 17
+next_week: 19
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

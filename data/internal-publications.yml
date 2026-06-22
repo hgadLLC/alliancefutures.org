@@ -32,6 +32,32 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "China&rsquo;s Police Walk a Fiji Beat"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 19
+  date: 2026-06-15
+  url: embassy-monitors/week-19.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Fiji, Vanuatu, Federated States of Micronesia]
+  featured: true
+  image: embassy-monitors/images/thumbs/week-19.jpg
+  excerpt: "China resumes police equipment handovers to Fiji and runs an intensive seminar campaign across the region."
+
+- type: monitor
+  title: "Fengqiao Lite in Lau Valley: China&rsquo;s Grassroots Policing Model Adapts to the Solomons"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 18
+  date: 2026-06-08
+  url: embassy-monitors/week-18.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Solomon Islands, Nauru]
+  excerpt: "China&rsquo;s policing partnerships in the Solomons; coordinated Dialogue Among Civilizations push and a Nauru media broadcast."
+
+- type: monitor
   title: "Wale Goes to Canberra; Beijing Stays Busy"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 17
   date: 2026-06-01
