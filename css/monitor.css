@@ -219,6 +219,27 @@
             margin-bottom: 0 !important;
         }
 
+        .callout-box .callout-figure {
+            margin: 1rem 0 0;
+        }
+        .callout-box .callout-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+        .callout-box .callout-figure figcaption {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--mid-gray);
+            font-style: italic;
+            margin-top: 0.4rem;
+        }
+        .callout-box .callout-figure figcaption a {
+            color: var(--ocean);
+            text-decoration: underline;
+        }
+
         .monitor-article figure {
             margin: 1.75rem 0;
         }

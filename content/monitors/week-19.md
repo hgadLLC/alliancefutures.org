@@ -17,6 +17,9 @@ ambassadors_corner: |
   The trip is analytically useful for one reason: the photos. This monitor identified several known embassy staff in the images, which show 16 people wearing matching Tusker shirts.
 
   China does not disclose its embassy staffing numbers, and this image offers a rare window into the Vanuatu mission size. Sixteen people visible in the casual group outing likely represents a portion, not the full complement, of embassy personnel.
+ambassadors_image: /embassy-monitors/images/week-19-vanuatu-staff.jpg
+ambassadors_image_caption: "PRC Embassy in Vanuatu staff at Vanuatu Brewing Ltd."
+ambassadors_image_source_label: "PRC Embassy in Vanuatu"
 
 summary: |
   China marked a significant step in restoring **police cooperation with Fiji** last week, reigniting a relationship that broke down in 2022. The PRC embassy and Fiji&rsquo;s Police Ministry oversaw the handover of equipment from China to the Fiji Police Force. China has also run an **intensive seminar campaign** over the past two months, hosting at least 12 events in the country with participants drawn from multiple Pacific Island countries.
@@ -29,9 +32,6 @@ themes:
       The meeting marks the latest step in a policing relationship that resumed in March 2024. China no longer embeds its own officers in Fiji, but the material support it provides&mdash;particularly technology with surveillance applications&mdash;gives Beijing continued influence in Fiji&rsquo;s policing model.
 
       A senior-level police officer also attended &mdash; his white uniform and epaulettes identify him as a Third Level Inspector in China&rsquo;s People&rsquo;s Police. Wang and the officer both appeared at the Fiji Police Force&rsquo;s Passing Out Parade for Batch 69.
-    figure: /embassy-monitors/images/week-19-vanuatu-staff.jpg
-    figure_caption: "PRC Embassy in Vanuatu staff visit Vanuatu Brewing Ltd."
-    figure_source_label: "PRC Embassy in Vanuatu"
     supporting_events:
       - country: Fiji
         label: Charg&eacute; d&rsquo;Affaires Meets with Fiji&rsquo;s Police Minister

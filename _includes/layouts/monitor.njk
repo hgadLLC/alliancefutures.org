@@ -45,6 +45,14 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 <div class="callout-box callout-box--float callout-box--note">
                     <span class="callout-box__label">Ambassador&rsquo;s Corner</span>
                     {{ ambassadors_corner | markdownify(callout=true) | safe }}
+                    {%- if ambassadors_image %}
+                    <figure class="callout-figure">
+                        <img src="{{ ambassadors_image }}" alt="{{ ambassadors_image_caption | striptags }}">
+                        {%- if ambassadors_image_caption %}
+                        <figcaption>{{ ambassadors_image_caption | safe }}{% if ambassadors_image_source_url and ambassadors_image_source_label %} (Source: <a href="{{ ambassadors_image_source_url }}" target="_blank" rel="noopener">{{ ambassadors_image_source_label }}</a>){% elif ambassadors_image_source_label %} (Source: {{ ambassadors_image_source_label | safe }}){% endif %}</figcaption>
+                        {%- endif %}
+                    </figure>
+                    {%- endif %}
                 </div>
                 {%- endif %}
 
