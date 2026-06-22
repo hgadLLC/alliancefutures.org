@@ -59,6 +59,15 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 <h2>Summary of PRC Activity</h2>
                 {{ summary | markdownify | safe }}
 
+                {%- if summary_image %}
+                <figure class="summary-figure">
+                    <img src="{{ summary_image }}" alt="{{ summary_image_caption | striptags }}">
+                    {%- if summary_image_caption %}
+                    <figcaption>{{ summary_image_caption | safe }}{% if summary_image_source_url and summary_image_source_label %}<br>(Source: <a href="{{ summary_image_source_url }}" target="_blank" rel="noopener">{{ summary_image_source_label }}</a>){% elif summary_image_source_label %}<br>(Source: {{ summary_image_source_label | safe }}){% endif %}</figcaption>
+                    {%- endif %}
+                </figure>
+                {%- endif %}
+
                 <h2>This Week&rsquo;s Big Theme{% if themes.length > 1 %}s{% endif %}:</h2>
 
                 {%- for theme in themes %}

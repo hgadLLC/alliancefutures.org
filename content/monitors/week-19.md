@@ -17,12 +17,13 @@ ambassadors_corner: |
   The trip is analytically useful for one reason: the photos. This monitor identified several known embassy staff in the images, which show 16 people wearing matching Tusker shirts.
 
   China does not disclose its embassy staffing numbers, and this image offers a rare window into the Vanuatu mission size. Sixteen people visible in the casual group outing likely represents a portion, not the full complement, of embassy personnel.
-ambassadors_image: /embassy-monitors/images/week-19-vanuatu-staff.jpg
-ambassadors_image_caption: "PRC Embassy in Vanuatu staff at Vanuatu Brewing Ltd."
-ambassadors_image_source_label: "PRC Embassy in Vanuatu"
 
 summary: |
   China marked a significant step in restoring **police cooperation with Fiji** last week, reigniting a relationship that broke down in 2022. The PRC embassy and Fiji&rsquo;s Police Ministry oversaw the handover of equipment from China to the Fiji Police Force. China has also run an **intensive seminar campaign** over the past two months, hosting at least 12 events in the country with participants drawn from multiple Pacific Island countries.
+
+summary_image: /embassy-monitors/images/week-19-vanuatu-staff.jpg
+summary_image_caption: "PRC Embassy in Vanuatu Staff Photo"
+summary_image_source_label: "PRC Embassy in Vanuatu"
 
 themes:
   - title: Police Cooperation in Fiji

@@ -219,6 +219,29 @@
             margin-bottom: 0 !important;
         }
 
+        .summary-figure {
+            margin: 1.5rem 0 2rem;
+            clear: none;
+        }
+        .summary-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .summary-figure figcaption {
+            border: 1px solid rgba(10, 37, 64, 0.18);
+            padding: 0.7rem 1rem;
+            margin-top: 0.6rem;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--mid-gray);
+        }
+        .summary-figure figcaption a {
+            color: var(--ocean);
+            text-decoration: underline;
+        }
+
         .callout-box .callout-figure {
             margin: 1rem 0 0;
         }
