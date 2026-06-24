@@ -16,6 +16,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-last-human-advantage
+next_slug: aukus-at-the-watershed
 featured: true
 ---
 This architecture is already assembling. China&rsquo;s state-backed mega-constellations began deploying orbital AI supercomputing nodes into low Earth orbit over the past year, aiming for an eventual ecosystem of thousands of satellites delivering exascale processing in space. Western tech giants are close behind: Google&rsquo;s Project Suncatcher is preparing TPU-equipped orbital prototypes, Nvidia silicon is already operating aboard commercial testbeds, and tech founders openly signal that orbital facilities will eventually beat the escalating cost of terrestrial data centres.

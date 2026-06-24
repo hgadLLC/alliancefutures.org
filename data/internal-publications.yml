@@ -279,7 +279,37 @@
   featured: true
   excerpt: "Three scenarios for how the Russia&ndash;Ukraine war ends &mdash; and what each teaches China about Taiwan."
 
-# ----- Southern Signals (Andrew Horton commentary series) -----
+# ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
+
+- type: report
+  title: "AUKUS at the watershed"
+  outlet: Southern Signals &middot; Research
+  date: 2026-06-24
+  url: publications/aukus-at-the-watershed.html
+  authors: [marc-ablong]
+  category: research
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Indo-Pacific
+  countries: [Australia, United Kingdom, United States, China]
+  image: publications/images/aukus-at-the-watershed-hero.jpg
+  excerpt: "Why three capitals signed, what the official case glosses over, and what the wager really costs."
+
+- type: commentary
+  title: "AUKUS at the watershed"
+  outlet: Southern Signals
+  date: 2026-06-24
+  url: our-work/commentary/aukus-at-the-watershed.html
+  authors: [marc-ablong]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Indo-Pacific
+  countries: [Australia, United Kingdom, United States]
+  image: our-work/commentary/images/aukus-at-the-watershed-hero.jpg
+  excerpt: "AUKUS is a wager worth making, with eyes open."
 
 - type: commentary
   title: "Offshore Is Now Overhead"
