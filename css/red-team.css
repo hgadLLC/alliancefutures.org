@@ -252,6 +252,48 @@
     margin-top: 0.5rem;
 }
 
+/* ===== Inline figures (hero, charts, illustrations) ===== */
+.report-content figure {
+    margin: 2rem 0;
+    max-width: 100%;
+}
+.report-content figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+.report-content figure figcaption {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--mid-gray);
+    font-style: italic;
+    margin-top: 0.6rem;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+/* ===== Sources / references list at the foot of the report ===== */
+.report-content ol.sources {
+    list-style: decimal;
+    margin: 1.5rem 0 2rem 1.75rem;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+.report-content ol.sources li {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 0.6rem;
+    color: var(--navy);
+}
+.report-content ol.sources a {
+    color: var(--ocean);
+    text-decoration: underline;
+    word-break: break-word;
+}
+
 /* ===== Crimson Callout ===== */
 .crimson-callout {
     background: #8B1A1A;

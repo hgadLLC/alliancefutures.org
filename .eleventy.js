@@ -20,6 +20,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "publications/images": "publications/images" });
     eleventyConfig.addPassthroughCopy({ "our-work/commentary/images": "our-work/commentary/images" });
     eleventyConfig.addPassthroughCopy({ "our-work/commentary/*.pdf": "our-work/commentary/" });
+    eleventyConfig.addPassthroughCopy({ "our-work/research/*.pdf": "our-work/research/" });
+    eleventyConfig.addPassthroughCopy({ "our-work/research/images": "our-work/research/images" });
 
     // Static pages that aren't CMS-managed — copy from the repo root as-is.
     // These ship verbatim until/unless they get migrated into content/pages/.

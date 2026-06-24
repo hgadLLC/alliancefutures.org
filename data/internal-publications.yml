@@ -282,10 +282,10 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: report
-  title: "AUKUS at the watershed"
+  title: "AUKUS At The Watershed"
   outlet: Southern Signals &middot; Research
   date: 2026-06-24
-  url: publications/aukus-at-the-watershed.html
+  url: our-work/research/aukus-at-the-watershed.html
   authors: [marc-ablong]
   category: research
   product_type: Southern Signals
@@ -293,11 +293,11 @@
   tag_class: is-southern-signals
   region: Indo-Pacific
   countries: [Australia, United Kingdom, United States, China]
-  image: publications/images/aukus-at-the-watershed-hero.jpg
+  image: our-work/research/images/aukus-at-the-watershed-hero.jpg
   excerpt: "Why three capitals signed, what the official case glosses over, and what the wager really costs."
 
 - type: commentary
-  title: "AUKUS at the watershed"
+  title: "AUKUS At The Watershed"
   outlet: Southern Signals
   date: 2026-06-24
   url: our-work/commentary/aukus-at-the-watershed.html

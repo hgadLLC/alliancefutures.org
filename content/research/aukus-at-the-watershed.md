@@ -1,12 +1,13 @@
 ---
 layout: layouts/red-team.njk
+permalink: "/our-work/research/aukus-at-the-watershed.html"
 slug: aukus-at-the-watershed
 date: 2026-06-24
-title: "AUKUS at the watershed"
+title: "AUKUS At The Watershed"
 subtitle: "Why three capitals signed, what the official case glosses over, and what the wager really costs."
-publication_title: "AUKUS at the Watershed"
+publication_title: "AUKUS At The Watershed"
 description: "A Southern Signals long-form research piece by Marc Ablong: why three capitals signed AUKUS, what the official case glosses over, and what the wager really costs."
-pdf: "/publications/AUKUS at the Watershed.pdf"
+pdf: "/our-work/research/aukus-at-the-watershed.pdf"
 authors:
   - "Marc Ablong"
 toc:
@@ -53,7 +54,7 @@ categories: [research, southern-signals]
 featured: false
 ---
 <figure class="figure">
-    <img src="/publications/images/aukus-at-the-watershed-hero.jpg" alt="A submarine bearing the Australian, British, and US flags surfaces near the camera, with shafts of sunlight cutting through the water.">
+    <img src="/our-work/research/images/aukus-at-the-watershed-hero.jpg" alt="A submarine bearing the Australian, British, and US flags surfaces near the camera, with shafts of sunlight cutting through the water.">
     <figcaption>(Adobe Stock)</figcaption>
 </figure>
 
@@ -198,7 +199,7 @@ Set against that, the nuclear path: a base estimate of $244.7 billion across the
 The comparison between the two ledgers is imperfect in ways that matter and that both boosters and critics routinely ignore. The horizons differ: the Attack class figures ran to 2080, while the AUKUS figures stop at 2054&ndash;55 with decades of sustainment beyond them uncounted. The fleets differ: twelve hulls against eight. And the contingency treatment differs: the $368 billion includes a deliberate $122.9 billion provision for overruns, while the Attack class numbers carried no comparable provision, and on that program&rsquo;s own trajectory it would have needed one.
 
 <figure class="figure">
-    <img src="/publications/images/aukus-cost-ledger.png" alt="A line chart titled &ldquo;The cost ledger as opportunity cost: nuclear versus conventional&rdquo;, showing cumulative program spend in billions of Australian dollars from 2025 to 2060. The nuclear (AUKUS) curve rises to about $244.7 billion by 2054 to 2055. The conventional counterfactual curve, modelled to the same horizon, rises to about $133 billion. The shaded wedge between them, labelled opportunity cost, is approximately $110 billion across the period.">
+    <img src="/our-work/research/images/aukus-cost-ledger.png" alt="A line chart titled &ldquo;The cost ledger as opportunity cost: nuclear versus conventional&rdquo;, showing cumulative program spend in billions of Australian dollars from 2025 to 2060. The nuclear (AUKUS) curve rises to about $244.7 billion by 2054 to 2055. The conventional counterfactual curve, modelled to the same horizon, rises to about $133 billion. The shaded wedge between them, labelled opportunity cost, is approximately $110 billion across the period.">
     <figcaption>The cost ledger as opportunity cost: nuclear versus conventional. The nuclear curve is the Parliamentary Budget Office base costing to 2054&ndash;55; the conventional curve is modelled from published annual submarine-spending figures run to the same horizon. The shaded wedge between them is the opportunity cost: the additional money the nuclear path consumes over the conventional counterfactual, roughly $110 billion across the period. The conventional curve is indicative, not an official estimate.</figcaption>
 </figure>
 
@@ -231,7 +232,7 @@ The Attack class program was expected to generate an annual average of around 2,
 The uniformed picture is steeper still. The Navy&rsquo;s trained submarine workforce stood at 881 in early 2021, the product of years of deliberate effort, and sits around 900 today. A Collins boat sails with a crew of around 55; a Virginia sails with 132. Crewing three Virginias while continuing to crew six Collins through their life extension, and then crewing SSN-AUKUS, requires the submarine workforce to grow to around 3,000. That is a tripling of a workforce that took two decades to grow to its current strength, in a labour market where every other national megaproject is bidding for the same engineers and technicians.
 
 <figure class="figure">
-    <img src="/publications/images/aukus-workforce-mountain.png" alt="A two-panel bar chart titled &ldquo;The workforce mountain: conventional versus nuclear&rdquo;. The top panel shows direct industrial workforce: Attack class annual average around 2,800; AUKUS yard construction at Osborne up to 4,000 (temporary); AUKUS submarine build at Osborne 4,000 to 5,500 at peak; AUKUS sustainment and SRF-West in Western Australia approximately 3,000. The bottom panel shows uniformed submarine workforce: 881 trained submariners in 2021, against approximately 3,000 required for the nuclear fleet, with crew sizes noted of about 55 per Collins and 132 per Virginia.">
+    <img src="/our-work/research/images/aukus-workforce-mountain.png" alt="A two-panel bar chart titled &ldquo;The workforce mountain: conventional versus nuclear&rdquo;. The top panel shows direct industrial workforce: Attack class annual average around 2,800; AUKUS yard construction at Osborne up to 4,000 (temporary); AUKUS submarine build at Osborne 4,000 to 5,500 at peak; AUKUS sustainment and SRF-West in Western Australia approximately 3,000. The bottom panel shows uniformed submarine workforce: 881 trained submariners in 2021, against approximately 3,000 required for the nuclear fleet, with crew sizes noted of about 55 per Collins and 132 per Virginia.">
     <figcaption>The workforce mountain: conventional versus nuclear. Attack class jobs are the program&rsquo;s expected annual average; AUKUS figures are Australian Submarine Agency peak estimates, with yard construction temporary; uniformed figures from Defence evidence to the Senate and the Lowy Institute.</figcaption>
 </figure>
 

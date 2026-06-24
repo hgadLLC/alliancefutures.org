@@ -2,7 +2,7 @@
 layout: layouts/commentary.njk
 slug: aukus-at-the-watershed
 date: 2026-06-24
-title: "AUKUS at the watershed"
+title: "AUKUS At The Watershed"
 series: "Southern Signals"
 author: "Marc Ablong"
 author_title: "Senior Fellow"
