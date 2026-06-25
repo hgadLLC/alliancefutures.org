@@ -281,6 +281,20 @@
 
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
+- type: commentary
+  title: "The Problem of Unknowable Power: Why Understanding AI May Matter More Than Owning It"
+  outlet: Southern Signals
+  date: 2026-06-25
+  url: our-work/commentary/the-problem-of-unknowable-power.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-problem-of-unknowable-power-hero.jpg
+  excerpt: "Why understanding AI may matter more than owning it &mdash; the next phase of strategic competition will be decided by evaluation, not ownership."
+
 - type: report
   title: "AUKUS At The Watershed"
   outlet: Southern Signals &middot; Research

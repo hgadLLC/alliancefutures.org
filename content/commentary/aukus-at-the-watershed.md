@@ -16,6 +16,7 @@ author_bio: |
   Marc is a geostrategic-risk advisor and former Australian Deputy Secretary whose 31-year public-service career spanned national security, intelligence, critical and emerging technology, cyber, and Defence strategy &mdash; including leadership of two Australian Defence White Papers. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/marc-ablong.html
 prev_slug: offshore-is-now-overhead
+next_slug: the-problem-of-unknowable-power
 featured: false
 ---
 For decades Australian defence planning rested on a comfortable assumption, embedded in policy as recently as the 2016 Defence White Paper: around ten years of strategic warning time before any serious threat could materialise. That assumption is dead. The 2023 Defence Strategic Review buried it, and the 2026 National Defence Strategy went further, describing &lsquo;force projection risks not seen since WWII&rsquo;. China&rsquo;s military modernisation has been the fastest sustained build-up by any power since the Second World War; the People&rsquo;s Liberation Army Navy is projected to reach eighty submarines by 2035, against a US fleet that will hover in the mid fifties. It is against this backdrop that AUKUS, announced in September 2021, must be judged. It is the most consequential strategic decision Australia has made since the Second World War. The argument here is that its strategic logic holds, but not always for the reasons ministers give, and the official case glosses over three things that deserve harder scrutiny. The alternatives, all of them, are worse.
