@@ -7,6 +7,7 @@ title: "China&rsquo;s Police Walk a Fiji Beat &mdash; Last Week in the Pacific"
 description: "China resumes police equipment handovers to Fiji and runs an intensive seminar campaign across the region. June 15 to June 21, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-19.pdf
 prev_week: 18
+next_week: 20
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

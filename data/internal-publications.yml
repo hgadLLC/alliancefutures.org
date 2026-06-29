@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "China Delegates Pacific Diplomacy to the Provinces"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 20
+  date: 2026-06-22
+  url: embassy-monitors/week-20.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Fiji, Solomon Islands]
+  image: embassy-monitors/images/thumbs/week-20.jpg
+  excerpt: "Jiangsu Province leads China&rsquo;s engagement with Fiji and Solomon Islands; Qian Bo briefs Pacific Islands diplomats in Nanjing on the Seven Cooperation Platforms."
+
+- type: monitor
   title: "China&rsquo;s Police Walk a Fiji Beat"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 19
   date: 2026-06-15
