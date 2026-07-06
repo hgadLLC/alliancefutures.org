@@ -16,6 +16,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: aukus-at-the-watershed
+next_slug: the-ai-harvest
 featured: false
 ---
 While presidents and prime ministers worked through the formal agenda, a working lunch brought together the leaders of the world&rsquo;s frontier artificial intelligence laboratories alongside heads of government. Sam Altman sat beside Donald Trump, while Dario Amodei and Demis Hassabis occupied seats once reserved for national leaders. Ministers and senior officials crowded the room, and the discussion drew as much attention as the summit itself.

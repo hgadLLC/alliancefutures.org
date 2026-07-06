@@ -307,6 +307,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The AI Harvest"
+  outlet: Southern Signals
+  date: 2026-07-06
+  url: our-work/commentary/the-ai-harvest.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-ai-harvest-hero.jpg
+  excerpt: "How artificial intelligence is turning democratic openness into authoritarian advantage &mdash; and why mastery, not retreat, is the answer."
+
+- type: commentary
   title: "The Problem of Unknowable Power: Why Understanding AI May Matter More Than Owning It"
   outlet: Southern Signals
   date: 2026-06-25
