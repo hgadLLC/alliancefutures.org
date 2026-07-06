@@ -7,6 +7,7 @@ title: "China Delegates Pacific Diplomacy to the Provinces &mdash; Last Week in 
 description: "Jiangsu Province leads China&rsquo;s engagement with Fiji and Solomon Islands; Qian Bo briefs Pacific Islands diplomats in Nanjing on the Seven Cooperation Platforms. June 22 to June 28, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-20.pdf
 prev_week: 19
+next_week: 21
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

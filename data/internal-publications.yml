@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "China and Taiwan Both Come Bearing Gifts"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 21
+  date: 2026-06-29
+  url: embassy-monitors/week-21.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Fiji, Tonga]
+  image: embassy-monitors/images/thumbs/week-21.jpg
+  excerpt: "China and Taiwan each donate to the Pacific Islands Forum in parallel bids for influence; Qian Bo engages the PIF Secretariat and Tonga&rsquo;s PM."
+
+- type: monitor
   title: "China Delegates Pacific Diplomacy to the Provinces"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 20
   date: 2026-06-22
