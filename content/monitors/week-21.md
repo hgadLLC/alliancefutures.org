@@ -21,6 +21,10 @@ ambassadors_corner: |
 summary: |
   **China and Taiwan each donated to the Pacific Islands Forum (PIF)** last week as Forum leaders convened in Fiji&mdash;a parallel play for influence at the region&rsquo;s premier multilateral body. China&rsquo;s Special Envoy Qian Bo met with the PIF Secretariat and Tonga&rsquo;s Prime Minister on the sidelines. Chinese embassies across the region marked the **CCP&rsquo;s 105th founding anniversary** in coordinated regional observance.
 
+summary_image: /embassy-monitors/images/week-21-waqa-qianbo.jpg
+summary_image_caption: "Baron Waqa with Qian Bo."
+summary_image_source_label: "Pacific Islands Forum Facebook"
+
 themes:
   - title: China and Taiwan Compete in the PIF
     body: |
@@ -31,9 +35,6 @@ themes:
       The diplomatic context matters: before last year&rsquo;s Leaders Meeting in the Solomon Islands, China tried to block Taiwan&rsquo;s participation through its relationship with the host government. The attempt triggered a controversy resolved only by excluding all development and dialogue partners&mdash;including both China and Taiwan&mdash;from the meeting. By directly engaging the PIF Secretariat, China may shape conditions for Palau&rsquo;s Leaders Meeting without going through Palau, with which it has no diplomatic relations.
 
       Qian Bo also met separately with Tonga&rsquo;s Prime Minister, Lord Fakafanua, and presented him with a volume of Xi Jinping&rsquo;s *The Governance of China*.
-    figure: /embassy-monitors/images/week-21-waqa-qianbo.jpg
-    figure_caption: "Baron Waqa with Qian Bo."
-    figure_source_label: "Pacific Islands Forum Facebook"
     supporting_events:
       - country: Fiji
         label: Wang Yuan Presents PIF Donation
