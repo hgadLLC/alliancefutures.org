@@ -320,6 +320,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Next AI Arms Race Isn&rsquo;t About Chips. It&rsquo;s About Trust."
+  outlet: Southern Signals
+  date: 2026-07-09
+  url: our-work/commentary/the-next-ai-arms-race.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-next-ai-arms-race-hero.jpg
+  excerpt: "Semiconductors and compute dominate the strategic debate. But the decisive contest will be over who can make autonomous systems accountable &mdash; and the window to act is closing."
+
+- type: commentary
   title: "The AI Harvest"
   outlet: Southern Signals
   date: 2026-07-06

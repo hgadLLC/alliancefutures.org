@@ -16,6 +16,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-problem-of-unknowable-power
+next_slug: the-next-ai-arms-race
 featured: false
 ---
 What sets AI apart is its mechanism. Earlier breakthroughs widened collection by opening new frontiers. AI instead transforms the strategic value of information that already exists.
