@@ -7,6 +7,7 @@ title: "China and Taiwan Both Come Bearing Gifts &mdash; Last Week in the Pacifi
 description: "China and Taiwan each donate to the Pacific Islands Forum in parallel bids for influence at the region&rsquo;s premier multilateral body. June 29 to July 5, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-21.pdf
 prev_week: 20
+next_week: 22
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

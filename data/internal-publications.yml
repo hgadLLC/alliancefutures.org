@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "Fiji Picks Australia; China Stays Anyway"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 22
+  date: 2026-07-06
+  url: embassy-monitors/week-22.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Fiji]
+  image: embassy-monitors/images/thumbs/week-22.jpg
+  excerpt: "Days after Fiji signed the Ocean of Peace Alliance with Australia, China&rsquo;s defense attach&eacute; donated to the RFMF, attended the Commander&rsquo;s birthday, and toured a frontline Fijian battalion."
+
+- type: monitor
   title: "China and Taiwan Both Come Bearing Gifts"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 21
   date: 2026-06-29
