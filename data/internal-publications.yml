@@ -333,6 +333,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Price of Freedom"
+  outlet: Southern Signals
+  date: 2026-07-16
+  url: our-work/commentary/the-price-of-freedom.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-price-of-freedom-hero.jpg
+  excerpt: "Why democracies risk pricing themselves out of the AI century &mdash; the Democracy Premium, cognitive dumping, and why affordability of trusted AI is now a national security issue."
+
+- type: commentary
   title: "The Next AI Arms Race Isn&rsquo;t About Chips. It&rsquo;s About Trust."
   outlet: Southern Signals
   date: 2026-07-09

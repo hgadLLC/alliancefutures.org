@@ -16,6 +16,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-ai-harvest
+next_slug: the-price-of-freedom
 featured: false
 ---
 They matter. But they are no longer the centre of gravity. The next strategic contest will be decided not by who builds the most powerful AI model, but by who solves the problem of trust before autonomous systems become embedded throughout the global economy.
