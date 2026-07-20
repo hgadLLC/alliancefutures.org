@@ -7,6 +7,7 @@ title: "Fiji Picks Australia; China Stays Anyway &mdash; Last Week in the Pacifi
 description: "Australia and Fiji sign the Ocean of Peace Alliance; days later China&rsquo;s defense attach&eacute; donates to the RFMF, attends the Commander&rsquo;s birthday, and tours the Third Battalion Fiji Infantry Regiment. July 6 to July 12, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-22.pdf
 prev_week: 21
+next_week: 23
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

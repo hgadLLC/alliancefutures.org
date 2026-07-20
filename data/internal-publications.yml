@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "China&rsquo;s Nauru Ambassador Hitches a Ride to Kiribati"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 23
+  date: 2026-07-13
+  url: embassy-monitors/week-23.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Nauru, Kiribati, Solomon Islands, Papua New Guinea]
+  image: embassy-monitors/images/thumbs/week-23.jpg
+  excerpt: "China&rsquo;s Ambassador to Nauru accompanies President Adeang to Kiribati&rsquo;s independence day; Solomon Islands FM signs an economic framework in Beijing; PNG closes the Taipei Economic Office."
+
+- type: monitor
   title: "Fiji Picks Australia; China Stays Anyway"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 22
   date: 2026-07-06
