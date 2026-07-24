@@ -346,6 +346,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Infrastructure of Intelligence"
+  outlet: Southern Signals
+  date: 2026-07-20
+  url: our-work/commentary/the-infrastructure-of-intelligence.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-infrastructure-of-intelligence-hero.jpg
+  excerpt: "Why compute &mdash; not algorithms &mdash; will decide the AI century, and how the location of hyperscale data centres, semiconductor supply chains, and sovereign cloud are already shaping the balance of power in the 2030s."
+
+- type: commentary
   title: "The Price of Freedom"
   outlet: Southern Signals
   date: 2026-07-16

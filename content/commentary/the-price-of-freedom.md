@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-next-ai-arms-race
+next_slug: the-infrastructure-of-intelligence
 featured: false
 ---
 That possibility should concern every Western policymaker. If trusted AI becomes a premium product while authoritarian governments subsidise capable alternatives, the defining contest of the AI age will not be won by the best model. It will be won by the one that becomes the global standard.
