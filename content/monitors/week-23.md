@@ -7,6 +7,7 @@ title: "China&rsquo;s Nauru Ambassador Hitches a Ride to Kiribati &mdash; Last W
 description: "China&rsquo;s Ambassador to Nauru accompanies President Adeang to Kiribati&rsquo;s independence day; Solomon Islands FM signs an economic framework in Beijing; PNG closes the Taipei Economic Office. July 13 to July 19, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-23.pdf
 prev_week: 22
+next_week: 24
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

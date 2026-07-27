@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "The CCP Takes Its Party Act to the Pacific"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 24
+  date: 2026-07-20
+  url: embassy-monitors/week-24.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Solomon Islands, Vanuatu, Fiji, Papua New Guinea, Tonga]
+  image: embassy-monitors/images/thumbs/week-24.jpg
+  excerpt: "The CCP&rsquo;s International Liaison Department makes its first recorded Pacific visit; Chinese ambassadors and provinces run six training programs for 130+ Pacific Islanders; PLA 99th anniversary receptions across three capitals."
+
+- type: monitor
   title: "China&rsquo;s Nauru Ambassador Hitches a Ride to Kiribati"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 23
   date: 2026-07-13
