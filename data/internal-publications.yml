@@ -359,6 +359,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Power Bill and People Power"
+  outlet: Southern Signals
+  date: 2026-07-30
+  url: our-work/commentary/the-power-bill-and-people-power.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-power-bill-and-people-power-hero.jpg
+  excerpt: "The civic veto &mdash; how household electricity politics is becoming the binding constraint on machine intelligence, and why democracies must treat social licence as strategic infrastructure."
+
+- type: commentary
   title: "The Infrastructure of Intelligence"
   outlet: Southern Signals
   date: 2026-07-20

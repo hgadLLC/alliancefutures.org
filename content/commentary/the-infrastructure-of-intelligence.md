@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-price-of-freedom
+next_slug: the-power-bill-and-people-power
 featured: false
 ---
 The nations that recognise this shift first will shape the global economy, military balance and technological order for decades to come. Those that continue to view artificial intelligence primarily as a contest of algorithms risk overlooking where enduring power is actually accumulating. The defining strategic asset of the AI age is no longer the model. It is the infrastructure that enables intelligence to exist at scale.
