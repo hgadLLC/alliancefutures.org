@@ -7,6 +7,7 @@ title: "The CCP Takes Its Party Act to the Pacific &mdash; Last Week in the Paci
 description: "The CCP&rsquo;s International Liaison Department makes its first recorded Pacific visit; Chinese ambassadors and provinces run at least six training programs for 130+ Pacific Islanders; PLA 99th anniversary receptions across three capitals. July 20 to July 26, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-24.pdf
 prev_week: 23
+next_week: 25
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
