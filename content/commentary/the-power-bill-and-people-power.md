@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-infrastructure-of-intelligence
+next_slug: the-abundance-doctrine
 featured: false
 ---
 Read past the theatre. The pledge is voluntary and carries no enforceable protections, yet its expansion four months before midterm elections records a strategic fact of the first order. When the most AI-committed administration on earth must publicly bargain with its own citizens to keep building, the centre of gravity in the contest for artificial intelligence has moved. It now sits at the household electricity meter.

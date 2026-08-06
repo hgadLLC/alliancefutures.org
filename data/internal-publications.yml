@@ -372,6 +372,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Abundance Doctrine"
+  outlet: Southern Signals
+  date: 2026-08-03
+  url: our-work/commentary/the-abundance-doctrine.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-abundance-doctrine-hero.jpg
+  excerpt: "America is trying to win the AI race by withholding technology. China intends to win it by giving technology away &mdash; and the giveaway is working. Why democracies need an Abundance Doctrine before Beijing owns the world&rsquo;s AI stack."
+
+- type: commentary
   title: "The Power Bill and People Power"
   outlet: Southern Signals
   date: 2026-07-30
