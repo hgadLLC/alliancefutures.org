@@ -315,6 +315,32 @@
     margin-bottom: 0 !important;
 }
 
+/* ===== Report Callout (light navy-tinted info box, mirrors PDF exec-summary / falsifiability boxes) ===== */
+.report-content blockquote.report-callout {
+    background: rgba(5, 22, 40, 0.04);
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+    font-style: normal;
+    font-family: inherit;
+    color: var(--navy);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.report-content blockquote.report-callout p,
+.report-content blockquote.report-callout ul,
+.report-content blockquote.report-callout ol {
+    color: var(--navy);
+    font-style: normal;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.report-content blockquote.report-callout > *:last-child { margin-bottom: 0; }
+.report-content blockquote.report-callout strong { color: var(--navy); }
+
 /* ===== Memo Styling ===== */
 .memo {
     max-width: 720px;
