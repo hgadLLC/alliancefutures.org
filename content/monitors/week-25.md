@@ -7,6 +7,7 @@ title: "China Addresses Taiwan Holdouts &mdash; Last Week in the Pacific"
 description: "Chinese diplomats publish one-China principle op-eds in Fiji and the FSM using PNG&rsquo;s Taipei office closure as their opening argument; Liu Weimin defends the missile test in Tonga; China hands over 161 CHEC/Huawei-built telecom towers in the Solomon Islands. July 27 to August 2, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-25.pdf
 prev_week: 24
+next_week: 26
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

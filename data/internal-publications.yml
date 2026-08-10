@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "Beijing Sends Buyers to Port Moresby"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 26
+  date: 2026-08-03
+  url: embassy-monitors/week-26.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Papua New Guinea, Samoa, Solomon Islands]
+  image: embassy-monitors/images/thumbs/week-26.jpg
+  excerpt: "A PetroChina delegation lands in Port Moresby days after Taiwan suspends spot LNG purchases; Guangdong signs a media letter of intent in Apia; China&rsquo;s National Immigration Administration donates six vehicles to the Solomon Islands Immigration Division."
+
+- type: monitor
   title: "China Addresses Taiwan Holdouts"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 25
   date: 2026-07-27
