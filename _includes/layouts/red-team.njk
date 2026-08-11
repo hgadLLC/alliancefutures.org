@@ -14,7 +14,7 @@ permalink: "/publications/{{ slug }}.html"
                 <nav class="breadcrumb">
                     <a href="/">Home</a> <span>/</span>
                     <a href="/our-work/futures.html">Our Work / Futures</a> <span>/</span>
-                    <span>{{ breadcrumb_title or title }}</span>
+                    <span>{{ breadcrumb_title or title | safe }}</span>
                 </nav>
                 <h1>{{ title | safe }}</h1>
                 {%- if subtitle %}<p>{{ subtitle | safe }}</p>{% endif %}
@@ -53,7 +53,7 @@ permalink: "/publications/{{ slug }}.html"
 
                 <article class="report-content">
                     <div class="publication-header">
-                        <span class="publication-title">{{ publication_title or title | striptags }}</span>
+                        <span class="publication-title">{{ (publication_title or title) | safe }}</span>
                         <div class="publication-logo">
                             <img src="/images/tafi-logo-real.png" alt="TAFI">
                         </div>

@@ -3,1085 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacific Islands Red Team Event Report | TAFI</title>
+    <title>Pacific Islands Red Team <em>Event Report</em> | TAFI</title>
     <meta name="description" content="A strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region through four regional scenarios.">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/shared.css">
-    <style>
-        /* ===== Layout ===== */
-        .report-layout {
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: clamp(3rem, 6vh, 5rem) 0;
-            align-items: start;
-        }
+    <link rel="stylesheet" href="/css/shared.css">
+    
 
-        .report-content {
-            max-width: 820px;
-        }
-
-        /* ===== Generate PDF Button ===== */
-        .generate-pdf-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            margin-bottom: 2.5rem;
-        }
-
-        .generate-pdf-btn:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
-        }
-
-        .generate-pdf-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* ===== Sticky TOC ===== */
-        .toc-sidebar {
-            position: sticky;
-            top: 100px;
-            max-height: calc(100vh - 120px);
-            overflow-y: auto;
-            padding-right: 1rem;
-        }
-
-        .toc-sidebar h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
-            letter-spacing: 0.5px;
-        }
-
-        .toc-sidebar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .toc-sidebar > ul > li {
-            margin-bottom: 0.25rem;
-        }
-
-        .toc-sidebar > ul > li > a {
-            display: block;
-            padding: 0.45rem 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--mid-gray);
-            text-decoration: none;
-            border-left: 2px solid transparent;
-            transition: all 0.3s ease;
-            line-height: 1.4;
-        }
-
-        .toc-sidebar > ul > li > a:hover,
-        .toc-sidebar > ul > li > a.active {
-            color: var(--navy);
-            border-left-color: var(--gold);
-            background: rgba(218, 165, 32, 0.06);
-        }
-
-        .toc-sidebar > ul > li > a.active {
-            font-weight: 600;
-            color: var(--gold-dark);
-        }
-
-        .toc-sub {
-            margin: 0.15rem 0 0.25rem 0.75rem !important;
-        }
-
-        .toc-sub li a {
-            display: block;
-            padding: 0.3rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: var(--light-gray);
-            text-decoration: none;
-            border-left: 2px solid transparent;
-            transition: all 0.3s ease;
-            line-height: 1.4;
-        }
-
-        .toc-sub li a:hover,
-        .toc-sub li a.active {
-            color: var(--navy);
-            border-left-color: var(--gold-light);
-        }
-
-        .toc-sub li a.active {
-            font-weight: 600;
-            color: var(--gold-dark);
-        }
-
-        /* ===== Report Article ===== */
-        .report-content h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.6rem, 2.5vw, 2rem);
-            color: var(--navy);
-            font-weight: 600;
-            margin: 3rem 0 1rem;
-            line-height: 1.3;
-            padding-top: 1rem;
-        }
-
-        .report-content h2:first-of-type {
-            margin-top: 0;
-        }
-
-        .report-content h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 1.8vw, 1.4rem);
-            color: var(--gold-dark);
-            font-weight: 600;
-            margin: 2rem 0 0.75rem;
-        }
-
-        .report-content h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: var(--navy);
-            font-weight: 600;
-            margin: 1.5rem 0 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .report-content p {
-            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-            color: var(--navy);
-            line-height: 1.85;
-            margin-bottom: 1.25rem;
-            font-weight: 300;
-        }
-
-        .report-content ul,
-        .report-content ol {
-            margin: 0.75rem 0 1.25rem 1.5rem;
-        }
-
-        .report-content li {
-            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-            color: var(--navy);
-            line-height: 1.75;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-        }
-
-        .report-content li strong {
-            font-weight: 600;
-        }
-
-        .report-content li p {
-            margin-top: 0.5rem;
-        }
-
-        /* ===== Crimson Callout ===== */
-        .crimson-callout {
-            background: #8B1A1A;
-            color: #ffffff;
-            padding: 2rem 2.5rem;
-            margin: 2rem 0;
-            border-radius: 2px;
-        }
-
-        .crimson-callout p {
-            color: #ffffff !important;
-            font-weight: 300 !important;
-            font-size: 0.95rem !important;
-            line-height: 1.8 !important;
-            margin-bottom: 1rem !important;
-        }
-
-        .crimson-callout p:last-child {
-            margin-bottom: 0 !important;
-        }
-
-        /* ===== Memo Styling ===== */
-        .memo {
-            max-width: 720px;
-            margin: 2.5rem auto;
-            border: 1px solid #ccc;
-            border-left: 4px solid var(--gold);
-            background: #fafaf8;
-            padding: 2rem 2.5rem;
-            font-family: 'Courier New', Courier, monospace;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .memo-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .memo-header-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 0.25rem;
-        }
-
-        .memo-header-sub {
-            font-size: 0.8rem;
-            font-style: italic;
-        }
-
-        .memo-header-classification {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-decoration: underline;
-            margin: 0.5rem 0 0.25rem;
-        }
-
-        .memo-fields {
-            margin-bottom: 1.5rem;
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-
-        .memo-fields strong {
-            display: inline-block;
-            width: 60px;
-        }
-
-        .memo-section-label {
-            font-weight: 700;
-            text-decoration: underline;
-            font-size: 0.9rem;
-            margin: 1.5rem 0 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        .memo p {
-            font-family: 'Courier New', Courier, monospace !important;
-            font-size: 0.85rem !important;
-            line-height: 1.75 !important;
-            margin-bottom: 1rem !important;
-            font-weight: 400 !important;
-        }
-
-        .memo ol,
-        .memo ul {
-            margin: 0.75rem 0 1rem 1.5rem;
-        }
-
-        .memo li {
-            font-family: 'Courier New', Courier, monospace !important;
-            font-size: 0.85rem !important;
-            line-height: 1.75 !important;
-            margin-bottom: 0.5rem !important;
-        }
-
-        .memo .memo-footnote {
-            font-size: 0.75rem !important;
-            font-style: italic;
-            color: var(--mid-gray) !important;
-            margin-top: 1.5rem;
-            border-top: 1px solid rgba(10, 37, 64, 0.1);
-            padding-top: 0.75rem;
-        }
-
-        /* ===== Publication Nav ===== */
-        .pub-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(218, 165, 32, 0.2);
-        }
-
-        .pub-nav a {
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .pub-nav-back {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--ocean);
-        }
-
-        .pub-nav-back:hover {
-            color: var(--ocean-dark);
-        }
-
-        .pub-nav-next {
-            text-align: right;
-            margin-left: auto;
-        }
-
-        .pub-nav-prev {
-            text-align: left;
-            margin-right: auto;
-        }
-
-        .pub-nav-label {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--light-gray);
-            margin-bottom: 0.25rem;
-        }
-
-        .pub-nav-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--navy);
-            transition: color 0.3s ease;
-        }
-
-        .pub-nav-next:hover .pub-nav-title,
-        .pub-nav-prev:hover .pub-nav-title {
-            color: var(--gold-dark);
-        }
-
-        /* ===== Section Divider ===== */
-        .section-divider {
-            border: none;
-            border-top: 1px solid rgba(218, 165, 32, 0.2);
-            margin: 3rem 0;
-        }
-
-        /* ===== Publication Header ===== */
-        .publication-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
-        }
-
-        .publication-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: 0.5px;
-        }
-
-        .publication-logo img {
-            width: 32px;
-            height: 32px;
-        }
-
-        /* ===== Venn Diagram ===== */
-        .venn-figure {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .venn-figure img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid rgba(10, 37, 64, 0.1);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .venn-figure figcaption {
-            font-size: 0.85rem;
-            color: var(--mid-gray);
-            font-style: italic;
-            margin-top: 0.75rem;
-        }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 968px) {
-            .report-layout {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .toc-sidebar {
-                position: relative;
-                top: 0;
-                max-height: none;
-                padding: 1.5rem;
-                background: var(--off-white);
-                border: 1px solid rgba(218, 165, 32, 0.15);
-                margin-bottom: 2rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .memo {
-                padding: 1.25rem 1rem;
-            }
-
-            .crimson-callout {
-                padding: 1.5rem 1.25rem;
-            }
-        }
-
-        /* ===== Print Styles ===== */
-        @media print {
-            header, footer, .toc-sidebar, .generate-pdf-btn, .mobile-menu, .mobile-nav {
-                display: none !important;
-            }
-
-            .page-hero {
-                padding: 1rem 0 !important;
-                background: none !important;
-            }
-
-            .page-hero::before {
-                display: none !important;
-            }
-
-            .page-hero h1 {
-                color: var(--navy) !important;
-                font-size: 2rem !important;
-            }
-
-            .page-hero h1 em {
-                color: var(--gold-dark) !important;
-            }
-
-            .page-hero p {
-                color: var(--mid-gray) !important;
-            }
-
-            .report-layout {
-                display: block !important;
-                padding: 0 !important;
-            }
-
-            .report-content {
-                max-width: 100% !important;
-            }
-
-            .print-header {
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-                gap: 1rem;
-                margin-bottom: 1.5rem;
-                padding-bottom: 1rem;
-                border-bottom: 2px solid var(--gold);
-            }
-
-            .print-header img {
-                width: 50px;
-                height: 50px;
-            }
-
-            .print-header span {
-                font-family: 'Cormorant Garamond', serif;
-                font-size: 1.2rem;
-                font-weight: 600;
-                color: var(--navy);
-            }
-
-            .memo {
-                break-inside: avoid;
-                box-shadow: none !important;
-                border: 1px solid #ccc;
-                border-left: 4px solid var(--gold);
-            }
-
-            .crimson-callout {
-                break-inside: avoid;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            @page {
-                margin: 2cm;
-            }
-        }
-
-        .print-header {
-            display: none;
-        }
-    </style>
+<link rel="stylesheet" href="/css/red-team.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header id="header">
-        <a href="../index.html" class="logo">
-            <img src="../images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
+        <a href="/" class="logo">
+            <img src="/images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
             <div class="logo-text">
                 <span class="logo-text-main">TAFI</span>
                 <span class="logo-text-sub">The Alliance Futures Initiative</span>
             </div>
         </a>
         <nav>
-            <a href="../about.html">About</a>
+            <a href="/about.html">About</a>
             <div class="nav-dropdown">
-                <a href="../our-work/index.html" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="/our-work/" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 <div class="nav-dropdown-menu">
-                    <a href="../our-work/research.html">Research</a>
-                    <a href="../our-work/futures.html">Futures</a>
-                    <a href="../our-work/commentary.html">Commentary</a>
-                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                    <a href="/our-work/research.html">Research</a>
+                    <a href="/our-work/futures.html">Futures</a>
+                    <a href="/our-work/commentary.html">Commentary</a>
+                    <a href="/embassy-monitors/">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../advisory.html">Advisory</a>
-            <a href="../people.html">People</a>
-            <a href="../support.html" class="nav-donate">Donate</a>
+            <a href="/advisory.html">Advisory</a>
+            <a href="/people.html">People</a>
+            <a href="/support.html" class="nav-donate">Donate</a>
         </nav>
-        <div class="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
         <nav class="mobile-nav">
-            <a href="../about.html">About</a>
+            <a href="/about.html">About</a>
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                 <div class="mobile-nav-group-items">
-                    <a href="../our-work/research.html">Research</a>
-                    <a href="../our-work/futures.html">Futures</a>
-                    <a href="../our-work/commentary.html">Commentary</a>
-                    <a href="../embassy-monitors/index.html">Embassies Monitor</a>
+                    <a href="/our-work/research.html">Research</a>
+                    <a href="/our-work/futures.html">Futures</a>
+                    <a href="/our-work/commentary.html">Commentary</a>
+                    <a href="/embassy-monitors/">Embassies Monitor</a>
                 </div>
             </div>
-            <a href="../advisory.html">Advisory</a>
-            <a href="../people.html">People</a>
-            <a href="../support.html" class="nav-donate">Donate</a>
+            <a href="/advisory.html">Advisory</a>
+            <a href="/people.html">People</a>
+            <a href="/support.html" class="nav-donate">Donate</a>
         </nav>
     </header>
 
-    <!-- Print-only header -->
+
     <div class="print-header">
-        <img src="../images/tafi-logo-real.png" alt="TAFI">
+        <img src="/images/tafi-logo-real.png" alt="TAFI">
         <span>The Alliance Futures Initiative</span>
     </div>
 
-    <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
                 <nav class="breadcrumb">
-                    <a href="../index.html">Home</a> <span>/</span>
-                    <span>PICs Red Team Report</span>
+                    <a href="/">Home</a> <span>/</span>
+                    <a href="/our-work/futures.html">Our Work / Futures</a> <span>/</span>
+                    <span>Pacific Islands Red Team <em>Event Report</em></span>
                 </nav>
-                <h1>Pacific Islands Red Team <em>Event Report</em></h1>
-                <p>A strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region through four regional scenarios.</p>
+                <h1>Pacific Islands Red Team <em>Event Report</em></h1><p>A strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region through four regional scenarios.</p>
+                <div class="report-byline">
+                    <strong>By</strong> <span class="report-byline-sep">&middot;</span> January 1, 2026
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Report Content -->
     <section style="background: var(--white);">
         <div class="container">
             <div class="report-layout">
 
-                <!-- Sticky Table of Contents -->
                 <aside class="toc-sidebar">
                     <h3>Contents</h3>
                     <ul>
-                        <li><a href="#executive-summary">I. Executive Summary</a></li>
-                        <li><a href="#introduction">II. Introduction</a></li>
-                        <li><a href="#exercise-roadmap">III. Exercise &amp; Report Roadmap</a></li>
-                        <li><a href="#directive-baseline">IV. Directive &amp; Baseline Strategy</a></li>
                         <li>
-                            <a href="#scenarios">V. Scenarios &amp; Recommendations</a>
-                            <ul class="toc-sub">
-                                <li><a href="#kanton-island">Kanton Island Lease</a></li>
-                                <li><a href="#deep-sea-mining">Deep-Sea Mining</a></li>
-                                <li><a href="#marshall-islands">Marshall Islands</a></li>
-                                <li><a href="#bougainville">Bougainville Crisis</a></li>
-                            </ul>
+                            <a href="#executive-summary">I. Executive Summary</a>
                         </li>
-                        <li><a href="#blue-team">VI. Lessons for the &ldquo;Blue Team&rdquo;</a></li>
-                        <li><a href="#conclusion">VII. Conclusion</a></li>
+                        <li>
+                            <a href="#introduction">II. Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#exercise-roadmap">III. Exercise & Report Roadmap</a>
+                        </li>
+                        <li>
+                            <a href="#directive-baseline">IV. Directive & Baseline Strategy</a>
+                        </li>
+                        <li>
+                            <a href="#scenarios">V. Scenarios & Red Team Recommendations</a>
+                        </li>
+                        <li>
+                            <a href="#blue-team">VI. Analysis & Lessons for the “Blue Team”</a>
+                        </li>
+                        <li>
+                            <a href="#conclusion">VII. Conclusion</a>
+                        </li>
                     </ul>
                 </aside>
 
-                <!-- Main Content -->
                 <article class="report-content">
-
-                    <!-- Publication header -->
                     <div class="publication-header">
                         <span class="publication-title">Pacific Islands Red Team Event Report</span>
                         <div class="publication-logo">
-                            <img src="../images/tafi-logo-real.png" alt="TAFI">
+                            <img src="/images/tafi-logo-real.png" alt="TAFI">
                         </div>
                     </div>
 
-                    <button class="generate-pdf-btn" onclick="window.print()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                        Generate PDF
-                    </button>
-
-                    <!-- ============================================ -->
-                    <!-- I. EXECUTIVE SUMMARY                         -->
-                    <!-- ============================================ -->
                     <h2 id="executive-summary">I. Executive Summary</h2>
+<p>This report synthesizes findings from a strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region. The exercise consisted of expert participants roleplaying PRC officials to assess potential responses to four regional scenarios. Through structured analysis and scenario-based deliberation, the exercise revealed consistent patterns in how the PRC approaches the Pacific Islands as a theater of strategic competition.</p>
+<h3>Key Findings</h3>
+<ol>
+<li><strong>Strategic Opportunism:</strong> The PRC employs a dual-track approach in the Pacific Islands, seeking to simultaneously diminish U.S. influence, fracture alliances, create economic dependencies, and normalize PLA presence in the region. Beijing views the Pacific Islands not as an end in themselves but as a means to reshape the broader Indo-Pacific strategic environment.</li>
+<li><strong>Political Warfare Predominance:</strong> The exercise identified one firm U.S. red line—direct threats to military assets. Beijing believes it can conduct unrestricted political and economic warfare below this threshold without triggering a decisive American response. This includes intelligence operations, disinformation campaigns, economic coercion, and diplomatic subversion.</li>
+<li><strong>Narrative Control:</strong> Across all four scenarios, the PRC prioritized maintaining the appearance of a “benign development partner” while pursuing strategic objectives that fundamentally undermine Western interests and regional sovereignty. The gap between rhetoric and reality represents both a vulnerability and an opportunity for Western counter-strategies.</li>
+<li><strong>Exploiting Strategic Flexibility:</strong> China consistently seeks to benefit from multiple possible outcomes, including regional instability. Unlike Western powers that generally favor the status quo, the PRC maintains the flexibility to capitalize on chaos, crisis, and political upheaval across the Pacific Islands.</li>
+</ol>
+<h3>Scenario-Based Insights</h3>
+<ul>
+<li><strong>Kanton Island Lease, 2029:</strong> The PRC would avoid establishing a formal military base, instead constructing dual-use infrastructure that serves strategic purposes under the guise of civilian development. This approach minimizes international backlash while steadily expanding China’s military reach into the Central Pacific.</li>
+<li><strong>Deep-Sea Mining Competition, 2027:</strong> Beijing would exploit U.S. bypassing of international norms to position itself as the defender of multilateral institutions and Pacific Island sovereignty, turning American unilateralism into a strategic advantage for Chinese narrative warfare.</li>
+<li><strong>Marshall Islands Diplomatic Switch, 2028:</strong> The PRC would capitalize on favorable political winds to engineer a diplomatic realignment, using a combination of personal inducements, economic incentives, and narrative warfare centered on the legacy of U.S. nuclear testing to detach the Marshall Islands from both Taiwan and Washington.</li>
+<li><strong>Bougainville Crisis, 2027:</strong> China would posture to benefit regardless of whether the crisis results in Bougainville’s independence or its continued integration with PNG. By positioning itself as a responsible regional actor while Western powers remain tied to the status quo, Beijing gains flexibility that its competitors lack.</li>
+</ul>
+<h3>Recommendations for Western Responses</h3>
+<ul>
+<li>Focus on specific instances where Chinese promises have not materialized or have come with hidden strings attached. Support independent media throughout the Pacific Islands to ensure that local populations have access to accurate information about the true costs and conditions of Chinese investment. Increase the visibility of Western development projects and their tangible benefits to Pacific Island communities. The most effective counter-narrative is not anti-China rhetoric but rather demonstrable proof that Western partnerships deliver genuine, unconditional development outcomes.</li>
+<li>Invest in building personal relationships with Pacific Island leaders and communities through consistent presence and engagement. Embrace the “last three feet of diplomacy”—the personal, face-to-face interactions that build trust and loyalty over time. Western diplomatic strategy must move beyond periodic high-level visits and institutional engagement to establish a persistent, relationship-driven presence that can compete with China’s patient, long-term approach to building political influence.</li>
+<li>Analyze strategic maneuvers with full consideration for the PRC’s domestic politics and the CCP’s internal dynamics. Beijing’s actions in the Pacific Islands serve not only strategic objectives but also the domestic legitimacy of the CCP and Xi Jinping personally. Infrastructure projects and diplomatic achievements in the region function as propaganda tools for domestic consumption. Understanding this dual purpose helps predict which actions Beijing will prioritize and where it may be willing to accept setbacks.</li>
+<li>Develop early warning systems for regional crises that the PRC might exploit. Pre-position diplomatic and development responses to rapidly deploy when instability emerges. Maintain constant engagement with Pacific Island governments to ensure that Western partners are the first call during a crisis, not Beijing. The PRC’s ability to benefit from apparent chaos demands that Western strategy shift from reactive crisis management to proactive engagement that anticipates and addresses the conditions that create opportunities for Chinese exploitation.</li>
+</ul>
+<hr class="section-divider">
+<h2 id="introduction">II. Introduction</h2>
+<h3>The Imperative</h3>
+<p>Great power competition in the Pacific Islands region has intensified dramatically in recent years, transforming what was once considered a strategic backwater into a pivot region of global strategy. The People’s Republic of China has pursued a long-term strategy to expand its influence across the Pacific, leveraging economic investment, diplomatic engagement, and security cooperation to reshape the regional order. To effectively counter these efforts, the United States and its allies must develop forward-looking, flexible strategies grounded in a deep understanding of how Beijing perceives the region and makes decisions within it.</p>
+<h3>Exercise Background</h3>
+<p>The PRC’s strategic objectives in the Pacific Islands encompass military, diplomatic, intelligence, and economic dimensions. Central among these is the isolation of Taiwan from its remaining diplomatic partners in the region and the securing of access to critical natural resources, including deep-sea minerals. China’s diplomatic footprint in the Pacific has tripled since 2015, marked by Xi Jinping’s visits to Fiji in 2014 and Papua New Guinea in 2018, and the expansion of the Belt and Road Initiative across the region. Recent developments—including the Cook Islands deep-sea mining arrangements, the Solomon Islands security pact, and police cooperation agreements with Fiji, Kiribati, and Vanuatu—underscore the breadth and depth of Beijing’s regional engagement.</p>
+<h3>Objectives</h3>
+<p>The purpose of this Red Team exercise was to systematically identify vulnerabilities, gaps, and blind spots in current Western strategic posture regarding PRC activities in the Pacific Islands. The exercise sought to develop strategic empathy—the ability to understand and anticipate an adversary’s decision-making processes. Specifically, the exercise explored:</p>
+<ul>
+<li>PRC perceptions of its interests and strategic position in the Pacific Islands region.</li>
+<li>PRC understandings of Western vulnerabilities and how to exploit them.</li>
+<li>PRC red lines and thresholds for escalation in the Pacific context.</li>
+<li>PRC strategic decision-making frameworks when confronted with regional scenarios that present both risks and opportunities.</li>
+</ul>
+<p>The development of strategic empathy is essential for crafting effective counter-strategies. By understanding how Beijing thinks about the Pacific Islands, Western policymakers can anticipate Chinese actions, identify vulnerabilities in Chinese strategy, and develop responses that address the root causes of Chinese strategic success rather than merely reacting to its symptoms.</p>
+<hr class="section-divider">
+<h2 id="exercise-roadmap">III. Exercise & Report Roadmap</h2>
+<div class="crimson-callout">
+<p>Red Team analysis challenges conventional thinking by having analysts adopt the perspective of an adversary or competitor. This structured analytic technique requires analysts to shift from observing opponents to becoming actors who think and respond as the adversary would do so. The method proves especially valuable when facing counterparts with different cultures, values, or decision-making processes.</p>
+<p>Red Teams immerse themselves in their assigned roles, producing authentic products like policy papers and strategic recommendations that the adversary might create.</p>
+<p>The technique helps organizations identify blind spots, test assumptions about adversary behavior, and develop more robust strategies. By forcing analysis to see situations through opponents’ eyes, Red Team analysis reveals vulnerabilities and alternative courses of action that might otherwise go unrecognized.</p>
+</div>
+<p>Eight expert participants adopted the Red Team role of PRC military and diplomatic officials, foreign policy strategists, and technical advisors. Individual Red Team members did not play specific roles but rather conferred in “committee” style to represent views across PRC statecraft domains. ASPI USA employed Chatham House Rule to encourage open speculation and candid discussion among the participants.</p>
+<p>The facilitator asked participants to determine “not just what the PRC should do, but why it should do it.” This emphasis on reasoning and motivation, rather than merely actions, ensured that the exercise captured the strategic logic underlying Chinese decision-making, not just its outputs.</p>
+<p>Four scenarios were presented to the participants as fictional policy memos addressed to Wang Yi, Director of the Central Foreign Affairs Commission. Each scenario was designed to test a different dimension of PRC strategic engagement in the Pacific Islands: military infrastructure development, resource competition, diplomatic realignment, and crisis exploitation. The memos that follow represent the synthesized recommendations of the Red Team for each scenario.</p>
+<p>The final section of this report is ASPI USA’s own analysis of the exercise findings, drawing lessons for the “blue team”—the United States and its allies and partners in the Pacific Islands region.</p>
+<hr class="section-divider">
+<h2 id="directive-baseline">IV. Directive & Baseline Strategy</h2>
+<p>Before addressing the individual scenarios, the Red Team established a baseline understanding of PRC strategic objectives in the Pacific Islands. The committee identified goals across three overlapping time horizons.</p>
+<p><img src="/publications/images/venn-diagram.png" alt="Strategic Goals in the Pacific Islands - Venn diagram showing Short Term, Long Term, and Overlapping goals"></p>
+<h3>Long-Term Goals</h3>
+<p>In the long term, the PRC aims to become the region’s primary partner, displacing U.S. regional presence and influence. Beijing seeks to deter U.S. aggression and military posturing in the Pacific while avoiding kinetic warfare that could disrupt economic development and invite international condemnation. The endgame is a Pacific Islands region that looks to Beijing, not Washington, as its principal strategic partner and security guarantor.</p>
+<h3>Short-Term Goals</h3>
+<p>In the near term, the PRC prioritizes diminishing U.S. influence throughout the Pacific Islands and fracturing existing alliances and partnerships, particularly targeting the Compact of Free Association (COFA) states. Beijing also seeks to exploit U.S. domestic political turmoil to undermine American credibility, divide the Pacific Islands Forum to prevent collective resistance, increase the number of states granting PRC diplomatic recognition at the expense of Taiwan, and gain access to the region’s natural resources, including deep-sea minerals and fisheries.</p>
+<h3>Overlapping Goals</h3>
+<p>Across both time horizons, several objectives persist: building and deepening partnerships with Pacific Island governments, controlling the regional narrative to present China as a beneficial and reliable partner, evading U.S. strategic attention and response, normalizing PLA presence through dual-use infrastructure and security cooperation, shaping the regional information environment to favor PRC interests, and creating economic dependencies that give Beijing leverage over Pacific Island decision-making.</p>
+<hr class="section-divider">
+<h2 id="scenarios">V. Scenarios & Red Team Recommendations</h2>
+<h3 id="kanton-island">Scenario 1: Kanton Island Lease</h3>
+<div class="memo">
+<div class="memo-header">
+<div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
+<div class="memo-header-sub">Beijing</div>
+<div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
+<div class="memo-header-classification">绝密//不得外准</div>
+</div>
+<div class="memo-fields">
+<strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br/>
+<strong>FROM:</strong> Oceania Leading Small Group<br/>
+<strong>DATE:</strong> 24 June 2029<br/>
+<strong>SUBJ:</strong> Kanton Island Lease
+                        </div>
+<div class="memo-section-label">EXECUTIVE SUMMARY</div>
+<p>The PRC has successfully consolidated political influence in Kiribati, forging a 99-year lease on Kanton Island in the Phoenix Islands chain. This strategic acquisition places Chinese-controlled territory approximately 1,900 miles from Pearl Harbor and positions the PRC to project influence across the Central Pacific. The committee has assessed the strategic implications and recommends a course of action that maximizes long-term benefit while minimizing the risk of a destabilizing Western response.</p>
+<div class="memo-section-label">BACKGROUND</div>
+<p>By 2028, Western relations with Kiribati had soured considerably. The erosion of judicial independence, combined with the government’s increasing authoritarian tendencies, created friction with traditional democratic partners. PRC law enforcement trainers have been embedded within Kiribati’s security apparatus, deepening institutional ties. The culmination of these trends was the negotiation of a 99-year lease on Kanton Island, providing the PRC with a sovereign foothold in the heart of the Pacific.</p>
+<div class="memo-section-label">ANALYSIS</div>
+<p>The committee assessed that Chinese military strategy would benefit significantly from a forward base on Kanton Island. At approximately 1,900 miles from Pearl Harbor, the island occupies a position of considerable strategic value for intelligence collection, maritime domain awareness, and potential power projection. However, overt militarization of the island risks triggering a sharp backlash from the United States, Australia, and regional partners, potentially unraveling years of careful diplomatic cultivation.</p>
+<p>The committee therefore recommends a dual-use infrastructure approach. By constructing facilities that serve ostensibly civilian purposes—port facilities, airstrip improvements, research stations, communications infrastructure—while maintaining the latent capability for military conversion, the PRC can steadily expand its strategic footprint without crossing Western red lines. This approach mirrors successful precedents in the South China Sea and Djibouti.</p>
+<div class="memo-section-label">RECOMMENDATIONS</div>
+<ol>
+<li><strong>Promote Strategic Infrastructure:</strong> Develop Kanton Island through dual-use infrastructure projects including port facilities capable of accommodating naval vessels, an extended airstrip suitable for military transport aircraft, and advanced communications and surveillance equipment. All projects should be framed as economic development and climate research initiatives.</li>
+<li><strong>Conduct Intelligence Operations:</strong> Establish a signals intelligence and maritime surveillance capability on Kanton Island under the cover of oceanographic research. This facility would provide valuable intelligence on U.S. military movements between Hawaii and the Western Pacific.</li>
+<li><strong>Provide Regional Assistance:</strong> Use Kanton Island as a hub for disaster relief and humanitarian assistance operations throughout the Central Pacific. This positions the PRC as a responsible regional actor and builds goodwill while normalizing a Chinese operational presence in the area.</li>
+<li><strong>Ensure Favorable Leadership:</strong> Continue to support political leaders in Kiribati who are positively disposed toward the PRC. Invest in political relationship-building, educational exchanges, and economic incentives that reinforce the value of the Kanton Island lease and broader Chinese partnership.</li>
+<li><strong>Consider Military Alternatives:</strong> While avoiding overt militarization, develop contingency plans for the rapid conversion of dual-use facilities to military purposes in the event of a regional crisis or escalation. Pre-position the logistical and engineering capabilities necessary to execute such a conversion within a compressed timeline.</li>
+</ol>
+</div>
+<h3 id="deep-sea-mining">Scenario 2: Deep-Sea Mining Competition</h3>
+<div class="memo">
+<div class="memo-header">
+<div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
+<div class="memo-header-sub">Beijing</div>
+<div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
+<div class="memo-header-classification">绝密//不得外准</div>
+</div>
+<div class="memo-fields">
+<strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br/>
+<strong>FROM:</strong> Oceania Leading Small Group<br/>
+<strong>DATE:</strong> 19 October 2027<br/>
+<strong>SUBJ:</strong> Response to U.S. Push into Deep-Sea Mining<sup>*</sup>
+</div>
+<div class="memo-section-label">EXECUTIVE SUMMARY</div>
+<p>The United States has begun pressuring Pacific Island Countries into bilateral deep-sea mining (DSM) agreements that bypass the International Seabed Authority (ISA) and established multilateral frameworks. This unilateral American approach presents both challenges and opportunities for PRC strategic interests. The committee assesses that China can turn this development to its advantage by positioning itself as the defender of international law and Pacific Island sovereignty.</p>
+<div class="memo-section-label">BACKGROUND</div>
+<p>The United States has prioritized critical mineral supply chains as a matter of national security, pursuing bilateral DSM agreements with the Cook Islands, Kiribati, Tonga, the Marshall Islands, Papua New Guinea, Vanuatu, and Nauru. These agreements bypass the ISA framework and represent a significant departure from multilateral norms. As President Xi Jinping has noted, the deep sea contains mineral treasures of immense strategic value. China currently holds the most ISA exploration contracts of any nation, and the committee assessed that France, through its Pacific territories, represents a more immediate competitor than the United States in the near term.</p>
+<div class="memo-section-label">ANALYSIS</div>
+<p>In the short term, U.S. attempts to secure bilateral DSM agreements do not fundamentally threaten PRC interests. China’s dominant position within the ISA framework and its existing deep-sea mining technological capabilities provide a strong foundation. However, the U.S. approach of bypassing international norms presents a significant narrative opportunity. By championing the ISA framework and multilateral governance of deep-sea resources, China can position itself as the responsible defender of the rules-based order—precisely the language that Western nations have used to criticize Beijing.</p>
+<p>The committee further noted that U.S. bilateral agreements may generate resentment among Pacific Island populations concerned about environmental impacts and the equitable distribution of mining revenues. China should be prepared to amplify these concerns through media, civil society, and diplomatic channels.</p>
+<div class="memo-section-label">RECOMMENDATIONS</div>
+<ol>
+<li><strong>Controlling the Narrative:</strong> Position the PRC as the champion of international law, multilateral governance, and Pacific Island environmental concerns. Highlight U.S. hypocrisy in bypassing the very international institutions that Washington claims to defend. Amplify Pacific Island voices critical of bilateral DSM agreements through media partnerships and civil society support.</li>
+<li><strong>Exchange Diplomacy &amp; Confucius Institutes:</strong> Expand educational and cultural exchange programs throughout the Pacific Islands, with a particular focus on marine science and resource management. Confucius Institutes and scholarship programs should cultivate a generation of Pacific Island leaders who view China as a partner in sustainable development rather than a rival for their resources.</li>
+<li><strong>Fracturing U.S. Relationships:</strong> Exploit divisions between Pacific Island countries that have signed bilateral agreements with the U.S. and those that have not. Provide preferential economic treatment to holdouts as an incentive for resisting American pressure. Highlight the contrast between U.S. extractive agreements and Chinese development investment.</li>
+<li><strong>Biding Time:</strong> Maintain China’s dominant position within the ISA while allowing U.S. bilateral agreements to generate their own friction and backlash. As environmental and equity concerns mount, position China to offer an alternative framework that Pacific Island countries find more attractive than the American approach.</li>
+</ol>
+<p class="memo-footnote"><sup>*</sup> This scenario was presented prior to similar developments by the second Trump administration.</p>
+</div>
+<h3 id="marshall-islands">Scenario 3: Marshall Islands Diplomatic Switch</h3>
+<div class="memo">
+<div class="memo-header">
+<div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
+<div class="memo-header-sub">Beijing</div>
+<div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
+<div class="memo-header-classification">绝密//不得外准</div>
+</div>
+<div class="memo-fields">
+<strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br/>
+<strong>FROM:</strong> Oceania Leading Small Group<br/>
+<strong>DATE:</strong> 14 January 2028<br/>
+<strong>SUBJ:</strong> Response to New Presidency in the Marshall Islands
+                        </div>
+<div class="memo-section-label">EXECUTIVE SUMMARY</div>
+<p>The Republic of the Marshall Islands (RMI) has elected a new president who is positively disposed towards the PRC. The committee recommends seizing this opportunity to secure diplomatic recognition from the RMI and, in the long run, engineer a fundamental break in the Marshall Islands’ relationship with the United States. The new president’s stated policy of being “friends to all and enemies to none” and growing COFA skepticism within the Marshallese population create favorable conditions for PRC engagement.</p>
+<div class="memo-section-label">BACKGROUND</div>
+<p>A new coalition won a majority in the Nitijela in 2027 and elected a president whose foreign policy orientation represents a significant departure from previous administrations. The new leadership has expressed skepticism about the value of the COFA relationship with the United States and has signaled openness to diversifying the Marshall Islands’ diplomatic partnerships. Growing frustration with the pace and conditions of U.S. economic support, combined with lingering resentment over the legacy of American nuclear testing in the Marshall Islands, has created a political environment receptive to PRC overtures.</p>
+<div class="memo-section-label">ANALYSIS</div>
+<p>The committee identified a strategic opportunity to remove one of the last diplomatic holdouts for the Nationalists in Taipei. The Marshall Islands represents one of Taiwan’s remaining diplomatic partners, and its defection would deal a significant blow to Taiwan’s international standing. However, the COFA relationship represents both an exploitation opportunity and an obstacle. While COFA skepticism creates openings for Chinese engagement, the deep institutional ties between the RMI and the United States—including military access rights and significant financial transfers—cannot be easily displaced.</p>
+<p>The committee assessed that the endgame is not merely diplomatic recognition but a fundamental political shift in the Marshall Islands away from the United States and toward the PRC. This requires a patient, multi-pronged approach that addresses Marshallese economic needs, political aspirations, and historical grievances simultaneously.</p>
+<div class="memo-section-label">RECOMMENDATIONS</div>
+<ol>
+<li><strong>Personnel Inducements:</strong> Cultivate personal relationships with the new president and key members of the governing coalition through private visits, educational opportunities for their families, and discreet economic incentives. Personal relationships with political leaders are the foundation of PRC influence throughout the Pacific.</li>
+<li><strong>Outbid Taiwan:</strong> Offer economic and development packages that significantly exceed what Taiwan can provide. This includes infrastructure investment, budget support, and scholarship programs. The goal is to make the economic case for diplomatic switch so compelling that it overcomes domestic political resistance.</li>
+<li><strong>Narrative Warfare About Nuclear Testing Legacy:</strong> Amplify and support Marshallese grievances regarding the legacy of U.S. nuclear testing. Frame the United States as a power that irradiated the Marshall Islands and then failed to provide adequate compensation or remediation. Position the PRC as a partner that respects Marshallese sovereignty and offers development without the baggage of colonial exploitation.</li>
+<li><strong>Displace America:</strong> Pursue a long-term strategy of displacing American institutional presence in the Marshall Islands. This includes offering alternatives to U.S.-funded programs, establishing Chinese economic and cultural institutions, and gradually reducing Marshallese dependence on COFA provisions by providing substitute sources of revenue and services.</li>
+</ol>
+</div>
+<h3 id="bougainville">Scenario 4: Bougainville Crisis</h3>
+<div class="memo">
+<div class="memo-header">
+<div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
+<div class="memo-header-sub">Beijing</div>
+<div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
+<div class="memo-header-classification">绝密//不得外准</div>
+</div>
+<div class="memo-fields">
+<strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br/>
+<strong>FROM:</strong> Oceania Leading Small Group<br/>
+<strong>DATE:</strong> 1 December 2027<br/>
+<strong>SUBJ:</strong> Crisis in Bougainville
+                        </div>
+<div class="memo-section-label">EXECUTIVE SUMMARY</div>
+<p>Tensions between the Autonomous Region of Bougainville and Papua New Guinea have escalated toward open conflict following the PNG parliament’s failure to address the results of Bougainville’s independence referendum. The committee assesses that China stands to benefit from either outcome of this crisis—whether Bougainville achieves independence or remains within PNG—and recommends a strategy that positions the PRC to capitalize on developments regardless of how the situation unfolds.</p>
+<div class="memo-section-label">BACKGROUND</div>
+<p>In December 2027, tensions escalated sharply after the PNG parliament failed to address Bougainville’s independence vote by the 1 September deadline established in the Bougainville Peace Agreement. Military mobilization on both sides has raised the specter of a return to the armed conflict that devastated the region in the 1990s. The crisis has attracted international attention and created opportunities for external actors to shape the outcome.</p>
+<div class="memo-section-label">ANALYSIS</div>
+<p>The PRC is positioned to benefit regardless of the outcome. Western powers—particularly Australia and the United States—generally favor the status quo of Bougainville remaining within PNG, which limits their flexibility to engage with all parties. China, by contrast, has greater strategic flexibility and can engage with both the PNG government and Bougainville independence leaders without the same constraints.</p>
+<p>The crisis also presents an opportunity to enhance PRC regional leadership by demonstrating a capacity for crisis management and peacekeeping. Furthermore, the Bougainville situation has potential spillover implications for West Papua and New Caledonia, where similar independence aspirations could create additional opportunities for PRC engagement.</p>
+<div class="memo-section-label">RECOMMENDATIONS</div>
+<ol>
+<li><strong>A Responsible Approach:</strong> Advocate for a PRC-led or PRC-supported peacekeeping effort in Bougainville. Position China as a neutral mediator that respects the will of the Bougainvillean people while maintaining constructive relations with PNG. A Chinese role in peacekeeping would normalize PLA and PRC security presence in Melanesia and establish a precedent for Chinese security engagement in the Pacific.</li>
+<li><strong>Regional Security:</strong> Reinforce the Solomon Islands police cooperation framework and strengthen ties with the Melanesian Spearhead Group. Use the Bougainville crisis to demonstrate the value of Chinese security partnerships and to position the PRC as a capable and willing provider of regional security assistance, in contrast to Western partners who are constrained by their preference for the status quo.</li>
+<li><strong>Fostering Prosperity:</strong> Regardless of the political outcome, position Chinese enterprises to participate in the restart of the Panguna mine, one of the world’s largest copper and gold deposits. The economic reconstruction of Bougainville—whether as an independent state or an autonomous region—will require massive investment, and the PRC should ensure that Chinese companies are at the front of the line.</li>
+</ol>
+</div>
+<hr class="section-divider">
+<h2 id="blue-team">VI. Analysis & Lessons for the “Blue Team”</h2>
+<p>The following analysis represents ASPI USA’s assessment of the exercise findings and their implications for Western strategy in the Pacific Islands region.</p>
+<h3>1. Benign Development Partner?</h3>
+<p>Across all four scenarios, the Red Team consistently prioritized maintaining the PRC’s image as a “benign development partner”—a nation that offers infrastructure, investment, and assistance without the political conditions attached to Western aid. This narrative is central to Chinese strategy in the Pacific Islands and serves as the primary vehicle for expanding influence while minimizing resistance.</p>
+<p>The PRC actively manipulates the Pacific information environment to sustain this narrative. State media, social media platforms, and co-opted local outlets amplify stories of Chinese generosity while suppressing coverage of debt conditions, labor practices, environmental impacts, and political interference. The committee’s consistent emphasis on narrative control confirms that the “benign development partner” image is not incidental but rather a deliberately constructed and maintained strategic asset.</p>
+<p>The United States and its allies must increase the visibility of their own development activities throughout the Pacific Islands. Too often, Western development projects are delivered through multilateral institutions or NGOs with little attribution to the partner governments that fund them. Supporting independent media in the Pacific Islands is equally critical, ensuring that local journalists have the resources and protections to report accurately on both Chinese and Western engagement in the region.</p>
+<h3>2. Unrestricted Political Warfare</h3>
+<p>The exercise identified only one firm Western red line that the PRC consistently respected: direct threats to U.S. military assets and installations. Below this threshold, Beijing believes it has a free hand to conduct unrestricted political warfare, encompassing intelligence operations, disinformation campaigns, economic coercion, diplomatic subversion, and the cultivation of political elites sympathetic to PRC interests.</p>
+<p>This finding carries profound implications for Western strategy. The PRC’s approach mirrors the classical Chinese strategic concept of winning without fighting—achieving strategic objectives through non-kinetic means that fall below the threshold of a military response. The breadth of Chinese political warfare activities in the Pacific Islands—from police cooperation agreements to media partnerships to educational exchanges—represents a comprehensive campaign to reshape the regional political landscape in China’s favor.</p>
+<p>Western counter-strategies must address this full spectrum of political warfare. Military deterrence, while necessary, is insufficient. The United States and its allies must develop their own capabilities for political warfare competition, including enhanced intelligence sharing with Pacific Island partners, media literacy programs, counter-corruption initiatives, and sustained diplomatic engagement that builds resilience against Chinese influence operations.</p>
+<h3>3. Show Your Strength or Bide Your Time?</h3>
+<p>The exercise revealed an internal tension within the Red Team between two strategic orientations. One group of participants favored a forward-leaning, assertive approach—the “strong men”—advocating for bold moves to seize strategic opportunities as they arise. The other group favored a more cautious, patient approach aligned with Deng Xiaoping’s famous dictum to “hide your strength and bide your time”—the “restrainers.”</p>
+<p>This tension mirrors a genuine debate within the CCP about the pace and assertiveness of Chinese foreign policy. Under Xi Jinping, the balance has shifted toward the “strong men” camp, with Xi having consolidated power with loyalists who share his more assertive vision. However, the “restrainers” remain influential, particularly when aggressive moves risk provoking a Western backlash that could undermine long-term objectives.</p>
+<p>For Western strategists, this internal tension represents both a challenge and an opportunity. By raising the costs of aggressive Chinese behavior in the Pacific Islands—through diplomatic consequences, economic penalties, and increased Western presence—the “restrainer” camp within the CCP can be empowered. Conversely, Western inaction or disengagement empowers the “strong men” by confirming that assertive moves carry no consequences.</p>
+<h3>4. All Under Heaven is in Chaos, and the Situation is Excellent</h3>
+<p>Mao Zedong’s famous aphorism captures a strategic orientation that was consistently evident throughout the exercise. Unlike Western powers, which generally seek stability and the preservation of the status quo, the PRC is positioned to benefit from chaos, crisis, and instability in the Pacific Islands region.</p>
+<p>The Bougainville scenario illustrated this dynamic most clearly. While Australia and the United States were constrained by their commitment to PNG’s territorial integrity and the existing political framework, China maintained the flexibility to engage with all parties and to benefit from any outcome. Similarly, the Solomon Islands police deployment, divisions within the Pacific Islands Forum over Taiwan recognition, and the erosion of democratic institutions in several Pacific Island states all create conditions that favor Chinese strategic objectives.</p>
+<p>Western strategy must account for the PRC’s ability to thrive in chaotic environments. This means investing in the stability and resilience of Pacific Island institutions, providing rapid-response capabilities for regional crises, and maintaining the kind of persistent, relationship-driven engagement that ensures Western partners are the first call when instability emerges.</p>
+<hr class="section-divider">
+<h2 id="conclusion">VII. Conclusion</h2>
+<p>The Pacific Islands Red Team exercise revealed a PRC strategy characterized by a dual-track approach: diminishing U.S. influence in the short term while positioning China as the region’s primary partner over the long term. Across all four scenarios, the Red Team demonstrated remarkable strategic flexibility, adapting its approach to exploit the specific conditions of each situation while maintaining consistency in its overarching objectives.</p>
+<p>The “benign development partner” narrative emerged as the linchpin of PRC strategy in the Pacific Islands. This carefully constructed image enables Beijing to expand its influence while minimizing the resistance that more overtly aggressive behavior would provoke. The exercise identified only one firm American red line—direct threats to U.S. military assets—below which Beijing believes it can operate with relative impunity in the political warfare domain.</p>
+<p>For Western policymakers, the exercise yields several actionable lessons. Counter-strategy should include the development of comprehensive counter-political warfare capabilities that address the full spectrum of Chinese influence operations. Supporting independent media throughout the Pacific Islands is essential for undermining the “benign development partner” narrative with factual reporting. Anticipating how the PRC benefits from chaos and instability must become a core element of Western strategic planning, with pre-positioned responses and early warning systems for regional crises.</p>
+<p>Analyzing PRC actions through the lens of domestic politics—understanding how Pacific Islands engagement serves the CCP’s internal legitimacy requirements—provides deeper insight into Chinese decision-making and priorities. Finally, strengthening regional institutions, particularly the Pacific Islands Forum and bilateral relationships with individual Pacific Island states, creates the resilience necessary to withstand sustained Chinese strategic pressure.</p>
+<p>The Pacific Islands are no longer a strategic backwater. They are a contested space where the future of great power competition in the Indo-Pacific will be significantly shaped. The United States and its allies must approach this theater with the seriousness, resources, and sustained attention that its strategic significance demands.</p>
 
-                    <p>This report synthesizes findings from a strategic red team exercise examining PRC objectives and decision-making in the Pacific Islands region. The exercise consisted of expert participants roleplaying PRC officials to assess potential responses to four regional scenarios. Through structured analysis and scenario-based deliberation, the exercise revealed consistent patterns in how the PRC approaches the Pacific Islands as a theater of strategic competition.</p>
 
-                    <h3>Key Findings</h3>
-                    <ol>
-                        <li><strong>Strategic Opportunism:</strong> The PRC employs a dual-track approach in the Pacific Islands, seeking to simultaneously diminish U.S. influence, fracture alliances, create economic dependencies, and normalize PLA presence in the region. Beijing views the Pacific Islands not as an end in themselves but as a means to reshape the broader Indo-Pacific strategic environment.</li>
-                        <li><strong>Political Warfare Predominance:</strong> The exercise identified one firm U.S. red line&mdash;direct threats to military assets. Beijing believes it can conduct unrestricted political and economic warfare below this threshold without triggering a decisive American response. This includes intelligence operations, disinformation campaigns, economic coercion, and diplomatic subversion.</li>
-                        <li><strong>Narrative Control:</strong> Across all four scenarios, the PRC prioritized maintaining the appearance of a &ldquo;benign development partner&rdquo; while pursuing strategic objectives that fundamentally undermine Western interests and regional sovereignty. The gap between rhetoric and reality represents both a vulnerability and an opportunity for Western counter-strategies.</li>
-                        <li><strong>Exploiting Strategic Flexibility:</strong> China consistently seeks to benefit from multiple possible outcomes, including regional instability. Unlike Western powers that generally favor the status quo, the PRC maintains the flexibility to capitalize on chaos, crisis, and political upheaval across the Pacific Islands.</li>
-                    </ol>
-
-                    <h3>Scenario-Based Insights</h3>
-                    <ul>
-                        <li><strong>Kanton Island Lease, 2029:</strong> The PRC would avoid establishing a formal military base, instead constructing dual-use infrastructure that serves strategic purposes under the guise of civilian development. This approach minimizes international backlash while steadily expanding China&rsquo;s military reach into the Central Pacific.</li>
-                        <li><strong>Deep-Sea Mining Competition, 2027:</strong> Beijing would exploit U.S. bypassing of international norms to position itself as the defender of multilateral institutions and Pacific Island sovereignty, turning American unilateralism into a strategic advantage for Chinese narrative warfare.</li>
-                        <li><strong>Marshall Islands Diplomatic Switch, 2028:</strong> The PRC would capitalize on favorable political winds to engineer a diplomatic realignment, using a combination of personal inducements, economic incentives, and narrative warfare centered on the legacy of U.S. nuclear testing to detach the Marshall Islands from both Taiwan and Washington.</li>
-                        <li><strong>Bougainville Crisis, 2027:</strong> China would posture to benefit regardless of whether the crisis results in Bougainville&rsquo;s independence or its continued integration with PNG. By positioning itself as a responsible regional actor while Western powers remain tied to the status quo, Beijing gains flexibility that its competitors lack.</li>
-                    </ul>
-
-                    <h3>Recommendations for Western Responses</h3>
-                    <ul>
-                        <li>
-                            <strong>Counter the &ldquo;Benign Development Partner&rdquo; Narrative.</strong>
-                            <p>Focus on specific instances where Chinese promises have not materialized or have come with hidden strings attached. Support independent media throughout the Pacific Islands to ensure that local populations have access to accurate information about the true costs and conditions of Chinese investment. Increase the visibility of Western development projects and their tangible benefits to Pacific Island communities. The most effective counter-narrative is not anti-China rhetoric but rather demonstrable proof that Western partnerships deliver genuine, unconditional development outcomes.</p>
-                        </li>
-                        <li>
-                            <strong>Develop Comprehensive Counter-Political Warfare Strategies.</strong>
-                            <p>Invest in building personal relationships with Pacific Island leaders and communities through consistent presence and engagement. Embrace the &ldquo;last three feet of diplomacy&rdquo;&mdash;the personal, face-to-face interactions that build trust and loyalty over time. Western diplomatic strategy must move beyond periodic high-level visits and institutional engagement to establish a persistent, relationship-driven presence that can compete with China&rsquo;s patient, long-term approach to building political influence.</p>
-                        </li>
-                        <li>
-                            <strong>Analyze PRC Maneuvers Through the Lens of Domestic Politics.</strong>
-                            <p>Analyze strategic maneuvers with full consideration for the PRC&rsquo;s domestic politics and the CCP&rsquo;s internal dynamics. Beijing&rsquo;s actions in the Pacific Islands serve not only strategic objectives but also the domestic legitimacy of the CCP and Xi Jinping personally. Infrastructure projects and diplomatic achievements in the region function as propaganda tools for domestic consumption. Understanding this dual purpose helps predict which actions Beijing will prioritize and where it may be willing to accept setbacks.</p>
-                        </li>
-                        <li>
-                            <strong>Anticipate How the PRC Benefits from Chaos and Instability.</strong>
-                            <p>Develop early warning systems for regional crises that the PRC might exploit. Pre-position diplomatic and development responses to rapidly deploy when instability emerges. Maintain constant engagement with Pacific Island governments to ensure that Western partners are the first call during a crisis, not Beijing. The PRC&rsquo;s ability to benefit from apparent chaos demands that Western strategy shift from reactive crisis management to proactive engagement that anticipates and addresses the conditions that create opportunities for Chinese exploitation.</p>
-                        </li>
-                    </ul>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- II. INTRODUCTION                              -->
-                    <!-- ============================================ -->
-                    <h2 id="introduction">II. Introduction</h2>
-
-                    <h3>The Imperative</h3>
-                    <p>Great power competition in the Pacific Islands region has intensified dramatically in recent years, transforming what was once considered a strategic backwater into a pivot region of global strategy. The People&rsquo;s Republic of China has pursued a long-term strategy to expand its influence across the Pacific, leveraging economic investment, diplomatic engagement, and security cooperation to reshape the regional order. To effectively counter these efforts, the United States and its allies must develop forward-looking, flexible strategies grounded in a deep understanding of how Beijing perceives the region and makes decisions within it.</p>
-
-                    <h3>Exercise Background</h3>
-                    <p>The PRC&rsquo;s strategic objectives in the Pacific Islands encompass military, diplomatic, intelligence, and economic dimensions. Central among these is the isolation of Taiwan from its remaining diplomatic partners in the region and the securing of access to critical natural resources, including deep-sea minerals. China&rsquo;s diplomatic footprint in the Pacific has tripled since 2015, marked by Xi Jinping&rsquo;s visits to Fiji in 2014 and Papua New Guinea in 2018, and the expansion of the Belt and Road Initiative across the region. Recent developments&mdash;including the Cook Islands deep-sea mining arrangements, the Solomon Islands security pact, and police cooperation agreements with Fiji, Kiribati, and Vanuatu&mdash;underscore the breadth and depth of Beijing&rsquo;s regional engagement.</p>
-
-                    <h3>Objectives</h3>
-                    <p>The purpose of this Red Team exercise was to systematically identify vulnerabilities, gaps, and blind spots in current Western strategic posture regarding PRC activities in the Pacific Islands. The exercise sought to develop strategic empathy&mdash;the ability to understand and anticipate an adversary&rsquo;s decision-making processes. Specifically, the exercise explored:</p>
-                    <ul>
-                        <li>PRC perceptions of its interests and strategic position in the Pacific Islands region.</li>
-                        <li>PRC understandings of Western vulnerabilities and how to exploit them.</li>
-                        <li>PRC red lines and thresholds for escalation in the Pacific context.</li>
-                        <li>PRC strategic decision-making frameworks when confronted with regional scenarios that present both risks and opportunities.</li>
-                    </ul>
-                    <p>The development of strategic empathy is essential for crafting effective counter-strategies. By understanding how Beijing thinks about the Pacific Islands, Western policymakers can anticipate Chinese actions, identify vulnerabilities in Chinese strategy, and develop responses that address the root causes of Chinese strategic success rather than merely reacting to its symptoms.</p>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- III. EXERCISE & REPORT ROADMAP                -->
-                    <!-- ============================================ -->
-                    <h2 id="exercise-roadmap">III. Exercise &amp; Report Roadmap</h2>
-
-                    <div class="crimson-callout">
-                        <p>Red Team analysis challenges conventional thinking by having analysts adopt the perspective of an adversary or competitor. This structured analytic technique requires analysts to shift from observing opponents to becoming actors who think and respond as the adversary would do so. The method proves especially valuable when facing counterparts with different cultures, values, or decision-making processes.</p>
-                        <p>Red Teams immerse themselves in their assigned roles, producing authentic products like policy papers and strategic recommendations that the adversary might create.</p>
-                        <p>The technique helps organizations identify blind spots, test assumptions about adversary behavior, and develop more robust strategies. By forcing analysis to see situations through opponents&rsquo; eyes, Red Team analysis reveals vulnerabilities and alternative courses of action that might otherwise go unrecognized.</p>
+                    <div class="report-endmatter">
+                        <p class="copyright">&copy; 2026 OTX International. All rights reserved. No part of this report may be reproduced or transmitted without prior written permission from the publisher.</p>
                     </div>
-
-                    <p>Eight expert participants adopted the Red Team role of PRC military and diplomatic officials, foreign policy strategists, and technical advisors. Individual Red Team members did not play specific roles but rather conferred in &ldquo;committee&rdquo; style to represent views across PRC statecraft domains. ASPI USA employed Chatham House Rule to encourage open speculation and candid discussion among the participants.</p>
-
-                    <p>The facilitator asked participants to determine &ldquo;not just what the PRC should do, but why it should do it.&rdquo; This emphasis on reasoning and motivation, rather than merely actions, ensured that the exercise captured the strategic logic underlying Chinese decision-making, not just its outputs.</p>
-
-                    <p>Four scenarios were presented to the participants as fictional policy memos addressed to Wang Yi, Director of the Central Foreign Affairs Commission. Each scenario was designed to test a different dimension of PRC strategic engagement in the Pacific Islands: military infrastructure development, resource competition, diplomatic realignment, and crisis exploitation. The memos that follow represent the synthesized recommendations of the Red Team for each scenario.</p>
-
-                    <p>The final section of this report is ASPI USA&rsquo;s own analysis of the exercise findings, drawing lessons for the &ldquo;blue team&rdquo;&mdash;the United States and its allies and partners in the Pacific Islands region.</p>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- IV. DIRECTIVE & BASELINE STRATEGY             -->
-                    <!-- ============================================ -->
-                    <h2 id="directive-baseline">IV. Directive &amp; Baseline Strategy</h2>
-
-                    <p>Before addressing the individual scenarios, the Red Team established a baseline understanding of PRC strategic objectives in the Pacific Islands. The committee identified goals across three overlapping time horizons.</p>
-
-                    <figure class="venn-figure">
-                        <img src="images/venn-diagram.png" alt="Strategic Goals in the Pacific Islands - Venn diagram showing Short Term, Long Term, and Overlapping goals">
-                        <figcaption>Figure 1: PRC Strategic Goals in the Pacific Islands &mdash; Short Term, Long Term, and Overlapping Objectives</figcaption>
-                    </figure>
-
-                    <h3>Long-Term Goals</h3>
-                    <p>In the long term, the PRC aims to become the region&rsquo;s primary partner, displacing U.S. regional presence and influence. Beijing seeks to deter U.S. aggression and military posturing in the Pacific while avoiding kinetic warfare that could disrupt economic development and invite international condemnation. The endgame is a Pacific Islands region that looks to Beijing, not Washington, as its principal strategic partner and security guarantor.</p>
-
-                    <h3>Short-Term Goals</h3>
-                    <p>In the near term, the PRC prioritizes diminishing U.S. influence throughout the Pacific Islands and fracturing existing alliances and partnerships, particularly targeting the Compact of Free Association (COFA) states. Beijing also seeks to exploit U.S. domestic political turmoil to undermine American credibility, divide the Pacific Islands Forum to prevent collective resistance, increase the number of states granting PRC diplomatic recognition at the expense of Taiwan, and gain access to the region&rsquo;s natural resources, including deep-sea minerals and fisheries.</p>
-
-                    <h3>Overlapping Goals</h3>
-                    <p>Across both time horizons, several objectives persist: building and deepening partnerships with Pacific Island governments, controlling the regional narrative to present China as a beneficial and reliable partner, evading U.S. strategic attention and response, normalizing PLA presence through dual-use infrastructure and security cooperation, shaping the regional information environment to favor PRC interests, and creating economic dependencies that give Beijing leverage over Pacific Island decision-making.</p>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- V. SCENARIOS & RED TEAM RECOMMENDATIONS       -->
-                    <!-- ============================================ -->
-                    <h2 id="scenarios">V. Scenarios &amp; Red Team Recommendations</h2>
-
-                    <!-- MEMO 1: Kanton Island Lease -->
-                    <h3 id="kanton-island">Scenario 1: Kanton Island Lease</h3>
-
-                    <div class="memo">
-                        <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
-                            <div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
-                            <div class="memo-header-classification">&#32477;&#23494;//&#19981;&#24471;&#22806;&#20934;</div>
-                        </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Oceania Leading Small Group<br>
-                            <strong>DATE:</strong> 24 June 2029<br>
-                            <strong>SUBJ:</strong> Kanton Island Lease
-                        </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The PRC has successfully consolidated political influence in Kiribati, forging a 99-year lease on Kanton Island in the Phoenix Islands chain. This strategic acquisition places Chinese-controlled territory approximately 1,900 miles from Pearl Harbor and positions the PRC to project influence across the Central Pacific. The committee has assessed the strategic implications and recommends a course of action that maximizes long-term benefit while minimizing the risk of a destabilizing Western response.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
-                        <p>By 2028, Western relations with Kiribati had soured considerably. The erosion of judicial independence, combined with the government&rsquo;s increasing authoritarian tendencies, created friction with traditional democratic partners. PRC law enforcement trainers have been embedded within Kiribati&rsquo;s security apparatus, deepening institutional ties. The culmination of these trends was the negotiation of a 99-year lease on Kanton Island, providing the PRC with a sovereign foothold in the heart of the Pacific.</p>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>The committee assessed that Chinese military strategy would benefit significantly from a forward base on Kanton Island. At approximately 1,900 miles from Pearl Harbor, the island occupies a position of considerable strategic value for intelligence collection, maritime domain awareness, and potential power projection. However, overt militarization of the island risks triggering a sharp backlash from the United States, Australia, and regional partners, potentially unraveling years of careful diplomatic cultivation.</p>
-                        <p>The committee therefore recommends a dual-use infrastructure approach. By constructing facilities that serve ostensibly civilian purposes&mdash;port facilities, airstrip improvements, research stations, communications infrastructure&mdash;while maintaining the latent capability for military conversion, the PRC can steadily expand its strategic footprint without crossing Western red lines. This approach mirrors successful precedents in the South China Sea and Djibouti.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
-                        <ol>
-                            <li><strong>Promote Strategic Infrastructure:</strong> Develop Kanton Island through dual-use infrastructure projects including port facilities capable of accommodating naval vessels, an extended airstrip suitable for military transport aircraft, and advanced communications and surveillance equipment. All projects should be framed as economic development and climate research initiatives.</li>
-                            <li><strong>Conduct Intelligence Operations:</strong> Establish a signals intelligence and maritime surveillance capability on Kanton Island under the cover of oceanographic research. This facility would provide valuable intelligence on U.S. military movements between Hawaii and the Western Pacific.</li>
-                            <li><strong>Provide Regional Assistance:</strong> Use Kanton Island as a hub for disaster relief and humanitarian assistance operations throughout the Central Pacific. This positions the PRC as a responsible regional actor and builds goodwill while normalizing a Chinese operational presence in the area.</li>
-                            <li><strong>Ensure Favorable Leadership:</strong> Continue to support political leaders in Kiribati who are positively disposed toward the PRC. Invest in political relationship-building, educational exchanges, and economic incentives that reinforce the value of the Kanton Island lease and broader Chinese partnership.</li>
-                            <li><strong>Consider Military Alternatives:</strong> While avoiding overt militarization, develop contingency plans for the rapid conversion of dual-use facilities to military purposes in the event of a regional crisis or escalation. Pre-position the logistical and engineering capabilities necessary to execute such a conversion within a compressed timeline.</li>
-                        </ol>
-                    </div>
-
-                    <!-- MEMO 2: Deep-Sea Mining -->
-                    <h3 id="deep-sea-mining">Scenario 2: Deep-Sea Mining Competition</h3>
-
-                    <div class="memo">
-                        <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
-                            <div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
-                            <div class="memo-header-classification">&#32477;&#23494;//&#19981;&#24471;&#22806;&#20934;</div>
-                        </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Oceania Leading Small Group<br>
-                            <strong>DATE:</strong> 19 October 2027<br>
-                            <strong>SUBJ:</strong> Response to U.S. Push into Deep-Sea Mining<sup>*</sup>
-                        </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The United States has begun pressuring Pacific Island Countries into bilateral deep-sea mining (DSM) agreements that bypass the International Seabed Authority (ISA) and established multilateral frameworks. This unilateral American approach presents both challenges and opportunities for PRC strategic interests. The committee assesses that China can turn this development to its advantage by positioning itself as the defender of international law and Pacific Island sovereignty.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
-                        <p>The United States has prioritized critical mineral supply chains as a matter of national security, pursuing bilateral DSM agreements with the Cook Islands, Kiribati, Tonga, the Marshall Islands, Papua New Guinea, Vanuatu, and Nauru. These agreements bypass the ISA framework and represent a significant departure from multilateral norms. As President Xi Jinping has noted, the deep sea contains mineral treasures of immense strategic value. China currently holds the most ISA exploration contracts of any nation, and the committee assessed that France, through its Pacific territories, represents a more immediate competitor than the United States in the near term.</p>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>In the short term, U.S. attempts to secure bilateral DSM agreements do not fundamentally threaten PRC interests. China&rsquo;s dominant position within the ISA framework and its existing deep-sea mining technological capabilities provide a strong foundation. However, the U.S. approach of bypassing international norms presents a significant narrative opportunity. By championing the ISA framework and multilateral governance of deep-sea resources, China can position itself as the responsible defender of the rules-based order&mdash;precisely the language that Western nations have used to criticize Beijing.</p>
-                        <p>The committee further noted that U.S. bilateral agreements may generate resentment among Pacific Island populations concerned about environmental impacts and the equitable distribution of mining revenues. China should be prepared to amplify these concerns through media, civil society, and diplomatic channels.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
-                        <ol>
-                            <li><strong>Controlling the Narrative:</strong> Position the PRC as the champion of international law, multilateral governance, and Pacific Island environmental concerns. Highlight U.S. hypocrisy in bypassing the very international institutions that Washington claims to defend. Amplify Pacific Island voices critical of bilateral DSM agreements through media partnerships and civil society support.</li>
-                            <li><strong>Exchange Diplomacy &amp; Confucius Institutes:</strong> Expand educational and cultural exchange programs throughout the Pacific Islands, with a particular focus on marine science and resource management. Confucius Institutes and scholarship programs should cultivate a generation of Pacific Island leaders who view China as a partner in sustainable development rather than a rival for their resources.</li>
-                            <li><strong>Fracturing U.S. Relationships:</strong> Exploit divisions between Pacific Island countries that have signed bilateral agreements with the U.S. and those that have not. Provide preferential economic treatment to holdouts as an incentive for resisting American pressure. Highlight the contrast between U.S. extractive agreements and Chinese development investment.</li>
-                            <li><strong>Biding Time:</strong> Maintain China&rsquo;s dominant position within the ISA while allowing U.S. bilateral agreements to generate their own friction and backlash. As environmental and equity concerns mount, position China to offer an alternative framework that Pacific Island countries find more attractive than the American approach.</li>
-                        </ol>
-
-                        <p class="memo-footnote"><sup>*</sup> This scenario was presented prior to similar developments by the second Trump administration.</p>
-                    </div>
-
-                    <!-- MEMO 3: Marshall Islands Diplomatic Switch -->
-                    <h3 id="marshall-islands">Scenario 3: Marshall Islands Diplomatic Switch</h3>
-
-                    <div class="memo">
-                        <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
-                            <div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
-                            <div class="memo-header-classification">&#32477;&#23494;//&#19981;&#24471;&#22806;&#20934;</div>
-                        </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Oceania Leading Small Group<br>
-                            <strong>DATE:</strong> 14 January 2028<br>
-                            <strong>SUBJ:</strong> Response to New Presidency in the Marshall Islands
-                        </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>The Republic of the Marshall Islands (RMI) has elected a new president who is positively disposed towards the PRC. The committee recommends seizing this opportunity to secure diplomatic recognition from the RMI and, in the long run, engineer a fundamental break in the Marshall Islands&rsquo; relationship with the United States. The new president&rsquo;s stated policy of being &ldquo;friends to all and enemies to none&rdquo; and growing COFA skepticism within the Marshallese population create favorable conditions for PRC engagement.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
-                        <p>A new coalition won a majority in the Nitijela in 2027 and elected a president whose foreign policy orientation represents a significant departure from previous administrations. The new leadership has expressed skepticism about the value of the COFA relationship with the United States and has signaled openness to diversifying the Marshall Islands&rsquo; diplomatic partnerships. Growing frustration with the pace and conditions of U.S. economic support, combined with lingering resentment over the legacy of American nuclear testing in the Marshall Islands, has created a political environment receptive to PRC overtures.</p>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>The committee identified a strategic opportunity to remove one of the last diplomatic holdouts for the Nationalists in Taipei. The Marshall Islands represents one of Taiwan&rsquo;s remaining diplomatic partners, and its defection would deal a significant blow to Taiwan&rsquo;s international standing. However, the COFA relationship represents both an exploitation opportunity and an obstacle. While COFA skepticism creates openings for Chinese engagement, the deep institutional ties between the RMI and the United States&mdash;including military access rights and significant financial transfers&mdash;cannot be easily displaced.</p>
-                        <p>The committee assessed that the endgame is not merely diplomatic recognition but a fundamental political shift in the Marshall Islands away from the United States and toward the PRC. This requires a patient, multi-pronged approach that addresses Marshallese economic needs, political aspirations, and historical grievances simultaneously.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
-                        <ol>
-                            <li><strong>Personnel Inducements:</strong> Cultivate personal relationships with the new president and key members of the governing coalition through private visits, educational opportunities for their families, and discreet economic incentives. Personal relationships with political leaders are the foundation of PRC influence throughout the Pacific.</li>
-                            <li><strong>Outbid Taiwan:</strong> Offer economic and development packages that significantly exceed what Taiwan can provide. This includes infrastructure investment, budget support, and scholarship programs. The goal is to make the economic case for diplomatic switch so compelling that it overcomes domestic political resistance.</li>
-                            <li><strong>Narrative Warfare About Nuclear Testing Legacy:</strong> Amplify and support Marshallese grievances regarding the legacy of U.S. nuclear testing. Frame the United States as a power that irradiated the Marshall Islands and then failed to provide adequate compensation or remediation. Position the PRC as a partner that respects Marshallese sovereignty and offers development without the baggage of colonial exploitation.</li>
-                            <li><strong>Displace America:</strong> Pursue a long-term strategy of displacing American institutional presence in the Marshall Islands. This includes offering alternatives to U.S.-funded programs, establishing Chinese economic and cultural institutions, and gradually reducing Marshallese dependence on COFA provisions by providing substitute sources of revenue and services.</li>
-                        </ol>
-                    </div>
-
-                    <!-- MEMO 4: Bougainville Crisis -->
-                    <h3 id="bougainville">Scenario 4: Bougainville Crisis</h3>
-
-                    <div class="memo">
-                        <div class="memo-header">
-                            <div class="memo-header-title">Central Foreign Affairs Commission of the CCP</div>
-                            <div class="memo-header-sub">Beijing</div>
-                            <div class="memo-header-classification">&gt;&gt;&gt;&gt;&gt;&gt;</div>
-                            <div class="memo-header-classification">&#32477;&#23494;//&#19981;&#24471;&#22806;&#20934;</div>
-                        </div>
-                        <div class="memo-fields">
-                            <strong>FOR:</strong> Director of the Central Foreign Affairs Commission, Wang Yi<br>
-                            <strong>FROM:</strong> Oceania Leading Small Group<br>
-                            <strong>DATE:</strong> 1 December 2027<br>
-                            <strong>SUBJ:</strong> Crisis in Bougainville
-                        </div>
-
-                        <div class="memo-section-label">EXECUTIVE SUMMARY</div>
-                        <p>Tensions between the Autonomous Region of Bougainville and Papua New Guinea have escalated toward open conflict following the PNG parliament&rsquo;s failure to address the results of Bougainville&rsquo;s independence referendum. The committee assesses that China stands to benefit from either outcome of this crisis&mdash;whether Bougainville achieves independence or remains within PNG&mdash;and recommends a strategy that positions the PRC to capitalize on developments regardless of how the situation unfolds.</p>
-
-                        <div class="memo-section-label">BACKGROUND</div>
-                        <p>In December 2027, tensions escalated sharply after the PNG parliament failed to address Bougainville&rsquo;s independence vote by the 1 September deadline established in the Bougainville Peace Agreement. Military mobilization on both sides has raised the specter of a return to the armed conflict that devastated the region in the 1990s. The crisis has attracted international attention and created opportunities for external actors to shape the outcome.</p>
-
-                        <div class="memo-section-label">ANALYSIS</div>
-                        <p>The PRC is positioned to benefit regardless of the outcome. Western powers&mdash;particularly Australia and the United States&mdash;generally favor the status quo of Bougainville remaining within PNG, which limits their flexibility to engage with all parties. China, by contrast, has greater strategic flexibility and can engage with both the PNG government and Bougainville independence leaders without the same constraints.</p>
-                        <p>The crisis also presents an opportunity to enhance PRC regional leadership by demonstrating a capacity for crisis management and peacekeeping. Furthermore, the Bougainville situation has potential spillover implications for West Papua and New Caledonia, where similar independence aspirations could create additional opportunities for PRC engagement.</p>
-
-                        <div class="memo-section-label">RECOMMENDATIONS</div>
-                        <ol>
-                            <li><strong>A Responsible Approach:</strong> Advocate for a PRC-led or PRC-supported peacekeeping effort in Bougainville. Position China as a neutral mediator that respects the will of the Bougainvillean people while maintaining constructive relations with PNG. A Chinese role in peacekeeping would normalize PLA and PRC security presence in Melanesia and establish a precedent for Chinese security engagement in the Pacific.</li>
-                            <li><strong>Regional Security:</strong> Reinforce the Solomon Islands police cooperation framework and strengthen ties with the Melanesian Spearhead Group. Use the Bougainville crisis to demonstrate the value of Chinese security partnerships and to position the PRC as a capable and willing provider of regional security assistance, in contrast to Western partners who are constrained by their preference for the status quo.</li>
-                            <li><strong>Fostering Prosperity:</strong> Regardless of the political outcome, position Chinese enterprises to participate in the restart of the Panguna mine, one of the world&rsquo;s largest copper and gold deposits. The economic reconstruction of Bougainville&mdash;whether as an independent state or an autonomous region&mdash;will require massive investment, and the PRC should ensure that Chinese companies are at the front of the line.</li>
-                        </ol>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- VI. ANALYSIS & LESSONS FOR THE BLUE TEAM      -->
-                    <!-- ============================================ -->
-                    <h2 id="blue-team">VI. Analysis &amp; Lessons for the &ldquo;Blue Team&rdquo;</h2>
-
-                    <p>The following analysis represents ASPI USA&rsquo;s assessment of the exercise findings and their implications for Western strategy in the Pacific Islands region.</p>
-
-                    <h3>1. Benign Development Partner?</h3>
-                    <p>Across all four scenarios, the Red Team consistently prioritized maintaining the PRC&rsquo;s image as a &ldquo;benign development partner&rdquo;&mdash;a nation that offers infrastructure, investment, and assistance without the political conditions attached to Western aid. This narrative is central to Chinese strategy in the Pacific Islands and serves as the primary vehicle for expanding influence while minimizing resistance.</p>
-                    <p>The PRC actively manipulates the Pacific information environment to sustain this narrative. State media, social media platforms, and co-opted local outlets amplify stories of Chinese generosity while suppressing coverage of debt conditions, labor practices, environmental impacts, and political interference. The committee&rsquo;s consistent emphasis on narrative control confirms that the &ldquo;benign development partner&rdquo; image is not incidental but rather a deliberately constructed and maintained strategic asset.</p>
-                    <p>The United States and its allies must increase the visibility of their own development activities throughout the Pacific Islands. Too often, Western development projects are delivered through multilateral institutions or NGOs with little attribution to the partner governments that fund them. Supporting independent media in the Pacific Islands is equally critical, ensuring that local journalists have the resources and protections to report accurately on both Chinese and Western engagement in the region.</p>
-
-                    <h3>2. Unrestricted Political Warfare</h3>
-                    <p>The exercise identified only one firm Western red line that the PRC consistently respected: direct threats to U.S. military assets and installations. Below this threshold, Beijing believes it has a free hand to conduct unrestricted political warfare, encompassing intelligence operations, disinformation campaigns, economic coercion, diplomatic subversion, and the cultivation of political elites sympathetic to PRC interests.</p>
-                    <p>This finding carries profound implications for Western strategy. The PRC&rsquo;s approach mirrors the classical Chinese strategic concept of winning without fighting&mdash;achieving strategic objectives through non-kinetic means that fall below the threshold of a military response. The breadth of Chinese political warfare activities in the Pacific Islands&mdash;from police cooperation agreements to media partnerships to educational exchanges&mdash;represents a comprehensive campaign to reshape the regional political landscape in China&rsquo;s favor.</p>
-                    <p>Western counter-strategies must address this full spectrum of political warfare. Military deterrence, while necessary, is insufficient. The United States and its allies must develop their own capabilities for political warfare competition, including enhanced intelligence sharing with Pacific Island partners, media literacy programs, counter-corruption initiatives, and sustained diplomatic engagement that builds resilience against Chinese influence operations.</p>
-
-                    <h3>3. Show Your Strength or Bide Your Time?</h3>
-                    <p>The exercise revealed an internal tension within the Red Team between two strategic orientations. One group of participants favored a forward-leaning, assertive approach&mdash;the &ldquo;strong men&rdquo;&mdash;advocating for bold moves to seize strategic opportunities as they arise. The other group favored a more cautious, patient approach aligned with Deng Xiaoping&rsquo;s famous dictum to &ldquo;hide your strength and bide your time&rdquo;&mdash;the &ldquo;restrainers.&rdquo;</p>
-                    <p>This tension mirrors a genuine debate within the CCP about the pace and assertiveness of Chinese foreign policy. Under Xi Jinping, the balance has shifted toward the &ldquo;strong men&rdquo; camp, with Xi having consolidated power with loyalists who share his more assertive vision. However, the &ldquo;restrainers&rdquo; remain influential, particularly when aggressive moves risk provoking a Western backlash that could undermine long-term objectives.</p>
-                    <p>For Western strategists, this internal tension represents both a challenge and an opportunity. By raising the costs of aggressive Chinese behavior in the Pacific Islands&mdash;through diplomatic consequences, economic penalties, and increased Western presence&mdash;the &ldquo;restrainer&rdquo; camp within the CCP can be empowered. Conversely, Western inaction or disengagement empowers the &ldquo;strong men&rdquo; by confirming that assertive moves carry no consequences.</p>
-
-                    <h3>4. All Under Heaven is in Chaos, and the Situation is Excellent</h3>
-                    <p>Mao Zedong&rsquo;s famous aphorism captures a strategic orientation that was consistently evident throughout the exercise. Unlike Western powers, which generally seek stability and the preservation of the status quo, the PRC is positioned to benefit from chaos, crisis, and instability in the Pacific Islands region.</p>
-                    <p>The Bougainville scenario illustrated this dynamic most clearly. While Australia and the United States were constrained by their commitment to PNG&rsquo;s territorial integrity and the existing political framework, China maintained the flexibility to engage with all parties and to benefit from any outcome. Similarly, the Solomon Islands police deployment, divisions within the Pacific Islands Forum over Taiwan recognition, and the erosion of democratic institutions in several Pacific Island states all create conditions that favor Chinese strategic objectives.</p>
-                    <p>Western strategy must account for the PRC&rsquo;s ability to thrive in chaotic environments. This means investing in the stability and resilience of Pacific Island institutions, providing rapid-response capabilities for regional crises, and maintaining the kind of persistent, relationship-driven engagement that ensures Western partners are the first call when instability emerges.</p>
-
-                    <hr class="section-divider">
-
-                    <!-- ============================================ -->
-                    <!-- VII. CONCLUSION                               -->
-                    <!-- ============================================ -->
-                    <h2 id="conclusion">VII. Conclusion</h2>
-
-                    <p>The Pacific Islands Red Team exercise revealed a PRC strategy characterized by a dual-track approach: diminishing U.S. influence in the short term while positioning China as the region&rsquo;s primary partner over the long term. Across all four scenarios, the Red Team demonstrated remarkable strategic flexibility, adapting its approach to exploit the specific conditions of each situation while maintaining consistency in its overarching objectives.</p>
-
-                    <p>The &ldquo;benign development partner&rdquo; narrative emerged as the linchpin of PRC strategy in the Pacific Islands. This carefully constructed image enables Beijing to expand its influence while minimizing the resistance that more overtly aggressive behavior would provoke. The exercise identified only one firm American red line&mdash;direct threats to U.S. military assets&mdash;below which Beijing believes it can operate with relative impunity in the political warfare domain.</p>
-
-                    <p>For Western policymakers, the exercise yields several actionable lessons. Counter-strategy should include the development of comprehensive counter-political warfare capabilities that address the full spectrum of Chinese influence operations. Supporting independent media throughout the Pacific Islands is essential for undermining the &ldquo;benign development partner&rdquo; narrative with factual reporting. Anticipating how the PRC benefits from chaos and instability must become a core element of Western strategic planning, with pre-positioned responses and early warning systems for regional crises.</p>
-
-                    <p>Analyzing PRC actions through the lens of domestic politics&mdash;understanding how Pacific Islands engagement serves the CCP&rsquo;s internal legitimacy requirements&mdash;provides deeper insight into Chinese decision-making and priorities. Finally, strengthening regional institutions, particularly the Pacific Islands Forum and bilateral relationships with individual Pacific Island states, creates the resilience necessary to withstand sustained Chinese strategic pressure.</p>
-
-                    <p>The Pacific Islands are no longer a strategic backwater. They are a contested space where the future of great power competition in the Indo-Pacific will be significantly shaped. The United States and its allies must approach this theater with the seriousness, resources, and sustained attention that its strategic significance demands.</p>
 
                     <aside class="support-cta">
                         <h3>Independent research costs money.</h3>
                         <p>If this report was useful to you, support our work. TAFI runs on grants and individual donors&mdash;tax-deductible through OTX International, a 501(c)(3) public charity.</p>
-                        <a href="../support.html" class="support-cta-btn">Donate</a>
+                        <a href="/support.html" class="support-cta-btn">Donate</a>
                     </aside>
 
-                    <!-- Publication Navigation -->
                     <nav class="pub-nav">
-                        <a href="index.html" class="pub-nav-back">&larr; All Publications</a>
-                        <a href="ukraine-red-team.html" class="pub-nav-next">
-                            <span class="pub-nav-label">Next Report &rarr;</span>
-                            <span class="pub-nav-title">Ukraine Red Team Event Report</span>
-                        </a>
+                        <a href="/our-work/futures.html" class="pub-nav-back">&larr; All Futures work</a>
                     </nav>
-
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../images/tafi-logo-real.png" alt="TAFI">
+                    <img src="/images/tafi-logo-real.png" alt="TAFI">
                     <span class="footer-logo-text">TAFI</span>
                 </div>
                 <div class="footer-links">
-                    <a href="../about.html">About</a>
-                    <a href="../our-work/index.html">Our Work</a>
-                    <a href="../advisory.html">Advisory</a>
-                    <a href="../people.html">People</a>
-                    <a href="../support.html" class="nav-donate">Donate</a>
-                    <a href="../index.html#contact">Contact</a>
+                    <a href="/about.html">About</a>
+                    <a href="/our-work/">Our Work</a>
+                    <a href="/advisory.html">Advisory</a>
+                    <a href="/people.html">People</a>
+                    <a href="/support.html">Donate</a>
+                    <a href="/#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <!-- PLACEHOLDERS to confirm before launch: mailing address, contact@ -->
-                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.85rem; line-height: 1.7;">
-                    TAFI is supported by foundation grants, individual donors, and commercial advisory work, with a strict firewall between commercial engagements and our public research.
-                </p>
-                <p style="max-width: 900px; margin: 0 auto 1rem; font-size: 0.8rem; line-height: 1.7; opacity: 0.85;">
-                    The Alliance Futures Initiative is a research program of OTX International, an independent, non-partisan 501(c)(3) public charity. Contributions are tax-deductible to the fullest extent permitted by law.
-                </p>
-                <p style="font-size: 0.8rem; opacity: 0.8;">
-                    <a href="mailto:contact@alliancefutures.org" style="color: var(--ocean-light);">contact@alliancefutures.org</a>
-                </p>
-                <p style="margin-top: 1rem;">&copy; 2026 The Alliance Futures Initiative &middot; Founded 2026 &middot; <a href="../privacy.html" style="color: var(--ocean-light);">Privacy</a></p>
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 100);
-        });
-
-        // Mobile menu toggle
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileNav = document.querySelector('.mobile-nav');
-
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // Mobile accordion
-        document.querySelectorAll('.mobile-nav-group-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                trigger.classList.toggle('active');
-                trigger.nextElementSibling.classList.toggle('active');
-            });
-        });
-
-        document.querySelectorAll('.mobile-nav-group-items a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for TOC links
-        document.querySelectorAll('.toc-sidebar a[href^="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    const headerOffset = 100;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Active TOC highlighting on scroll
-        const tocLinks = document.querySelectorAll('.toc-sidebar a[href^="#"]');
-        const sections = [];
-        tocLinks.forEach(link => {
-            const id = link.getAttribute('href').substring(1);
-            const section = document.getElementById(id);
-            if (section) sections.push({ id, el: section, link });
-        });
-
-        function updateActiveToc() {
-            const scrollPos = window.pageYOffset + 150;
-            let current = null;
-
-            for (let i = sections.length - 1; i >= 0; i--) {
-                if (scrollPos >= sections[i].el.offsetTop) {
-                    current = sections[i];
-                    break;
-                }
-            }
-
-            tocLinks.forEach(l => l.classList.remove('active'));
-            if (current) {
-                current.link.classList.add('active');
-            }
-        }
-
-        window.addEventListener('scroll', updateActiveToc);
-        updateActiveToc();
+        mobileMenu.addEventListener('click', () => { mobileMenu.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav a').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.remove('active'); mobileNav.classList.remove('active'); }));
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(t => t.addEventListener('click', () => { t.classList.toggle('active'); t.nextElementSibling.classList.toggle('active'); }));
     </script>
+
 </body>
 </html>
