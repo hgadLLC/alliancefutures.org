@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-power-bill-and-people-power
+next_slug: the-manufactured-workforce
 featured: false
 ---
 One event gave the technology away. The other built the institution to govern its spread. Read together, they reveal a strategy.

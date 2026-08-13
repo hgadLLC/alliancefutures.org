@@ -385,6 +385,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Manufactured Workforce"
+  outlet: Southern Signals
+  date: 2026-08-11
+  url: our-work/commentary/the-manufactured-workforce.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-manufactured-workforce-hero.jpg
+  excerpt: "Manufactured demography &mdash; how Beijing is converting labour supply from an organic variable into an industrial output, and why the state that standardises machine labour first will dictate the rules of twenty-first-century production."
+
+- type: commentary
   title: "The Abundance Doctrine"
   outlet: Southern Signals
   date: 2026-08-03
