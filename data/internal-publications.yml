@@ -522,6 +522,7 @@
   region: Pacific
   countries: [Fiji, Federated States of Micronesia, Kiribati, Naoero, Papua New Guinea, Samoa, Solomon Islands, Tonga, Vanuatu]
   image: our-work/research/images/china-model-on-the-offensive-hero.jpg
+  featured: true
   excerpt: "Beijing&rsquo;s 15th Five-Year Plan promotion in the Pacific Islands is a governance-model export. All nine PRC embassies have run coordinated advocacy, and in Naoero, Kiribati, and Tonga they moved past description into offering to help host governments design their strategies along Chinese lines."
 
 - type: report

@@ -59,7 +59,7 @@ about: |
 disclaimer: |
   The views expressed in this report are those of the author alone and do not represent the official positions of The Alliance Futures Initiative. This report is intended for informational and analytical purposes only. All sources cited are publicly available. This report was produced using institutional funding.
 categories: [research, tafi-perspective]
-featured: false
+featured: true
 ---
 <figure class="figure">
     <img src="/our-work/research/images/china-model-on-the-offensive-hero.jpg" alt="Cover of &lsquo;China&rsquo;s Model on the Offensive&rsquo; by Jonah Bock, a TAFI Perspective on China&rsquo;s Five-Year Plan promotion in the Pacific, showing the Asia-Pacific region against a dark navy background with the TAFI logo.">
