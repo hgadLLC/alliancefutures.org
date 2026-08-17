@@ -7,6 +7,7 @@ title: "Beijing Sends Buyers to Port Moresby &mdash; Last Week in the Pacific"
 description: "A PetroChina delegation lands in Port Moresby days after Taiwan suspends spot LNG purchases; Guangdong signs a media letter of intent in Apia; China&rsquo;s National Immigration Administration donates six vehicles to the Solomon Islands Immigration Division. August 3 to August 9, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-26.pdf
 prev_week: 25
+next_week: 27
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
