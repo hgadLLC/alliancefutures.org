@@ -398,6 +398,34 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Last Perimeter"
+  outlet: Southern Signals
+  date: 2026-08-20
+  url: our-work/commentary/the-last-perimeter.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-last-perimeter-hero.jpg
+  excerpt: "The atomic perimeter &mdash; why machine-speed intrusion and post-quantum cryptography are moving protection from the network to the individual datum, and why control of trust is becoming the currency of information-age power."
+
+- type: commentary
+  title: "The Export That Never Leaves"
+  outlet: Southern Signals
+  date: 2026-08-20
+  url: our-work/commentary/the-export-that-never-leaves.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-export-that-never-leaves-hero.jpg
+  excerpt: "Compute clearing &mdash; how remote access to advanced processors defeats an export control regime built for physical borders, and why the states that write the rules of compute will govern the next international order."
+
+- type: commentary
   title: "The Manufactured Workforce"
   outlet: Southern Signals
   date: 2026-08-11

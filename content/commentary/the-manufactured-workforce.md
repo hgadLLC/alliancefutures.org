@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-abundance-doctrine
+next_slug: the-export-that-never-leaves
 featured: false
 ---
 For a decade, the settled view in Western defence and intelligence circles held that demography was the one constraint the Chinese Communist Party could neither engineer nor legislate away. A shrinking workforce, the argument ran, would drive up labour costs, drain regional pension funds and place a hard ceiling on the growth from which the party derives its legitimacy. The thesis carried a hidden vulnerability: it rested on the industrial-age assumption that a nation&rsquo;s labour supply is a biological endowment, bounded by the births of a generation earlier. That assumption has expired.
