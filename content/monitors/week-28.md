@@ -4,7 +4,7 @@ week: 28
 date: 2026-08-17
 date_end: 2026-08-23
 title: "China Works the Interior &mdash; Last Week in the Pacific"
-description: "China&rsquo;s Ambassador briefs Naoeroan MPs on Beijing&rsquo;s ethnic unity law and holds a second party-to-party exchange with Vanuatu&rsquo;s opposition Land and Justice Party; a Chinese diplomat reaches the Solomon Islands&rsquo; Temotu Province for the first time. August 17 to August 23, 2026."
+description: "China&rsquo;s Ambassador briefs Naoeroan MPs on Beijing&rsquo;s ethnic unity law and holds a second party-to-party exchange with Vanuatu&rsquo;s Land and Justice Party; a Chinese diplomat reaches the Solomon Islands&rsquo; Temotu Province for the first time. August 17 to August 23, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-28.pdf
 prev_week: 27
 authors: [jonah-bock]
@@ -36,7 +36,7 @@ themes:
 
       The briefing reflects a core diplomatic objective for Beijing: building international support for domestic policies that draw international criticism. The one-China principle dominates China&rsquo;s Pacific diplomatic agenda, but support for China&rsquo;s ethnic policies&mdash;including its approach to Tibet and Xinjiang&mdash;also matters to the CCP.
 
-      A separate engagement in Port Vila illustrates how Beijing builds durability into that support. Ambassador **Li Minggang** hosted a party-to-party exchange with Vanuatu&rsquo;s **Land and Justice Party**&mdash;the second such meeting since July. The party reaffirmed its commitment to Beijing&rsquo;s one-China principle. China&rsquo;s diplomats collect these reaffirmations from sitting governments, but cultivating political parties and parliamentarians outside government ensures the relationship survives when administrations change. The week&rsquo;s two engagements&mdash;Naoeroan MPs and a Vanuatuan opposition party&mdash;follow the same logic.
+      A separate engagement in Port Vila illustrates how Beijing builds durability into that support. Ambassador **Li Minggang** hosted a party-to-party exchange with Vanuatu&rsquo;s **Land and Justice Party**&mdash;the second such meeting since July. The party reaffirmed its commitment to Beijing&rsquo;s one-China principle. China&rsquo;s diplomats collect these reaffirmations from sitting governments, but cultivating political parties and parliamentarians outside government ensures the relationship survives when administrations change. The week&rsquo;s two engagements&mdash;Naoeroan MPs and a Vanuatuan political party&mdash;follow the same logic.
     supporting_events:
       - country: Nauru
         label: Lyu Jin Meets Returning Parliamentarians
