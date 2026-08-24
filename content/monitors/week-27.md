@@ -7,6 +7,7 @@ title: "Close Protection, Aerial Surveillance, and a Spy Ship in Suva &mdash; La
 description: "China&rsquo;s Police Liaison Team completes close protection training for the RSIPF officers who guard the Solomon Islands&rsquo; political leadership; the embassy in Port Vila donates drones to Vanuatu Correctional Services; Beijing&rsquo;s defence attach&eacute; in Suva marks the return of a donated hydrographic survey ship. August 10 to August 16, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-27.pdf
 prev_week: 26
+next_week: 28
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
