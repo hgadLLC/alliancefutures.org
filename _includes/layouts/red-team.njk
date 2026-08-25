@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-extra_head: '<link rel="stylesheet" href="/css/red-team.css">'
+extra_head: '<link rel="stylesheet" href="/css/red-team.css?v=2">'
 permalink: "/publications/{{ slug }}.html"
 ---
     <div class="print-header">
@@ -69,6 +69,10 @@ permalink: "/publications/{{ slug }}.html"
                     {{ content | safe }}
 
                     <div class="report-endmatter">
+                        {%- if author_note %}
+                        <h3>About the Author</h3>
+                        {{ author_note | markdownify | safe }}
+                        {%- endif %}
                         {%- if about %}
                         <h3>About TAFI</h3>
                         {{ about | markdownify | safe }}
@@ -80,6 +84,10 @@ permalink: "/publications/{{ slug }}.html"
                         {%- if acknowledgements %}
                         <h3>Acknowledgements</h3>
                         {{ acknowledgements | markdownify | safe }}
+                        {%- endif %}
+                        {%- if ai_disclosure %}
+                        <h3>AI Disclosure</h3>
+                        {{ ai_disclosure | markdownify | safe }}
                         {%- endif %}
                         <p class="copyright">&copy; 2026 OTX International. All rights reserved. No part of this report may be reproduced or transmitted without prior written permission from the publisher.</p>
                     </div>

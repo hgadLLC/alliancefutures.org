@@ -551,6 +551,21 @@
   excerpt: "Why understanding AI may matter more than owning it &mdash; the next phase of strategic competition will be decided by evaluation, not ownership."
 
 - type: report
+  title: "Beyond the Submarine"
+  outlet: TAFI Perspective
+  date: 2026-07-31
+  url: our-work/research/beyond-the-submarine.html
+  authors: [adam-leslie]
+  category: research
+  product_type: TAFI Perspective
+  series: TAFI Perspective
+  tag_class: is-research
+  region: Indo-Pacific
+  countries: [Australia, United Kingdom, United States]
+  image: our-work/research/images/beyond-the-submarine-thumb.jpg
+  excerpt: "TAFI&rsquo;s submission to the Independent Public Inquiry into AUKUS: preserve AUKUS, preserve and expand SRF-West, and discontinue the sovereign nuclear-powered submarine pathway in favour of the capabilities where Australia holds a comparative security advantage."
+
+- type: report
   title: "China&rsquo;s Model on the Offensive"
   outlet: TAFI Perspective
   date: 2026-07-31
