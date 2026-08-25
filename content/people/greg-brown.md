@@ -21,6 +21,8 @@ affiliations:
   - "Founding Director, TAFI"
 education:
   - "Ph.D., Government, University of Texas at Austin"
+prev_slug: adam-leslie
+prev_name: "Adam Leslie"
 next_slug: eric-lies
 next_name: "Eric Lies"
 ---

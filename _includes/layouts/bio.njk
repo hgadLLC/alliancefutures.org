@@ -2,6 +2,9 @@
 layout: layouts/base.njk
 extra_head: '<link rel="stylesheet" href="/css/bio.css?v=2">'
 permalink: "/team/{{ slug }}.html"
+eleventyComputed:
+  title: "{{ name }}"
+  description: "{{ name }}, {{ role }} at The Alliance Futures Initiative."
 ---
     <section class="bio-hero">
         <div class="bio-hero-inner">
