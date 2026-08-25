@@ -39,6 +39,8 @@ disclaimer: |
 acknowledgements: |
   TAFI is grateful for the support of Adam Leslie, Nishank Motwani, Austin Wu, Leah Markworth, Marika Vigo, and the Australian Strategic Policy Institute.
 categories: [research, red-team]
+section_label: "Futures"
+section_url: "/our-work/futures.html"
 featured: true
 ---
 <h2 id="executive-summary">Executive Summary</h2>

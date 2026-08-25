@@ -13,7 +13,7 @@ permalink: "/publications/{{ slug }}.html"
             <div class="page-hero-content">
                 <nav class="breadcrumb">
                     <a href="/">Home</a> <span>/</span>
-                    <a href="/our-work/futures.html">Our Work / Futures</a> <span>/</span>
+                    <a href="{{ section_url or "/our-work/research.html" }}">Our Work / {{ section_label or "Research" }}</a> <span>/</span>
                     <span>{{ breadcrumb_title or title | safe }}</span>
                 </nav>
                 <h1>{{ title | safe }}</h1>
@@ -99,7 +99,7 @@ permalink: "/publications/{{ slug }}.html"
                     </aside>
 
                     <nav class="pub-nav">
-                        <a href="/our-work/futures.html" class="pub-nav-back">&larr; All Futures work</a>
+                        <a href="{{ section_url or "/our-work/research.html" }}" class="pub-nav-back">&larr; All {{ section_label or "Research" }} work</a>
                     </nav>
                 </article>
             </div>
