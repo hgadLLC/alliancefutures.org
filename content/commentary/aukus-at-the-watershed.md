@@ -13,7 +13,7 @@ lede: |
   AUKUS is a wager worth making, with eyes open.
 author_image: /images/team/marc-ablong.jpg
 author_bio: |
-  Marc is a geostrategic-risk advisor and former Australian Deputy Secretary whose 31-year public-service career spanned national security, intelligence, critical and emerging technology, cyber, and Defence strategy &mdash; including leadership of two Australian Defence White Papers. He writes the *Southern Signals* series for TAFI.
+  Marc is a geostrategic-risk advisor and former Australian Deputy Secretary whose 31-year public-service career spanned national security, intelligence, critical and emerging technology, cyber, and Defence strategy &mdash; including leadership of two Australian Defence White Papers. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/marc-ablong.html
 prev_slug: offshore-is-now-overhead
 next_slug: the-problem-of-unknowable-power

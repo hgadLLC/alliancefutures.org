@@ -14,7 +14,7 @@ lede: |
   Every great era of geopolitical competition has been organised around a strategic resource. Coal powered the Industrial Revolution. Oil defined the twentieth century. Compute will define the twenty-first.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-price-of-freedom
 next_slug: the-power-bill-and-people-power

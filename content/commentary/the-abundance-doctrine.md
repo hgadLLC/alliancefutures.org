@@ -14,7 +14,7 @@ lede: |
   On 16 July, two ceremonies unfolded in Shanghai within hours of each other. At the World Artificial Intelligence Conference, Beijing-based Moonshot AI unveiled Kimi K3, a 2.8 trillion-parameter system that is the largest open-weight model ever released, and pledged its full weights to anyone on Earth within a fortnight. Across the city, representatives of 29 nations signed the founding agreement of the World AI Cooperation Organization (WAICO), a China-led intergovernmental body headquartered in Shanghai, with the United Nations Secretary-General looking on.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-power-bill-and-people-power
 next_slug: the-manufactured-workforce

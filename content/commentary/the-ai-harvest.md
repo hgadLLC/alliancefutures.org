@@ -13,7 +13,7 @@ lede: |
   Photography transformed military reconnaissance. Signals intelligence helped decide the Second World War. Satellite imagery defined the Cold War. Each breakthrough changed not just how intelligence was gathered, but what governments believed was knowable. Artificial intelligence is the next revolution in that lineage, and it will prove the most consequential of all.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-problem-of-unknowable-power
 next_slug: the-next-ai-arms-race

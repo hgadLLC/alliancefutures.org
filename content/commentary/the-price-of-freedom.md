@@ -14,7 +14,7 @@ lede: |
   Liberal democracies may be on the verge of making one of the most expensive strategic mistakes of the digital age. In seeking to build the world&rsquo;s safest, most transparent and most trustworthy artificial intelligence, they risk making it too expensive for much of the world to adopt.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-next-ai-arms-race
 next_slug: the-infrastructure-of-intelligence

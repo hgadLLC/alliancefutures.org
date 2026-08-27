@@ -13,7 +13,7 @@ lede: |
   The next tax haven will orbit the planet every ninety minutes at 27,000 kilometres per hour. It will carry more frontier compute than most national economies can field on Earth and under current settings, it will fly the flag of whichever state sells its jurisdiction cheapest.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-last-human-advantage
 next_slug: aukus-at-the-watershed

@@ -14,7 +14,7 @@ lede: |
   In rented server racks across Johor, Bangkok and Jakarta, Nvidia&rsquo;s most advanced processors are training Chinese artificial intelligence tonight &mdash; legally, profitably and beyond the reach of any customs officer on Earth. The silicon remains where it was manufactured. The capability flows across networks. What looks like a routine cloud transaction has become one of the most serious strategic vulnerabilities confronting the Western alliance.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-manufactured-workforce
 next_slug: the-last-perimeter

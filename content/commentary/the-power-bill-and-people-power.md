@@ -14,7 +14,7 @@ lede: |
   America has just told the world where the AI race will be won, and it is not where the strategists have been looking. On Thursday in Washington, a president who has staked national prestige on machine intelligence assembled 23 governors and at least 187 companies to promise voters that the artificial intelligence build-out will not touch their power bills.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-infrastructure-of-intelligence
 next_slug: the-abundance-doctrine

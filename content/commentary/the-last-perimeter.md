@@ -14,9 +14,10 @@ lede: |
   Late last year, a state-backed cyber operator entered a target list into an artificial intelligence system and stepped back. According to Anthropic&rsquo;s subsequent investigation, the AI conducted reconnaissance, identified vulnerabilities, harvested credentials, moved laterally through networks and sorted the stolen material by intelligence value, executing between 80 and 90 per cent of a campaign that ran against roughly thirty organisations across technology, finance, industry and government. The humans supervised. One intrusion set does not remake a discipline, but this one showed where the contest is heading: toward machine-speed operations in which the traditional advantages of human defenders erode by the month.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-export-that-never-leaves
+next_slug: the-compounding-error
 featured: false
 ---
 For four decades, cybersecurity has been organised around the boundary. The vocabulary gives the assumption away: firewall, gateway, demilitarised zone, intrusion. Even zero trust, the most consequential reform of the past decade, kept the premise that defence begins with controlling access to systems. That premise is failing, and the failure is measurable in three ways.

@@ -13,7 +13,7 @@ lede: |
   In the past month, a proposed White House executive order introducing additional AI oversight measures was shelved. The reported reason: new guardrails might slow American progress against China. That single episode captures the defining strategic dilemma of the AI era — and explains why the architects of the most consequential technology in history are sounding alarms that no government has yet seriously answered.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 next_slug: the-great-race
 featured: false

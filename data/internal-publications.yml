@@ -411,6 +411,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Compounding Error"
+  outlet: Southern Signals
+  date: 2026-08-24
+  url: our-work/commentary/the-compounding-error.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-compounding-error-hero.jpg
+  excerpt: "Error debt &mdash; why reliability has not scaled with capability, how hostile services turn ordinary machine error into an attack surface, and why epistemic sovereignty is becoming the ultimate source of power."
+
+- type: commentary
   title: "The Last Perimeter"
   outlet: Southern Signals
   date: 2026-08-20

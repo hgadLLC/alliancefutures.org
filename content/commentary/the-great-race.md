@@ -13,7 +13,7 @@ lede: |
   A new strategic arms race is underway. It is not being fought with aircraft carriers, missiles or nuclear weapons, but with algorithms. Its outcome may shape national power, economic competitiveness and institutional resilience more profoundly than any competition since the Cold War.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: who-owns-the-mind-of-the-machine
 next_slug: the-last-human-advantage

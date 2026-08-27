@@ -14,7 +14,7 @@ lede: |
   Beijing has decided that if its people will not multiply, its machines will. Two policy documents issued this year make the decision legible. In January, the National Bureau of Statistics confirmed that Chinese births had fallen to 7.92 million &mdash; the lowest figure since the founding of the People&rsquo;s Republic in 1949 &mdash; as the population contracted for a fourth consecutive year. In June, the Ministry of Industry and Information Technology and the state-assets regulator issued an operational directive ordering 10,000 humanoid robots into real-world &ldquo;work mode&rdquo; across factories, logistics hubs, hospitals and state-owned enterprises by December. Most Western capitals read the demographic data as a sentence of decline. Beijing read it as a procurement order.
 author_image: /images/team/andrew-horton.jpeg
 author_bio: |
-  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the *Southern Signals* series for TAFI.
+  Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-abundance-doctrine
 next_slug: the-export-that-never-leaves
