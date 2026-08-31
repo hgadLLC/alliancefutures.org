@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "China Sends for Pacific Students"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 29
+  date: 2026-08-24
+  url: embassy-monitors/week-29.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Nauru, Papua New Guinea, Solomon Islands, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/week-29.jpg
+  excerpt: "Five of China&rsquo;s nine Pacific embassies hold scholarship and pre-departure ceremonies for students heading to Chinese universities; Ambassador Lyu Jin hosts Naoero&rsquo;s Acting President nine days before the Pacific Islands Forum, meets Australia&rsquo;s new High Commissioner, and calls the China-aided sports center a &lsquo;project of the century.&rsquo;"
+
+- type: monitor
   title: "China Works the Interior"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 28
   date: 2026-08-17

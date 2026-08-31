@@ -7,6 +7,7 @@ title: "China Works the Interior &mdash; Last Week in the Pacific"
 description: "China&rsquo;s Ambassador briefs Naoeroan MPs on Beijing&rsquo;s ethnic unity law and holds a second party-to-party exchange with Vanuatu&rsquo;s Land and Justice Party; a Chinese diplomat reaches the Solomon Islands&rsquo; Temotu Province for the first time. August 17 to August 23, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-28.pdf
 prev_week: 27
+next_week: 29
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
