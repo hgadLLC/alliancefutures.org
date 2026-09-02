@@ -631,9 +631,12 @@ footer {
 .page-hero h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    line-height: 1.12;
     color: var(--white);
     font-weight: 600;
     margin-bottom: 1rem;
+    max-width: 24ch;
+    text-wrap: balance;
 }
 
 .page-hero h1 em {
@@ -652,6 +655,11 @@ footer {
 /* ===== Breadcrumb ===== */
 
 .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem 0.6rem;
+    line-height: 1.45;
     margin-bottom: 1.5rem;
 }
 
@@ -667,6 +675,7 @@ footer {
     color: var(--gold-light);
     text-decoration: none;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .breadcrumb a:hover {
