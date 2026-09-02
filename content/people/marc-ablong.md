@@ -26,10 +26,12 @@ education:
   - "Joint Services Staff College (1997)"
   - "Centre for Defence and Strategic Studies (2002)"
   - "Advanced Management Program 190, Harvard Business School (2016)"
+honours:
+  - "Public Service Medal (PSM), 2018 Australia Day Honours"
 prev_slug: andrew-horton
 prev_name: "Andrew Horton"
-next_slug: austin-wu
-next_name: "Austin Wu"
+next_slug: eric-lies
+next_name: "Eric Lies"
 ---
 ## Public Service Career
 

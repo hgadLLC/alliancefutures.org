@@ -114,6 +114,14 @@ eleventyComputed:
                     </ul>
                 </div>
                 {%- endif %}
+                {%- if honours and honours.length > 0 %}
+                <div class="rail-card">
+                    <h3>Honours</h3>
+                    <ul>
+                        {%- for h in honours %}<li>{{ h | safe }}</li>{% endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
             </aside>
         </div>
     </section>

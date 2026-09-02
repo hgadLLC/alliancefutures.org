@@ -17,8 +17,8 @@ focus:
 affiliations:
   - "Fellow, TAFI"
   - "U.S. Army Reserve, Intelligence Officer"
-prev_slug: marc-ablong
-prev_name: "Marc Ablong PSM"
+prev_slug: eric-lies
+prev_name: "Eric Lies"
 next_slug: jackie-gibson
 next_name: "Jackie Gibson"
 ---

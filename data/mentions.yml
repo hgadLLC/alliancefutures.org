@@ -84,7 +84,15 @@
   date: 2024-02-05
   url: https://www.aspistrategist.org.au/tapping-the-private-sector-to-unlock-aukus/
 
-# ----- Eric Lies (Deputy Director) -----
+# ----- Eric Lies (Fellow) -----
+
+- author: eric-lies
+  type: op-ed
+  title: "The Armyfication of the Navy"
+  outlet: CIMSEC
+  date: 2026-09-02
+  url: https://cimsec.org/the-armyfication-of-the-navy/
+  excerpt: "Decades of force projection and constrained operating patterns have eroded the mobility and concealment that make naval power distinct."
 
 - author: eric-lies
   type: media

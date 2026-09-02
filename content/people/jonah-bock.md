@@ -21,8 +21,8 @@ affiliations:
   - "Former Senior Research Assistant, ASPI USA"
 education:
   - "B.A., International Affairs (Chinese minor), American University"
-prev_slug: eric-lies
-prev_name: "Eric Lies"
+prev_slug: greg-brown
+prev_name: "Dr. Greg Brown"
 next_slug: leah-markworth
 next_name: "Leah Markworth"
 ---
