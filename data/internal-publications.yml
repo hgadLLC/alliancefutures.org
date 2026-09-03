@@ -424,6 +424,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Unpriced Catastrophe"
+  outlet: Southern Signals
+  date: 2026-08-31
+  url: our-work/commentary/the-unpriced-catastrophe.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-unpriced-catastrophe-hero.jpg
+  excerpt: "The invisible balance sheet &mdash; why the accounts can price a breach to the dollar but cannot record the confidence it destroys, and why trust has become strategic infrastructure."
+
+- type: commentary
   title: "The Compounding Error"
   outlet: Southern Signals
   date: 2026-08-24

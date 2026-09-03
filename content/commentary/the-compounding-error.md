@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-last-perimeter
+next_slug: the-unpriced-catastrophe
 featured: false
 ---
 The obvious story was Chinese censorship. The more dangerous story was the technological climate into which that censorship landed.
