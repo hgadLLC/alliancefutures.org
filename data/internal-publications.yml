@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "Qian Bo Brings a Ledger to a Check Fight"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 30
+  date: 2026-08-31
+  url: embassy-monitors/week-30.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Cook Islands, Federated States of Micronesia, Kiribati, Nauru, Papua New Guinea, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/week-30.jpg
+  excerpt: "China&rsquo;s Special Envoy Qian Bo catalogues past projects at the Pacific Islands Forum while Washington and Canberra announce new money; Kiribati&rsquo;s embassy publicizes five donations in a week; Chinese drones reach a third arm of the Vanuatu government."
+
+- type: monitor
   title: "China Sends for Pacific Students"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 29
   date: 2026-08-24

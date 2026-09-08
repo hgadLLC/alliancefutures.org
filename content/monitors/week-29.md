@@ -7,6 +7,7 @@ title: "China Sends for Pacific Students &mdash; Last Week in the Pacific"
 description: "Five of China&rsquo;s nine Pacific embassies hold scholarship and pre-departure ceremonies for students heading to Chinese universities; Ambassador Lyu Jin hosts Naoero&rsquo;s Acting President nine days before the Pacific Islands Forum, meets Australia&rsquo;s new High Commissioner, and calls the China-aided sports center a &lsquo;project of the century.&rsquo; August 24 to August 30, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-29.pdf
 prev_week: 28
+next_week: 30
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
