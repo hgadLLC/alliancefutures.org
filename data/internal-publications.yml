@@ -437,6 +437,34 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Megawatt Wall"
+  outlet: Southern Signals
+  date: 2026-09-10
+  url: our-work/commentary/the-megawatt-wall.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-megawatt-wall-hero.jpg
+  excerpt: "The megawatt wall &mdash; why the binding constraint in the AI race has migrated below chips, below generation and below politics into heavy electrical engineering, and why the queue is now the hierarchy."
+
+- type: commentary
+  title: "Compliance Is Not Resilience"
+  outlet: Southern Signals
+  date: 2026-09-07
+  url: our-work/commentary/compliance-is-not-resilience.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/compliance-is-not-resilience-hero.jpg
+  excerpt: "The illusion of cover &mdash; why documented compliance is not protection against undocumented threats, and why institutional credibility is migrating from what organisations can attest to what they can endure."
+
+- type: commentary
   title: "The Unpriced Catastrophe"
   outlet: Southern Signals
   date: 2026-08-31

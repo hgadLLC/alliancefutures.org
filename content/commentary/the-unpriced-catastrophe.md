@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-compounding-error
+next_slug: compliance-is-not-resilience
 featured: false
 ---
 Medibank initially put the direct cost at between $25 million and $35 million, excluding litigation and regulatory consequences, and Australia&rsquo;s prudential regulator later imposed an additional $250 million capital requirement over the weaknesses the breach exposed. These were significant penalties, yet neither captured the asset the attackers were truly targeting. **They were attacking trust.**
