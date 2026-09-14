@@ -7,6 +7,7 @@ title: "Qian Bo Brings a Ledger to a Check Fight &mdash; Last Week in the Pacifi
 description: "China&rsquo;s Special Envoy Qian Bo catalogues past projects at the Pacific Islands Forum while Washington and Canberra announce new money; Kiribati&rsquo;s embassy publicizes five donations in a week; Chinese drones reach a third arm of the Vanuatu government. August 31 to September 6, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-30.pdf
 prev_week: 29
+next_week: 31
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

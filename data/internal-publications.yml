@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "Eight Pacific States Report to Beijing&rsquo;s Top Cop"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 31
+  date: 2026-09-07
+  url: embassy-monitors/week-31.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Fiji, Kiribati, Nauru, Papua New Guinea, Samoa, Solomon Islands, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/week-31.jpg
+  excerpt: "China&rsquo;s Minister of Public Security convenes the Fifth Ministerial Dialogue on police cooperation with delegations from eight of the nine Pacific Island Countries hosting Chinese missions; Samoa&rsquo;s Deputy Prime Minister travels to Shanxi and PNG&rsquo;s Mining Minister courts investors in Tianjin."
+
+- type: monitor
   title: "Qian Bo Brings a Ledger to a Check Fight"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 30
   date: 2026-08-31
