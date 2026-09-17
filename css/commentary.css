@@ -37,3 +37,11 @@
 .commentary-nav a { font-size: 0.82rem; font-weight: 600; color: var(--ocean); text-decoration: none; letter-spacing: 0.5px; }
 .commentary-nav a:hover { color: var(--gold); }
 @media (max-width: 640px) { .author-block { flex-direction: column; } .author-block img { width: 72px; height: 72px; } }
+
+/* Endmatter for commentary that carries its own citations (non-series pieces) */
+.commentary-prose sup { font-size: 0.7em; line-height: 0; vertical-align: super; color: var(--gold-dark); font-weight: 500; }
+.commentary-prose h3.endmatter-head { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--navy); line-height: 1.2; margin: 2.5rem 0 0.75rem; }
+.commentary-prose p.endmatter-note { font-size: 0.92rem; line-height: 1.7; color: var(--mid-gray); }
+.commentary-prose ol.sources { margin: 0.5rem 0 1rem 1.5rem; padding: 0; }
+.commentary-prose ol.sources li { font-size: 0.88rem; line-height: 1.6; color: var(--navy); margin-bottom: 0.55rem; padding-left: 0.25rem; }
+.commentary-prose ol.sources a { color: var(--ocean); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
