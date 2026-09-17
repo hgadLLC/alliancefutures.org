@@ -450,6 +450,34 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Behavioural Export"
+  outlet: Southern Signals
+  date: 2026-09-14
+  url: our-work/commentary/the-behavioural-export.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-behavioural-export-hero.jpg
+  excerpt: "The behavioural export &mdash; how distillation moves frontier AI capability through authorised use rather than as cargo, and why trusted access to cognition is becoming an alliance privilege."
+
+- type: commentary
+  title: "The Alliance Reserve"
+  outlet: Southern Signals
+  date: 2026-09-14
+  url: our-work/commentary/the-alliance-reserve.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-alliance-reserve-hero.jpg
+  excerpt: "The alliance reserve &mdash; why Australia&rsquo;s greatest AUKUS vulnerability is a public consensus thinning faster than anything happening in Washington, and why a treaty is the receipt rather than the relationship."
+
+- type: commentary
   title: "The Megawatt Wall"
   outlet: Southern Signals
   date: 2026-09-10

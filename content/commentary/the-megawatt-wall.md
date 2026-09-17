@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: compliance-is-not-resilience
+next_slug: the-alliance-reserve
 featured: false
 ---
 An American utility ordering a large power transformer today faces a delivery quote in 2030. Before the pandemic, the same machine took roughly a year; today the average wait in the United States has stretched to **128 weeks**, specialty units require half a decade, and prices have surged 77 per cent. The order books of the turbine makers tell the same story. GE Vernova&rsquo;s gas turbine backlog reached 116 gigawatts in the June quarter, with worldwide orders now exceeding annual manufacturing capacity by nearly half. Siemens Energy carries a record backlog of &euro;162 billion, Mitsubishi warns buyers that a turbine commissioned today will arrive at the decade&rsquo;s end, and grid operators desperate for electrons are bolting retired jet engines to concrete pads. **The most advanced technology contest in human history has stalled in a queue outside a machine shop.**
