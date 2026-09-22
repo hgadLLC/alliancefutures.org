@@ -7,6 +7,7 @@ title: "Eight Pacific States Report to Beijing&rsquo;s Top Cop &mdash; Last Week
 description: "China&rsquo;s Minister of Public Security convenes the Fifth Ministerial Dialogue on police cooperation with delegations from eight of the nine Pacific Island Countries hosting Chinese missions; Samoa&rsquo;s Deputy Prime Minister travels to Shanxi and PNG&rsquo;s Mining Minister courts investors in Tianjin. September 7 to September 13, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-31.pdf
 prev_week: 30
+next_week: 32
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
