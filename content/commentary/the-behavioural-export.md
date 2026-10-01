@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-alliance-reserve
+next_slug: the-window-before-impact
 featured: false
 ---
 Containment rests on a proposition inherited from the industrial age: technological power can be held because the things that create it must move. Chips cross borders, lithography machines travel in crates, uranium changes hands, and a state commanding the choke points slows the spread of strategic capability. The Bureau of Industry and Security has drawn and redrawn those lines since 2022, and in January moved chips below 21,000 TPP to case-by-case review for Chinese buyers. Those lines decide who can build a frontier model. **They have stopped deciding who can use frontier-level capability**, and that separation is now the central fact of the contest.

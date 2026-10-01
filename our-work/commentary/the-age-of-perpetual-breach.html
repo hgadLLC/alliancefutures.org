@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Age of Perpetual Breach | TAFI</title>
+    <meta name="description" content="A Southern Signals commentary by Andrew Horton on the age of perpetual breach &mdash; why machine-scale vulnerability discovery has outrun remediation, why compliance clocks measure the one variable an adversary has already outrun, and why information is the true centre of gravity.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css?v=5">
+    
+
+<link rel="stylesheet" href="/css/our-work.css?v=2"><link rel="stylesheet" href="/css/commentary.css?v=2">
+</head>
+<body>
+    <header id="header">
+        <a href="/" class="logo">
+            <img src="/images/tafi-logo-real.png" alt="TAFI Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-main">TAFI</span>
+                <span class="logo-text-sub">The Alliance Futures Initiative</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/about.html">About</a>
+            <div class="nav-dropdown">
+                <a href="/our-work/" class="nav-dropdown-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown-menu">
+                    <a href="/our-work/research.html">Research</a>
+                    <a href="/our-work/futures.html">Futures</a>
+                    <a href="/our-work/commentary.html">Commentary</a>
+                    <a href="/embassy-monitors/">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="/advisory.html">Advisory</a>
+            <a href="/people.html">People</a>
+            <a href="/support.html" class="nav-donate">Donate</a>
+        </nav>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+        <nav class="mobile-nav">
+            <a href="/about.html">About</a>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-trigger">Our Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-nav-group-items">
+                    <a href="/our-work/research.html">Research</a>
+                    <a href="/our-work/futures.html">Futures</a>
+                    <a href="/our-work/commentary.html">Commentary</a>
+                    <a href="/embassy-monitors/">Embassies Monitor</a>
+                </div>
+            </div>
+            <a href="/advisory.html">Advisory</a>
+            <a href="/people.html">People</a>
+            <a href="/support.html" class="nav-donate">Donate</a>
+        </nav>
+    </header>
+
+
+    <section class="commentary-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> <span>/</span>
+                <a href="/our-work/">Our Work</a> <span>/</span>
+                <a href="/our-work/commentary.html">Commentary</a> <span>/</span>
+                <span>The Age of Perpetual Breach</span>
+            </nav>
+            <span class="commentary-eyebrow">Southern Signals</span>
+            <h1 class="commentary-title">The Age of Perpetual Breach</h1>
+            <div class="commentary-byline">By <strong>Andrew Horton</strong> &middot; Senior Fellow &middot; October 1, 2026</div>
+            <div class="commentary-actions">
+                <a href="/our-work/commentary/the-age-of-perpetual-breach.pdf" class="commentary-download" download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF
+                </a>
+            </div>
+            <figure class="commentary-hero-image"><img src="/our-work/commentary/images/the-age-of-perpetual-breach-hero.jpg" alt=""></figure>
+        </div>
+    </section>
+
+    <section class="commentary-body">
+        <div class="container">
+            <article class="commentary-prose"><p class="lede">Microsoft&rsquo;s September security release fixed 966 vulnerabilities in a single day, the largest security update in the company&rsquo;s history. More than one hundred were rated critical, and attackers were already exploiting two of them. The significance lies in what the number reveals about the changing character of cyber conflict.
+</p>
+
+                <p>For more than three decades, cybersecurity rested on a simple assumption that discovering vulnerabilities was difficult and fixing them was largely a matter of process and discipline. Artificial intelligence has overturned that equation. Machines now analyse software at a scale and speed beyond any human team, so <strong>discovery has become abundant while remediation remains finite</strong>.</p>
+<p>Microsoft’s own trajectory shows how quickly the ground has moved. The company patched 887 vulnerabilities across all of 2021, then 917 in 2022 and 909 in 2023, before climbing to 1,009 in 2024 and 1,130 in 2025. By September 2026 it had already fixed <strong>more than 2,600 for the year</strong>, more than double its previous annual record of 1,245, with a quarter still to run. We are entering the Age of Perpetual Breach, a condition in which machines expose flaws faster than institutions can close them, so that compromise becomes the standing state of every network.</p>
+<p>That discovery should be welcomed. Microsoft has turned an agentic AI system on its own code and warned customers that “as AI helps defenders discover more issues, customers will see a higher volume of security updates included in each security release”. Every flaw a vendor discovers and fixes is one fewer opportunity for an adversary, and Microsoft deserves credit for interrogating its own products at machine speed. The difficulty is that the same capability is spreading. Hostile intelligence services and ransomware syndicates can turn machine-scale discovery against the software that runs governments and critical infrastructure, and they will find weaknesses faster than institutions can remove them.</p>
+<p>Many boards and policymakers still treat cybersecurity as a compliance problem, in which vulnerabilities are counted and progress is recorded in audit reports. Those activities remain necessary, and they have stopped being sufficient. Once machine discovery reaches industrial scale, every organisation accumulates a backlog it can never clear, because security teams cannot test and deploy fixes as fast as new flaws appear. Human attention becomes the binding constraint, and the contest shifts from discovering vulnerabilities to deciding which of them matter.</p>
+<p>Compliance regimes designed for an earlier era strain under that load. Australia’s <strong>Essential Eight</strong> asks organisations to patch internet-facing systems within 48 hours where a working exploit exists and within two weeks otherwise. Those clocks assume remediation can keep pace with discovery, an assumption calibrated for a major vendor shipping under a hundred fixes a month. Applied to a thousand, they become a test few security teams can pass honestly and a box many will tick regardless.</p>
+<blockquote class="pullquote">A compliance regime that measures the speed of patching measures the one variable an adversary has already outrun.</blockquote>
+<p>The adversary, meanwhile, is accelerating. Mandiant’s M-Trends 2026 estimates the mean time to exploit at <strong>minus seven days</strong>, meaning attackers routinely weaponise vulnerabilities before vendors release patches, and exploitation has been the leading avenue of intrusion for six consecutive years. Attackers now operate inside the defender’s decision cycle. A compliance regime that measures the speed of patching measures the one variable an adversary has already outrun.</p>
+<p>Vulnerabilities differ enormously in danger, and the sceptics deserve a hearing. VulnCheck’s analysis of the first half of 2026 found that of 1,061 vulnerabilities attributed to AI discovery, only 14 were confirmed as exploited, and Tenable’s Satnam Narang argues that AI is “creating larger haystacks, but it isn’t finding more needles”. That observation strengthens the argument. The same VulnCheck data shows almost a quarter of exploited flaws were attacked on or before the day they were published. The real task is finding the few flaws that matter before an adversary does, and in a flood of technical discoveries, <strong>judgement becomes the most valuable defensive capability</strong>.</p>
+<p>The closest parallel sits on the battlefields of Ukraine. In May the Ukrainian Air Force recorded close to 1,500 Russian drones and missiles launched across a single day, the heaviest barrage of the war. Kyiv’s planners accepted that some weapons would get through and concentrated on preserving what mattered most. Engineers ringed critical substations with concrete and sandbags, and in August the grid operator Ukrenergo began moving parts of the network underground ahead of a fourth winter of strikes. Ukraine recognised a reality many cybersecurity strategies still resist: success depends on ensuring that the assets which matter most survive the attacks that inevitably get through.</p>
+<p>Cybersecurity has entered the same strategic phase. The Australian Signals Directorate advises organisations to operate with a mindset of “assume compromise”, an acknowledgement that breach has become a normal condition of digital life, and its latest threat report records the average cost of an incident to a large Australian business rising <strong>219 per cent</strong> in a single year. The question has moved from whether intrusions will occur to whether organisations can keep operating when they do. Most boards can describe their patching programs. Far fewer can name the specific datasets whose theft or corruption would threaten the future of the enterprise.</p>
+<p>Information is increasingly the true centre of gravity. Defence intellectual property, critical infrastructure designs, scientific research and sensitive government data carry enduring strategic value. Networks can be rebuilt and servers replaced, while lost information is often gone for good. Nations that field AI-enabled discovery at scale will accumulate unprecedented insight into the weaknesses embedded across the digital ecosystem, and the advantage will pass to those who know precisely what must be protected at all costs. Authoritarian states have long treated data as a strategic harvest, gathered now and exploited later. Democracies must answer with equal clarity, drawing on trusted institutions and alliances able to coordinate the defence of critical information across governments and industry.</p>
+<p>For policymakers, this means moving cyber regulation from measuring activity towards measuring resilience. Knowing precisely where critical data resides, isolating it from routine systems, and regularly rehearsing its recovery should carry the same regulatory weight as the speed with which organisations apply patches. For boards, the central question shifts from whether the organisation is patched to what an adversary could reach once inside. <strong>The first question measures diligence. The second measures survival.</strong></p>
+<p class="signoff">Ukraine&rsquo;s engineers learned under relentless attack that resilience begins with deciding which parts of a system must never fail. The Age of Perpetual Breach will reward the nations and companies that make that decision about their information before the intruder arrives, and history will judge them by what survived the breach.</p>
+
+            </article>
+            <aside class="author-block"><img src="/images/team/andrew-horton.jpeg" alt="Andrew Horton">
+                <div>
+                    <h3>Andrew Horton</h3>
+                    <p class="author-title">Senior Fellow, The Alliance Futures Initiative</p>
+                    <p>Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
+ <a href="/team/andrew-horton.html">Read full bio &rarr;</a></p>
+                </div>
+            </aside>
+
+            <aside class="support-cta">
+                <h3>Independent research costs money.</h3>
+                <p>If this piece was useful to you, support our work. TAFI runs on grants and individual donors&mdash;tax-deductible through OTX International, a 501(c)(3) public charity.</p>
+                <a href="/support.html" class="support-cta-btn">Donate</a>
+            </aside>
+
+            <nav class="commentary-nav"><a href="/our-work/commentary/the-window-before-impact.html">&larr; Previous</a>
+                <a href="/our-work/commentary.html">All Commentary</a><span></span>
+            </nav>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/images/tafi-logo-real.png" alt="TAFI">
+                    <span class="footer-logo-text">TAFI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/about.html">About</a>
+                    <a href="/our-work/">Our Work</a>
+                    <a href="/advisory.html">Advisory</a>
+                    <a href="/people.html">People</a>
+                    <a href="/support.html">Donate</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Alliance Futures Initiative. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">TAFI is a project by OTX International.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileMenu.addEventListener('click', () => { mobileMenu.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav a').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.remove('active'); mobileNav.classList.remove('active'); }));
+        document.querySelectorAll('.mobile-nav-group-trigger').forEach(t => t.addEventListener('click', () => { t.classList.toggle('active'); t.nextElementSibling.classList.toggle('active'); }));
+    </script>
+
+</body>
+</html>

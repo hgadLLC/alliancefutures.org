@@ -7,6 +7,7 @@ title: "Guangdong and its Capital Send Delegations to the Pacific &mdash; Last W
 description: "Governors from all four FSM states attend a Ministry of Commerce seminar run by the Zhejiang body that doubles as China&rsquo;s BRICS special economic zones secretariat; a Guangzhou delegation breaks ground on a Chinese-funded square in Naoero while a Guangdong delegation tours Fiji; Ambassador Cai Weiming hands over Honiara buildings damaged in the 2021 unrest. September 14 to September 20, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-32.pdf
 prev_week: 31
+next_week: 33
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

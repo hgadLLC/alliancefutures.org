@@ -32,6 +32,19 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "Judges, Governors, and a Princess Visit China"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 33
+  date: 2026-09-21
+  url: embassy-monitors/week-33.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Federated States of Micronesia, Fiji, Nauru, Papua New Guinea, Samoa, Solomon Islands, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/week-33.jpg
+  excerpt: "Samoa&rsquo;s Chief Justice leads a judicial delegation that meets the CCP&rsquo;s top political-legal official, a former Minister of State Security; officials from all four FSM states tour Zhejiang; Tonga&rsquo;s Princess Pilolevu travels to Shenzhen; and China lobbies Pacific missions in Suva for Xiamen&rsquo;s bid to host the High Seas Treaty secretariat."
+
+- type: monitor
   title: "Guangdong and its Capital Send Delegations to the Pacific"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 32
   date: 2026-09-14
@@ -476,6 +489,34 @@
   excerpt: "Maritime coercion targets the price of risk rather than the ship &mdash; why an unconfirmed report of IRGC plans against Asian shipping still matters, and why economic deterrence by denial should replace escalating punishment."
 
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
+
+- type: commentary
+  title: "The Age of Perpetual Breach"
+  outlet: Southern Signals
+  date: 2026-10-01
+  url: our-work/commentary/the-age-of-perpetual-breach.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-age-of-perpetual-breach-hero.jpg
+  excerpt: "The age of perpetual breach &mdash; why machine-scale vulnerability discovery has outrun remediation, why patching clocks measure the one variable an adversary has already outrun, and why information is the true centre of gravity."
+
+- type: commentary
+  title: "The Window Before Impact"
+  outlet: Southern Signals
+  date: 2026-09-28
+  url: our-work/commentary/the-window-before-impact.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-window-before-impact-hero.jpg
+  excerpt: "The window before impact &mdash; why warning time has not vanished but moved into the gap between compromise and exploitation, and why advantage belongs to whoever sees the stolen assets first."
 
 - type: commentary
   title: "The Behavioural Export"
