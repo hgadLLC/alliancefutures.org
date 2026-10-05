@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "people.html": "people.html" });
     eleventyConfig.addPassthroughCopy({ "embassy-monitors/index.html": "embassy-monitors/index.html" });
     eleventyConfig.addPassthroughCopy({ "embassy-monitors/dashboard.html": "embassy-monitors/dashboard.html" });
+    eleventyConfig.addPassthroughCopy({ "embassy-monitors/dashboard-app.html": "embassy-monitors/dashboard-app.html" });
     eleventyConfig.addPassthroughCopy({ "our-work/index.html": "our-work/index.html" });
     eleventyConfig.addPassthroughCopy({ "our-work/research.html": "our-work/research.html" });
     eleventyConfig.addPassthroughCopy({ "our-work/futures.html": "our-work/futures.html" });
