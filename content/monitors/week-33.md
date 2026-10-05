@@ -7,6 +7,7 @@ title: "Judges, Governors, and a Princess Visit China &mdash; Last Week in the P
 description: "Samoa&rsquo;s Chief Justice leads a judicial delegation that meets the CCP&rsquo;s top political-legal official, a former Minister of State Security; officials from all four FSM states tour Zhejiang; Tonga&rsquo;s Princess Pilolevu travels to Shenzhen; and China lobbies Pacific missions in Suva for Xiamen&rsquo;s bid to host the High Seas Treaty secretariat. September 21 to September 27, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-33.pdf
 prev_week: 32
+next_week: 34
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
