@@ -32,6 +32,20 @@
 # ----- PRC Pacific Embassies Monitor -----
 
 - type: monitor
+  title: "PPEM Dashboard: August 2026 Preview"
+  outlet: PRC Pacific Embassies Monitor &middot; Interactive Dashboard
+  date: 2026-10-05
+  url: embassy-monitors/dashboard.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Interactive Dashboard
+  region: Pacific
+  countries: [Federated States of Micronesia, Fiji, Kiribati, Nauru, Papua New Guinea, Samoa, Solomon Islands, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/dashboard.jpg
+  featured: true
+  excerpt: "Explore a month of PRC diplomatic activity across nine Pacific posts: 87 events mapped by location, filtered by country, domain and activity type, and linked to the 300-plus officials and organizations involved."
+
+- type: monitor
   title: "Judges, Governors, and a Princess Visit China"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 33
   date: 2026-09-21
