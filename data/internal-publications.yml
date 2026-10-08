@@ -518,6 +518,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The AI Failure Tax"
+  outlet: Southern Signals
+  date: 2026-10-01
+  url: our-work/commentary/the-ai-failure-tax.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-ai-failure-tax-hero.jpg
+  excerpt: "The AI failure tax &mdash; why pay-per-token pricing rewards vendors for their own unreliability, why enterprises are escaping to open-weight Chinese models, and why outcome-based contracts matter more than export controls."
+
+- type: commentary
   title: "The Age of Perpetual Breach"
   outlet: Southern Signals
   date: 2026-10-01

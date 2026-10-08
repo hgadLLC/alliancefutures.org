@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-window-before-impact
+next_slug: the-ai-failure-tax
 featured: false
 ---
 For more than three decades, cybersecurity rested on a simple assumption that discovering vulnerabilities was difficult and fixing them was largely a matter of process and discipline. Artificial intelligence has overturned that equation. Machines now analyse software at a scale and speed beyond any human team, so **discovery has become abundant while remediation remains finite**.
