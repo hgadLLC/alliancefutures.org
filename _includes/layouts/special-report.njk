@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-extra_head: '<link rel="stylesheet" href="/css/monitor.css">'
+extra_head: '<link rel="stylesheet" href="/css/monitor.css?v=2">'
 permalink: "/embassy-monitors/week-{{ week }}.html"
 ---
     <section class="page-hero">
@@ -9,10 +9,10 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 <nav class="breadcrumb">
                     <a href="/">Home</a> <span>/</span>
                     <a href="/embassy-monitors/">Embassies Monitor</a> <span>/</span>
-                    <span>Week {{ week }} Special Report</span>
+                    <span>{% if week %}Week {{ week }} Special Report{% else %}{{ breadcrumb_label or "Special Report" }}{% endif %}</span>
                 </nav>
                 <h1>{{ hero_title | safe }}</h1>
-                <p>PRC Pacific Embassies Monitor Special Report &middot; Week {{ week }} &middot; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}</p>
+                <p>PRC Pacific Embassies Monitor Special Report &middot; {% if week %}Week {{ week }} &middot; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}{% else %}{{ period_label }}{% endif %}</p>
             </div>
         </div>
     </section>
@@ -29,7 +29,7 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
 
                 <div class="monitor-meta">
                     <div class="monitor-meta-info">
-                        <div class="monitor-meta-date">Week {{ week }} &mdash; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}</div>
+                        <div class="monitor-meta-date">{% if week %}Week {{ week }} &mdash; {{ date | dateLong }} &ndash; {{ date_end | dateShort }}{% else %}{{ period_label }}{% endif %}</div>
                         {%- if author %}<div class="monitor-meta-author">By {{ author }}{% if author_title %}, {{ author_title }}{% endif %}</div>{% endif %}
                     </div>
                     {%- if pdf %}
@@ -56,7 +56,7 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 {{ content | safe }}
 
                 <div class="monitor-endnote">
-                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. This Special Report extends the series with deeper analytical work on a single regional threat actor.</p>
+                    <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. {{ endnote_tail or "This Special Report extends the series with deeper analytical work on a single regional threat actor." | safe }}</p>
                     {%- if disclaimer %}
                     <p style="margin-top: 0.75rem;"><em>{{ disclaimer | safe }}</em></p>
                     {%- endif %}
@@ -72,9 +72,15 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 </aside>
 
                 <nav class="monitor-nav">
+                    {%- if week %}
                     {%- if prev_week %}<a href="/embassy-monitors/week-{{ prev_week }}.html">&larr; Previous Week</a>{% else %}<span class="monitor-nav-placeholder">&larr; Previous Week</span>{% endif %}
                     <a href="/embassy-monitors/">All Monitors</a>
                     {%- if next_week %}<a href="/embassy-monitors/week-{{ next_week }}.html">Next Week &rarr;</a>{% else %}<span class="monitor-nav-placeholder">Next Week &rarr;</span>{% endif %}
+                    {%- else %}
+                    <a href="/our-work/research.html">&larr; All Research</a>
+                    <a href="/embassy-monitors/">All Monitors</a>
+                    <span class="monitor-nav-placeholder"></span>
+                    {%- endif %}
                 </nav>
             </article>
         </div>

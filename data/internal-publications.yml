@@ -45,6 +45,22 @@
   featured: true
   excerpt: "Explore a month of PRC diplomatic activity across nine Pacific posts: 87 events mapped by location, filtered by country, domain and activity type, and linked to the 300-plus officials and organizations involved."
 
+- type: monitor-special
+  title: "Mapping Beijing&rsquo;s Pacific Push"
+  outlet: PRC Pacific Embassies Monitor &middot; Half-Year in Review
+  date: 2026-10-12
+  url: embassy-monitors/mapping-beijings-pacific-push.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  also_in: [research]
+  product_type: Review Report
+  tag_class: is-research
+  region: Pacific
+  countries: [Federated States of Micronesia, Fiji, Kiribati, Nauru, Papua New Guinea, Samoa, Solomon Islands, Tonga, Vanuatu]
+  image: embassy-monitors/images/thumbs/half-year-review.jpg
+  featured: false
+  excerpt: "Seven months of systematic open-source collection across the nine Pacific Island Countries hosting Chinese missions: 679 coded events broken down by post, functional domain, and activity type, with a country-by-country breakdown of all nine embassies."
+
 - type: monitor
   title: "Fiji Sends Civil Servants to China&rsquo;s Party School"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 34
