@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-age-of-perpetual-breach
+next_slug: the-great-geo-patriation
 featured: false
 ---
 The architecture of Western AI rests on a simple premise: charge by the token. Every prompt, every response and every additional cycle of computation generates revenue. When large language models were little more than digital curiosities, billing by volume was a reasonable convention. Now that banks, governments, defence contractors and multinational corporations are deploying autonomous agents to execute business-critical workflows, token pricing has become a source of strategic distortion.

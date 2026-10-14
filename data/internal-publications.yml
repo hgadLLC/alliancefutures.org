@@ -534,6 +534,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "The Great Geo-Patriation: The New Test of Sovereignty"
+  outlet: Southern Signals
+  date: 2026-10-12
+  url: our-work/commentary/the-great-geo-patriation.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/the-great-geo-patriation-hero.jpg
+  excerpt: "The great geo-patriation &mdash; why a server on sovereign soil is still hostage to foreign identity services and software updates, what the Baltic grid disconnection taught about standing alone, and why allied democracies should audit critical systems for survival without their offshore control links."
+
+- type: commentary
   title: "The AI Failure Tax"
   outlet: Southern Signals
   date: 2026-10-01
