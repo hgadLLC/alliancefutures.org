@@ -1,6 +1,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | safe }}{% if title %} | {% endif %}TAFI</title>
+    <title>{{ title | striptags | safe }}{% if title %} | {% endif %}TAFI</title>
     {% if description %}<meta name="description" content="{{ description | safe }}">{% endif %}
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16.png">

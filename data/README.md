@@ -42,11 +42,11 @@ people, and it'll show on each of their bio pages.
 
 ```yaml
 - type: report
-  title: Pacific Islands Red Team Event Report
+  title: Pacific Politics, Chinese Playbook
   outlet: TAFI Red Team Report
-  date: 2026-03-01
-  url: publications/pics-red-team.html      # path from project root
-  authors: [greg-brown, eric-lies]
+  date: 2026-10-19
+  url: publications/pacific-politics-chinese-playbook.html   # path from project root
+  authors: [jonah-bock, greg-brown]
   excerpt: A structured analytic exercise…
 ```
 

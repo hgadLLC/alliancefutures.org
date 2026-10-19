@@ -713,3 +713,29 @@
 .print-header {
     display: none;
 }
+
+/* Report data figures and memo footnotes */
+.report-content figure.report-figure {
+    margin: 2rem 0 2.25rem;
+}
+.report-content figure.report-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(10, 37, 64, 0.12);
+}
+.report-content figure.report-figure figcaption {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--mid-gray);
+}
+.memo p.memo-footnote {
+    margin-top: 1.25rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(10, 37, 64, 0.15);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
