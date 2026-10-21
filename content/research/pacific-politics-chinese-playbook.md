@@ -347,4 +347,4 @@ For the United States and its partners, these insights demand a comprehensive co
 
 ### Red Team Composition
 
-The red team was comprised of participants from the Pacific Islands, United States, and Antipodes. Professional backgrounds include former government officials, uniformed services, academia, and think tanks.
+The red team comprised participants from the Pacific Islands, the United States, and Antipodes. Professional backgrounds included current and former government officials, uniformed services, academia, and think tanks.
