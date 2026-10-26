@@ -17,6 +17,8 @@ lede: "Seven months of systematic open-source collection across the nine Pacific
 authors: [jonah-bock]
 categories: [embassies-monitor, special-report, research]
 featured: false
+prev_url: /embassy-monitors/dashboard.html
+next_url: /embassy-monitors/week-37.html
 endnote_tail: "This Half-Year in Review consolidates the first seven months of collection, from 1 December 2025 to 30 June 2026."
 photo_credit: "TAFI is grateful for the support of Greg Brown, Leah Markworth, and William Janson. &copy; 2026 OTX International. All rights reserved. No part of this report may be reproduced or transmitted without prior written permission from the publisher."
 ---

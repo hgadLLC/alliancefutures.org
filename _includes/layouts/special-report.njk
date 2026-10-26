@@ -77,9 +77,9 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                     <a href="/embassy-monitors/">All Monitors</a>
                     {%- if next_week %}<a href="/embassy-monitors/week-{{ next_week }}.html">Next Week &rarr;</a>{% else %}<span class="monitor-nav-placeholder">Next Week &rarr;</span>{% endif %}
                     {%- else %}
-                    <a href="/our-work/research.html">&larr; All Research</a>
+                    {%- if prev_url %}<a href="{{ prev_url }}">&larr; {{ prev_label or "Previous Week" }}</a>{% else %}<a href="/our-work/research.html">&larr; All Research</a>{% endif %}
                     <a href="/embassy-monitors/">All Monitors</a>
-                    <span class="monitor-nav-placeholder"></span>
+                    {%- if next_url %}<a href="{{ next_url }}">{{ next_label or "Next Week" }} &rarr;</a>{% else %}<span class="monitor-nav-placeholder"></span>{% endif %}
                     {%- endif %}
                 </nav>
             </article>

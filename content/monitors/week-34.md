@@ -7,7 +7,7 @@ title: "Fiji Sends Civil Servants to China&rsquo;s Party School &mdash; Last Wee
 description: "Twenty-three senior Fijian officials train at the CCP cadre academy in Shanghai and Solomon Islands diplomats complete a course built for them alone; Fiji&rsquo;s military commander tours two Chinese arms manufacturers and meets a Central Military Commission official; China&rsquo;s ambassadors are absent across four Pacific posts. September 28 to October 4, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-34.pdf
 prev_week: 33
-next_week: 37
+next_url: /embassy-monitors/dashboard.html
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
