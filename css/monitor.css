@@ -330,3 +330,39 @@
             line-height: 1.5;
             color: var(--mid-gray);
         }
+
+        /* Substack CTA (optional, per-week) */
+        .monitor-article .substack-cta {
+            margin: 2.5rem 0 1.5rem;
+            padding: 1.5rem 1.75rem;
+            border: 1px solid rgba(10, 37, 64, 0.18);
+            border-top: 3px solid var(--gold);
+            background: rgba(10, 37, 64, 0.03);
+            text-align: center;
+        }
+        .monitor-article .substack-cta h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin: 0 0 0.5rem;
+        }
+        .monitor-article .substack-cta p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--mid-gray);
+            margin: 0 auto 1.1rem;
+            max-width: 52ch;
+        }
+        .substack-cta-btn {
+            display: inline-block;
+            padding: 0.6rem 1.6rem;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+        .substack-cta-btn:hover { background: var(--gold-dark, var(--gold)); }

@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-extra_head: '<link rel="stylesheet" href="/css/monitor.css">'
+extra_head: '<link rel="stylesheet" href="/css/monitor.css?v=3">'
 permalink: "/embassy-monitors/week-{{ week }}.html"
 ---
     <section class="page-hero">
@@ -90,6 +90,16 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 </ul>
                 {%- endif %}
                 {%- endfor %}
+
+                {%- if substack_url %}
+                <aside class="substack-cta">
+                    <h3>Continue reading on Substack</h3>
+                    {%- if substack_note %}
+                    <p>{{ substack_note | safe }}</p>
+                    {%- endif %}
+                    <a href="{{ substack_url }}" class="substack-cta-btn" target="_blank" rel="noopener">Subscribe</a>
+                </aside>
+                {%- endif %}
 
                 <div class="monitor-endnote">
                     <p><sup>*</sup> The PRC Pacific Embassies Monitor provides systematic, open-source tracking of Beijing&rsquo;s public diplomatic activities across the nine Pacific Island Countries hosting Chinese missions. The monitor captures official embassy social media and website posts, supplemented by local sources, to offer a weekly structured intelligence report that bridges critical information gaps on regional engagement.</p>
