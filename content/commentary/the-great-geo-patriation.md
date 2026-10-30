@@ -17,6 +17,7 @@ author_bio: |
   Andrew is a technology founder, strategic advisor, and experienced Board Chair operating at the intersection of emerging technology and geopolitics. He writes the <em>Southern Signals</em> series for TAFI.
 author_bio_link: /team/andrew-horton.html
 prev_slug: the-ai-failure-tax
+next_slug: who-controls-trust
 featured: false
 ---
 For three decades, the global economy was built on the assumption that digital dependencies would expand indefinitely. That architecture of integration is now colliding with an era of great power rivalry and cyber warfare. The systems that sustain modern societies&mdash;from power grids and financial markets to frontier artificial intelligence&mdash;run on infrastructure operating largely beyond national control. Connectivity defined the last strategic era. Operational sovereignty will define the next.

@@ -551,6 +551,20 @@
 # ----- Southern Signals (commentary series — Andrew Horton, Marc Ablong) -----
 
 - type: commentary
+  title: "Who Controls Trust?"
+  outlet: Southern Signals
+  date: 2026-10-26
+  url: our-work/commentary/who-controls-trust.html
+  authors: [andrew-horton]
+  category: commentary
+  product_type: Southern Signals
+  series: Southern Signals
+  tag_class: is-southern-signals
+  region: Global
+  image: our-work/commentary/images/who-controls-trust-hero.jpg
+  excerpt: "The sovereignty gap &mdash; why governments remain accountable for systems they can no longer command, why dependence on an ally is still dependence, and what an Allied Capability Continuity Standard would require."
+
+- type: commentary
   title: "The Great Geo-Patriation: The New Test of Sovereignty"
   outlet: Southern Signals
   date: 2026-10-12
