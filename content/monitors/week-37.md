@@ -7,6 +7,7 @@ title: "The Chinese Communist Party Reaches Out &mdash; Last Week in the Pacific
 description: "The CCP hosts Pacific political leaders in Beijing and signs a party-to-party MOU with Papua New Guinea&rsquo;s ruling Pangu Pati; a new Chinese ambassador arrives in Kiribati after an eight-month vacancy; a Guangdong provincial legislature delegation tours Tonga and Port Vila signs a sister-city agreement with Liaocheng. October 19 to October 25, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-37.pdf
 prev_url: /embassy-monitors/mapping-beijings-pacific-push.html
+next_week: 38
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

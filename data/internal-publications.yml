@@ -62,6 +62,19 @@
   excerpt: "Seven months of systematic open-source collection across the nine Pacific Island Countries hosting Chinese missions: 679 coded events broken down by post, functional domain, and activity type, with a country-by-country breakdown of all nine embassies."
 
 - type: monitor
+  title: "China Probes Naoero&rsquo;s Seabed"
+  outlet: PRC Pacific Embassies Monitor &middot; Wk 38
+  date: 2026-10-26
+  url: embassy-monitors/week-38.html
+  authors: [jonah-bock]
+  category: embassies-monitor
+  product_type: Embassies Monitor
+  region: Pacific
+  countries: [Nauru, Kiribati, Fiji, Solomon Islands]
+  image: embassy-monitors/images/thumbs/week-38.jpg
+  excerpt: "The submersible Jiaolong docks at Aiwo carrying AI systems that could adapt to submarine and sonar uses, and hosts Naoero&rsquo;s president; a Kiribati fisheries delegation holds ten meetings across China, where joint ventures appear to supply more than a tenth of government revenue; and the RFMF China Alumni Association signs its constitution in Suva."
+
+- type: monitor
   title: "The Chinese Communist Party Reaches Out"
   outlet: PRC Pacific Embassies Monitor &middot; Wk 37
   date: 2026-10-19
