@@ -7,6 +7,7 @@ title: "China Probes Naoero&rsquo;s Seabed &mdash; Last Week in the Pacific"
 description: "The submersible Jiaolong docks at Aiwo carrying AI systems that could adapt to submarine and sonar uses, and hosts Naoero&rsquo;s president; a Kiribati fisheries delegation holds ten meetings across China, where joint ventures appear to supply more than a tenth of government revenue; and the RFMF China Alumni Association signs its constitution in Suva. October 26 to November 1, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-38.pdf
 prev_week: 37
+next_week: 39
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false
