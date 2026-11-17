@@ -7,6 +7,7 @@ title: "Beijing Splashes Cash in Port Moresby &mdash; Last Week in the Pacific"
 description: "CIDCA Chairman Chen Xiaodong signs agreements worth an estimated US$11 million in Port Moresby and Prime Minister Marape asks for Mandarin in PNG schools; the day after Chen leaves, Taiwan closes its office and ends all aid; and Chinese embassies shift their account of a seized artillery shell three times in a week. November 2 to November 8, 2026."
 pdf: /embassy-monitors/pdfs/embassy-monitor-week-39.pdf
 prev_week: 38
+next_week: 40
 authors: [jonah-bock]
 categories: [embassies-monitor]
 featured: false

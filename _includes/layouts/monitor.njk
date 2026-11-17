@@ -81,6 +81,19 @@ permalink: "/embassy-monitors/week-{{ week }}.html"
                 </figure>
                 {%- endif %}
                 {{ theme.body | markdownify | safe }}
+                {%- if theme.figures %}
+                {%- for fig in theme.figures %}
+                <figure class="figure--float">
+                    <img src="{{ fig.src }}" alt="{{ fig.caption | striptags }}">
+                    {%- if fig.caption %}
+                    <figcaption>{{ fig.caption | safe }}{% if fig.source_url and fig.source_label %} (Source: <a href="{{ fig.source_url }}" target="_blank" rel="noopener">{{ fig.source_label }}</a>){% endif %}</figcaption>
+                    {%- endif %}
+                </figure>
+                {%- endfor %}
+                {%- endif %}
+                {%- if theme.body_after %}
+                {{ theme.body_after | markdownify | safe }}
+                {%- endif %}
                 {%- if theme.supporting_events and theme.supporting_events.length > 0 %}
                 <p><strong>Supporting Events</strong></p>
                 <ul>
